@@ -143,7 +143,7 @@
     <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/relationType">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
         <rdfs:range rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
-        <rdfs:label xml:lang="en">This is a top-level placeholder for relevant knowledge relations between bk:Concept instances. See bk:Relation for a detailed description of how relations are model in BioKNet,</rdfs:label>
+        <terms:description xml:lang="en">This is a top-level placeholder for relevant knowledge relations between bk:Concept instances. See bk:Relation for a detailed description of how relations are model in BioKNet,</terms:description>
         <rdfs:label xml:lang="en">is related to</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.ondex.org/bioknet/terms/Relation"/>
     </owl:ObjectProperty>
@@ -223,6 +223,7 @@
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Accession"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">TODO: we need to clarify what this is exactly. How can an accession be ambiguous? Examples?</rdfs:comment>
+        <rdfs:label xml:lang="en">is anbiguous accession</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -290,7 +291,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <terms:description xml:lang="en">An attribute is a literal value associated to a type. The type might optionally tell a unit for the literal value (presumably a number).</terms:description>
-        <rdfs:label xml:lang="en">attribute</rdfs:label>
+        <rdfs:label xml:lang="en">Attribute</rdfs:label>
         <skos:editorialNote xml:lang="en">Note that this is different than other structured value models (e.g., schema.org, good relations), where units can be specified for each value. Here these are linked to the type for all the values of that type.</skos:editorialNote>
     </owl:Class>
     
@@ -325,6 +326,7 @@ The recommended way to use bk:Concept and bk:ConceptClass is:
   - optionally, but recommended in production environment like triple stores backing SPARQL, declare your new instance an instance of bk:Concept too. While this can be inferred, having explicit instances make things easier for applications.
 
 Note also that bk:Concept should never be subclassed with specific network classes, use bk:ConceptClass instead.</terms:description>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:editorialNote xml:lang="en">Those used to the ONDEX model should note that we are mapping the conceptType relations straight to rdf:type and the ONDEX Concept Classes to rdfs:subClassOf this class. We see this as a natural mapping of the ONDEX model to the RDF/RDF-S/OWL standards.</skos:editorialNote>
     </owl:Class>
     
@@ -364,7 +366,7 @@ These are:
 - rdfs:label, to provide a resource human-readable label
 
 - dcterms:description, to provide a resource longer description.</terms:description>
-        <rdfs:label xml:lang="en">A describeable entity.</rdfs:label>
+        <rdfs:label xml:lang="en">Describeable Entity</rdfs:label>
         <skos:editorialNote xml:lang="en">[kNetMiner] these properties correspond to id, fullName, description in the ONDEX model.</skos:editorialNote>
     </owl:Class>
     
@@ -415,6 +417,7 @@ we recommend to also define the triple ex:gene0 ex:encodes ex:prot0. This is to 
 The opposite (i.e., to create a bk:Relation for each bk:Concept triple based on subproperties of bk:relationType, even when there aren&apos;t further properties to attach to the triple) is less important, however, we recommend to introduce this redundancy, for the same sake of ease-to-write queries and performance.
 
 We suggest to base the identifiers of reified relations on the IDs (or URIs) of its three parts, e.g., MD5 ( gene0 + encodes + prot0 ). This makes it easier to find the reified version of a relation once you have the components of its identifiers. WARNING: this should be considered an application facility and never be assumed as a reliable rule.</terms:description>
+        <rdfs:label xml:lang="en">Relation</rdfs:label>
     </owl:Class>
     
 
