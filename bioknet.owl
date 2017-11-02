@@ -131,6 +131,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/relTypeRef">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Relation"/>
+        <rdfs:label xml:lang="en">is instance of relation type</rdfs:label>
         <skos:editorialNote xml:lang="en">The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don&apos;t use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn&apos;t be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check).</skos:editorialNote>
         <schema:rangeIncludes rdf:resource="http://www.ondex.org/bioknet/terms/relationType"/>
     </owl:ObjectProperty>
@@ -172,6 +173,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/altName">
         <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/name"/>
+        <rdfs:label xml:lang="en">has alternative name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -180,6 +182,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/attributeValue">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Attribute"/>
+        <rdfs:label xml:lang="en">attribute value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -189,6 +192,7 @@
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/graphConceptsCount">
         <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/graphSummaryFigure"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:label xml:lang="en">graph concepts count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -198,6 +202,7 @@
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/graphRelationsCount">
         <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/graphSummaryFigure"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:label xml:lang="en">graph relations count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -207,6 +212,7 @@
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/graphSummaryFigure">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Graph"/>
         <terms:description xml:lang="en">a property of this type provides summary figures for the contents of a graph, such as the number of concepts or relations.</terms:description>
+        <rdfs:label xml:lang="en">graph summary figure</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -226,6 +232,8 @@
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/name">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <terms:description xml:lang="en">In bio-databases a name is often meant as something more specific than a title or a label (being more official and often shorter) and not as unique as accessions.</terms:description>
+        <rdfs:label xml:lang="en">has name</rdfs:label>
+        <skos:editorialNote xml:lang="en">Compared to the ONDEX model, we use bk:prefName to represent a name that has the preferred flag set to true, bk:altName to represent all the other names, bk:name for generic names. This is simpler than having a class just to store an additional flag.</skos:editorialNote>
     </owl:DatatypeProperty>
     
 
@@ -234,6 +242,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.ondex.org/bioknet/terms/prefName">
         <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/name"/>
+        <rdfs:label xml:lang="en">has preferred name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -259,6 +268,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <terms:description xml:lang="en">An accession is a string value, assigned with dcterms:identifier and at least one data source in which the accession value is usually unique. Set bk:isAccessionAmbiguous to false to specify the accession is not necessarily unique.</terms:description>
+        <rdfs:label xml:lang="en">Accession</rdfs:label>
     </owl:Class>
     
 
@@ -280,6 +290,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <terms:description xml:lang="en">An attribute is a literal value associated to a type. The type might optionally tell a unit for the literal value (presumably a number).</terms:description>
+        <rdfs:label xml:lang="en">attribute</rdfs:label>
         <skos:editorialNote xml:lang="en">Note that this is different than other structured value models (e.g., schema.org, good relations), where units can be specified for each value. Here these are linked to the type for all the values of that type.</skos:editorialNote>
     </owl:Class>
     
@@ -296,6 +307,7 @@
                 <owl:onClass rdf:resource="http://www.ondex.org/bioknet/terms/Unit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Attribute Type</rdfs:label>
         <skos:editorialNote xml:lang="en">This is AttributeName in ONDEX. It doesn&apos;t look correct to call it name.</skos:editorialNote>
     </owl:Class>
     
@@ -335,6 +347,7 @@ Note also that bk:Concept should never be subclassed with specific network class
 
     <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/DataSource">
         <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Describeable"/>
+        <rdfs:label xml:lang="en">Data Source</rdfs:label>
     </owl:Class>
     
 
@@ -361,6 +374,7 @@ These are:
 
     <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/EvidenceType">
         <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Describeable"/>
+        <rdfs:label xml:lang="en">Evidence Type</rdfs:label>
     </owl:Class>
     
 
@@ -368,7 +382,8 @@ These are:
     <!-- http://www.ondex.org/bioknet/terms/Graph -->
 
     <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Graph">
-        <rdfs:label xml:lang="en">A biological knowledge network can be grouped together into a graph. This is typically a named graph as well and used in triple stores like Virtuoso to identify networks/subsets.</rdfs:label>
+        <terms:description xml:lang="en">A biological knowledge network can be grouped together into a graph. This is typically a named graph as well and used in triple stores like Virtuoso to identify networks/subsets.</terms:description>
+        <rdfs:label xml:lang="en">Graph</rdfs:label>
         <skos:editorialNote xml:lang="en">[TODO] to be completed, using VoID, pav, etc.</skos:editorialNote>
     </owl:Class>
     
@@ -419,6 +434,7 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
 
     <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Unit">
         <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Describeable"/>
+        <rdfs:label xml:lang="en">Unit</rdfs:label>
     </owl:Class>
     
 
