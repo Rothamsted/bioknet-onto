@@ -1,8 +1,8 @@
 <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ondex.org/bioknet/terms/Relation> .
 <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.w3.org/2004/02/skos/core#editorialNote> "The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don't use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn't be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check)."@en .
 <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.w3.org/2000/01/rdf-schema#comment> "[editorial note] The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don't use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn't be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check)." .
+<http://www.ondex.org/bioknet/terms/relTypeRef> <http://schema.org/rangeIncludes> <http://www.ondex.org/bioknet/terms/relationType> .
 <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.ondex.org/bioknet/terms/relTypeRef> <https://schema.org/rangeIncludes> <http://www.ondex.org/bioknet/terms/relationType> .
 <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.w3.org/2000/01/rdf-schema#label> "is instance of relation type"@en .
 <http://www.ondex.org/bioknet/terms/DataSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Describeable> .
 <http://www.ondex.org/bioknet/terms/DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -18,6 +18,8 @@
 <http://www.ondex.org/bioknet/terms/Concept> <http://purl.org/dc/terms/description> "A Concept is the a basic unit of information in the Bio Knowledge Network Ontology. The main type of knowledge in BioKNet consists of relations (either RDF triples based on bk:relationType, or bk:Relation instances) between bk:Concept instances.\n\nThe recommended way to use bk:Concept and bk:ConceptClass is: \n  - subclass bk:ConceptClass with specific classes (eg, Protein, Gene)\n  - instance those specific classes\n  - optionally, but recommended in production environments like triple stores backing SPARQL, declare your new instance an instance of bk:Concept too. While this can be inferred, having explicit instances make things easier for applications.\n\nNote also that bk:Concept should never be subclassed with specific network classes, use bk:ConceptClass instead."@en .
 <http://www.ondex.org/bioknet/terms/Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
 <http://www.ondex.org/bioknet/terms/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+_:Bac4ffa7f1c25e9498867a18f53679ee2 <http://www.w3.org/2002/07/owl#unionOf> _:B59be0ae883b233834e3c9b46ec9b3f8f .
+_:Bac4ffa7f1c25e9498867a18f53679ee2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/isAmbiguousAccession> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ondex.org/bioknet/terms/Accession> .
 <http://www.ondex.org/bioknet/terms/isAmbiguousAccession> <http://www.w3.org/2004/02/skos/core#editorialNote> "TODO: we need to clarify what this is exactly. How can an accession be ambiguous? Examples?"@en .
 <http://www.ondex.org/bioknet/terms/isAmbiguousAccession> <http://www.w3.org/2000/01/rdf-schema#comment> "[editorial note] TODO: we need to clarify what this is exactly. How can an accession be ambiguous? Examples?" .
@@ -29,6 +31,9 @@
 <http://www.ondex.org/bioknet/terms/testProp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.ondex.org/bioknet/terms/testProp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/testProp> <http://purl.org/dc/terms/description> "Just a test relation."@en .
+_:Bb5b277687a5863ba28795236f8112c95 <http://www.w3.org/2002/07/owl#onProperty> <http://www.ondex.org/bioknet/terms/dataSource> .
+_:Bb5b277687a5863ba28795236f8112c95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bb5b277687a5863ba28795236f8112c95 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.ondex.org/bioknet/terms/DataSource> .
 <http://www.w3.org/2004/02/skos/core#editorialNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.ondex.org/bioknet/terms/testStmt0> <http://www.ondex.org/bioknet/terms/relTypeRef> <http://www.ondex.org/bioknet/terms/testProp> .
 <http://www.ondex.org/bioknet/terms/testStmt0> <http://www.ondex.org/bioknet/terms/relTo> <http://www.ondex.org/bioknet/terms/testConcept0_2> .
@@ -40,7 +45,6 @@
 <http://www.ondex.org/bioknet/terms/graphConceptsCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.ondex.org/bioknet/terms/graphConceptsCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#long> .
 <http://www.ondex.org/bioknet/terms/graphConceptsCount> <http://www.w3.org/2000/01/rdf-schema#label> "graph concepts count"@en .
-<http://www.ondex.org/bioknet/terms/ondexId> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/domainIncludes> .
 <http://www.ondex.org/bioknet/terms/ondexId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.ondex.org/bioknet/terms/ondexId> <http://www.w3.org/2000/01/rdf-schema#label> "ONDEX identifier"@en .
 <http://www.ondex.org/bioknet/terms/ondexId> <http://www.w3.org/2000/01/rdf-schema#label> "This is used internally in the ONDEX an kNetMiner projects, in order to match an entity type (e.g., concept class/relation, attribute property) with the corresponding ID that the components in these projects understand. This is necessary when new, better understandable IDs were introduced for existing ones (e.g., produced_by replaces pd_by)."@en .
@@ -53,6 +57,9 @@
 <http://www.ondex.org/bioknet/terms/relFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ondex.org/bioknet/terms/Relation> .
 <http://www.ondex.org/bioknet/terms/relFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/relFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ondex.org/bioknet/terms/Concept> .
+_:B85f13bf17270e53e4525b8a8930c3997 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B85f13bf17270e53e4525b8a8930c3997 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ondex.org/bioknet/terms/RelationElement> .
+<http://schema.org/rangeIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.ondex.org/bioknet/terms/testUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] This is a test unit, which shows how attributes and their units are modelled in BioKNet." .
 <http://www.ondex.org/bioknet/terms/testUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.ondex.org/bioknet/terms/testUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ondex.org/bioknet/terms/Unit> .
@@ -67,6 +74,8 @@
 <http://www.ondex.org/bioknet/terms/attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.ondex.org/bioknet/terms/attribute> <http://purl.org/dc/terms/description> "An attribute is a literal property associated to a concept or a relation. \n\nSpecific attribute types (e.g., pValue, geneBegin) should be defined as subproperty of this one and proper annotations (rdfs:label, dcterms:description) attached. The new properties should also specify their range via rdfs:range and preferrably using an XSD type. Hierarchical attribute type relations should be defined via rdfs:subPropertyOf. \n\nNote that attributes can refer to measure values, in which case you should associate a unit to the corresponding bk:attribute subproperty."@en .
 <http://www.ondex.org/bioknet/terms/attribute> <http://www.w3.org/2000/01/rdf-schema#label> "attribute"@en .
+_:B59be0ae883b233834e3c9b46ec9b3f8f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B85f13bf17270e53e4525b8a8930c3997 .
+_:B59be0ae883b233834e3c9b46ec9b3f8f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ondex.org/bioknet/terms/Accession> .
 <http://www.ondex.org/bioknet/terms/graphSummaryFigure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ondex.org/bioknet/terms/Graph> .
 <http://www.ondex.org/bioknet/terms/graphSummaryFigure> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] a property of this type provides summary figures for the contents of a graph, such as the number of concepts or relations." .
 <http://www.ondex.org/bioknet/terms/graphSummaryFigure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -77,8 +86,6 @@
 <http://www.ondex.org/bioknet/terms/evidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/evidence> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ondex.org/bioknet/terms/EvidenceType> .
 <http://www.ondex.org/bioknet/terms/evidence> <http://purl.org/dc/terms/description> "Links an entity, such as a concept or a relation, to the type of evidence that prove it exists, such as 'imported from database', evidence codes, 'inferred from literature'."@en .
-_:B5001ab1f8b613468daec2ddfbb74c5cd <http://www.w3.org/2002/07/owl#unionOf> _:B752abdeb82f2ae6a5d877dab98e73149 .
-_:B5001ab1f8b613468daec2ddfbb74c5cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/domainIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.ondex.org/bioknet/terms/ConceptClass> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] bk:ConceptClass is a convenience container to be used to subclass bk:Concept. Application-specific concept types should be subclassed starting from here." .
 <http://www.ondex.org/bioknet/terms/ConceptClass> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.ondex.org/bioknet/terms/Concept> .
@@ -118,7 +125,7 @@ _:B5001ab1f8b613468daec2ddfbb74c5cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <http://www.ondex.org/bioknet/terms/prefName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ondex.org/bioknet/terms/name> .
 <http://www.ondex.org/bioknet/terms/prefName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.ondex.org/bioknet/terms/prefName> <http://www.w3.org/2000/01/rdf-schema#label> "has preferred name"@en .
-<http://www.ondex.org/bioknet/terms/dataSource> <http://www.w3.org/2000/01/rdf-schema#domain> _:B5001ab1f8b613468daec2ddfbb74c5cd .
+<http://www.ondex.org/bioknet/terms/dataSource> <http://www.w3.org/2000/01/rdf-schema#domain> _:Bac4ffa7f1c25e9498867a18f53679ee2 .
 <http://www.ondex.org/bioknet/terms/dataSource> <http://www.w3.org/2004/02/skos/core#editorialNote> "[TODO] Align to PAV and alike."@en .
 <http://www.ondex.org/bioknet/terms/dataSource> <http://www.w3.org/2000/01/rdf-schema#comment> "[editorial note] [TODO] Align to PAV and alike." .
 <http://www.ondex.org/bioknet/terms/dataSource> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] The source from which an entity comes from, or was imported or alike." .
@@ -134,19 +141,16 @@ _:B5001ab1f8b613468daec2ddfbb74c5cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <http://www.ondex.org/bioknet/terms/testAttribute> <http://purl.org/dc/terms/description> "Just a test attribute. created to show how attribute properties should be used in BioKNet."@en .
 <http://www.ondex.org/bioknet/terms/testAttribute> <http://www.w3.org/2000/01/rdf-schema#label> "test attribute"@en .
 <http://www.ondex.org/bioknet/terms/Accession> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] An accession is a string value, assigned with dcterms:identifier and at least one data source in which the accession value is usually unique. Set bk:isAccessionAmbiguous to false to specify the accession is not necessarily unique." .
-<http://www.ondex.org/bioknet/terms/Accession> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4bd098d801120391aaf94c9769e12936 .
+<http://www.ondex.org/bioknet/terms/Accession> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb5b277687a5863ba28795236f8112c95 .
 <http://www.ondex.org/bioknet/terms/Accession> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Accession> <http://purl.org/dc/terms/description> "An accession is a string value, assigned with dcterms:identifier and at least one data source in which the accession value is usually unique. Set bk:isAccessionAmbiguous to false to specify the accession is not necessarily unique."@en .
 <http://www.ondex.org/bioknet/terms/Accession> <http://www.w3.org/2000/01/rdf-schema#label> "Accession"@en .
 <http://www.ondex.org/bioknet/terms/altName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ondex.org/bioknet/terms/name> .
 <http://www.ondex.org/bioknet/terms/altName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.ondex.org/bioknet/terms/altName> <http://www.w3.org/2000/01/rdf-schema#label> "has alternative name"@en .
-_:B74d9e38b3559d4656a482c8aa0f5df71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:B74d9e38b3559d4656a482c8aa0f5df71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ondex.org/bioknet/terms/RelationElement> .
 <http://www.ondex.org/bioknet/terms/Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Describeable> .
 <http://www.ondex.org/bioknet/terms/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit"@en .
-<https://schema.org/rangeIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.ondex.org/bioknet/terms/Describeable> <http://www.w3.org/2004/02/skos/core#editorialNote> "[kNetMiner] these properties correspond to id, fullName, description in the ONDEX model."@en .
 <http://www.ondex.org/bioknet/terms/Describeable> <http://www.w3.org/2000/01/rdf-schema#comment> "[editorial note] [kNetMiner] these properties correspond to id, fullName, description in the ONDEX model." .
 <http://www.ondex.org/bioknet/terms/Describeable> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] This is an abstract container to factorise those individuals for which a minimum of description attributes can be defined.\n\nThese are:\n\n- dcterms:identifier, to provide a resource identifier. Note that this is possibly valid only within a given context. it is also recommended that it is unique/unambiguous under that context, however, that is not strictly prescribed.\n\n- rdfs:label, to provide a resource human-readable label\n\n- dcterms:description, to provide a resource longer description." .
@@ -166,12 +170,7 @@ _:B74d9e38b3559d4656a482c8aa0f5df71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <http://www.ondex.org/bioknet/terms/Relation> <http://purl.org/dc/terms/description> "Relations in BioKNet are created in two ways:\n\n- as straight RDF statements between instances of Concept, and using subclasses of the relatedConcept property.\n\n- as instances of Relation, with links from the Relation instance to the relation source (relFrom property), target (relTo property) and predicate (relTypeRef property). This way to define relations is well-known as reification and it is necessary when further properties/links need to be associated to a statement.\n\nA reified relation can have attributes attached (bk:attribute property).\n\nWARNING: We strongly recommend that, if an instance of Relation (i.e., a reified relation) exists in a data set, then the corresponding plain triple exists too. For instance, if this is defined:\n\n<code>\nex:r0 a bk:Relation;\n  bk:relTypeRef ex:encodes;\n  bk:relFrom ex:gene0;\n  bk:relTo ex:prot0.\n</code>\n\nwe recommend to also define the triple ex:gene0 ex:encodes ex:prot0. This is to ease queries and start them from a base representation that is compliant with RDF principles.\n\nThe opposite (i.e., to create a bk:Relation for each bk:Concept triple based on subproperties of bk:relatedConcept, even when there aren't further properties to attach to the triple) is less important, however, we recommend to introduce this redundancy, for the same sake of easy-to-write queries and performance.\n\nWe suggest to base the identifiers of reified relations on the IDs (or URIs) of its three parts, e.g., MD5 ( gene0 + encodes + prot0 ). This makes it easier to find the reified version of a relation once you have the components of its identifiers. WARNING: this should be considered an application facility and never be assumed as a reliable rule."@en .
 <http://www.ondex.org/bioknet/terms/Relation> <http://www.w3.org/2000/01/rdf-schema#label> "Relation"@en .
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-_:B752abdeb82f2ae6a5d877dab98e73149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B74d9e38b3559d4656a482c8aa0f5df71 .
-_:B752abdeb82f2ae6a5d877dab98e73149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ondex.org/bioknet/terms/Accession> .
 <http://www.ondex.org/bioknet/terms/EvidenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Describeable> .
 <http://www.ondex.org/bioknet/terms/EvidenceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/EvidenceType> <http://www.w3.org/2000/01/rdf-schema#label> "Evidence Type"@en .
-_:B4bd098d801120391aaf94c9769e12936 <http://www.w3.org/2002/07/owl#onProperty> <http://www.ondex.org/bioknet/terms/dataSource> .
-_:B4bd098d801120391aaf94c9769e12936 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B4bd098d801120391aaf94c9769e12936 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.ondex.org/bioknet/terms/DataSource> .
 <http://www.ondex.org/bioknet/terms/testConcept0_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
