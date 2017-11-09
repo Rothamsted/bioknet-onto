@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+
+DELETE {
+  ?res rdfs:comment ?c;
+       bk:allComments ?call.
+}
+INSERT {
+  ?res rdfs:comment ?call
+}
+WHERE {
+  ?res rdfs:comment ?c;
+       bk:allComments ?call.
+}
