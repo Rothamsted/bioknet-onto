@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.ondex.org/bioknet/terms/"
      xml:base="http://www.ondex.org/bioknet/terms/"
-     xmlns:schema="https://schema.org/"
+     xmlns:schema="http://schema.org/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:schema1="http://schema.org/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -38,12 +37,17 @@
     
 
 
+    <!-- http://schema.org/rangeIncludes -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/rangeIncludes"/>
+    
+
+
     <!-- http://www.ondex.org/bioknet/terms/ondexId -->
 
     <owl:AnnotationProperty rdf:about="http://www.ondex.org/bioknet/terms/ondexId">
         <rdfs:label xml:lang="en">ONDEX identifier</rdfs:label>
         <rdfs:label xml:lang="en">This is used internally in the ONDEX an kNetMiner projects, in order to match an entity type (e.g., concept class/relation, attribute property) with the corresponding ID that the components in these projects understand. This is necessary when new, better understandable IDs were introduced for existing ones (e.g., produced_by replaces pd_by).</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/domainIncludes"/>
     </owl:AnnotationProperty>
     
 
@@ -51,12 +55,6 @@
     <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
-    
-
-
-    <!-- https://schema.org/rangeIncludes -->
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/rangeIncludes"/>
     
 
 
@@ -76,7 +74,7 @@
     <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/attributeUnit">
         <rdfs:range rdf:resource="http://www.ondex.org/bioknet/terms/Unit"/>
         <terms:description xml:lang="en">When a bk:attribute property is associated to a unit by means of this property, literal values of that property are measure values expressed in the associated unit.</terms:description>
-        <schema1:domainIncludes rdf:resource="http://www.ondex.org/bioknet/terms/attribute"/>
+        <schema:domainIncludes rdf:resource="http://www.ondex.org/bioknet/terms/attribute"/>
         <rdfs:label xml:lang="en">attribute unit</rdfs:label>
         <skos:editorialNote xml:lang="en">Note that the domain of this property is a subclass of bk:attribute. This is specified by means of schema:domainIncludes, in order to keep OWL correctness.</skos:editorialNote>
     </owl:ObjectProperty>
@@ -133,9 +131,9 @@
 
     <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/relTypeRef">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Relation"/>
+        <schema:rangeIncludes rdf:resource="http://www.ondex.org/bioknet/terms/relationType"/>
         <rdfs:label xml:lang="en">is instance of relation type</rdfs:label>
         <skos:editorialNote xml:lang="en">The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don&apos;t use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn&apos;t be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check).</skos:editorialNote>
-        <schema:rangeIncludes rdf:resource="http://www.ondex.org/bioknet/terms/relationType"/>
     </owl:ObjectProperty>
     
 
