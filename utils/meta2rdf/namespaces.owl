@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+  Some namespaces used in the Jena-based conversions made by meta2rdf.sh
+-->
+<rdf:RDF xmlns="http://www.ondex.org/bioknet/terms/"
+     xml:base="http://www.ondex.org/bioknet/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:bk="http://www.ondex.org/bioknet/terms/"
+     xmlns:bka="http://www.ondex.org/bioknet/terms/attributes/"
+     xmlns:bkev="http://www.ondex.org/bioknet/terms/evidences/"
+     xmlns:bkds="http://www.ondex.org/bioknet/terms/dataSources/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.ondex.org/bioknet/terms/"/>
+</rdf:RDF>

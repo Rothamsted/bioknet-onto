@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+
+# This is called after a set of annotations are converted to rdfs:comment annotations.
+# It joins all such comments and makes one comment only per resource. This is another thing
+# that is necessary to make LODE happy.
+#
+# This is the first part of the operation: does the join and creates fictitious bk:allComments annotations,
+# delete_comments.sparul deletes rdfs:comment and translates allComments back to a single rdfs:comment.
+#
+
+INSERT {
+  ?res bk:allComments ?call
+}
+WHERE {
+  {
+    SELECT ?res ( GROUP_CONCAT ( ?c; separator = '\n' ) AS ?call ) {
+      ?res rdfs:comment ?c.
+    }
+    GROUP BY ?res
+  }
+}

@@ -1,0 +1,14 @@
+PREFIX odx: <http://www.ondex.org/bioknet/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ?prop rdfs:subPropertyOf odx:conceptsRelation.
+}
+WHERE {
+  ?prop rdfs:subPropertyOf odx:conceptsRelation, ?otherRel.
+
+  FILTER ( ?otherRel != odx:conceptsRelation )
+  FILTER ( STRSTARTS ( STR ( ?otherRel ), STR  ( odx: ) ))
+}

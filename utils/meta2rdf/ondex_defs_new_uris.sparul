@@ -1,0 +1,50 @@
+PREFIX odx: <http://www.ondex.org/bioknet/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  ?src odx:isOndexPreferred ?value.
+  #?src ?p ?o.
+  #?s ?ip ?src
+}
+INSERT {
+  ?dst ?p ?o.
+  ?s ?ip ?dst.
+  ?dst ?eqProp ?src.
+}
+WHERE {
+  { ?src ?p ?o } UNION { ?s ?ip ?src }
+
+  OPTIONAL { ?src odx:isOndexPreferred ?value }
+
+  VALUES (?src ?dst ?eqProp ) {
+    # Classes
+    ( odx:Comp odx:Compound owl:equivalentClass )
+    ( odx:Protcmplx odx:ProteinComplex owl:equivalentClass )
+    ( odx:MolCmplx odx:MoleculeComplex owl:equivalentClass )
+    ( odx:CelComp odx:CellularComponent owl:equivalentClass )
+    ( odx:MolFunc odx:MolecularFunction owl:equivalentClass )
+    ( odx:BioProc odx:BiologicalProcess owl:equivalentClass )
+
+    # Relations
+    ( odx:physical odx:physical_relation owl:equivalentProperty ) # TODO: how is it actually used?
+    ( odx:pub_in odx:published_in owl:equivalentProperty )
+    ( odx:genetic odx:genetic_relation owl:equivalentProperty )
+    ( odx:h_s_s odx:has_similar_sequence owl:equivalentProperty )
+    ( odx:enc odx:encodes owl:equivalentProperty )
+    ( odx:enc_by odx:encoded_by owl:equivalentProperty )
+    ( odx:occ_in odx:occurs_in owl:equivalentProperty )
+    ( odx:cooc_wi odx:occurs_with owl:equivalentProperty )
+    ( odx:pd_by odx:produced_by owl:equivalentProperty )
+    ( odx:rg_by odx:regulated_by owl:equivalentProperty )
+    ( odx:re_by odx:repressed_by owl:equivalentProperty )
+    ( odx:ac_by odx:activated_by owl:equivalentProperty )
+    ( odx:ex_by odx:expressed_by owl:equivalentProperty )
+    ( odx:in_by odx:inhibited_by owl:equivalentProperty )
+    ( odx:cs_by odx:consumed_by owl:equivalentProperty )
+    ( odx:pu_by odx:taken_up_by owl:equivalentProperty )
+    ( odx:cat_c odx:catalyzing_class owl:equivalentProperty )
+    ( odx:ca_by odx:catalyzed_by owl:equivalentProperty )
+    ( odx:equ odx:equivalent owl:equivalentProperty )
+  }
+}
