@@ -1,4 +1,4 @@
-<xsl:stylesheet 
+<xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:odx="http://ondex.sourceforge.net/"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -18,9 +18,9 @@
 	<xsl:output method="xml" indent="yes" />
 
   <xsl:template match = "/odx:ondex">
-  
+
   		<xsl:message>Matching Root <xsl:value-of select = "name(.)" /></xsl:message>
-  
+
     <rdf:RDF
 	    	xmlns:odx="http://ondex.sourceforge.net/"
 	    	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -41,14 +41,14 @@
 
 		</rdf:RDF>
 	</xsl:template>
-	
-	
+
+
 	<xsl:template match = "odx:conceptclasses/odx:cc[ not ( fn:is_ignored_cc ( odx:id ) )]">
-	
+
 		<xsl:message>Matching CC <xsl:value-of select = "odx:id" /></xsl:message>
-	
+
 		<owl:Class rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:id )}">
-			
+
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
@@ -66,14 +66,14 @@
 					<xsl:when test = "not ( fn:is_ignored_cc ( odx:specialisationOf/odx:id ))">
 						<xsl:value-of select = "odx:specialisationOf/odx:id" />
 					</xsl:when>
-					<xsl:otherwise>ConceptClass</xsl:otherwise>
+					<xsl:otherwise>Concept</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
 
 			<rdfs:subClassOf rdf:resource = "{concat( 'http://www.ondex.org/bioknet/terms/', $super_class_id )}" />
 
 		</owl:Class>
-		
+
 	</xsl:template>
 
 
@@ -81,12 +81,12 @@
 	<xsl:template match = "odx:relationtypes/odx:relation_type[not ( fn:is_ignored_relation ( odx:id ))]
 	   | odx:relationtypes/odx:relation_type/specialisationOf[not ( fn:is_ignored_relation ( odx:id ))]
 	 ">
-	
+
 		<xsl:message>Matching Relation <xsl:value-of select = "odx:id" /></xsl:message>
-	
-	
+
+
 		<owl:ObjectProperty rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:id )}">
-			
+
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
@@ -126,7 +126,7 @@
 			</xsl:if>
 
 
-			<!-- Symmetric property -->		
+			<!-- Symmetric property -->
 			<xsl:if test = "not ( fn:is_ignored_relation ( ./odx:inverseName ) )">
 				<owl:inverseOf>
 					<owl:ObjectProperty rdf:about="{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}">
@@ -137,18 +137,18 @@
 			</xsl:if>
 
 		</owl:ObjectProperty>
-		
+
 	</xsl:template>
 
 
 	<xsl:template match = "odx:attrnames/odx:attrname">
-	
+
 		<xsl:message>Matching Attribute <xsl:value-of select = "odx:id" /></xsl:message>
-	
+
 		<owl:DatatypeProperty rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/attributes/', odx:id )}">
-			
+
 			<rdfs:subPropertyOf rdf:resource = "http://www.ondex.org/bioknet/terms/attribute" />
-			
+
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
@@ -158,9 +158,9 @@
 
 			<xsl:if test="./odx:description != ''">
 				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
-			</xsl:if>			
+			</xsl:if>
 
-			
+
 			<!-- Datatype -->
 			<xsl:variable name = "wtype" select = "concat ( '|', odx:datatype, '|' )" />
 			<xsl:variable name ="xsd_type">
@@ -171,30 +171,30 @@
 					<xsl:otherwise></xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			
+
 			<xsl:if test="$xsd_type != ''">
 				<rdfs:range rdf:resource="{concat ( 'http://www.w3.org/2001/XMLSchema#', $xsd_type )}"/>
 			</xsl:if>
-			
+
 		</owl:DatatypeProperty>
-	
+
 	</xsl:template>
 
 
 	<!-- Data Sources and Evidences -->
 	<xsl:template match = "odx:cvs/odx:cv|odx:evidences/odx:evidence">
-	
+
 		<xsl:variable name="mode">
 			<xsl:choose>
 				<xsl:when test = "local-name() = 'cv'">ds</xsl:when>
 				<xsl:otherwise>ev</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-	
+
 		<xsl:message>Matching <xsl:value-of select = "fn:if ( $mode = 'ds', 'CV/DataSource ', 'Evidence ' )" /> <xsl:value-of select = "odx:id" /></xsl:message>
-	
+
 		<owl:Class rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'dataSources', 'evidences' ), '/', ./odx:id )}">
-			
+
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
@@ -205,11 +205,11 @@
 			<xsl:if test="./odx:description != ''">
 				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
 			</xsl:if>
-			
+
 			<rdfs:subClassOf rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
 
 		</owl:Class>
-		
+
 	</xsl:template>
 
 
@@ -224,9 +224,9 @@
 
 	<!-- Utility functions -->
 
-	<!-- 
+	<!--
 		Classical ternary operator, returning the second or third parameter, depending on the boolean value
-		of the first parameter. 
+		of the first parameter.
 	-->
 	<xsl:function name = "fn:if" >
 		<xsl:param name="expr" />
@@ -254,9 +254,9 @@
 	<xsl:function name = "fn:is_ignored" as="xs:boolean">
 		<xsl:param name="list" />
 		<xsl:param name="id" />
-		
+
 		<!-- xsl:message>CHECK '<xsl:value-of select = "$id" />'</xsl:message -->
-		
+
 		<xsl:choose>
 			<xsl:when test="normalize-space( $id ) = ''" >
 				<xsl:value-of select="true()"/>
@@ -272,7 +272,7 @@
 	<!-- WARN: never used! -->
 	<xsl:function name="fn:encode_id">
 		<xsl:param name="id" />
-		
+
 		<xsl:variable name="idnrm">
 			<xsl:value-of select = "translate ( normalize-space ( $id ), ' -/', '___' )" />
 		</xsl:variable>
@@ -287,7 +287,7 @@
 	  			<xsl:value-of select="concat ( lower-case ( substring ( $idnrm, 1, 1 ) ), substring( $idnrm, 2 ) )" />
 	  		</xsl:otherwise>
 	  </xsl:choose>
-		
+
 	</xsl:function>
 
 </xsl:stylesheet>
