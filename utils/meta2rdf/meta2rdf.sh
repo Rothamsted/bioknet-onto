@@ -4,8 +4,8 @@ if [ "$finput" = '' ]; then
   cat <<EOT
 
 
-  Converts ondex_metadata.xml (in $1) to extensions of the BioKNet ontology.
-  Sends the output to $2 (default is ../../bk_ondex.owl)
+  Converts ondex_metadata.xml (in \$1) to extensions of the BioKNet ontology.
+  Sends the output to \$2 (default is ../../bk_ondex.owl)
   It expects some variables to be initialised, see ../*init.sh
 
 EOT

@@ -96,7 +96,7 @@
 <http://www.ondex.org/bioknet/terms/physical_IB_relation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ondex.org/bioknet/terms/conceptsRelation> .
 <http://www.ondex.org/bioknet/terms/physical_IB_relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/SequenceFeature> <http://purl.org/dc/terms/identifier> "SequenceFeature" .
-<http://www.ondex.org/bioknet/terms/SequenceFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/SequenceFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/SequenceFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/SequenceFeature> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/SequenceFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Sequence Feature"@en .
@@ -337,7 +337,7 @@
 <http://www.ondex.org/bioknet/terms/dataSources/LOCUSTAG> <http://www.w3.org/2000/01/rdf-schema#label> "Locus tag"@en .
 <http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://purl.org/dc/terms/identifier> "MeshPharmacologicalAction" .
 <http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A parmacological action from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshPharmacologicalAction> <http://purl.org/dc/terms/description> "A parmacological action from MeSH\n\t\t\t\t"@en .
@@ -753,7 +753,7 @@
 <http://www.ondex.org/bioknet/terms/CelComp> <http://purl.org/dc/terms/description> "Cellular Component (GO)"@en .
 <http://www.ondex.org/bioknet/terms/CelComp> <http://www.w3.org/2000/01/rdf-schema#label> "Cellular_Component"@en .
 <http://www.ondex.org/bioknet/terms/ProcessSequence> <http://purl.org/dc/terms/identifier> "ProcessSequence" .
-<http://www.ondex.org/bioknet/terms/ProcessSequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/ProcessSequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/ProcessSequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/ProcessSequence> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/ProcessSequence> <http://www.w3.org/2000/01/rdf-schema#label> "ProcessSequence"@en .
@@ -964,15 +964,15 @@
 <http://www.ondex.org/bioknet/terms/dataSources/unknown> <http://www.w3.org/2000/01/rdf-schema#label> "unknown data source"@en .
 <http://www.ondex.org/bioknet/terms/ortho> <http://purl.org/dc/terms/identifier> "ortho" .
 <http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ondex.org/bioknet/terms/homologue> .
-<http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] blastbased ortholog proteins of different species\n\t\t\t\t" .
+<http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] blastbased ortholog proteins of different species" .
 <http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
 <http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/ortho> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.ondex.org/bioknet/terms/ortho> <http://purl.org/dc/terms/description> "blastbased ortholog proteins of different species\n\t\t\t\t"@en .
+<http://www.ondex.org/bioknet/terms/ortho> <http://purl.org/dc/terms/description> "blastbased ortholog proteins of different species"@en .
 <http://www.ondex.org/bioknet/terms/ortho> <http://www.w3.org/2000/01/rdf-schema#label> "orthologue"@en .
 <http://www.ondex.org/bioknet/terms/MeshQualifier> <http://purl.org/dc/terms/identifier> "MeshQualifier" .
 <http://www.ondex.org/bioknet/terms/MeshQualifier> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A qualifier from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshQualifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshQualifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshQualifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshQualifier> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshQualifier> <http://purl.org/dc/terms/description> "A qualifier from MeSH\n\t\t\t\t"@en .
@@ -1045,7 +1045,7 @@
 <http://www.ondex.org/bioknet/terms/evidences/TAS> <http://www.w3.org/2000/01/rdf-schema#label> "Traceable Author Statement"@en .
 <http://www.ondex.org/bioknet/terms/Publication> <http://purl.org/dc/terms/identifier> "Publication" .
 <http://www.ondex.org/bioknet/terms/Publication> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] none\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/Publication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Publication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Publication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Publication> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Publication> <http://purl.org/dc/terms/description> "none\n\t\t\t\t"@en .
@@ -1057,7 +1057,7 @@
 <http://www.ondex.org/bioknet/terms/attributes/INTERNAL> <http://www.w3.org/2000/01/rdf-schema#label> "InternalTypes"@en .
 <http://www.ondex.org/bioknet/terms/Experiment> <http://purl.org/dc/terms/identifier> "Experiment" .
 <http://www.ondex.org/bioknet/terms/Experiment> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] Scientific experiment\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/Experiment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Experiment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Experiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Experiment> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Experiment> <http://purl.org/dc/terms/description> "Scientific experiment\n\t\t\t\t"@en .
@@ -1085,7 +1085,7 @@
 <http://www.ondex.org/bioknet/terms/attributes/PTM> <http://purl.org/dc/terms/description> "posttranslational modification\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/attributes/PTM> <http://www.w3.org/2000/01/rdf-schema#label> "PTM"@en .
 <http://www.ondex.org/bioknet/terms/Annotation> <http://purl.org/dc/terms/identifier> "Annotation" .
-<http://www.ondex.org/bioknet/terms/Annotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Annotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Annotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Annotation> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Annotation> <http://www.w3.org/2000/01/rdf-schema#label> "Annotation"@en .
@@ -1131,7 +1131,7 @@
 <http://www.ondex.org/bioknet/terms/GIDGD> <http://www.w3.org/2000/01/rdf-schema#label> "Dosage Growth Defect"@en .
 <http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://purl.org/dc/terms/identifier> "MeshSemanticType" .
 <http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A semantic type from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshSemanticType> <http://purl.org/dc/terms/description> "A semantic type from MeSH\n\t\t\t\t"@en .
@@ -1151,7 +1151,7 @@
 <http://www.ondex.org/bioknet/terms/bi_to> <http://www.w3.org/2000/01/rdf-schema#label> "binds_to"@en .
 <http://www.ondex.org/bioknet/terms/MeshSubstance> <http://purl.org/dc/terms/identifier> "MeshSubstance" .
 <http://www.ondex.org/bioknet/terms/MeshSubstance> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A substance from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshSubstance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshSubstance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshSubstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshSubstance> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshSubstance> <http://purl.org/dc/terms/description> "A substance from MeSH\n\t\t\t\t"@en .
@@ -1391,7 +1391,7 @@
 <http://www.ondex.org/bioknet/terms/integral_part_of> <http://www.w3.org/2000/01/rdf-schema#label> "integral_part_of"@en .
 <http://www.ondex.org/bioknet/terms/Timepoint> <http://purl.org/dc/terms/identifier> "Timepoint" .
 <http://www.ondex.org/bioknet/terms/Timepoint> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A point in time where an observation is taken\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/Timepoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Timepoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Timepoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Timepoint> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Timepoint> <http://purl.org/dc/terms/description> "A point in time where an observation is taken\n\t\t\t\t"@en .
@@ -1550,13 +1550,13 @@
 <http://www.ondex.org/bioknet/terms/not_function> <http://www.w3.org/2000/01/rdf-schema#label> "has_not_function"@en .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://purl.org/dc/terms/identifier> "MeshSupplementalRecord" .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A supplementary record from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://purl.org/dc/terms/description> "A supplementary record from MeSH\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/MeshSupplementalRecord> <http://www.w3.org/2000/01/rdf-schema#label> "MeSH Supplementary Record"@en .
 <http://www.ondex.org/bioknet/terms/Sequence> <http://purl.org/dc/terms/identifier> "Sequence" .
-<http://www.ondex.org/bioknet/terms/Sequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Sequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Sequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Sequence> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Sequence> <http://www.w3.org/2000/01/rdf-schema#label> "Sequence"@en .
@@ -1590,7 +1590,7 @@
 <http://www.ondex.org/bioknet/terms/RRNAGene> <http://www.w3.org/2000/01/rdf-schema#label> "rRNA-Gene"@en .
 <http://www.ondex.org/bioknet/terms/HierarchyNode> <http://purl.org/dc/terms/identifier> "HierarchyNode" .
 <http://www.ondex.org/bioknet/terms/HierarchyNode> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] a node in a graph hierarchy dendrogram\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/HierarchyNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/HierarchyNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/HierarchyNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/HierarchyNode> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/HierarchyNode> <http://purl.org/dc/terms/description> "a node in a graph hierarchy dendrogram\n\t\t\t\t"@en .
@@ -1623,7 +1623,7 @@
 <http://www.ondex.org/bioknet/terms/evidences/InferredByTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "Inferred by transformation"@en .
 <http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://purl.org/dc/terms/identifier> "MeshDescriptor" .
 <http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A descriptor record from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshDescriptor> <http://purl.org/dc/terms/description> "A descriptor record from MeSH\n\t\t\t\t"@en .
@@ -1917,7 +1917,7 @@
 <http://www.ondex.org/bioknet/terms/has_not_participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/PublicationList> <http://purl.org/dc/terms/identifier> "PublicationList" .
 <http://www.ondex.org/bioknet/terms/PublicationList> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] List of publications\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/PublicationList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/PublicationList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/PublicationList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/PublicationList> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/PublicationList> <http://purl.org/dc/terms/description> "List of publications\n\t\t\t\t"@en .
@@ -2091,7 +2091,7 @@
 <http://www.ondex.org/bioknet/terms/attributes/CLASS> <http://www.w3.org/2000/01/rdf-schema#label> "MetabolicClass"@en .
 <http://www.ondex.org/bioknet/terms/Treatment> <http://purl.org/dc/terms/identifier> "Treatment" .
 <http://www.ondex.org/bioknet/terms/Treatment> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] Any biotic or abiotic treatment like pathogens,\n\t\t\t\t\twound or drought to any host\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/Treatment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Treatment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Treatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Treatment> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Treatment> <http://purl.org/dc/terms/description> "Any biotic or abiotic treatment like pathogens,\n\t\t\t\t\twound or drought to any host\n\t\t\t\t"@en .
@@ -2396,7 +2396,7 @@
 <http://www.ondex.org/bioknet/terms/h_s_s> <http://purl.org/dc/terms/description> "blastbased homolog proteins of different species\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/h_s_s> <http://www.w3.org/2000/01/rdf-schema#label> "has_similar_sequence"@en .
 <http://www.ondex.org/bioknet/terms/Interaction> <http://purl.org/dc/terms/identifier> "Interaction" .
-<http://www.ondex.org/bioknet/terms/Interaction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Interaction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Interaction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Interaction> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Interaction> <http://www.w3.org/2000/01/rdf-schema#label> "Interaction"@en .
@@ -2797,7 +2797,7 @@
 <http://www.ondex.org/bioknet/terms/it_wi> <http://purl.org/dc/terms/description> "Thing->Thing\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/it_wi> <http://www.w3.org/2000/01/rdf-schema#label> "interacts_with"@en .
 <http://www.ondex.org/bioknet/terms/Group> <http://purl.org/dc/terms/identifier> "Group" .
-<http://www.ondex.org/bioknet/terms/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Group> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Group> <http://www.w3.org/2000/01/rdf-schema#label> "Group"@en .
@@ -3095,7 +3095,7 @@
 <http://www.ondex.org/bioknet/terms/glycosylated_by> <http://www.w3.org/2000/01/rdf-schema#label> "glycosylated_by"@en .
 <http://www.ondex.org/bioknet/terms/MeshConcept> <http://purl.org/dc/terms/identifier> "MeshConcept" .
 <http://www.ondex.org/bioknet/terms/MeshConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] A concept from MeSH\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/MeshConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/MeshConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/MeshConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/MeshConcept> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/MeshConcept> <http://purl.org/dc/terms/description> "A concept from MeSH\n\t\t\t\t"@en .
@@ -3686,7 +3686,7 @@
 <http://www.ondex.org/bioknet/terms/attributes/BLEV> <http://purl.org/dc/terms/description> "The number of different alignents with scores\n\t\t\t\t\tequivalent to or better than S that are expected to\n\t\t\t\t\toccur in a database search by chance. The lower the\n\t\t\t\t\tE value, the more significant the score.\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/attributes/BLEV> <http://www.w3.org/2000/01/rdf-schema#label> "BLAST E-Value"@en .
 <http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://purl.org/dc/terms/identifier> "ExpressionAffector" .
-<http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/ExpressionAffector> <http://www.w3.org/2000/01/rdf-schema#label> "ExpressionAffector"@en .
@@ -4014,7 +4014,7 @@
 <http://www.ondex.org/bioknet/terms/attributes/Chromosome> <http://www.w3.org/2000/01/rdf-schema#label> "Chromosome"@en .
 <http://www.ondex.org/bioknet/terms/Taxon> <http://purl.org/dc/terms/identifier> "Taxon" .
 <http://www.ondex.org/bioknet/terms/Taxon> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] Any Taxonomic Entity such as species families etc\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/Taxon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Taxon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Taxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Taxon> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Taxon> <http://purl.org/dc/terms/description> "Any Taxonomic Entity such as species families etc\n\t\t\t\t"@en .
@@ -4191,7 +4191,7 @@
 <http://www.ondex.org/bioknet/terms/takes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.ondex.org/bioknet/terms/PWM> <http://purl.org/dc/terms/identifier> "PWM" .
 <http://www.ondex.org/bioknet/terms/PWM> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] pwm represents a scoring scheme for potential dna binding sites of a\n\t\t\t\t\ttranscription factor\n\t\t\t\t" .
-<http://www.ondex.org/bioknet/terms/PWM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/PWM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/PWM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/PWM> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/PWM> <http://purl.org/dc/terms/description> "pwm represents a scoring scheme for potential dna binding sites of a\n\t\t\t\t\ttranscription factor\n\t\t\t\t"@en .
@@ -4467,7 +4467,7 @@
 <http://www.ondex.org/bioknet/terms/QTL> <http://purl.org/dc/terms/description> "Quantitative Trait Locus\n\t\t\t\t"@en .
 <http://www.ondex.org/bioknet/terms/QTL> <http://www.w3.org/2000/01/rdf-schema#label> "Quantitative Trait Locus"@en .
 <http://www.ondex.org/bioknet/terms/OntologyTerms> <http://purl.org/dc/terms/identifier> "OntologyTerms" .
-<http://www.ondex.org/bioknet/terms/OntologyTerms> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/OntologyTerms> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/OntologyTerms> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/OntologyTerms> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/OntologyTerms> <http://www.w3.org/2000/01/rdf-schema#label> "OntologyTerms"@en .
@@ -4495,7 +4495,7 @@
 <http://www.ondex.org/bioknet/terms/Scaffold> <http://www.w3.org/2000/01/rdf-schema#label> "Scaffold"@en .
 <http://www.ondex.org/bioknet/terms/Localizable> <http://purl.org/dc/terms/identifier> "Localizable" .
 <http://www.ondex.org/bioknet/terms/Localizable> <http://www.w3.org/2000/01/rdf-schema#comment> "[description] An abstract or physical concept that can have a location." .
-<http://www.ondex.org/bioknet/terms/Localizable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/ConceptClass> .
+<http://www.ondex.org/bioknet/terms/Localizable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ondex.org/bioknet/terms/Concept> .
 <http://www.ondex.org/bioknet/terms/Localizable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ondex.org/bioknet/terms/Localizable> <http://www.ondex.org/bioknet/terms/isOndexPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.ondex.org/bioknet/terms/Localizable> <http://purl.org/dc/terms/description> "An abstract or physical concept that can have a location."@en .

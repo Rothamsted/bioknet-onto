@@ -374,7 +374,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>HierarchyNode</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/KOPR">
@@ -462,7 +462,7 @@
     <rdfs:label xml:lang="en">Sequence</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Sequence</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/PROSITE">
@@ -908,7 +908,7 @@
     <rdfs:label xml:lang="en">Group</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Group</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/SOYCYC">
@@ -945,7 +945,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshDescriptor</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/COG">
@@ -998,7 +998,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>PWM</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/ORF">
@@ -1176,7 +1176,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshQualifier</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/WB">
@@ -1288,7 +1288,7 @@
     <rdfs:label xml:lang="en">Annotation</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Annotation</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/UMLS">
@@ -1391,7 +1391,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshSupplementalRecord</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Compound">
@@ -1569,7 +1569,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Taxon</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/NLM">
@@ -1869,7 +1869,7 @@
     <rdfs:label xml:lang="en">OntologyTerms</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>OntologyTerms</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/SF">
@@ -1994,7 +1994,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Experiment</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/WN">
@@ -2294,7 +2294,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>PublicationList</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/TRNA">
@@ -2430,7 +2430,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshSemanticType</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/VEGA">
@@ -2473,7 +2473,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshConcept</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/MRNA">
@@ -2533,21 +2533,21 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Timepoint</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/SequenceFeature">
     <rdfs:label xml:lang="en">Sequence Feature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>SequenceFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Interaction">
     <rdfs:label xml:lang="en">Interaction</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Interaction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/ProtDomain">
@@ -2937,7 +2937,7 @@
     <rdfs:label xml:lang="en">ProcessSequence</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>ProcessSequence</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/SignallingPathway">
@@ -3323,7 +3323,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshPharmacologicalAction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/NucleotideFeature">
@@ -3375,7 +3375,7 @@
     <terms:description xml:lang="en">An abstract or physical concept that can have a location.</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Localizable</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/evidences/IMPD_MANUALLY_CURATED">
@@ -3510,7 +3510,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>MeshSubstance</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/At_Mutant">
@@ -3547,7 +3547,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Treatment</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/CDEII">
@@ -3569,7 +3569,7 @@
     <rdfs:label xml:lang="en">ExpressionAffector</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>ExpressionAffector</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/evidences/EC2GO">
@@ -3594,7 +3594,7 @@
 				</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/ConceptClass"/>
+    <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
     <terms:identifier>Publication</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/evidences/SGD_Verified">
@@ -4985,8 +4985,7 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/ortho">
     <rdfs:label xml:lang="en">orthologue</rdfs:label>
-    <terms:description xml:lang="en">blastbased ortholog proteins of different species
-				</terms:description>
+    <terms:description xml:lang="en">blastbased ortholog proteins of different species</terms:description>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
