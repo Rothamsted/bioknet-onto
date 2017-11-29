@@ -329,6 +329,7 @@ Note that bk:attribute is considered an abstract property container: rather than
     <!-- http://www.ondex.org/bioknet/terms/Concept -->
 
     <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Concept">
+        <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Describeable"/>
         <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/RelationElement"/>
         <dcterms:description xml:lang="en">A Concept is the a basic unit of information in the Bio Knowledge Network Ontology. The main type of knowledge in BioKNet consists of relations (either RDF triples based on bk:relationType, or bk:Relation instances) between bk:Concept instances.
 
