@@ -53,6 +53,17 @@
     
 
 
+    <!-- http://www.ondex.org/bioknet/terms/isIndexed -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ondex.org/bioknet/terms/isIndexed">
+        <dcterms:description xml:lang="en">This is used in the ONDEX project to tell that entities like attributes have to be indexed in systems like Lucene.</dcterms:description>
+        <rdfs:label xml:lang="en">is indexed</rdfs:label>
+        <skos:editorialNote xml:lang="en">This should be done at type level, eg, bk:attribte subproperty and not the single attribute value, as it is done in ONDEX. We simplify things this way (compared to ONDEX), since it doesn&apos;t make much sense to specifiy the indexing at value level (and it&apos;s not being done in the current indexing components).</skos:editorialNote>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.ondex.org/bioknet/terms/isOndexPreferred -->
 
     <owl:AnnotationProperty rdf:about="http://www.ondex.org/bioknet/terms/isOndexPreferred">
@@ -90,6 +101,15 @@ Thisi is particularly useful for managing mappings to standard ontologies.</dcte
         <schema:domainIncludes rdf:resource="http://www.ondex.org/bioknet/terms/attribute"/>
         <rdfs:label xml:lang="en">attribute unit</rdfs:label>
         <skos:editorialNote xml:lang="en">Note that the domain of this property is a subclass of bk:attribute. This is specified by means of schema:domainIncludes, in order to keep OWL correctness.</skos:editorialNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ondex.org/bioknet/terms/conceptAccession -->
+
+    <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/conceptAccession">
+        <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
+        <rdfs:range rdf:resource="http://www.ondex.org/bioknet/terms/Accession"/>
     </owl:ObjectProperty>
     
 
@@ -471,6 +491,7 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
     <!-- http://www.ondex.org/bioknet/terms/testConcept0_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.ondex.org/bioknet/terms/testConcept0_1">
+        <rdf:type rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
         <bka:testAttribute rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</bka:testAttribute>
     </owl:NamedIndividual>
     
@@ -478,7 +499,9 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
 
     <!-- http://www.ondex.org/bioknet/terms/testConcept0_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.ondex.org/bioknet/terms/testConcept0_2"/>
+    <owl:NamedIndividual rdf:about="http://www.ondex.org/bioknet/terms/testConcept0_2">
+        <rdf:type rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
+    </owl:NamedIndividual>
     
 
 

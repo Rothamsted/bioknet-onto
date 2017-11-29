@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://www.ondex.org/bioknet/terms/" uri="https://raw.githubusercontent.com/Rothamsted/bioknet-onto/master/bioknet.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1511867149814" name="http://www.ondex.org/bioknet/terms/" uri="bioknet.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1511867149814" name="shadowed:http://www.ondex.org/bioknet/terms/" uri="utils/meta2rdf/namespaces.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1511982368101" name="http://www.ondex.org/bioknet/terms/" uri="bioknet.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1511982368101" name="shadowed:http://www.ondex.org/bioknet/terms/" uri="utils/meta2rdf/namespaces.owl"/>
     </group>
 </catalog>
