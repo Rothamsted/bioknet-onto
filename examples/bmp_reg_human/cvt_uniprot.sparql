@@ -1,0 +1,25 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX protCore: <http://purl.uniprot.org/core/>
+PREFIX prot: <http://purl.uniprot.org/uniprot/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+CONSTRUCT {
+  ?bkProt a bk:Protein;
+    bk:prefName ?bkAcc;
+    bk:is_annotated_by ?goTerm.
+}
+WHERE
+{
+  ?prot a protCore:Protein;
+    prot:menmonic ?accession.
+
+  OPTIONAL {
+    ?prot prot:classifiedWith ?goTerm.
+    FILTER ( STRSTARTS ( ?goTerm, CONCAT ( STR ( obo: ), "GO_" )) )
+    #FILTER ( REGEX ( ?goTerm, ".+GO_[0-9]+$" ) )
+  }
+
+  BIND ( REPLACE ( ?accession, "_HUMAN$", "" ) AS ?bkAcc )
+  BIND ( CONCAT ( STR ( bkr: ), ?bkAcc ) AS ?bkProt )
+}

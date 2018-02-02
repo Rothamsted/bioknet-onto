@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# I've run this against Fuseki, after uploading the GO/OWL file into a local TDB.
+
+CONSTRUCT {
+  ?term a owl:Class.
+  ?term rdfs:label ?label.
+  ?term dcterms:description ?def.
+
+  ?term rdfs:subClassOf ?superClass.
+}
+WHERE
+{
+  VALUES ( ?term0 )
+  {
+    ( obo:GO_0030014 )
+    ( obo:GO_0030514 )
+    ( obo:GO_0003714 )
+  }
+
+
+  { ?term0 rdfs:subClassOf* ?term. }
+
+  OPTIONAL { ?term rdfs:subClassOf ?superClass. }
+  OPTIONAL { ?term rdfs:label ?label }
+  OPTIONAL { ?term obo:IAO_0000115 ?def }
+}

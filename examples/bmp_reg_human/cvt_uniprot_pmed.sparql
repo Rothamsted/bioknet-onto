@@ -1,0 +1,40 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX prot: <http://purl.uniprot.org/uniprot/>
+PREFIX protCore: <http://purl.uniprot.org/core/>
+PREFIX protCit: <http://purl.uniprot.org/citations/>
+
+CONSTRUCT
+{
+  ?bkPub a bk:bkPub;
+    bk:prefName ?pmedId;
+    dc:identifier ?bkAccUri;
+    bka:abstractHeader ?title;
+    bka:YEAR ?date;
+    bka:AUTHORS ?authorList.
+
+  ?bkAccUri a bk:Accession;
+    dcterms:identifier ?pmedId;
+    bk:dataSource bkr:pmedDataSource.
+}
+WHERE
+{
+  ?pub a protCore:Journal_Citation;
+    prot:title ?title;
+    prot:date ?date;
+    prot:name ?journal;
+
+  {
+    SELECT ( GROUP_CONCAT ( ?authorName, SEPARATOR = "; " ) AS ?autorList )
+    WHERE {
+      ?pub prot:author ?authorName;
+    }
+    GROUP BY ?pub
+  }
+
+  FILTER ( STRSTARTS ( ?pub, STR ( protCit: ) ) )
+  BIND ( REPLACE ( ?pub, STR ( protCit: ), "" ) AS ?pmedId )
+  BIND ( CONCAT ( STR ( bkr: ), ?pmedId ) AS ?bkPub )
+  BIND ( CONCAT ( ?bkPub, "_acc" ) AS ?bkAccUri )
+}

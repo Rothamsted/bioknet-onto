@@ -1,0 +1,26 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+
+CONSTRUCT {
+  ?path a bk:Path;
+    bk:prefName ?pathName.
+
+  ?bkProt a bk:Protein;
+    bk:prefName ?protName;
+    bk:participates_in ?path.
+}
+WHERE
+{
+  ?path a bp:Pathway;
+    bp:displayName ?pathName;
+    bp:pathwayComponent ?react.
+
+  ?react a bp:BiochemicalReaction;
+    bp:right|bp:left ?protein;
+
+  ?protein a bp:Protein
+    bp:displayName ?protName;
+
+  BIND ( CONCAT ( STR ( bkr: ), ?protName ) AS ?bkProt.
+}

@@ -1,0 +1,287 @@
+@prefix :      <http://purl.obolibrary.org/obo/go.owl#> .
+@prefix terms: <http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix go:    <http://purl.obolibrary.org/obo/go#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+obo:GO_0030014  a            owl:Class ;
+        rdfs:label           "CCR4-NOT complex" ;
+        rdfs:subClassOf      obo:GO_0044424 , obo:GO_0043234 ;
+        dcterms:description  "The evolutionarily conserved CCR4-NOT complex is involved in several aspects of mRNA metabolism, including repression and activation of mRNA initiation, control of mRNA elongation, and the deadenylation and subsequent degradation of mRNA. In Saccharomyces the CCR4-NOT complex comprises a core complex of 9 proteins (Ccr4p, Caf1p, Caf40p, Caf130p, Not1p, Not2p, Not3p, Not4p, and Not5p), Caf4p, Caf16p, and several less well characterized proteins." .
+
+obo:GO_2000112  a            owl:Class ;
+        rdfs:label           "regulation of cellular macromolecule biosynthetic process" ;
+        rdfs:subClassOf      obo:GO_0031326 , obo:GO_0010556 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of cellular macromolecule biosynthetic process." .
+
+obo:GO_0048583  a            owl:Class ;
+        rdfs:label           "regulation of response to stimulus" ;
+        rdfs:subClassOf      obo:GO_0050789 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of a response to a stimulus. Response to stimulus is a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus." .
+
+obo:GO_0044424  a            owl:Class ;
+        rdfs:label           "intracellular part" ;
+        rdfs:subClassOf      obo:GO_0044464 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any constituent part of the living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." .
+
+obo:GO_0048519  a            owl:Class ;
+        rdfs:label           "negative regulation of biological process" ;
+        rdfs:subClassOf      obo:GO_0050789 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." .
+
+obo:GO_0019219  a            owl:Class ;
+        rdfs:label           "regulation of nucleobase-containing compound metabolic process" ;
+        rdfs:subClassOf      obo:GO_0051171 , obo:GO_0080090 , obo:GO_0031323 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any cellular process that modulates the frequency, rate or extent of the chemical reactions and pathways involving nucleobases, nucleosides, nucleotides and nucleic acids." .
+
+obo:GO_0006357  a            owl:Class ;
+        rdfs:label           "regulation of transcription from RNA polymerase II promoter" ;
+        rdfs:subClassOf      obo:GO_0006355 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter." .
+
+obo:GO_0010646  a            owl:Class ;
+        rdfs:label           "regulation of cell communication" ;
+        rdfs:subClassOf      obo:GO_0050794 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of cell communication. Cell communication is the process that mediates interactions between a cell and its surroundings. Encompasses interactions such as signaling or attachment between one cell and another cell, between a cell and an extracellular matrix, or between a cell and any other aspect of its environment." .
+
+obo:GO_0090101  a            owl:Class ;
+        rdfs:label           "negative regulation of transmembrane receptor protein serine/threonine kinase signaling pathway" ;
+        rdfs:subClassOf      obo:GO_0090092 , obo:GO_0009968 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that decreases the rate, frequency, or extent of the series of molecular signals generated as a consequence of a transmembrane receptor serine/threonine kinase binding to its physiological ligand." .
+
+obo:GO_0080090  a            owl:Class ;
+        rdfs:label           "regulation of primary metabolic process" ;
+        rdfs:subClassOf      obo:GO_0019222 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism involving those compounds formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism." .
+
+obo:GO_0044464  a            owl:Class ;
+        rdfs:label           "cell part" ;
+        rdfs:subClassOf      obo:GO_0005575 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any constituent part of a cell, the basic structural and functional unit of all organisms." .
+
+obo:GO_0008150  a            owl:Class ;
+        rdfs:label           "biological_process" ;
+        dcterms:description  "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." .
+
+obo:GO_0090288  a            owl:Class ;
+        rdfs:label           "negative regulation of cellular response to growth factor stimulus" ;
+        rdfs:subClassOf      obo:GO_0090287 , obo:GO_0048523 , obo:GO_0048585 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that decreases the rate, frequency, or extent of a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a growth factor stimulus." .
+
+obo:GO_0050794  a            owl:Class ;
+        rdfs:label           "regulation of cellular process" ;
+        rdfs:subClassOf      obo:GO_0050789 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of a cellular process, any of those that are carried out at the cellular level, but are not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." .
+
+obo:GO_0009966  a            owl:Class ;
+        rdfs:label           "regulation of signal transduction" ;
+        rdfs:subClassOf      obo:GO_0010646 , obo:GO_0048583 , obo:GO_0023051 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of signal transduction." .
+
+obo:GO_0032991  a            owl:Class ;
+        rdfs:label           "macromolecular complex" ;
+        rdfs:subClassOf      obo:GO_0005575 ;
+        dcterms:description  "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together." .
+
+obo:GO_0003714  a            owl:Class ;
+        rdfs:label           "transcription corepressor activity" ;
+        rdfs:subClassOf      obo:GO_0003712 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Interacting selectively and non-covalently with a repressing transcription factor and also with the basal transcription machinery in order to stop, prevent, or reduce the frequency, rate or extent of transcription. Cofactors generally do not bind the template nucleic acid, but rather mediate protein-protein interactions between repressive transcription factors and the basal transcription machinery." .
+
+obo:GO_0090287  a            owl:Class ;
+        rdfs:label           "regulation of cellular response to growth factor stimulus" ;
+        rdfs:subClassOf      obo:GO_0050794 , obo:GO_0048583 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the rate, frequency, or extent of a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a growth factor stimulus." .
+
+obo:GO_0031323  a            owl:Class ;
+        rdfs:label           "regulation of cellular metabolic process" ;
+        rdfs:subClassOf      obo:GO_0019222 , obo:GO_0050794 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways by which individual cells transform chemical substances." .
+
+obo:GO_0023057  a            owl:Class ;
+        rdfs:label           "negative regulation of signaling" ;
+        rdfs:subClassOf      obo:GO_0048519 , obo:GO_0023051 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of a signaling process." .
+
+obo:GO_0006355  a            owl:Class ;
+        rdfs:label           "regulation of transcription, DNA-templated" ;
+        rdfs:subClassOf      obo:GO_2000112 , obo:GO_0010468 , obo:GO_1903506 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of cellular DNA-templated transcription." .
+
+obo:GO_0051252  a            owl:Class ;
+        rdfs:label           "regulation of RNA metabolic process" ;
+        rdfs:subClassOf      obo:GO_0019219 , obo:GO_0060255 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving RNA." .
+
+obo:GO_0030510  a            owl:Class ;
+        rdfs:label           "regulation of BMP signaling pathway" ;
+        rdfs:subClassOf      obo:GO_0090287 , obo:GO_0090092 , obo:GO_0006357 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the activity of any BMP receptor signaling pathway." .
+
+obo:GO_0023051  a            owl:Class ;
+        rdfs:label           "regulation of signaling" ;
+        rdfs:subClassOf      obo:GO_0050789 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of a signaling process." .
+
+obo:GO_0065007  a            owl:Class ;
+        rdfs:label           "biological regulation" ;
+        rdfs:subClassOf      obo:GO_0008150 ;
+        dcterms:description  "Any process that modulates a measurable attribute of any biological process, quality or function." .
+
+obo:GO_0000989  a            owl:Class ;
+        rdfs:label           "transcription factor activity, transcription factor binding" ;
+        rdfs:subClassOf      obo:GO_0000988 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Interacting selectively and non-covalently with a specific transcription factor, which may be a single protein or a complex, in order to modulate transcription. A protein binding transcription factor may or may not also interact with the template nucleic acid (either DNA or RNA) as well." .
+
+obo:GO_0005575  a            owl:Class ;
+        rdfs:label           "cellular_component" ;
+        dcterms:description  "The part of a cell, extracellular environment or virus in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." .
+
+obo:GO_0048585  a            owl:Class ;
+        rdfs:label           "negative regulation of response to stimulus" ;
+        rdfs:subClassOf      obo:GO_0048583 , obo:GO_0048519 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of a response to a stimulus. Response to stimulus is a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus." .
+
+obo:GO_2001141  a            owl:Class ;
+        rdfs:label           "regulation of RNA biosynthetic process" ;
+        rdfs:subClassOf      obo:GO_0031326 , obo:GO_0010556 , obo:GO_0051252 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of RNA biosynthetic process." .
+
+obo:GO_0048523  a            owl:Class ;
+        rdfs:label           "negative regulation of cellular process" ;
+        rdfs:subClassOf      obo:GO_0050794 , obo:GO_0048519 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of a cellular process, any of those that are carried out at the cellular level, but are not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." .
+
+obo:GO_0003674  a            owl:Class ;
+        rdfs:label           "molecular_function" ;
+        dcterms:description  "Elemental activities, such as catalysis or binding, describing the actions of a gene product at the molecular level. A given gene product may exhibit one or more molecular functions." .
+
+obo:GO_0010556  a            owl:Class ;
+        rdfs:label           "regulation of macromolecule biosynthetic process" ;
+        rdfs:subClassOf      obo:GO_0009889 , obo:GO_0060255 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the rate, frequency or extent of the chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." .
+
+obo:GO_0043234  a            owl:Class ;
+        rdfs:label           "protein complex" ;
+        rdfs:subClassOf      obo:GO_0032991 ;
+        dcterms:description  "A stable macromolecular complex composed (only) of two or more polypeptide subunits along with any covalently attached molecules (such as lipid anchors or oligosaccharide) or non-protein prosthetic groups (such as nucleotides or metal ions). Prosthetic group in this context refers to a tightly bound cofactor. The component polypeptide subunits may be identical." .
+
+obo:GO_0003712  a            owl:Class ;
+        rdfs:label           "transcription cofactor activity" ;
+        rdfs:subClassOf      obo:GO_0000989 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Interacting selectively and non-covalently with a regulatory transcription factor and also with the basal transcription machinery in order to modulate transcription. Cofactors generally do not bind the template nucleic acid, but rather mediate protein-protein interactions between regulatory transcription factors and the basal transcription machinery." .
+
+obo:GO_1903506  a            owl:Class ;
+        rdfs:label           "regulation of nucleic acid-templated transcription" ;
+        rdfs:subClassOf      obo:GO_2001141 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of nucleic acid-templated transcription." .
+
+obo:GO_0000988  a            owl:Class ;
+        rdfs:label           "transcription factor activity, protein binding" ;
+        rdfs:subClassOf      obo:GO_0003674 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules), in order to modulate transcription. A protein binding transcription factor may or may not also interact with the template nucleic acid (either DNA or RNA) as well." .
+
+obo:GO_0010648  a            owl:Class ;
+        rdfs:label           "negative regulation of cell communication" ;
+        rdfs:subClassOf      obo:GO_0048523 , obo:GO_0010646 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that decreases the frequency, rate or extent of cell communication. Cell communication is the process that mediates interactions between a cell and its surroundings. Encompasses interactions such as signaling or attachment between one cell and another cell, between a cell and an extracellular matrix, or between a cell and any other aspect of its environment." .
+
+obo:GO_0030514  a            owl:Class ;
+        rdfs:label           "negative regulation of BMP signaling pathway" ;
+        rdfs:subClassOf      obo:GO_0090288 , obo:GO_0030510 , obo:GO_0090101 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of the BMP signaling pathway." .
+
+obo:GO_0051171  a            owl:Class ;
+        rdfs:label           "regulation of nitrogen compound metabolic process" ;
+        rdfs:subClassOf      obo:GO_0019222 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving nitrogen or nitrogenous compounds." .
+
+obo:GO_0050789  a            owl:Class ;
+        rdfs:label           "regulation of biological process" ;
+        rdfs:subClassOf      obo:GO_0065007 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." .
+
+obo:GO_0019222  a            owl:Class ;
+        rdfs:label           "regulation of metabolic process" ;
+        rdfs:subClassOf      obo:GO_0050789 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism." .
+
+obo:GO_0060255  a            owl:Class ;
+        rdfs:label           "regulation of macromolecule metabolic process" ;
+        rdfs:subClassOf      obo:GO_0019222 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." .
+
+obo:GO_0009889  a            owl:Class ;
+        rdfs:label           "regulation of biosynthetic process" ;
+        rdfs:subClassOf      obo:GO_0019222 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of substances." .
+
+obo:GO_0090092  a            owl:Class ;
+        rdfs:label           "regulation of transmembrane receptor protein serine/threonine kinase signaling pathway" ;
+        rdfs:subClassOf      obo:GO_0009966 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the rate, frequency, or extent of the series of molecular signals generated as a consequence of a transmembrane receptor serine/threonine kinase binding to its physiological ligand." .
+
+obo:GO_0031326  a            owl:Class ;
+        rdfs:label           "regulation of cellular biosynthetic process" ;
+        rdfs:subClassOf      obo:GO_0009889 , obo:GO_0031323 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." .
+
+obo:GO_0010468  a            owl:Class ;
+        rdfs:label           "regulation of gene expression" ;
+        rdfs:subClassOf      obo:GO_0060255 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that modulates the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." .
+
+obo:GO_0009968  a            owl:Class ;
+        rdfs:label           "negative regulation of signal transduction" ;
+        rdfs:subClassOf      obo:GO_0010648 , obo:GO_0048585 , obo:GO_0009966 , obo:GO_0023057 ;
+        rdfs:subClassOf      [ a  owl:Class ] ;
+        dcterms:description  "Any process that stops, prevents, or reduces the frequency, rate or extent of signal transduction." .
