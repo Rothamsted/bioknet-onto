@@ -15,7 +15,7 @@ Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge 
 
 We use/are using/plan to use bioKNetOnto in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
 
-## The basics
+## The basics
 
 The two main classes in bioKNetOnto are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
 
