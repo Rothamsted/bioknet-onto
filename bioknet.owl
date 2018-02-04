@@ -172,7 +172,7 @@ This property should never be used directly, a concept/concept relation of inter
 
     <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/relTypeRef">
         <rdfs:domain rdf:resource="http://www.ondex.org/bioknet/terms/Relation"/>
-        <schema:rangeIncludes rdf:resource="http://www.ondex.org/bioknet/terms/relationType"/>
+        <schema:rangeIncludes rdf:resource="http://www.ondex.org/bioknet/terms/relatedConcept"/>
         <rdfs:label xml:lang="en">is instance of relation type</rdfs:label>
         <skos:editorialNote xml:lang="en">The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don&apos;t use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn&apos;t be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check).</skos:editorialNote>
     </owl:ObjectProperty>
@@ -413,7 +413,7 @@ These are:
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.ondex.org/bioknet/terms/relFrom"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.ondex.org/bioknet/terms/Concept"/>
+                <owl:onClass rdf:resource="http://www.ondex.org/bioknet/terms/RelationElement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

@@ -1,0 +1,112 @@
+@prefix schema: <http://schema.org/> .
+@prefix :      <http://purl.obolibrary.org/obo/go.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bp:    <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix protCore: <http://purl.uniprot.org/core/> .
+@prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prot:  <http://purl.uniprot.org/uniprot/> .
+@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix terms: <http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/terms/> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix go:    <http://purl.obolibrary.org/obo/go#> .
+@prefix protCit: <http://purl.uniprot.org/citations/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bibo:  <http://purl.org/ontology/bibo/> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+bkr:citation_TOB1_23236473
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:23236473 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_23186163
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:23186163 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_8632892
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:8632892 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_14702039
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:14702039 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_19276069
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:19276069 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_19690332
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:19690332 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_21336257
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:21336257 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_20068231
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:20068231 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:citation_TOB1_18669648
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:18669648 ;
+        bk:relTypeRef  bk:published_in .
+
+bkr:TOB1  a                 bk:Protein ;
+        bk:is_annotated_by  obo:GO_0017148 , obo:GO_0046332 , obo:GO_0008285 , obo:GO_0030509 , obo:GO_0030514 , obo:GO_0005737 , obo:GO_0045668 , obo:GO_0030971 , obo:GO_0005634 , obo:GO_0007184 , obo:GO_1900153 , obo:GO_0005070 , obo:GO_0030014 , obo:GO_0060212 , obo:GO_0060213 , obo:GO_0003714 ;
+        bk:prefName         "TOB1" ;
+        bk:published_in     bkr:23236473 , bkr:19276069 , bkr:23186163 , bkr:15489334 , bkr:21336257 , bkr:18669648 , bkr:8632892 , bkr:14702039 , bkr:19690332 , bkr:20068231 .
+
+bkr:citation_TOB1_15489334
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:15489334 ;
+        bk:relTypeRef  bk:published_in .

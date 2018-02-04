@@ -1,25 +1,51 @@
 PREFIX bk: <http://www.ondex.org/bioknet/terms/>
 PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
 PREFIX protCore: <http://purl.uniprot.org/core/>
 PREFIX prot: <http://purl.uniprot.org/uniprot/>
+PREFIX protCit: <http://purl.uniprot.org/citations/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 CONSTRUCT {
   ?bkProt a bk:Protein;
     bk:prefName ?bkAcc;
-    bk:is_annotated_by ?goTerm.
+    bk:is_annotated_by ?goTerm;
+    bk:published_in ?bkPub.
+
+  ?bkCitation a bk:Relation;
+    bk:relTypeRef bk:published_in;
+    bk:relFrom ?bkProt;
+    bk:relTo ?bkPub;
+    bka:Score 0.95; # Just to show use of attributes for reified relationships
+    bk:evidence bkev:TM # Text Mining based mapping, again, it's just to show reification attachements
 }
 WHERE
 {
   ?prot a protCore:Protein;
-    prot:menmonic ?accession.
+    protCore:mnemonic ?accession.
 
   OPTIONAL {
-    ?prot prot:classifiedWith ?goTerm.
-    FILTER ( STRSTARTS ( ?goTerm, CONCAT ( STR ( obo: ), "GO_" )) )
+    ?prot protCore:classifiedWith ?goTerm.
+    FILTER ( STRSTARTS ( STR ( ?goTerm ), CONCAT ( STR ( obo: ), "GO_" )) )
     #FILTER ( REGEX ( ?goTerm, ".+GO_[0-9]+$" ) )
   }
 
   BIND ( REPLACE ( ?accession, "_HUMAN$", "" ) AS ?bkAcc )
-  BIND ( CONCAT ( STR ( bkr: ), ?bkAcc ) AS ?bkProt )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), ?bkAcc ) ) AS ?bkProt )
+
+  OPTIONAL {
+    ?prot protCore:citation ?pub.
+    ?pub a protCore:Journal_Citation.
+
+    FILTER ( STRSTARTS ( STR ( ?pub ), STR ( protCit: ) ) )
+    BIND ( REPLACE ( STR ( ?pub ), STR ( protCit: ), "" ) AS ?pmedId )
+    BIND ( IRI ( CONCAT ( STR ( bkr: ), ?pmedId ) ) AS ?bkPub )
+  }
+
+  BIND (
+    IRI ( CONCAT ( STR ( bkr: ), "citation_", ?bkAcc, "_", STR ( ?pmedId ) ) )
+    AS ?bkCitation
+  )
 }

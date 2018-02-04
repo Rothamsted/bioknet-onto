@@ -1,0 +1,37 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+
+
+CONSTRUCT {
+  ?goTerm a bk:GeneOntologyTerms;
+    bk:prefName ?label;
+    bk:is_a ?superClass;
+    dc:identifier ?bkAccUri.
+
+  ?bkAccUri a bk:Accession;
+    dcterms:identifier ?accession;
+    bk:dataSource bkds:GO.
+}
+WHERE
+{
+  ?goTerm a owl:Class;
+    rdfs:label ?label.
+
+  FILTER ( STRSTARTS ( STR ( ?goTerm ), CONCAT ( STR ( obo:GO_ ) ) ) )
+
+  OPTIONAL {
+    ?goTerm  rdfs:subClassOf ?superClass.
+    FILTER ( STRSTARTS ( STR ( ?superClass ), CONCAT ( STR ( obo:GO_ ) ) ) )
+  }
+
+  BIND ( REPLACE ( STR ( ?goTerm ), STR ( obo: ), "" ) AS ?accession )
+  BIND ( IRI ( CONCAT ( STR ( ?goTerm ), "_acc" ) ) AS ?bkAccUri )
+}

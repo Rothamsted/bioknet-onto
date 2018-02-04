@@ -1,26 +1,44 @@
 PREFIX bk: <http://www.ondex.org/bioknet/terms/>
 PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
 CONSTRUCT {
   ?path a bk:Path;
-    bk:prefName ?pathName.
+    bk:prefName ?pathName;
+    bk:evidence bkev:IMDPD.
 
   ?bkProt a bk:Protein;
+    dc:identifier ?bkProtAccUri;
     bk:prefName ?protName;
     bk:participates_in ?path.
+
+  ?bkProtAccUri a bk:Accession;
+    dcterms:identifier ?protName;
+    bk:dataSource bkds:UNIPROTKB.
 }
 WHERE
 {
   ?path a bp:Pathway;
     bp:displayName ?pathName;
-    bp:pathwayComponent ?react.
+    bp:pathwayComponent ?comp.
 
-  ?react a bp:BiochemicalReaction;
-    bp:right|bp:left ?protein;
+  {
+    ?comp a bp:BiochemicalReaction;
+      bp:left|bp:right ?protein.
+  }
+  UNION {
+    ?react a bp:Complex;
+      bp:component ?protein.
+  }
 
-  ?protein a bp:Protein
-    bp:displayName ?protName;
+  ?protein a bp:Protein;
+    bp:displayName ?protName.
 
-  BIND ( CONCAT ( STR ( bkr: ), ?protName ) AS ?bkProt.
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), STR ( ?protName ) ) ) AS ?bkProt )
+  BIND ( IRI ( CONCAT ( STR ( ?bkProt ), "_acc" ) ) AS ?bkProtAccUri  )
 }

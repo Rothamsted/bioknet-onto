@@ -1,40 +1,49 @@
 PREFIX bk: <http://www.ondex.org/bioknet/terms/>
 PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX prot: <http://purl.uniprot.org/uniprot/>
 PREFIX protCore: <http://purl.uniprot.org/core/>
 PREFIX protCit: <http://purl.uniprot.org/citations/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 CONSTRUCT
 {
   ?bkPub a bk:bkPub;
     bk:prefName ?pmedId;
+    bka:PMID ?pmedId;
     dc:identifier ?bkAccUri;
     bka:abstractHeader ?title;
     bka:YEAR ?date;
-    bka:AUTHORS ?authorList.
+    bka:AUTHORS ?authorList;
+    bk:evidence bkev:NAS, bkev:IMPD.
 
   ?bkAccUri a bk:Accession;
     dcterms:identifier ?pmedId;
-    bk:dataSource bkr:pmedDataSource.
+    bk:dataSource bkds:PubMed.
 }
 WHERE
 {
   ?pub a protCore:Journal_Citation;
-    prot:title ?title;
-    prot:date ?date;
-    prot:name ?journal;
+    protCore:title ?title;
+    protCore:date ?date;
+    protCore:name ?journal;
 
   {
-    SELECT ( GROUP_CONCAT ( ?authorName, SEPARATOR = "; " ) AS ?autorList )
+    SELECT ( GROUP_CONCAT ( ?authorName; SEPARATOR = "; " ) AS ?autorList )
     WHERE {
-      ?pub prot:author ?authorName;
+      ?pub
+        a protCore:Journal_Citation;
+        protCore:author ?authorName;
     }
     GROUP BY ?pub
   }
 
-  FILTER ( STRSTARTS ( ?pub, STR ( protCit: ) ) )
-  BIND ( REPLACE ( ?pub, STR ( protCit: ), "" ) AS ?pmedId )
-  BIND ( CONCAT ( STR ( bkr: ), ?pmedId ) AS ?bkPub )
-  BIND ( CONCAT ( ?bkPub, "_acc" ) AS ?bkAccUri )
+  FILTER ( STRSTARTS ( STR ( ?pub ), STR ( protCit: ) ) )
+  BIND ( REPLACE ( STR ( ?pub ), STR ( protCit: ), "" ) AS ?pmedId )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), ?pmedId ) ) AS ?bkPub )
+  BIND ( IRI ( CONCAT ( STR ( ?bkPub ), "_acc" ) ) AS ?bkAccUri )
 }

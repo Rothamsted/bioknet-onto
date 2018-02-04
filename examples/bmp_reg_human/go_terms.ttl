@@ -1,0 +1,36 @@
+@prefix :      <http://purl.obolibrary.org/obo/go.owl#> .
+@prefix terms: <http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/terms/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix go:    <http://purl.obolibrary.org/obo/go#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+obo:GO_0043234  a        owl:Class ;
+        rdfs:label       "protein complex" ;
+        rdfs:subClassOf  obo:GO_0032991 .
+
+obo:GO_0044424  a        owl:Class ;
+        rdfs:label       "intracellular part" ;
+        rdfs:subClassOf  obo:GO_0044464 ;
+        rdfs:subClassOf  [ a  owl:Class ] .
+
+obo:GO_0030014  a        owl:Class ;
+        rdfs:label       "CCR4-NOT complex" ;
+        rdfs:subClassOf  obo:GO_0044424 , obo:GO_0043234 .
+
+obo:GO_0005575  a   owl:Class ;
+        rdfs:label  "cellular_component" .
+
+obo:GO_0044464  a        owl:Class ;
+        rdfs:label       "cell part" ;
+        rdfs:subClassOf  obo:GO_0005575 ;
+        rdfs:subClassOf  [ a  owl:Class ] .
+
+obo:GO_0032991  a        owl:Class ;
+        rdfs:label       "macromolecular complex" ;
+        rdfs:subClassOf  obo:GO_0005575 .

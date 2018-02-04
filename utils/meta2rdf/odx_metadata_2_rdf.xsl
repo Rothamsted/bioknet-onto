@@ -27,7 +27,10 @@
 	    	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	    xmlns:bk="http://www.ondex.org/bioknet/terms/"
 	  		xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
     	>
+      <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/"/>
+
 
     		<owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/conceptsRelation" />
 

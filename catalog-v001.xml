@@ -3,8 +3,9 @@
     <uri id="Imports Wizard Entry" name="http://www.ondex.org/bioknet/terms/" uri="bioknet.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.ondex.org/bioknet/terms/" uri="https://raw.githubusercontent.com/Rothamsted/bioknet-onto/master/bioknet.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1517486228648" name="http://purl.uniprot.org/uniprot/" uri="examples/bmp_reg_human/tob1_P50616.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1517486228648" name="http://www.ondex.org/bioknet/terms/" uri="bioknet.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1517486228648" name="shadowed:http://www.ondex.org/bioknet/terms/" uri="utils/meta2rdf/namespaces.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1517678895727" name="http://purl.uniprot.org/uniprot/" uri="examples/bmp_reg_human/tob1_P50616.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1517678895727" name="http://www.ondex.org/bioknet/terms/" uri="bioknet.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1517678895727" name="http://www.wikipathways.org/" uri="examples/bmp_reg_human/WP1425_86082_bpax.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1517678895727" name="shadowed:http://www.ondex.org/bioknet/terms/" uri="utils/meta2rdf/namespaces.owl"/>
     </group>
 </catalog>

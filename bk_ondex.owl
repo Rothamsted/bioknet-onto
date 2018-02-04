@@ -10,7 +10,7 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:bk="http://www.ondex.org/bioknet/terms/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:Ontology rdf:about="http://www.ondex.org/bioknet/terms/"/>
+  <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/"/>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/NEWT">
     <rdfs:label xml:lang="en">UniProt Taxonomy Database</rdfs:label>
     <terms:description xml:lang="en">NEWT is the taxonomy database maintained by the UniProt group. It integrates taxonomy data
