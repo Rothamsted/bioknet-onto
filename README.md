@@ -1,5 +1,5 @@
-# bioknet-onto
-The Bio Knowledge Network, which will power the kNetMiner project.
+# bkNetOnto
+The Bio Knowledge Network, which powers the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project.
 
 ## Ontology Overview
 
@@ -9,21 +9,19 @@ At the most basic level, it provides simple modelling for very general entities,
 
 In addition to that, entities such as structured accessions, data sources and evidence-tracking predicates are defined. 
 
-At a more specific level, the core definitions are extended with common biological entities, such as Protein, Gene, or encodes relation.
+At a more specific level, [the core definitions](bioknet.owl) are extended with common biological entities, such as Protein, Gene, or the 'encodes' relation.
 
-Suitable mappings are also given, in order to map the knowledge networks modelled by means of bkNetOnto to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., bioschemas).
+Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of bkNetOnto to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., [bioschemas](http://bioschemas.org/)).
 
-We use bkNetOnto in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
+We use/are using/plan to use bkNetOnto in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
 
 ## The basics
 
-The two main classes in bkNetOnto are `bk:Concept` and `bk:Relation`. The latter is a close relative of the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
+The two main classes in bkNetOnto are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
 
-Typically, the entities you want to talk about in a bkNetOnto knowledge network are indirect instances of `bk:Concept`, while Concepts are linked together by some subproperty of `bk:conceptsRelation`. 
+Typically, the entities you want to talk about in a bkNetOnto knowledge network are indirect (i.e., transitive) instances of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:conceptsRelation`. 
 
 A first instance about a biological pathway, taken from our [WikiPathway example](examples/bmp_reg_human/bkout):
-
-### Concepts and properties
 
 ```Turtle
 <http://www.wikipathways.org/id1>
@@ -35,7 +33,7 @@ A first instance about a biological pathway, taken from our [WikiPathway example
         
 bkr:TOB1  a                 bk:Protein ;
         dc:identifier       bkr:TOB1_acc ;
-        # A simplified link, hiding Biopax pathwayComponent -> BioChemicalReaction|Complex -> Protein
+        # A simplified link, hiding BioPax pathwayComponent -> BioChemicalReaction|Complex -> Protein
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB1"^^<xsd:string> .
         
@@ -52,7 +50,7 @@ original link chains between pathways and proteins present in the BioPax data ar
 
 ## Concept attributes
 
-Under the top-level `bk:attribute` property, bkNetOnto provides a numer of OWL datatype properties, which can be attached to concepts and relations. For instance:
+Under the top-level `bk:attribute` property, bkNetOnto provides a number of OWL datatype properties, which can be attached to concepts and relations. For instance:
 
 ```Turtle
 bkr:20068231  a             bk:bkPub ;
