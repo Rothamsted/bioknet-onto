@@ -1,5 +1,5 @@
 # 
-# Converts a couple of files about WikiPathway examples to bkNetOnto.  
+# Converts a couple of files about WikiPathway examples to bioKNetOnto.  
 # Stores the results in bkout, as Turtle files, and also puts all the data (original and converted) into
 # a temp TDB.
 # 
