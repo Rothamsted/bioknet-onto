@@ -1,7 +1,7 @@
 # bioKNetOnto
 The Bio Knowledge Network, which powers the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project.
 
-## Ontology Overview
+## Ontology Overview
 
 bioKNetOnto is a lightweight ontology, aimed at representing biological-related knowledge networks.
 
