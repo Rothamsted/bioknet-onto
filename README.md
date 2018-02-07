@@ -1,9 +1,9 @@
-# BioKno, The Bio Knowledge Network Ontology 
+# BioKno, The Biological Knowledge Network Ontology 
 
 
 ## Ontology Overview
 
-BioKno (pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project. 
+**BIO**logical **KN**owledge Network **O**ntology (BioKnow, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project. 
 
 At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and attributed-attached reified relationships. 
 
