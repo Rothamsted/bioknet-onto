@@ -37,15 +37,38 @@ bkr:TOB1  a                 bk:Protein ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB1"^^<xsd:string> .
         
-# Structured accession, allow for linking identifier and context.         
+# Structured accession, allow for linking of identifier and context.         
 bkr:TOB1_acc  a             bk:Accession ;
         dcterms:identifier  "TOB1"^^<xsd:string> ;
-        bk:dataSource       bkds:UNIPROTKB . # instance of bk:DataSource. We havea list of predefined data sources.
+        bk:dataSource       bkds:UNIPROTKB; # instance of bk:DataSource. We havea list of predefined data sources.
+        bk:is_annotated_by obo:GO_0030014.
 ```
 
 As you can see, we have predefined entities like `bk:Path`, subclassing core entities like `bk:Concept`. Moreover, the 
 original link chains between pathways and proteins present in the BioPax data are simplified by means of the 
 `bk:participates_in` relation.
+
+Another example, about the gene ontology term rederred by above:
+
+```Turtle
+obo:GO_0030014  a      bk:GeneOntologyTerms ;
+        dc:identifier  obo:GO_0030014_acc ;
+        bk:is_a        obo:GO_0044424 , obo:GO_0043234 ;
+        bk:prefName    "CCR4-NOT complex" .
+
+obo:GO_0044424  a      bk:GeneOntologyTerms ;
+        dc:identifier  obo:GO_0044424_acc ;
+        bk:is_a        obo:GO_0044464 ;
+        bk:prefName    "intracellular part" .
+        
+obo:GO_0030015  a  bk:GeneOntologyTerms;
+        dc:identifier  obo:GO_0030015_acc ;
+        bk:is_a        obo:GO_0044424, obo:GO_0043234 ;
+        bk:part_of 		obo:GO_0030014;
+        bk:prefName    "CCR4-NOT core complex" .
+```
+
+As you can see, original URIs about external RDF data can be reused (in OWL-2, this is possible thanks to [punning](https://www.w3.org/2007/OWL/wiki/Punning)). Morever, relations like `bk:is_a`, `bk:part_of` are more informal than OWL/OBO relations, which might simplify the modelling. For instance, the fact that a CCR4-NOT core complex is part of a CCR4-NOT complex is a simple direct relation, where, in OWL terms must be an axiom like "part of some CCR-NOT complex.    
 
 
 ## Concept attributes
