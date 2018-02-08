@@ -48,7 +48,7 @@ As you can see, we have predefined entities like `bk:Path`, subclassing core ent
 original link chains between pathways and proteins present in the BioPax data are simplified by means of the 
 `bk:participates_in` relation.
 
-Another example, about the gene ontology term rederred by above:
+Another example, about the gene ontology term referred by above:
 
 ```Turtle
 obo:GO_0030014  a      bk:GeneOntologyTerms ;
