@@ -98,7 +98,7 @@ bkr:TOB1 bk:published_in    bkr:20068231.
 
 bkr:citation_TOB1_15489334
         a              bk:Relation ;
-        bk:relTypeRef  bk:published_in;        
+        bk:relTypeRef  bk:published_in;  # the same relations used for straight triples      
         bk:relFrom     bkr:TOB1 ; # This is the protein in the examples above
         bk:relTo       bkr:15489334 ; # And this is the publication above
         bka:Score      0.95 ;
