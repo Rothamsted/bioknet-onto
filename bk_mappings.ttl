@@ -1,0 +1,110 @@
+@prefix bk: <http://www.ondex.org/bioknet/terms/>.
+@prefix bka: <http://www.ondex.org/bioknet/terms/attributes/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix bpax: <http://www.biopax.org/release/biopax-level3.owl#>.
+@prefix schema: <http://schema.org/>.
+@prefix sio: <http://semanticscience.org/resource/>.
+@prefix bioschema: <http://bioschemas.org/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix obo: <http://purl.obolibrary.org/obo/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+bk:Concept rdfs:subClassOf skos:Concept.
+
+bk:Path
+  owl:equivalentClass
+    bpax:Pathway,
+    sio:SIO_001107
+.
+
+bk:Publication rdfs:subClassOf schema:CreativeWork.
+
+bk:Interaction owl:equivalentClass bpax:Interaction.
+
+bk:Participant
+  owl:equivalentClass bpax:Entity;
+  skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en
+.
+
+bk:Protein owl:equivalentClass
+  bpax:Protein, sio:SIO_010043
+.
+
+bk:MoleculeComplex
+  owl:equivalentClass bpax:Complex;
+  rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en
+.
+bk:Gene owl:equivalentClass bpax:Gene.
+bk:Reaction
+  owl:equivalentClass bpax:BiochemicalReaction;
+  rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, wether it's biology-related or not"@en
+.
+bk:Transport owl:equivalentClass bpax:Transport.
+
+bk:Molecule rdfs:subClassOf bioschema:BioChemEntity.
+
+bk:participates_in owl:equivalentProperty obo:RO_0000056.
+bk:has_participant owl:equivalentProperty obo:RO_0000057.
+bpax:participant rdfs:subPropertyOf bk:has_participant.
+
+bpax:product rdfs:subPropertyOf bk:produces.
+bk:produces owl:equivalentProperty obo:RO_0002234.
+bk:pd_by owl:equivalentProperty obo:RO_0002353.
+
+bk:consumes owl:equivalentProperty obo:RO_0002233.
+bk:cs_by owl:equivalentProperty obo:RO_0002352.
+
+bk:regulates
+  owl:equivalentProperty obo:RO_0002211;
+  rdfs:comment "See bk:participates_in about compatibility with RO";
+  rdfs:seeAlso bk:participates_in
+.
+
+bk:pos_reg
+  owl:equivalentProperty obo:RO_0002213;
+  rdfs:comment "See bk:participates_in about compatibility with RO";
+  rdfs:seeAlso bk:participates_in
+.
+
+bk:neg_reg owl:equivalentProperty obo:RO_0002212.
+
+bk:part_of owl:equivalentProperty obo:BFO_0000050.
+bk:has_part owl:equivalentProperty obo:BFO_0000051.
+
+bk:occ_in owl:equivalentProperty obo:BFO_0000066.
+bk:cooc_wi owl:equivalentProperty obo:RO_0008506.
+
+bk:enc rdfs:subPropertyOf sio:SIO_010078.
+bk:en_by rdfs:subPropertyOf sio:SIO_010079.
+
+bk:published_in rdfs:subPropertyOf
+  schema:subjectOf,
+  [ owl:inverseOf dc:subject ]
+.
+bk:publication_features rdfs:subPropertyOf dc:subject.
+
+bka:Abstract rdfs:subPropertyOf dcterms:description.
+bka:AbstractHeader rdfs:subPropertyOf dcterms:title.
+bka:AUTHORS rdfs:subPropertyOf dc:creator.
+bka:FullText rdfs:subPropertyOf dcterms:description.
+bka:YEAR rdfs:subPropertyOf dcterms:issued.
+bka:URL owl:equivalentProperty schema:url.
+
+bka:PVALUE rdfs:seeAlso sio:SIO_000765, obo:OBI_0000175;
+  rdfs:comment "TODO: we would like to find a better form of integration with SIO/OBI"@en
+.
+
+bka:Score rdfs:seeAlso obo:OBI_0000970.
+
+bpax:name rdfs:subPropertyOf bk:name.
+bpax:standardName rdfs:subPropertyOf bk:prefName.
+
+bk:name
+  owl:equivalentProperty schema:name;
+  rdfs:subPropertyOf dcterms:label
+.
+
+bk:prefName rdfs:subPropertyOf skos:prefLabel.
+bk:altName rdfs:subPropertyOf skos:altLabel.

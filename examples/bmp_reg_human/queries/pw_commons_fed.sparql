@@ -1,0 +1,55 @@
+PREFIX bp: <http://open-services.net/ns/basicProfile#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX bpax: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX bioschema: <http://bioschemas.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# Gets the pathways in Pathway Commons having participant proteins in common
+# to one of our own pathways.
+#
+SELECT DISTINCT ?cPwName ?protName
+{
+  ?pway a bpax:Pathway;
+        dcterms:label ?pwName.
+        # Different label properties are actually used, let's the reasoner play
+
+  FILTER ( REGEX ( STR ( ?pwName ), "Bone Morphogenic Protein" ) )
+
+  # We simplify link chains with this
+  ?pway bk:has_participant ?prot.
+
+  ?prot a bpax:Protein;
+        dcterms:label ?protName.
+
+  # Remote query is run fist and then protein matches happen here.
+  # TODO: make it more efficient by publishing our end point and working inside-out, i.e.,
+  # with Path Commons as outer SERVICE and our endpoint as inner SERVICE that is contacted by
+  # their endpoint
+  #
+  FILTER ( STR ( ?cProtName ) = STR ( ?protName ) )
+
+  SERVICE <http://rdf.pathwaycommons.org/sparql>
+  {
+    # Here the model is BioPax-only
+    #
+    ?cPway a bpax:Pathway;
+           bpax:pathwayComponent ?cComp;
+           bpax:displayName ?cPwName.
+
+    ?partProp rdfs:subPropertyOf* bpax:participant.
+    ?cComp ?partProp ?cProt.
+
+    ?cProt a bpax:Protein;
+           bpax:displayName ?cProtName.
+  }
+
+}
+LIMIT 100

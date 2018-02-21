@@ -2,6 +2,9 @@ PREFIX odx: <http://www.ondex.org/bioknet/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# Takes names coming from ONDEX and adds new, more suitable names, marking the old entities as
+# preferred in the ONDEX platform. This allows us to rename ONDEX data coming from old names.
+#
 DELETE {
   ?src odx:isOndexPreferred ?value.
   #?src ?p ?o.
@@ -12,12 +15,14 @@ INSERT {
   ?s ?ip ?dst.
   ?dst ?eqProp ?src.
 }
-WHERE {
+WHERE 
+{
   { ?src ?p ?o } UNION { ?s ?ip ?src }
 
   OPTIONAL { ?src odx:isOndexPreferred ?value }
 
-  VALUES (?src ?dst ?eqProp ) {
+  VALUES (?src ?dst ?eqProp )
+  {
     # Classes
     ( odx:Comp odx:Compound owl:equivalentClass )
     ( odx:Protcmplx odx:ProteinComplex owl:equivalentClass )
