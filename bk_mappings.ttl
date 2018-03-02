@@ -57,19 +57,16 @@ bk:consumes owl:equivalentProperty obo:RO_0002233.
 bk:cs_by owl:equivalentProperty obo:RO_0002352.
 
 bk:regulates
-  owl:equivalentProperty obo:RO_0002211;
-  rdfs:comment "See bk:participates_in about compatibility with RO";
-  rdfs:seeAlso bk:participates_in
+  owl:equivalentProperty obo:RO_0002211
 .
 
 bk:pos_reg
-  owl:equivalentProperty obo:RO_0002213;
-  rdfs:comment "See bk:participates_in about compatibility with RO";
-  rdfs:seeAlso bk:participates_in
+  owl:equivalentProperty obo:RO_0002213
 .
 
 bk:neg_reg owl:equivalentProperty obo:RO_0002212.
 
+bk:is_a owl:equivalentProperty skos:broader.
 bk:part_of owl:equivalentProperty obo:BFO_0000050.
 bk:has_part owl:equivalentProperty obo:BFO_0000051.
 
