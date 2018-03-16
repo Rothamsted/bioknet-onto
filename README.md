@@ -1,9 +1,9 @@
-# BioKno, The Biological Knowledge Network Ontology 
+# BioKNO, The Biological Knowledge Network Ontology 
 
 
 ## Ontology Overview
 
-**BIO**logical **KN**owledge Network **O**ntology (BioKno, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project. 
+**BIO**logical **KN**owledge Network **O**ntology (BioKNO, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project. 
 
 At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and attributed-attached reified relationships. 
 
@@ -11,15 +11,15 @@ In addition to that, entities such as structured accessions, data sources and ev
 
 At a more specific level, [the core definitions](bioknet.owl) are extended with common biological entities, such as Protein, Gene, or the 'encodes' relation.
 
-Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKno to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., [bioschemas](http://bioschemas.org/)).
+Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., [bioschemas](http://bioschemas.org/)).
 
-We use/are using/plan to use BioKno in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
+We use/are using/plan to use BioKNO in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
 
 ## The basics
 
-The two main classes in BioKno are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
+The two main classes in BioKNO are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
 
-Typically, the entities you want to talk about in a BioKno knowledge network are indirect (i.e., transitive) instances of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:conceptsRelation`. 
+Typically, the entities you want to talk about in a BioKNO knowledge network are indirect (i.e., transitive) instances of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:conceptsRelation`. 
 
 A first instance about a biological pathway, taken from our [WikiPathway example](examples/bmp_reg_human/bkout):
 
@@ -73,7 +73,7 @@ As you can see, original URIs about external RDF data can be reused (in OWL-2, t
 
 ## Concept attributes
 
-Under the top-level `bk:attribute` property, BioKno provides a number of OWL datatype properties, which can be attached to concepts and relations. For instance:
+Under the top-level `bk:attribute` property, BioKNO provides a number of OWL datatype properties, which can be attached to concepts and relations. For instance:
 
 ```Turtle
 bkr:20068231  a             bk:bkPub ;
