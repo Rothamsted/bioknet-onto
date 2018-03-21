@@ -6,12 +6,18 @@
 @prefix sio: <http://semanticscience.org/resource/>.
 @prefix bioschema: <http://bioschemas.org/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix obo: <http://purl.obolibrary.org/obo/>.
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix dcterms: <http://purl.org/dc/terms/>.
 
 bk:Concept rdfs:subClassOf skos:Concept.
+
+bk:Relation rdfs:subClassOf rdf:Statement.
+bk:relFrom rdfs:subPropertyOf rdf:subject.
+bk:relTypeRef rdfs:subPropertyOf rdf:predicate.
+bk:relTo rdfs:subPropertyOf rdf:object.
 
 bk:Path
   owl:equivalentClass
