@@ -1,0 +1,26 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT
+{
+  ?degRelIri
+    a bk:Relation;
+    bka:PVALUE     ?pValue;
+    bk:evidence    bkev:EXP; # Inferred from experiment
+    bk:relFrom     ?protIri; # Details defined by UniProt info
+    bk:relTo       ?sampleIri; # Details defined by sample_degs_2.tsv
+    bk:relTypeRef  bk:expressed_by
+  .
+}
+WHERE {
+  # Some IDs and IRIs to be defined above
+  BIND ( LCASE ( REPLACE ( ?Sample, ' ', '_' ) ) AS ?sampleId )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), ?Gene_Symbol ) ) AS ?protIri )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), 'degex_', ?sampleId ) ) AS ?sampleIri )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), 'degex_', ?sampleId, '_', LCASE ( ?Gene_Symbol ) ) ) AS ?degRelIri )
+  BIND ( xsd:double ( ?p_value ) AS ?pValue )
+}

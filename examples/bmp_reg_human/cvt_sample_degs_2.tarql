@@ -1,0 +1,31 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+
+CONSTRUCT
+{
+  ?sampleIri
+    a bk:ExperimentalSample;
+    bk:prefName ?Sample_Name;
+    bk:is_annotated_by ?treatmentIri;
+    bk:member_of bkr:sampleExp # this is described by sample_degs_experiment.ttl
+  .
+
+  ?treatmentIri
+    a bk:Annotation;
+    bk:prefName ?Treatment
+  .
+}
+WHERE {
+  # Some IDs and IRIs to be defined above
+  BIND ( LCASE ( REPLACE ( ?Sample_Name, ' ', '_' ) ) AS ?sampleId )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), 'degex_', ?sampleId ) ) AS ?sampleIri )
+
+  BIND ( LCASE ( REPLACE ( ?Treatment, ' ', '_' ) ) AS ?treatmentId )
+  BIND ( IRI ( CONCAT ( STR ( bkr: ), 'degex_', ?treatmentId ) ) AS ?treatmentIri )
+}
