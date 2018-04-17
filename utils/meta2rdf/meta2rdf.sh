@@ -26,7 +26,7 @@ echo Redundant subproperty declarations
 echo URI normalization
 "$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_new_uris.sparul --dump | sponge "$ntmpf"
 
-echo "RDF/XML conversion"
+echo "Conversion to RDF/XML encoding"
 $JENA_HOME/bin/riot --formatted='RDF/XML' namespaces.owl "$ntmpf" >"$fout"
 
 echo "The End"

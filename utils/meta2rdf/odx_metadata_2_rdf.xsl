@@ -29,7 +29,9 @@
 	  		xmlns:dcterms="http://purl.org/dc/terms/"
         xmlns:owl="http://www.w3.org/2002/07/owl#"
     	>
-      <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/"/>
+	    <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/">
+	        <owl:imports rdf:resource="http://www.ondex.org/bioknet/terms/"/>
+	    </owl:Ontology>
 
 
     		<owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/conceptsRelation" />
@@ -178,7 +180,11 @@
 			<xsl:if test="$xsd_type != ''">
 				<rdfs:range rdf:resource="{concat ( 'http://www.w3.org/2001/XMLSchema#', $xsd_type )}"/>
 			</xsl:if>
-
+			
+			<!-- Keeps track of the original datatype, in case we convert back from OWL -->
+			<xsl:if test = "odx:datatype != ''">
+				<bk:ondexRange><xsl:value-of select = "odx:datatype" /></bk:ondexRange>
+			</xsl:if>
 		</owl:DatatypeProperty>
 
 	</xsl:template>
@@ -241,13 +247,20 @@
 		</xsl:choose>
 	</xsl:function>
 
-	<!-- These concept classes are ignored since they don't make much sense in RDF/OWL -->
+	<!-- 
+		These concept classes are ignored since they don't make much sense in RDF/OWL
+		When a template gets a true return value for this, it usually chooses a proper general entity
+		for the one being ignored (e.g., 'Thing' as concept class => odx:Concept)
+	-->
 	<xsl:function name = "fn:is_ignored_cc" as="xs:boolean">
 		<xsl:param name="id" />
 		<xsl:value-of select = "fn:is_ignored ( '|Thing|UndefinedSemantics|', $id )" />
 	</xsl:function>
 
-	<!-- These relations are ignored since they don't make much sense in RDF/OWL -->
+	<!-- 
+		These relations are ignored since they don't make much sense in RDF/OWL
+		See above about general entities on the OWL side 
+	-->
 	<xsl:function name = "fn:is_ignored_relation" as="xs:boolean">
 		<xsl:param name="id" />
 		<xsl:value-of select = "fn:is_ignored ( '|relatedTo|r|undefined_semantics|none|', $id )" />

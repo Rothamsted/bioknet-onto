@@ -12,6 +12,11 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix dcterms: <http://purl.org/dc/terms/>.
 
+<http://www.ondex.org/bioknet/ext_mappings>
+  a owl:Ontology;
+  owl:imports <http://www.ondex.org/bioknet/kNetMiner_extensions/>
+.
+  
 bk:Concept rdfs:subClassOf skos:Concept.
 
 bk:Relation rdfs:subClassOf rdf:Statement.
@@ -45,7 +50,7 @@ bk:MoleculeComplex
 bk:Gene owl:equivalentClass bpax:Gene.
 bk:Reaction
   owl:equivalentClass bpax:BiochemicalReaction;
-  rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, wether it's biology-related or not"@en
+  rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, whether it's biology-related or not"@en
 .
 bk:Transport owl:equivalentClass bpax:Transport.
 

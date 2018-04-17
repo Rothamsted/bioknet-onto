@@ -77,6 +77,16 @@ Thisi is particularly useful for managing mappings to standard ontologies.</dcte
     
 
 
+    <!-- http://www.ondex.org/bioknet/terms/ondexRange -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ondex.org/bioknet/terms/ondexRange">
+        <dcterms:description xml:lang="en">This is internal to the ONDEX project, used to track the original ONDEX datatype or range for an attribute or relation. We transform some of these types during translation of original ONDEX metadata into OWL (e.g., &apos;character&apos; =&gt; &apos;string&apos;), so this property is used to retrofit datatypes after editing of OWL ontologies.</dcterms:description>
+        <rdfs:label xml:lang="en">ONDEX range or datatype</rdfs:label>
+        <skos:editorialNote xml:lang="en">This is extracted from ondex_metadata.xml, usually attributes only defines their datatype ranges.</skos:editorialNote>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>

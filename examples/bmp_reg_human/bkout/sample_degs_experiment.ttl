@@ -10,7 +10,7 @@ bkr:sampleExp
   a bk:Experiment;
   bk:prefName "Sample Gene Expression Experiment";
   dcterms:description
-'''A fititius experiment about gene expression, showing how to import data into BK-Onto from CSV,
+'''A fictitius experiment about gene expression, showing how to import data into BK-Onto from CSV,
 using the TARQL tool.
 
 The experiment reports lists of differentially expressed genes, each gene is associated to a biological
