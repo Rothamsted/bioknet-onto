@@ -128,7 +128,7 @@ bkr:BMPR1B_acc  a           bk:Accession ;
 
 <http://www.wikipathways.org/id1>
         a            bk:Path ;
-        bk:evidence  bkev:IMDPD ;
+        bk:evidence  bkev:IMPD ;
         bk:prefName  "Bone Morphogenic Protein (BMP) Signalling and Regulation"^^<xsd:string> .
 
 bkr:NOG  a                  bk:Protein ;

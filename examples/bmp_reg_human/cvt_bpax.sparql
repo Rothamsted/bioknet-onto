@@ -10,7 +10,7 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 CONSTRUCT {
   ?path a bk:Path;
     bk:prefName ?pathName;
-    bk:evidence bkev:IMDPD.
+    bk:evidence bkev:IMPD.
 
   ?bkProt a bk:Protein;
     dc:identifier ?bkProtAccUri;

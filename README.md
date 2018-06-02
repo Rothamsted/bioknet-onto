@@ -32,7 +32,7 @@ A first instance about a biological pathway, taken from our [WikiPathway example
 <http://www.wikipathways.org/id1>
         # A pathway, a predefined class in bk_ondex.owl. This is a subclass of bk:Concept, which subclasses skos:Concept
         a            bk:Path ; 
-        bk:evidence  bkev:IMDPD ; # Imported from database, a predefined constant on bk_ondex.owl
+        bk:evidence  bkev:IMPD ; # Imported from database, a predefined constant on bk_ondex.owl
         # bk:prefName maps to skos-x:prefLabel
         bk:prefName  "Bone Morphogenic Protein (BMP) Signalling and Regulation"^^<xsd:string> .
         
