@@ -19,15 +19,18 @@ echo "Converting CSVs from DEG Example"
 tarql_cmd="$TARQL_HOME/bin/tarql --tabs --quotechar '\"'"
 for i in $(seq 2)
 do
+  fname="sample_degs_$i.tsv"
+  echo "$fname"
   "$TARQL_HOME/bin/tarql" --tabs --quotechar '"' \
-    cvt_sample_degs_$i.tarql input_data/sample_degs_$i.tsv \
+    cvt_sample_degs_$i.tarql "input_data/$fname" \
     >"$out_dir/sample_degs_$i.ttl"
 done
 
-mv input_data/bkonto/*.ttl "$out_dir"
+echo "Moving BK-Onto files"
+[ -e "input_data/bkonto/*.ttl" ] && cp -f input_data/bkonto/*.ttl "$out_dir"
 
-echo "Loading data into temp TDB $tdb"
 tdb="/tmp/bk_convert_tdb"
+echo "Loading data into temp TDB '$tdb'"
 rm -Rf "$tdb"
 "$JENA_HOME/bin/tdbloader2" --loc="$tdb" ../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl}
 

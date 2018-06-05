@@ -12,7 +12,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 CONSTRUCT
 {
-  ?bkPub a bk:bkPub;
+  ?bkPub a bk:Publication;
     bk:prefName ?pmedId;
     bka:PMID ?pmedId;
     dc:identifier ?bkAccUri;

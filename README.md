@@ -81,7 +81,7 @@ As you can see, original URIs about external RDF data can be reused (in OWL-2, t
 Under the top-level `bk:attribute` property, BioKNO provides a number of OWL datatype properties, which can be attached to concepts and relations. For instance:
 
 ```Turtle
-bkr:20068231  a             bk:bkPub ;
+bkr:20068231  a             bk:Publication ;
         dc:identifier       bkr:20068231_acc ;
         bka:PMID            "20068231" ;
         bka:YEAR            "2010"^^xsd:gYear ;

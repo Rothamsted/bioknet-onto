@@ -14,6 +14,8 @@ CONSTRUCT {
     bk:is_annotated_by ?goTerm;
     bk:published_in ?bkPub.
 
+  ?bkProt bk:published_in ?bkPub.
+
   ?bkCitation a bk:Relation;
     bk:relTypeRef bk:published_in;
     bk:relFrom ?bkProt;

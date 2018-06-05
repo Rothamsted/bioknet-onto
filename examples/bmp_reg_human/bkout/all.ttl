@@ -352,7 +352,7 @@ bkr:citation_TOB1_15489334
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-bkr:20068231  a             bk:bkPub ;
+bkr:20068231  a             bk:Publication ;
         dc:identifier       bkr:20068231_acc ;
         bka:PMID            "20068231" ;
         bka:YEAR            "2010"^^xsd:gYear ;
@@ -360,7 +360,7 @@ bkr:20068231  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "20068231" .
 
-bkr:21336257  a             bk:bkPub ;
+bkr:21336257  a             bk:Publication ;
         dc:identifier       bkr:21336257_acc ;
         bka:PMID            "21336257" ;
         bka:YEAR            "2011"^^xsd:gYear ;
@@ -376,7 +376,7 @@ bkr:23186163_acc  a         bk:Accession ;
         dcterms:identifier  "23186163" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:19690332  a             bk:bkPub ;
+bkr:19690332  a             bk:Publication ;
         dc:identifier       bkr:19690332_acc ;
         bka:PMID            "19690332" ;
         bka:YEAR            "2009"^^xsd:gYear ;
@@ -384,7 +384,7 @@ bkr:19690332  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "19690332" .
 
-bkr:15489334  a             bk:bkPub ;
+bkr:15489334  a             bk:Publication ;
         dc:identifier       bkr:15489334_acc ;
         bka:PMID            "15489334" ;
         bka:YEAR            "2004"^^xsd:gYear ;
@@ -392,7 +392,7 @@ bkr:15489334  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "15489334" .
 
-bkr:18669648  a             bk:bkPub ;
+bkr:18669648  a             bk:Publication ;
         dc:identifier       bkr:18669648_acc ;
         bka:PMID            "18669648" ;
         bka:YEAR            "2008"^^xsd:gYear ;
@@ -400,7 +400,7 @@ bkr:18669648  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "18669648" .
 
-bkr:23186163  a             bk:bkPub ;
+bkr:23186163  a             bk:Publication ;
         dc:identifier       bkr:23186163_acc ;
         bka:PMID            "23186163" ;
         bka:YEAR            "2013"^^xsd:gYear ;
@@ -408,7 +408,7 @@ bkr:23186163  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "23186163" .
 
-bkr:14702039  a             bk:bkPub ;
+bkr:14702039  a             bk:Publication ;
         dc:identifier       bkr:14702039_acc ;
         bka:PMID            "14702039" ;
         bka:YEAR            "2004"^^xsd:gYear ;
@@ -416,7 +416,7 @@ bkr:14702039  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "14702039" .
 
-bkr:8632892  a              bk:bkPub ;
+bkr:8632892  a              bk:Publication ;
         dc:identifier       bkr:8632892_acc ;
         bka:PMID            "8632892" ;
         bka:YEAR            "1996"^^xsd:gYear ;
@@ -452,7 +452,7 @@ bkr:21336257_acc  a         bk:Accession ;
         dcterms:identifier  "21336257" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:19276069  a             bk:bkPub ;
+bkr:19276069  a             bk:Publication ;
         dc:identifier       bkr:19276069_acc ;
         bka:PMID            "19276069" ;
         bka:YEAR            "2009"^^xsd:gYear ;
@@ -464,7 +464,7 @@ bkr:14702039_acc  a         bk:Accession ;
         dcterms:identifier  "14702039" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:23236473  a             bk:bkPub ;
+bkr:23236473  a             bk:Publication ;
         dc:identifier       bkr:23236473_acc ;
         bka:PMID            "23236473" ;
         bka:YEAR            "2012"^^xsd:gYear ;
@@ -479,6 +479,8 @@ bkr:23236473  a             bk:bkPub ;
 @prefix bk:  <http://www.ondex.org/bioknet/terms/> .
 @prefix bka:  <http://www.ondex.org/bioknet/terms/attributes/> .
 
+bkr:TOB1  bk:expressed_by  bkr:degex_patient_1 .
+
 bkr:degex_patient_1_tob1
         rdf:type       bk:Relation ;
         bka:PVALUE     "0.000000600497806344172"^^xsd:double ;
@@ -486,6 +488,8 @@ bkr:degex_patient_1_tob1
         bk:relFrom     bkr:TOB1 ;
         bk:relTo       bkr:degex_patient_1 ;
         bk:relTypeRef  bk:expressed_by .
+
+bkr:SMAD1  bk:expressed_by  bkr:degex_patient_1 .
 
 bkr:degex_patient_1_smad1
         rdf:type       bk:Relation ;
@@ -495,6 +499,8 @@ bkr:degex_patient_1_smad1
         bk:relTo       bkr:degex_patient_1 ;
         bk:relTypeRef  bk:expressed_by .
 
+bkr:BMPR2  bk:expressed_by  bkr:degex_patient_1 .
+
 bkr:degex_patient_1_bmpr2
         rdf:type       bk:Relation ;
         bka:PVALUE     "0.0000000588968741986782"^^xsd:double ;
@@ -502,6 +508,8 @@ bkr:degex_patient_1_bmpr2
         bk:relFrom     bkr:BMPR2 ;
         bk:relTo       bkr:degex_patient_1 ;
         bk:relTypeRef  bk:expressed_by .
+
+bkr:RUNX2  bk:expressed_by  bkr:degex_patient_1 .
 
 bkr:degex_patient_1_runx2
         rdf:type       bk:Relation ;
@@ -511,6 +519,8 @@ bkr:degex_patient_1_runx2
         bk:relTo       bkr:degex_patient_1 ;
         bk:relTypeRef  bk:expressed_by .
 
+bkr:BMPR2  bk:expressed_by  bkr:degex_patient_1 .
+
 bkr:degex_patient_1_bmpr2
         rdf:type       bk:Relation ;
         bka:PVALUE     "0.000000603507498720886"^^xsd:double ;
@@ -518,6 +528,8 @@ bkr:degex_patient_1_bmpr2
         bk:relFrom     bkr:BMPR2 ;
         bk:relTo       bkr:degex_patient_1 ;
         bk:relTypeRef  bk:expressed_by .
+
+bkr:TOB1  bk:expressed_by  bkr:degex_patient_2 .
 
 bkr:degex_patient_2_tob1
         rdf:type       bk:Relation ;
@@ -527,6 +539,8 @@ bkr:degex_patient_2_tob1
         bk:relTo       bkr:degex_patient_2 ;
         bk:relTypeRef  bk:expressed_by .
 
+bkr:SMURF1  bk:expressed_by  bkr:degex_patient_2 .
+
 bkr:degex_patient_2_smurf1
         rdf:type       bk:Relation ;
         bka:PVALUE     "0.000000252516243921889"^^xsd:double ;
@@ -534,6 +548,8 @@ bkr:degex_patient_2_smurf1
         bk:relFrom     bkr:SMURF1 ;
         bk:relTo       bkr:degex_patient_2 ;
         bk:relTypeRef  bk:expressed_by .
+
+bkr:RUNX2  bk:expressed_by  bkr:degex_patient_2 .
 
 bkr:degex_patient_2_runx2
         rdf:type       bk:Relation ;
@@ -588,7 +604,7 @@ bkr:sampleExp
   a bk:Experiment;
   bk:prefName "Sample Gene Expression Experiment";
   dcterms:description
-'''A fititius experiment about gene expression, showing how to import data into BK-Onto from CSV,
+'''A fictitius experiment about gene expression, showing how to import data into BK-Onto from CSV,
 using the TARQL tool.
 
 The experiment reports lists of differentially expressed genes, each gene is associated to a biological

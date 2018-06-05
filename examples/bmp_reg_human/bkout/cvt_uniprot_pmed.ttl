@@ -26,7 +26,7 @@
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-bkr:20068231  a             bk:bkPub ;
+bkr:20068231  a             bk:Publication ;
         dc:identifier       bkr:20068231_acc ;
         bka:PMID            "20068231" ;
         bka:YEAR            "2010"^^xsd:gYear ;
@@ -34,7 +34,7 @@ bkr:20068231  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "20068231" .
 
-bkr:21336257  a             bk:bkPub ;
+bkr:21336257  a             bk:Publication ;
         dc:identifier       bkr:21336257_acc ;
         bka:PMID            "21336257" ;
         bka:YEAR            "2011"^^xsd:gYear ;
@@ -50,7 +50,7 @@ bkr:23186163_acc  a         bk:Accession ;
         dcterms:identifier  "23186163" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:19690332  a             bk:bkPub ;
+bkr:19690332  a             bk:Publication ;
         dc:identifier       bkr:19690332_acc ;
         bka:PMID            "19690332" ;
         bka:YEAR            "2009"^^xsd:gYear ;
@@ -58,7 +58,7 @@ bkr:19690332  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "19690332" .
 
-bkr:15489334  a             bk:bkPub ;
+bkr:15489334  a             bk:Publication ;
         dc:identifier       bkr:15489334_acc ;
         bka:PMID            "15489334" ;
         bka:YEAR            "2004"^^xsd:gYear ;
@@ -66,7 +66,7 @@ bkr:15489334  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "15489334" .
 
-bkr:18669648  a             bk:bkPub ;
+bkr:18669648  a             bk:Publication ;
         dc:identifier       bkr:18669648_acc ;
         bka:PMID            "18669648" ;
         bka:YEAR            "2008"^^xsd:gYear ;
@@ -74,7 +74,7 @@ bkr:18669648  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "18669648" .
 
-bkr:23186163  a             bk:bkPub ;
+bkr:23186163  a             bk:Publication ;
         dc:identifier       bkr:23186163_acc ;
         bka:PMID            "23186163" ;
         bka:YEAR            "2013"^^xsd:gYear ;
@@ -82,7 +82,7 @@ bkr:23186163  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "23186163" .
 
-bkr:14702039  a             bk:bkPub ;
+bkr:14702039  a             bk:Publication ;
         dc:identifier       bkr:14702039_acc ;
         bka:PMID            "14702039" ;
         bka:YEAR            "2004"^^xsd:gYear ;
@@ -90,7 +90,7 @@ bkr:14702039  a             bk:bkPub ;
         bk:evidence         bkev:IMPD , bkev:NAS ;
         bk:prefName         "14702039" .
 
-bkr:8632892  a              bk:bkPub ;
+bkr:8632892  a              bk:Publication ;
         dc:identifier       bkr:8632892_acc ;
         bka:PMID            "8632892" ;
         bka:YEAR            "1996"^^xsd:gYear ;
@@ -126,7 +126,7 @@ bkr:21336257_acc  a         bk:Accession ;
         dcterms:identifier  "21336257" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:19276069  a             bk:bkPub ;
+bkr:19276069  a             bk:Publication ;
         dc:identifier       bkr:19276069_acc ;
         bka:PMID            "19276069" ;
         bka:YEAR            "2009"^^xsd:gYear ;
@@ -138,7 +138,7 @@ bkr:14702039_acc  a         bk:Accession ;
         dcterms:identifier  "14702039" ;
         bk:dataSource       bkds:PubMed .
 
-bkr:23236473  a             bk:bkPub ;
+bkr:23236473  a             bk:Publication ;
         dc:identifier       bkr:23236473_acc ;
         bka:PMID            "23236473" ;
         bka:YEAR            "2012"^^xsd:gYear ;

@@ -7,6 +7,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT
 {
+  ?protIri bk:expressed_by ?sampleIri.
+
   ?degRelIri
     a bk:Relation;
     bka:PVALUE     ?pValue;
