@@ -1,0 +1,13 @@
+{
+  "type": "Protein",
+  "id": "TOB1",
+	"prefName": "TOB1 Human",
+	"participates_in":
+	{
+  	"type": "Pathway",
+		"id": "id1",
+		"evidence": "IMPD",
+  	"prefName":  "Bone Morphogenic Protein (BMP) Signalling and Regulation"
+	},
+	"is_annotated_by": "GO_0030014"
+}        

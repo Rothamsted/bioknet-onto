@@ -1,0 +1,31 @@
+{
+	"@context": {
+		"bk": "http://www.ondex.org/bioknet/terms/",
+		"bka": "http://www.ondex.org/bioknet/terms/attributes/",
+		"bkds": "http://www.ondex.org/bioknet/terms/dataSources/",
+		"bkev": "http://www.ondex.org/bioknet/terms/evidences/",
+		"bkr": "http://www.ondex.org/bioknet/resources/",
+		"dcterms": "http://purl.org/dc/terms/",
+		"obo": "http://purl.obolibrary.org/obo/",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"@vocab": "http://www.ondex.org/bioknet/terms/",
+		"dcterms:identifier": {
+			"@type": "xsd:string"
+		},
+		"evidence": {
+			"@id": "bk:evidence",
+			"@type": "@id"
+		}
+	},
+	"@id": "bkr:TOB1",
+	"@type": "bk:Protein",
+	"prefName": "TOB1 Human",
+	"dcterms:identifier": "TOB1",
+	"is_annotated_by": "obo:GO_0030014",	
+	"participates_in": {
+		"@id": "http://www.wikipathways.org/id1",
+		"@type": "bk:Pathway",
+		"evidence": "bkev:IMPD",
+		"prefName": "Bone Morphogenic Protein (BMP) Signalling and Regulation"
+	}
+}

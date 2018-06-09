@@ -1,0 +1,28 @@
+@prefix : <http://www.ondex.org/bioknet/terms/> .
+@prefix bk: <http://www.ondex.org/bioknet/terms/> .
+@prefix bka: <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bkds: <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix bkev: <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix bkr: <http://www.ondex.org/bioknet/resources/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bkr:TOB1 a bk:Protein ;
+    dcterms:identifier "TOB1"^^xsd:string ;
+    bk:participates_in <http://www.wikipathways.org/id1> ;
+    bk:prefName "Protein TOB1" .
+
+<http://www.wikipathways.org/id1> a bk:Pathway ;
+    bk:evidence bkev:IMPD ;
+    bk:prefName "Bone Morphogenic Protein (BMP) Signalling and Regulation" .
+
+bkr:citation_TOB1_23236473
+        a              bk:Relation ;
+        bka:Score      0.95 ;
+        bk:evidence    bkev:TM ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:23236473 ;
+        bk:relTypeRef  bk:published_in .
