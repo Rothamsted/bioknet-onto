@@ -16,7 +16,7 @@ CONSTRUCT
     bk:prefName ?pmedId;
     bka:PMID ?pmedId;
     dc:identifier ?bkAccUri;
-    bka:abstractHeader ?title;
+    bka:AbstractHeader ?title;
     bka:YEAR ?date;
     bka:AUTHORS ?authorList;
     bk:evidence bkev:NAS, bkev:IMPD.
