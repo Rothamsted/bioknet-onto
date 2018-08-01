@@ -34,6 +34,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
     <!-- http://schema.org/domainIncludes -->
 
     <owl:AnnotationProperty rdf:about="http://schema.org/domainIncludes"/>
@@ -361,6 +367,7 @@ The recommended way to use bk:Concept is:
   - subclass bk:Concept with specific classes (eg, Protein, Gene)
   - instance those specific classes
   - optionally, but recommended in production environments like triple stores backing SPARQL, declare your new instance an instance of bk:Concept too. While this can be inferred, having explicit instances make things easier for applications.</dcterms:description>
+        <dcterms:identifier>Concept</dcterms:identifier>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:editorialNote xml:lang="en">Those used to the ONDEX model should note that we are mapping the &apos;concept type&apos; relations straight to rdf:type and the ONDEX Concept Classes to rdfs:subClassOf, with this class on the top. We see this as a natural mapping of the ONDEX model to the RDF/RDF-S/OWL standards.</skos:editorialNote>
     </owl:Class>

@@ -15,20 +15,20 @@
 	  Does most of the XML -> RDF job run by meta2rdf.sh
 	 -->
 
-	<xsl:output method="xml" indent="yes" />
+	<xsl:output method="xml" indent="yes" cdata-section-elements = "rdfs:label dcterms:description"/>
 
   <xsl:template match = "/odx:ondex">
 
-  		<xsl:message>Matching Root <xsl:value-of select = "name(.)" /></xsl:message>
+  	<xsl:message>Matching Root <xsl:value-of select = "name(.)" /></xsl:message>
 
     <rdf:RDF
-	    	xmlns:odx="http://ondex.sourceforge.net/"
-	    	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	    	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	    xmlns:odx="http://ondex.sourceforge.net/"
+	    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	    xmlns:bk="http://www.ondex.org/bioknet/terms/"
-	  		xmlns:dcterms="http://purl.org/dc/terms/"
-        xmlns:owl="http://www.w3.org/2002/07/owl#"
-    	>
+	  	xmlns:dcterms="http://purl.org/dc/terms/"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+    >
 	    <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/">
 	        <owl:imports rdf:resource="http://www.ondex.org/bioknet/terms/"/>
 	    </owl:Ontology>
@@ -58,11 +58,11 @@
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
 			<xsl:if test="./odx:fullname != ''">
-      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "odx:fullname" /></rdfs:label>
+      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:fullname )" /></rdfs:label>
 			</xsl:if>
 
 			<xsl:if test="./odx:description != ''">
-				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
+				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
 			<!-- Super-class -->
@@ -96,11 +96,11 @@
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
 			<xsl:if test="./odx:fullname != ''">
-      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "odx:fullname" /></rdfs:label>
+      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:fullname )" /></rdfs:label>
 			</xsl:if>
 
 			<xsl:if test="./odx:description != ''">
-				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
+				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
 			<!-- Super-property -->
@@ -158,11 +158,11 @@
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
 			<xsl:if test="./odx:fullname != ''">
-      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "odx:fullname" /></rdfs:label>
+      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:fullname )" /></rdfs:label>
 			</xsl:if>
 
 			<xsl:if test="./odx:description != ''">
-				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
+				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
 
@@ -208,11 +208,11 @@
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
 
 			<xsl:if test="./odx:fullname != ''">
-      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "odx:fullname" /></rdfs:label>
+      		<rdfs:label xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:fullname )" /></rdfs:label>
 			</xsl:if>
 
 			<xsl:if test="./odx:description != ''">
-				<dcterms:description xml:lang = 'en'><xsl:value-of select = "./odx:description" /></dcterms:description>
+				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
 			<rdfs:subClassOf rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
