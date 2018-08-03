@@ -1,6 +1,7 @@
 PREFIX odx: <http://www.ondex.org/bioknet/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 # Takes names coming from ONDEX and adds new, more suitable names, marking the old entities as
 # preferred in the ONDEX platform. This allows us to rename ONDEX data coming from old names.
@@ -9,18 +10,16 @@ DELETE {
   ?src odx:isOndexPreferred ?value.
   #?src ?p ?o.
   #?s ?ip ?src
+  #?src dcterms:identifier ?id
 }
 INSERT {
   ?dst ?p ?o.
   ?s ?ip ?dst.
   ?dst ?eqProp ?src.
+  ?dst dcterms:identifier ?newId
 }
 WHERE 
 {
-  { ?src ?p ?o } UNION { ?s ?ip ?src }
-
-  OPTIONAL { ?src odx:isOndexPreferred ?value }
-
   VALUES (?src ?dst ?eqProp )
   {
     # Classes
@@ -52,4 +51,22 @@ WHERE
     ( odx:ca_by odx:catalyzed_by owl:equivalentProperty )
     ( odx:equ odx:equivalent owl:equivalentProperty )
   }
+  
+  BIND ( STRAFTER ( STR ( ?dst ), STR ( odx: ) ) AS ?newId )
+  
+  { 
+  	?src ?p ?o
+  	
+  	# Because we're going to assign our own identifier, calculated from the new URI
+  	FILTER ( ?p != dcterms:identifier )
+  } 
+  UNION { 
+  	?s ?ip ?src 
+  }
+  UNION {
+    # See above
+  	OPTIONAL { ?src dcterms:identifier ?id }
+	}
+
+  OPTIONAL { ?src odx:isOndexPreferred ?value }
 }

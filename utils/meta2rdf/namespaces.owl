@@ -16,5 +16,4 @@
      xmlns:bkev="http://www.ondex.org/bioknet/terms/evidences/"
      xmlns:bkds="http://www.ondex.org/bioknet/terms/dataSources/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.ondex.org/bioknet/terms/"/>
 </rdf:RDF>

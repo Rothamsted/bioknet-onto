@@ -76,7 +76,9 @@
     <owl:AnnotationProperty rdf:about="http://www.ondex.org/bioknet/terms/isOndexPreferred">
         <dcterms:description xml:lang="en">A class or property marked with this flag tells that, if there are equivalent classes or individuals with multiple inheritance, this entity should be used as the preferred one for the internals of the ONDEX and kNetMiner projects.
 
-Thisi is particularly useful for managing mappings to standard ontologies.</dcterms:description>
+This is particularly useful for managing mappings to standard ontologies.
+
+Note that we mark certain top-level entities with this flag (e.g., bk:Concept, bk:conceptsRelation) for practical reasons, that is, some Ondex-related conversion scripts are simpler to write this way.</dcterms:description>
         <rdfs:label xml:lang="en">is ONDEX-preferred</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:AnnotationProperty>
@@ -131,6 +133,8 @@ Thisi is particularly useful for managing mappings to standard ontologies.</dcte
         <dcterms:description xml:lang="en">This is a top-level container, which is used to define specific relations of interest between between bk:Concept instances. See bk:Relation for a detailed description of how concept relations are model in BioKNet.
 
 This property should never be used directly, a concept/concept relation of interest should always be instance of some specific subproperty of this one (TODO: closure axiom).</dcterms:description>
+        <dcterms:identifier>conceptsRelation</dcterms:identifier>
+        <isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOndexPreferred>
         <rdfs:label xml:lang="en">concept relation</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.ondex.org/bioknet/terms/Relation"/>
         <skos:editorialNote xml:lang="en">All ONDEX/kNetMiner relations should go under this property.</skos:editorialNote>
@@ -205,6 +209,7 @@ This property should never be used directly, a concept/concept relation of inter
 This is used to attach a cross-reference of type bk:Concept to another concept or a bk:Relation.
 
 This is used to relate a relation element with a non better-specified relation (which might mean things like &apos;see also&apos;, &apos;cross reference&apos;).</dcterms:description>
+        <dcterms:identifier>relatedConcept</dcterms:identifier>
         <rdfs:label xml:lang="en">related to concept</rdfs:label>
         <skos:editorialNote xml:lang="en">In the ONDEX/kNetMiner software, this corresponds to the concept and relation&apos;s property &apos;tags&apos;.</skos:editorialNote>
     </owl:ObjectProperty>
@@ -368,6 +373,7 @@ The recommended way to use bk:Concept is:
   - instance those specific classes
   - optionally, but recommended in production environments like triple stores backing SPARQL, declare your new instance an instance of bk:Concept too. While this can be inferred, having explicit instances make things easier for applications.</dcterms:description>
         <dcterms:identifier>Concept</dcterms:identifier>
+        <isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOndexPreferred>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:editorialNote xml:lang="en">Those used to the ONDEX model should note that we are mapping the &apos;concept type&apos; relations straight to rdf:type and the ONDEX Concept Classes to rdfs:subClassOf, with this class on the top. We see this as a natural mapping of the ONDEX model to the RDF/RDF-S/OWL standards.</skos:editorialNote>
     </owl:Class>
@@ -463,6 +469,7 @@ The opposite (i.e., to create a bk:Relation for each bk:Concept triple based on 
 
 We suggest to base the identifiers of reified relations on the IDs (or URIs) of its three parts, e.g., MD5 ( gene0 + encodes + prot0 ). This makes it easier to find the reified version of a relation once you have the components of its identifiers. WARNING: this should be considered an application facility and never be assumed as a reliable rule.</dcterms:description>
         <constraints>MUST HAVE exactly 1 value for bk:relTypeRef.</constraints>
+        <isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOndexPreferred>
         <rdfs:label xml:lang="en">Relation</rdfs:label>
     </owl:Class>
     

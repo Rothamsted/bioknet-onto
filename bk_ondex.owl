@@ -10,7 +10,6 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:bk="http://www.ondex.org/bioknet/terms/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:Ontology rdf:about="http://www.ondex.org/bioknet/terms/"/>
   <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/">
     <owl:imports rdf:resource="http://www.ondex.org/bioknet/terms/"/>
   </owl:Ontology>
@@ -109,7 +108,7 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/GeneOntologyTerms"/>
     </rdfs:subClassOf>
-    <terms:identifier>MolFunc</terms:identifier>
+    <terms:identifier>MolecularFunction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/EC">
     <rdfs:label xml:lang="en">Enzyme Classification</rdfs:label>
@@ -472,7 +471,7 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/GeneOntologyTerms"/>
     </rdfs:subClassOf>
-    <terms:identifier>CelComp</terms:identifier>
+    <terms:identifier>CellularComponent</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/ENCODE">
     <rdfs:label xml:lang="en">ENCyclopedia Of DNA Elements</rdfs:label>
@@ -1123,7 +1122,7 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/Molecule"/>
     </rdfs:subClassOf>
-    <terms:identifier>Comp</terms:identifier>
+    <terms:identifier>Compound</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/SMOD">
     <rdfs:label xml:lang="en">SWISS-MODEL</rdfs:label>
@@ -1847,7 +1846,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Protein"/>
-    <terms:identifier>Protcmplx</terms:identifier>
+    <terms:identifier>ProteinComplex</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/dataSources/GR">
     <rdfs:label xml:lang="en">Gramene</rdfs:label>
@@ -2185,7 +2184,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subClassOf rdf:resource="http://www.ondex.org/bioknet/terms/Participant"/>
-    <terms:identifier>MolCmplx</terms:identifier>
+    <terms:identifier>MoleculeComplex</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/GISR">
     <rdfs:label xml:lang="en">Synthetic Rescue</rdfs:label>
@@ -2272,7 +2271,7 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/GeneOntologyTerms"/>
     </rdfs:subClassOf>
-    <terms:identifier>BioProc</terms:identifier>
+    <terms:identifier>BiologicalProcess</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://www.ondex.org/bioknet/terms/TFBS">
     <rdfs:label xml:lang="en">Transcription factor binding site</rdfs:label>
@@ -3093,7 +3092,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/consumes"/>
     </owl:inverseOf>
-    <terms:identifier>cs_by</terms:identifier>
+    <terms:identifier>consumed_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/cs_by"/>
     </owl:equivalentProperty>
@@ -3205,7 +3204,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/inhibits"/>
     </owl:inverseOf>
-    <terms:identifier>in_by</terms:identifier>
+    <terms:identifier>inhibited_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/in_by"/>
     </owl:equivalentProperty>
@@ -3334,7 +3333,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/takes_up"/>
     </owl:inverseOf>
-    <terms:identifier>pu_by</terms:identifier>
+    <terms:identifier>taken_up_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/pu_by"/>
     </owl:equivalentProperty>
@@ -3414,11 +3413,10 @@
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/given_by"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/produces"/>
     </owl:inverseOf>
-    <terms:identifier>pd_by</terms:identifier>
+    <terms:identifier>produced_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/pd_by"/>
     </owl:equivalentProperty>
@@ -3516,7 +3514,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/activates"/>
     </owl:inverseOf>
-    <terms:identifier>ac_by</terms:identifier>
+    <terms:identifier>activated_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/ac_by"/>
     </owl:equivalentProperty>
@@ -3721,7 +3719,7 @@
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/rg_by"/>
     </rdfs:subPropertyOf>
-    <terms:identifier>ex_by</terms:identifier>
+    <terms:identifier>expressed_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/ex_by"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/gi_dl">
@@ -3808,7 +3806,7 @@
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/part_of"/>
     </rdfs:subPropertyOf>
-    <terms:identifier>cat_c</terms:identifier>
+    <terms:identifier>catalyzing_class</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/cat_c"/>
     </owl:equivalentProperty>
@@ -3945,7 +3943,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/regulates"/>
     </owl:inverseOf>
-    <terms:identifier>rg_by</terms:identifier>
+    <terms:identifier>regulated_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/rg_by"/>
     </owl:equivalentProperty>
@@ -4084,7 +4082,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation"/>
-    <terms:identifier>physical</terms:identifier>
+    <terms:identifier>physical_relation</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/physical"/>
     </owl:equivalentProperty>
@@ -4154,7 +4152,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/has_agent"/>
     <owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/catalyzes"/>
-    <terms:identifier>ca_by</terms:identifier>
+    <terms:identifier>catalyzed_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/ca_by"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/ortho">
@@ -4250,9 +4248,8 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/phys_intbio"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation"/>
     <owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/has_similar_sequence"/>
-    <terms:identifier>h_s_s</terms:identifier>
+    <terms:identifier>has_similar_sequence</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/h_s_s"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/upstream">
@@ -4431,7 +4428,7 @@
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation"/>
     <owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/has_occurrence_of"/>
-    <terms:identifier>occ_in</terms:identifier>
+    <terms:identifier>occurs_in</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/occ_in"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/takes">
@@ -4454,7 +4451,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation"/>
-    <terms:identifier>cooc_wi</terms:identifier>
+    <terms:identifier>occurs_with</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/cooc_wi"/>
     </owl:equivalentProperty>
@@ -4487,7 +4484,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/physical"/>
-    <terms:identifier>equ</terms:identifier>
+    <terms:identifier>equivalent</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/equ"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/ipara">
@@ -4728,7 +4725,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/info_transd"/>
     <owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/is_encoded_by"/>
-    <terms:identifier>enc</terms:identifier>
+    <terms:identifier>encodes</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/enc"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/im_of">
@@ -4777,7 +4774,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/rg_by"/>
-    <terms:identifier>re_by</terms:identifier>
+    <terms:identifier>repressed_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/re_by"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/participates_not">
@@ -4914,7 +4911,7 @@
     >true</bk:isOndexPreferred>
     <rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/publication_features"/>
-    <terms:identifier>pub_in</terms:identifier>
+    <terms:identifier>published_in</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://www.ondex.org/bioknet/terms/pub_in"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/modifies">
