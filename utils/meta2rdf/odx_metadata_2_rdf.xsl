@@ -202,7 +202,7 @@
 
 		<xsl:message>Matching <xsl:value-of select = "fn:if ( $mode = 'ds', 'CV/DataSource ', 'Evidence ' )" /> <xsl:value-of select = "odx:id" /></xsl:message>
 
-		<owl:Class rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'dataSources', 'evidences' ), '/', ./odx:id )}">
+		<owl:NamedIndividual rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'dataSources', 'evidences' ), '/', ./odx:id )}">
 
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
@@ -215,9 +215,9 @@
 				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
-			<rdfs:subClassOf rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
+			<rdf:type rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
 
-		</owl:Class>
+		</owl:NamedIndividual>
 
 	</xsl:template>
 
