@@ -3,7 +3,10 @@
 
 ## Ontology Overview
 
-**BIO**logical **KN**owledge Network **O**ntology (BioKNO, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [kNetMiner](http://knetminer.rothamsted.ac.uk/) project. 
+**BIO**logical **KN**owledge Network **O**ntology (BioKNO, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [KnetMiner](http://knetminer.rothamsted.ac.uk/) project.
+
+Further information on the ontology and where it fits in KnetMiner is available from our 
+[IB2018 article](https://www.degruyter.com/view/j/jib.ahead-of-print/jib-2018-0023/jib-2018-0023.xml).
 
 At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and attributed-attached reified relationships. 
 
@@ -13,10 +16,10 @@ At a more specific level, [the core definitions](bioknet.owl) are extended with 
 
 Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., [bioschemas](http://bioschemas.org/)).
 
-We use/are using/plan to use BioKNO in the kNetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
+We use/are using/plan to use BioKNO in the KnetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
 
 ## Web View
-You can web-browse the ontology [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bioknet.html), and mappings to our [kNetMiner](http://knetminer.rothamsted.ac.uk/)/[Ondex](https://github.com/Rothamsted/ondex-knet-builder) metadata [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bk_ondex.html). Many thanks to the developers of [LODE](http://www.essepuntato.it/lode), which we uses for rendering these pages.
+You can web-browse the ontology [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bioknet.html), and mappings to our [KnetMiner](http://knetminer.rothamsted.ac.uk/)/[Ondex](https://github.com/Rothamsted/ondex-knet-builder) metadata [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bk_ondex.html). Many thanks to the developers of [LODE](http://www.essepuntato.it/lode), which we uses for rendering these pages.
 
 **WARNING**: *sometimes these views might be outdated with respect to the last versions of the original ontology files that they are based on.*
 
