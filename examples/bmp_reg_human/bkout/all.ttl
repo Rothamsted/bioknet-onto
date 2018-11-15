@@ -6,8 +6,8 @@
 @prefix go:    <http://purl.obolibrary.org/obo/go#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bp:    <http://www.biopax.org/release/biopax-level3.owl#> .
 @prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
@@ -143,8 +143,8 @@ bkr:NOG  a                  bk:Protein ;
 @prefix go:    <http://purl.obolibrary.org/obo/go#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bp:    <http://www.biopax.org/release/biopax-level3.owl#> .
 @prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
@@ -217,8 +217,8 @@ obo:GO_0032991  a      bk:GeneOntologyTerms ;
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bp:    <http://www.biopax.org/release/biopax-level3.owl#> .
 @prefix protCore: <http://purl.uniprot.org/core/> .
@@ -329,8 +329,8 @@ bkr:citation_TOB1_15489334
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bp:    <http://www.biopax.org/release/biopax-level3.owl#> .
 @prefix protCore: <http://purl.uniprot.org/core/> .
@@ -592,21 +592,3 @@ bkr:degex_patient_3  rdf:type  bk:ExperimentalSample ;
 
 bkr:degex_control  rdf:type  bk:Annotation ;
         bk:prefName  "Control" .
-PREFIX bk: <http://www.ondex.org/bioknet/terms/>
-PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
-PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
-PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
-PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-
-bkr:sampleExp
-  a bk:Experiment;
-  bk:prefName "Sample Gene Expression Experiment";
-  dcterms:description
-'''A fictitius experiment about gene expression, showing how to import data into BK-Onto from CSV,
-using the TARQL tool.
-
-The experiment reports lists of differentially expressed genes, each gene is associated to a biological
-sample, each sample is marked by a treatment.'''
-.
