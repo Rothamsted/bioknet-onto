@@ -99,7 +99,8 @@ bkr:citation_TOB1_18669648
         bk:relTypeRef  bk:published_in .
 
 bkr:TOB1  a                 bk:Protein ;
-        bk:is_annotated_by  obo:GO_0017148 , obo:GO_0046332 , obo:GO_0008285 , obo:GO_0030509 , obo:GO_0030514 , obo:GO_0005737 , obo:GO_0045668 , obo:GO_0030971 , obo:GO_0005634 , obo:GO_0007184 , obo:GO_1900153 , obo:GO_0005070 , obo:GO_0030014 , obo:GO_0060212 , obo:GO_0060213 , obo:GO_0003714 ;
+        bk:evidence         bkev:IMPD ;
+        bk:is_annotated_by  obo:GO_0030014 ;
         bk:prefName         "TOB1" ;
         bk:published_in     bkr:23236473 , bkr:19276069 , bkr:23186163 , bkr:15489334 , bkr:21336257 , bkr:18669648 , bkr:8632892 , bkr:14702039 , bkr:19690332 , bkr:20068231 .
 

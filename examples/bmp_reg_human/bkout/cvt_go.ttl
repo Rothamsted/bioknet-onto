@@ -29,11 +29,13 @@ obo:GO_0044464_acc  a       bk:Accession ;
 
 obo:GO_0043234  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0043234_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0032991 ;
         bk:prefName    "protein complex" .
 
 obo:GO_0044424  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0044424_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0044464 ;
         bk:prefName    "intracellular part" .
 
@@ -43,15 +45,18 @@ obo:GO_0043234_acc  a       bk:Accession ;
 
 obo:GO_0030014  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0030014_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0044424 , obo:GO_0043234 ;
         bk:prefName    "CCR4-NOT complex" .
 
 obo:GO_0005575  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0005575_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:prefName    "cellular_component" .
 
 obo:GO_0044464  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0044464_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0005575 ;
         bk:prefName    "cell part" .
 
@@ -73,5 +78,6 @@ obo:GO_0005575_acc  a       bk:Accession ;
 
 obo:GO_0032991  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0032991_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0005575 ;
         bk:prefName    "macromolecular complex" .

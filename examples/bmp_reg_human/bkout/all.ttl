@@ -1,4 +1,67 @@
 @prefix schema: <http://schema.org/> .
+@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
+@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.ondex.org/bioknet/bk-onto-sample-extension/>
+        a            owl:Ontology ;
+        owl:imports  bk: .
+
+bk:ExperimentalSample
+        a                    owl:Class ;
+        rdfs:label           "Experimental Sample"@en ;
+        rdfs:subClassOf      bk:Concept ;
+        terms:description    "Anything that can be seen as a sample related to organism(s) and taken to perform an experiment (e.g. blood sample, cell culture, cohort of patients)"@en ;
+        terms:identifier     "ExperimentalSample" ;
+        bk:isOndexPreferred  true .
+@prefix bkr: <http://www.ondex.org/bioknet/resources/>.
+@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
+@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: 	 <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms:  <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/> .
+
+
+
+<http://www.ondex.org/bioknet/bk-onto-sample-extension/>
+        a            owl:Ontology ;
+        owl:imports  bk: .
+
+bk:ExperimentalSample
+        a                    owl:Class ;
+        rdfs:label           "Experimental Sample"@en ;
+        rdfs:subClassOf      bk:Concept ;
+        dcterms:description    "Anything that can be seen as a sample related to organism(s) and taken to perform an experiment (e.g. blood sample, cell culture, cohort of patients)"@en ;
+        dcterms:identifier     "ExperimentalSample" ;
+        bk:isOndexPreferred  true .
+
+bkr:sampleExp
+	a bk:Experiment;
+	bk:prefName "Sample Gene Expression Experiment";
+	bk:evidence bkev:M; # Manually curated
+	dc:identifier bkr:sampleExp_Acc
+.
+
+bkr:sampleExp_Acc a bk:Accession;
+	dcterms:identifier "sampleExp";
+  bk:dataSource bkds:unknown	# TODO: should actually be something like 'manually curated'
+.
+
+@prefix schema: <http://schema.org/> .
 @prefix :      <http://purl.obolibrary.org/obo/go.owl#> .
 @prefix void:  <http://rdfs.org/ns/void#> .
 @prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
@@ -29,6 +92,7 @@ bkr:BMPR1A_acc  a           bk:Accession ;
 
 bkr:SMAD4  a                bk:Protein ;
         dc:identifier       bkr:SMAD4_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD4"^^<xsd:string> .
 
@@ -38,16 +102,19 @@ bkr:NOG_acc  a              bk:Accession ;
 
 bkr:RUNX2  a                bk:Protein ;
         dc:identifier       bkr:RUNX2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "RUNX2"^^<xsd:string> .
 
 bkr:SMURF1  a               bk:Protein ;
         dc:identifier       bkr:SMURF1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMURF1"^^<xsd:string> .
 
 bkr:BMP2  a                 bk:Protein ;
         dc:identifier       bkr:BMP2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMP2"^^<xsd:string> .
 
@@ -57,6 +124,7 @@ bkr:TOB1_acc  a             bk:Accession ;
 
 bkr:TOB2  a                 bk:Protein ;
         dc:identifier       bkr:TOB2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB2"^^<xsd:string> .
 
@@ -74,11 +142,13 @@ bkr:RUNX2_acc  a            bk:Accession ;
 
 bkr:BMPR2  a                bk:Protein ;
         dc:identifier       bkr:BMPR2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR2"^^<xsd:string> .
 
 bkr:TOB1  a                 bk:Protein ;
         dc:identifier       bkr:TOB1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB1"^^<xsd:string> .
 
@@ -88,16 +158,19 @@ bkr:BMP2_acc  a             bk:Accession ;
 
 bkr:SMAD1  a                bk:Protein ;
         dc:identifier       bkr:SMAD1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD1"^^<xsd:string> .
 
 bkr:BMPR1B  a               bk:Protein ;
         dc:identifier       bkr:BMPR1B_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR1B"^^<xsd:string> .
 
 bkr:SMAD6  a                bk:Protein ;
         dc:identifier       bkr:SMAD6_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD6"^^<xsd:string> .
 
@@ -111,6 +184,7 @@ bkr:SMAD6_acc  a            bk:Accession ;
 
 bkr:BMPR1A  a               bk:Protein ;
         dc:identifier       bkr:BMPR1A_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR1A"^^<xsd:string> .
 
@@ -133,6 +207,7 @@ bkr:BMPR1B_acc  a           bk:Accession ;
 
 bkr:NOG  a                  bk:Protein ;
         dc:identifier       bkr:NOG_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "NOG"^^<xsd:string> .
 @prefix schema: <http://schema.org/> .
@@ -166,11 +241,13 @@ obo:GO_0044464_acc  a       bk:Accession ;
 
 obo:GO_0043234  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0043234_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0032991 ;
         bk:prefName    "protein complex" .
 
 obo:GO_0044424  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0044424_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0044464 ;
         bk:prefName    "intracellular part" .
 
@@ -180,15 +257,18 @@ obo:GO_0043234_acc  a       bk:Accession ;
 
 obo:GO_0030014  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0030014_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0044424 , obo:GO_0043234 ;
         bk:prefName    "CCR4-NOT complex" .
 
 obo:GO_0005575  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0005575_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:prefName    "cellular_component" .
 
 obo:GO_0044464  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0044464_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0005575 ;
         bk:prefName    "cell part" .
 
@@ -210,6 +290,7 @@ obo:GO_0005575_acc  a       bk:Accession ;
 
 obo:GO_0032991  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0032991_acc ;
+        bk:evidence    bkev:IMPD ;
         bk:is_a        obo:GO_0005575 ;
         bk:prefName    "macromolecular complex" .
 @prefix schema: <http://schema.org/> .
@@ -313,7 +394,8 @@ bkr:citation_TOB1_18669648
         bk:relTypeRef  bk:published_in .
 
 bkr:TOB1  a                 bk:Protein ;
-        bk:is_annotated_by  obo:GO_0017148 , obo:GO_0046332 , obo:GO_0008285 , obo:GO_0030509 , obo:GO_0030514 , obo:GO_0005737 , obo:GO_0045668 , obo:GO_0030971 , obo:GO_0005634 , obo:GO_0007184 , obo:GO_1900153 , obo:GO_0005070 , obo:GO_0030014 , obo:GO_0060212 , obo:GO_0060213 , obo:GO_0003714 ;
+        bk:evidence         bkev:IMPD ;
+        bk:is_annotated_by  obo:GO_0030014 ;
         bk:prefName         "TOB1" ;
         bk:published_in     bkr:23236473 , bkr:19276069 , bkr:23186163 , bkr:15489334 , bkr:21336257 , bkr:18669648 , bkr:8632892 , bkr:14702039 , bkr:19690332 , bkr:20068231 .
 
@@ -570,7 +652,8 @@ bkr:degex_patient_2_runx2
 bkr:degex_patient_1  rdf:type  bk:ExperimentalSample ;
         bk:prefName         "Patient 1" ;
         bk:is_annotated_by  bkr:degex_smad1_inhibitor ;
-        bk:member_of        bkr:sampleExp .
+        bk:member_of        bkr:sampleExp ;
+        bk:evidence         bkev:IMPD .
 
 bkr:degex_smad1_inhibitor
         rdf:type     bk:Annotation ;
@@ -579,7 +662,8 @@ bkr:degex_smad1_inhibitor
 bkr:degex_patient_2  rdf:type  bk:ExperimentalSample ;
         bk:prefName         "Patient 2" ;
         bk:is_annotated_by  bkr:degex_smad6_blocker ;
-        bk:member_of        bkr:sampleExp .
+        bk:member_of        bkr:sampleExp ;
+        bk:evidence         bkev:IMPD .
 
 bkr:degex_smad6_blocker
         rdf:type     bk:Annotation ;
@@ -588,7 +672,8 @@ bkr:degex_smad6_blocker
 bkr:degex_patient_3  rdf:type  bk:ExperimentalSample ;
         bk:prefName         "Patient 3" ;
         bk:is_annotated_by  bkr:degex_control ;
-        bk:member_of        bkr:sampleExp .
+        bk:member_of        bkr:sampleExp ;
+        bk:evidence         bkev:IMPD .
 
 bkr:degex_control  rdf:type  bk:Annotation ;
         bk:prefName  "Control" .

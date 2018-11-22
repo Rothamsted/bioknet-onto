@@ -14,7 +14,8 @@ CONSTRUCT {
   ?goTerm a bk:GeneOntologyTerms;
     bk:prefName ?label;
     bk:is_a ?superClass;
-    dc:identifier ?bkAccUri.
+    dc:identifier ?bkAccUri;
+    bk:evidence bkev:IMPD.    
 
   ?bkAccUri a bk:Accession;
     dcterms:identifier ?accession;

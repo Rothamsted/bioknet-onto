@@ -1,0 +1,40 @@
+@prefix bkr: <http://www.ondex.org/bioknet/resources/>.
+@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
+@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: 	 <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms:  <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/> .
+
+
+
+<http://www.ondex.org/bioknet/bk-onto-sample-extension/>
+        a            owl:Ontology ;
+        owl:imports  bk: .
+
+bk:ExperimentalSample
+        a                    owl:Class ;
+        rdfs:label           "Experimental Sample"@en ;
+        rdfs:subClassOf      bk:Concept ;
+        dcterms:description    "Anything that can be seen as a sample related to organism(s) and taken to perform an experiment (e.g. blood sample, cell culture, cohort of patients)"@en ;
+        dcterms:identifier     "ExperimentalSample" ;
+        bk:isOndexPreferred  true .
+
+bkr:sampleExp
+	a bk:Experiment;
+	bk:prefName "Sample Gene Expression Experiment";
+	bk:evidence bkev:M; # Manually curated
+	dc:identifier bkr:sampleExp_Acc
+.
+
+bkr:sampleExp_Acc a bk:Accession;
+	dcterms:identifier "sampleExp";
+  bk:dataSource bkds:unknown	# TODO: should actually be something like 'manually curated'
+.
+

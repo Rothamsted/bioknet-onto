@@ -27,12 +27,13 @@ do
 done
 
 echo "Moving BK-Onto files"
-[ -e "input_data/bkonto/*.ttl" ] && cp -f input_data/bkonto/*.ttl "$out_dir"
+[ -e input_data/bkonto/*.ttl ] && cp -f input_data/bkonto/*.ttl "$out_dir"
 
 tdb="/tmp/bk_convert_tdb"
 echo "Loading data into temp TDB '$tdb'"
 rm -Rf "$tdb"
-"$JENA_HOME/bin/tdbloader2" --loc="$tdb" ../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl}
+"$JENA_HOME/bin/tdbloader2" --loc="$tdb" \
+	../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl} input_data/bkonto/*.ttl
 
 
 echo "Running CONSTRUCTs"

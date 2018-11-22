@@ -29,6 +29,7 @@ bkr:BMPR1A_acc  a           bk:Accession ;
 
 bkr:SMAD4  a                bk:Protein ;
         dc:identifier       bkr:SMAD4_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD4"^^<xsd:string> .
 
@@ -38,16 +39,19 @@ bkr:NOG_acc  a              bk:Accession ;
 
 bkr:RUNX2  a                bk:Protein ;
         dc:identifier       bkr:RUNX2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "RUNX2"^^<xsd:string> .
 
 bkr:SMURF1  a               bk:Protein ;
         dc:identifier       bkr:SMURF1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMURF1"^^<xsd:string> .
 
 bkr:BMP2  a                 bk:Protein ;
         dc:identifier       bkr:BMP2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMP2"^^<xsd:string> .
 
@@ -57,6 +61,7 @@ bkr:TOB1_acc  a             bk:Accession ;
 
 bkr:TOB2  a                 bk:Protein ;
         dc:identifier       bkr:TOB2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB2"^^<xsd:string> .
 
@@ -74,11 +79,13 @@ bkr:RUNX2_acc  a            bk:Accession ;
 
 bkr:BMPR2  a                bk:Protein ;
         dc:identifier       bkr:BMPR2_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR2"^^<xsd:string> .
 
 bkr:TOB1  a                 bk:Protein ;
         dc:identifier       bkr:TOB1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "TOB1"^^<xsd:string> .
 
@@ -88,16 +95,19 @@ bkr:BMP2_acc  a             bk:Accession ;
 
 bkr:SMAD1  a                bk:Protein ;
         dc:identifier       bkr:SMAD1_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD1"^^<xsd:string> .
 
 bkr:BMPR1B  a               bk:Protein ;
         dc:identifier       bkr:BMPR1B_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR1B"^^<xsd:string> .
 
 bkr:SMAD6  a                bk:Protein ;
         dc:identifier       bkr:SMAD6_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD6"^^<xsd:string> .
 
@@ -111,6 +121,7 @@ bkr:SMAD6_acc  a            bk:Accession ;
 
 bkr:BMPR1A  a               bk:Protein ;
         dc:identifier       bkr:BMPR1A_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "BMPR1A"^^<xsd:string> .
 
@@ -133,5 +144,6 @@ bkr:BMPR1B_acc  a           bk:Accession ;
 
 bkr:NOG  a                  bk:Protein ;
         dc:identifier       bkr:NOG_acc ;
+        bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "NOG"^^<xsd:string> .

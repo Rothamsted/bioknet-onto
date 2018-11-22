@@ -11,9 +11,10 @@ CONSTRUCT
   ?sampleIri
     a bk:ExperimentalSample;
     bk:prefName ?Sample_Name;
-    bk:is_annotated_by ?treatmentIri;
-    bk:member_of bkr:sampleExp # this is described by sample_degs_experiment.ttl
-  .
+    bk:is_annotated_by ?treatmentIri;    
+    bk:member_of bkr:sampleExp; # this is described by constants.ttl
+    bk:evidence bkev:IMPD
+  .    
 
   ?treatmentIri
     a bk:Annotation;

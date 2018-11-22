@@ -15,8 +15,9 @@ CONSTRUCT {
   ?bkProt a bk:Protein;
     dc:identifier ?bkProtAccUri;
     bk:prefName ?protName;
-    bk:participates_in ?path.
-
+    bk:participates_in ?path;
+    bk:evidence bkev:IMPD.
+    
   ?bkProtAccUri a bk:Accession;
     dcterms:identifier ?protName;
     bk:dataSource bkds:UNIPROTKB.

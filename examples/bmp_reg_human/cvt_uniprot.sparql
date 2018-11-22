@@ -7,12 +7,15 @@ PREFIX protCore: <http://purl.uniprot.org/core/>
 PREFIX prot: <http://purl.uniprot.org/uniprot/>
 PREFIX protCit: <http://purl.uniprot.org/citations/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
 
 CONSTRUCT {
   ?bkProt a bk:Protein;
     bk:prefName ?bkAcc;
     bk:is_annotated_by ?goTerm;
-    bk:published_in ?bkPub.
+    bk:published_in ?bkPub;
+    bk:evidence bkev:IMPD    
+  .
 
   ?bkProt bk:published_in ?bkPub.
 
@@ -30,8 +33,12 @@ WHERE
 
   OPTIONAL {
     ?prot protCore:classifiedWith ?goTerm.
-    FILTER ( STRSTARTS ( STR ( ?goTerm ), CONCAT ( STR ( obo: ), "GO_" )) )
-    #FILTER ( REGEX ( ?goTerm, ".+GO_[0-9]+$" ) )
+
+		# We keep only those terms that are actually described in go_terms.ttl
+		?goTerm a owl:Class.
+
+		# But you can choose to be more liberal
+    # FILTER ( STRSTARTS ( STR ( ?goTerm ), CONCAT ( STR ( obo: ), "GO_" )) )
   }
 
   BIND ( REPLACE ( ?accession, "_HUMAN$", "" ) AS ?bkAcc )
