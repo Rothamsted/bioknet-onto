@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='index.html' class='' >Classes</a>
+<a href='../objectproperties/index.html' class='' >Object Properties</a>
+<a href='../dataproperties/index.html' class='' >Data Properties</a>
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+<a href='../individuals/index.html' class='' >Individuals</a>
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Class: Relation</h2>
+
+<div id='annotations_(4)'>
+<h4>Annotations (4)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/description___456553100.html" class='Annotation Property' title="http://purl.org/dc/terms/description">dcterms:description</a> <span class='literal'>"Relations in BioKNet are created in two ways:<br /><br />- as straight RDF statements between instances of Concept, and using subclasses of the relatedConcept property.<br /><br />- as instances of Relation, with links from the Relation instance to the relation source (relFrom property), target (relTo property) and predicate (relTypeRef property). This way to define relations is well-known as reification and it is necessary when further properties/links need to be associated to a statement.<br /><br />A reified relation can have attributes attached (bk:attribute property).<br /><br />WARNING: We strongly recommend that, if an instance of Relation (i.e., a reified relation) exists in a data set, then the corresponding plain triple exists too. For instance, if this is defined:<br /><br />&lt;code&gt;<br />ex:r0 a bk:Relation;<br />  bk:relTypeRef ex:encodes;<br />  bk:relFrom ex:gene0;<br />  bk:relTo ex:prot0.<br />&lt;/code&gt;<br /><br />we recommend to also define the triple ex:gene0 ex:encodes ex:prot0. This is to ease queries and start them from a base representation that is compliant with RDF principles.<br /><br />The opposite (i.e., to create a bk:Relation for each bk:Concept triple based on subproperties of bk:relatedConcept, even when there aren't further properties to attach to the triple) is less important, however, we recommend to introduce this redundancy, for the same sake of easy-to-write queries and performance.<br /><br />We suggest to base the identifiers of reified relations on the IDs (or URIs) of its three parts, e.g., MD5 ( gene0 + encodes + prot0 ). This makes it easier to find the reified version of a relation once you have the components of its identifiers. WARNING: this should be considered an application facility and never be assumed as a reliable rule."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/constraints___-604756739.html" class='Annotation Property' title="http://www.ondex.org/bioknet/terms/constraints">constraints</a> <span class='literal'>"MUST HAVE exactly 1 value for bk:relTypeRef."</span></li>
+<li class="asserted"><a href="../annotationproperties/isOndexPreferred___-1170698214.html" class='Annotation Property' title="http://www.ondex.org/bioknet/terms/isOndexPreferred">isOndexPreferred</a> <span class='literal'>"true"</span>(<a href="../datatypes/boolean___1756652655.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a>)</li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"Relation"</span> <span style='color: black;'>@en</span></li>
+</ul>
+</div>
+</div><!-- annotations (4) -->
+
+
+<div id='superclasses_(3)'>
+<h4>Superclasses (3)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="RelationElement___1080098823.html" class='Class' title="http://www.ondex.org/bioknet/terms/RelationElement">RelationElement</a></li>
+<li class="asserted"><a href="../objectproperties/relFrom___2091634346.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relFrom">relFrom</a> <span class='exactly'>exactly</span> 1 <a href="RelationElement___1080098823.html" class='Class' title="http://www.ondex.org/bioknet/terms/RelationElement">RelationElement</a></li>
+<li class="asserted"><a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relTo">relTo</a> <span class='exactly'>exactly</span> 1 <a href="Concept___-677342961.html" class='Class' title="http://www.ondex.org/bioknet/terms/Concept">Concept</a></li>
+</ul>
+</div>
+</div><!-- superclasses (3) -->
+
+
+<div id='members_(1)'>
+<h4>Members (1)</h4>
+<div class='codebox'>
+<span class="asserted"><a href="../individuals/testStmt0___-189249859.html" class='Individual' title="http://www.ondex.org/bioknet/terms/testStmt0">testStmt0</a></span></div>
+</div><!-- members (1) -->
+
+
+<div id='usage_(3)'>
+<h4>Usage (3)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../objectproperties/relFrom___2091634346.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relFrom">relFrom</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>Relation</span></li>
+<li class="asserted"><a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relTo">relTo</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>Relation</span></li>
+<li class="asserted"><a href="../objectproperties/relTypeRef___-2033525017.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relTypeRef">relTypeRef</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>Relation</span></li>
+</ul>
+</div>
+</div><!-- usage (3) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>
