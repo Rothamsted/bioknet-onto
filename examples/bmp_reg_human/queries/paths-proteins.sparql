@@ -1,0 +1,21 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+# Searches pathways and related proteins
+#
+SELECT ?pathName ?protName 
+WHERE {
+  ?path a bk:Path;
+    bk:prefName ?pathName.
+
+  ?bkProt a bk:Protein;
+    bk:prefName ?protName;
+    bk:participates_in ?path;
+    bk:evidence bkev:IMPD.
+}

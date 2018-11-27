@@ -1,0 +1,28 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
+PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+# Proteins being annotated with a GO class that is subclass of 'intracellular part'
+# This is an example of inference realised with SPARQL property paths.
+#
+SELECT DISTINCT ?protName ?className
+WHERE {
+
+  ?bkProt a bk:Protein;
+    bk:prefName ?protName;
+    bk:participates_in ?path;
+    bk:evidence bkev:IMPD.
+
+  ?bkProt bk:is_annotated_by ?class.
+  
+  ?class bk:prefName ?className. # Let's return the name
+
+  ?class bk:is_a* ?intraCellPart. # is_a* means a chain of is_a triples, of any lentgh
+
+  ?intraCellPart bk:prefName 'intracellular part'.
+}
