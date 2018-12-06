@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.ondex.org/bioknet/knetminer_extensions/" uri="bk_ondex.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
         <uri id="Automatically generated entry, Timestamp=1539629262391" name="http://purl.uniprot.org/uniprot/" uri="examples/bmp_reg_human/input_data/tob1_P50616.rdf"/>
         <uri id="Automatically generated entry, Timestamp=1539629262391" name="http://www.biopax.org/release/biopax-level3.owl" uri="examples/bmp_reg_human/bkout/ext/biopax-level3.owl"/>

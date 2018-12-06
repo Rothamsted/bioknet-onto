@@ -1,118 +1,386 @@
-@prefix bk: <http://www.ondex.org/bioknet/terms/>.
-@prefix bka: <http://www.ondex.org/bioknet/terms/attributes/>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix bpax: <http://www.biopax.org/release/biopax-level3.owl#>.
-@prefix schema: <http://schema.org/>.
-@prefix sio: <http://semanticscience.org/resource/>.
-@prefix bioschema: <http://bioschemas.org/>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix obo: <http://purl.obolibrary.org/obo/>.
-@prefix dc: <http://purl.org/dc/elements/1.1/>.
-@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix : <http://www.ondex.org/bioknet/ext_mappings#> .
+@prefix bk: <http://www.ondex.org/bioknet/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bka: <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bpax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bioschema: <http://bioschemas.org/> .
+@base <http://www.ondex.org/bioknet/ext_mappings> .
 
-<http://www.ondex.org/bioknet/ext_mappings>
-  a owl:Ontology;
-  owl:imports <http://www.ondex.org/bioknet/kNetMiner_extensions/>
-.
-  
-bk:Concept rdfs:subClassOf skos:Concept.
+<http://www.ondex.org/bioknet/ext_mappings> rdf:type owl:Ontology ;
+                                             owl:imports <http://www.ondex.org/bioknet/knetminer_extensions/> .
 
-bk:Relation rdfs:subClassOf rdf:Statement.
-bk:relFrom rdfs:subPropertyOf rdf:subject.
-bk:relTypeRef rdfs:subPropertyOf rdf:predicate.
-bk:relTo rdfs:subPropertyOf rdf:object.
 
-bk:Path
-  owl:equivalentClass
-    bpax:Pathway,
-    sio:SIO_001107
-.
+###  http://purl.org/dc/terms/label
+dcterms:label rdf:type owl:DatatypeProperty .
 
-bk:Publication rdfs:subClassOf schema:CreativeWork.
 
-bk:Interaction owl:equivalentClass bpax:Interaction.
+###  http://www.biopax.org/release/biopax-level3.owl#name
+bpax:name rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf bk:name .
 
-bk:Participant
-  owl:equivalentClass bpax:Entity;
-  skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en
-.
 
-bk:Protein owl:equivalentClass
-  bpax:Protein, sio:SIO_010043
-.
+###  http://www.biopax.org/release/biopax-level3.owl#standardName
+bpax:standardName rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf bk:prefName .
 
-bk:MoleculeComplex
-  owl:equivalentClass bpax:Complex;
-  rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en
-.
-bk:Gene owl:equivalentClass bpax:Gene.
-bk:Reaction
-  owl:equivalentClass bpax:BiochemicalReaction;
-  rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, whether it's biology-related or not"@en
-.
-bk:Transport owl:equivalentClass bpax:Transport.
 
-bk:Molecule rdfs:subClassOf bioschema:BioChemEntity.
+###  http://www.ondex.org/bioknet/terms/altName
+bk:altName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf skos:altLabel .
 
-bk:participates_in owl:equivalentProperty obo:RO_0000056.
-bk:has_participant owl:equivalentProperty obo:RO_0000057.
-bpax:participant rdfs:subPropertyOf bk:has_participant.
 
-bpax:product rdfs:subPropertyOf bk:produces.
-bk:produces owl:equivalentProperty obo:RO_0002234.
-bk:pd_by owl:equivalentProperty obo:RO_0002353.
+###  http://www.ondex.org/bioknet/terms/name
+bk:name rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf dcterms:label .
 
-bk:consumes owl:equivalentProperty obo:RO_0002233.
-bk:cs_by owl:equivalentProperty obo:RO_0002352.
 
-bk:regulates
-  owl:equivalentProperty obo:RO_0002211
-.
+###  http://www.ondex.org/bioknet/terms/prefName
+bk:prefName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf skos:prefLabel .
 
-bk:pos_reg
-  owl:equivalentProperty obo:RO_0002213
-.
 
-bk:neg_reg owl:equivalentProperty obo:RO_0002212.
+###  http://www.ondex.org/bioknet/terms/relFrom
+bk:relFrom rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf rdf:subject .
 
-bk:is_a owl:equivalentProperty skos:broader.
-bk:part_of owl:equivalentProperty obo:BFO_0000050.
-bk:has_part owl:equivalentProperty obo:BFO_0000051.
 
-bk:occ_in owl:equivalentProperty obo:BFO_0000066.
-bk:cooc_wi owl:equivalentProperty obo:RO_0008506.
+###  http://www.ondex.org/bioknet/terms/relTo
+bk:relTo rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf rdf:object .
 
-bk:enc rdfs:subPropertyOf sio:SIO_010078.
-bk:en_by rdfs:subPropertyOf sio:SIO_010079.
 
-bk:published_in rdfs:subPropertyOf
-  schema:subjectOf,
-  [ owl:inverseOf dc:subject ]
-.
-bk:publication_features rdfs:subPropertyOf dc:subject.
+###  http://www.ondex.org/bioknet/terms/relTypeRef
+bk:relTypeRef rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf rdf:predicate .
 
-bka:Abstract rdfs:subPropertyOf dcterms:description.
-bka:AbstractHeader rdfs:subPropertyOf dcterms:title.
-bka:AUTHORS rdfs:subPropertyOf dc:creator.
-bka:FullText rdfs:subPropertyOf dcterms:description.
-bka:YEAR rdfs:subPropertyOf dcterms:issued.
-bka:URL owl:equivalentProperty schema:url.
 
-bka:PVALUE rdfs:seeAlso sio:SIO_000765, obo:OBI_0000175;
-  rdfs:comment "TODO: we would like to find a better form of integration with SIO/OBI"@en
-.
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
+rdf:object rdf:type owl:DatatypeProperty .
 
-bka:Score rdfs:seeAlso obo:OBI_0000970.
 
-bpax:name rdfs:subPropertyOf bk:name.
-bpax:standardName rdfs:subPropertyOf bk:prefName.
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
+rdf:predicate rdf:type owl:DatatypeProperty .
 
-bk:name
-  owl:equivalentProperty schema:name;
-  rdfs:subPropertyOf dcterms:label
-.
 
-bk:prefName rdfs:subPropertyOf skos:prefLabel.
-bk:altName rdfs:subPropertyOf skos:altLabel.
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
+rdf:subject rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/subject
+dc:subject rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/subjectOf
+schema:subjectOf rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/SIO_010078
+sio:SIO_010078 rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/SIO_010079
+sio:SIO_010079 rdf:type owl:ObjectProperty .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#participant
+bpax:participant rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf bk:has_participant .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#product
+bpax:product rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf bk:produces .
+
+
+###  http://www.ondex.org/bioknet/terms/consumes
+bk:consumes rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/cooc_wi
+bk:cooc_wi rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/cs_by
+bk:cs_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/en_by
+bk:en_by rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf sio:SIO_010079 .
+
+
+###  http://www.ondex.org/bioknet/terms/enc
+bk:enc rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf sio:SIO_010078 .
+
+
+###  http://www.ondex.org/bioknet/terms/has_part
+bk:has_part rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/has_participant
+bk:has_participant rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/is_a
+bk:is_a rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/neg_reg
+bk:neg_reg rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/occ_in
+bk:occ_in rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/part_of
+bk:part_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/participates_in
+bk:participates_in rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/pd_by
+bk:pd_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/pos_reg
+bk:pos_reg rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/produces
+bk:produces rdf:type owl:ObjectProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/publication_features
+bk:publication_features rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf dc:subject .
+
+
+###  http://www.ondex.org/bioknet/terms/published_in
+bk:published_in rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf schema:subjectOf ,
+                                   [ owl:inverseOf dc:subject
+                                   ] .
+
+
+###  http://www.ondex.org/bioknet/terms/regulates
+bk:regulates rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/AUTHORS
+bka:AUTHORS rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf dc:creator .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/Abstract
+bka:Abstract rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dcterms:description .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/AbstractHeader
+bka:AbstractHeader rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf dcterms:title .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/FullText
+bka:FullText rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dcterms:description .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/PVALUE
+bka:PVALUE rdf:type owl:DatatypeProperty ;
+           rdfs:comment "TODO: we would like to find a better form of integration with SIO/OBI"@en ;
+           rdfs:seeAlso obo:OBI_0000175 ,
+                        sio:SIO_000765 .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/URL
+bka:URL rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ondex.org/bioknet/terms/attributes/YEAR
+bka:YEAR rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf dcterms:issued .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://bioschemas.org/BioChemEntity
+bioschema:BioChemEntity rdf:type owl:Class .
+
+
+###  http://schema.org/CreativeWork
+schema:CreativeWork rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/SIO_001107
+sio:SIO_001107 rdf:type owl:Class ;
+               owl:equivalentClass bk:Path .
+
+
+###  http://semanticscience.org/resource/SIO_010043
+sio:SIO_010043 rdf:type owl:Class ;
+               owl:equivalentClass bk:Protein .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction
+bpax:BiochemicalReaction rdf:type owl:Class ;
+                         owl:equivalentClass bk:Reaction .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Complex
+bpax:Complex rdf:type owl:Class ;
+             owl:equivalentClass bk:MoleculeComplex .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Entity
+bpax:Entity rdf:type owl:Class ;
+            owl:equivalentClass bk:Participant .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Gene
+bpax:Gene rdf:type owl:Class ;
+          owl:equivalentClass bk:Gene .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Interaction
+bpax:Interaction rdf:type owl:Class ;
+                 owl:equivalentClass bk:Interaction .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Pathway
+bpax:Pathway rdf:type owl:Class ;
+             owl:equivalentClass bk:Path .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Protein
+bpax:Protein rdf:type owl:Class ;
+             owl:equivalentClass bk:Protein .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Transport
+bpax:Transport rdf:type owl:Class ;
+               owl:equivalentClass bk:Transport .
+
+
+###  http://www.ondex.org/bioknet/terms/Concept
+bk:Concept rdfs:subClassOf skos:Concept .
+
+
+###  http://www.ondex.org/bioknet/terms/Gene
+bk:Gene rdf:type owl:Class .
+
+
+###  http://www.ondex.org/bioknet/terms/Interaction
+bk:Interaction rdf:type owl:Class .
+
+
+###  http://www.ondex.org/bioknet/terms/Molecule
+bk:Molecule rdf:type owl:Class ;
+            rdfs:subClassOf bioschema:BioChemEntity .
+
+
+###  http://www.ondex.org/bioknet/terms/MoleculeComplex
+bk:MoleculeComplex rdf:type owl:Class ;
+                   rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en .
+
+
+###  http://www.ondex.org/bioknet/terms/Participant
+bk:Participant rdf:type owl:Class ;
+               skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en .
+
+
+###  http://www.ondex.org/bioknet/terms/Path
+bk:Path rdf:type owl:Class .
+
+
+###  http://www.ondex.org/bioknet/terms/Protein
+bk:Protein rdf:type owl:Class .
+
+
+###  http://www.ondex.org/bioknet/terms/Publication
+bk:Publication rdf:type owl:Class ;
+               rdfs:subClassOf schema:CreativeWork .
+
+
+###  http://www.ondex.org/bioknet/terms/Reaction
+bk:Reaction rdf:type owl:Class ;
+            rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, whether it's biology-related or not"@en .
+
+
+###  http://www.ondex.org/bioknet/terms/Relation
+bk:Relation rdf:type owl:Class ;
+            rdfs:subClassOf rdf:Statement .
+
+
+###  http://www.ondex.org/bioknet/terms/Transport
+bk:Transport rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+rdf:Statement rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+bka:Score rdfs:seeAlso obo:OBI_0000970 .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
