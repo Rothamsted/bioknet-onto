@@ -51,7 +51,7 @@ do
 done
 
 echo -e "\n\n==== TDB Loading of converted CSVs\n"
-"$JENA_HOME/bin/tdbloader" --loc="$tdb" "$out_dir/sample_degs_$i.ttl"
+"$JENA_HOME/bin/tdbloader" --loc="$tdb" "$out_dir"/sample_degs_*.ttl
 
 
 echo -e "\n\n==== Running CONSTRUCTs\n"
