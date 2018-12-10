@@ -133,16 +133,17 @@
 
 			<!-- Symmetric property -->
 			<xsl:if test = "not ( fn:is_ignored_relation ( ./odx:inverseName ) )">
-				<owl:inverseOf>
-					<owl:ObjectProperty rdf:about="{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}">
-						<!-- Not all of them are well defined, so let's state this and then we will remove redundant declarations -->
-						<rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation" />
-					</owl:ObjectProperty>
-				</owl:inverseOf>
+				<owl:inverseOf rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}" />
 			</xsl:if>
 
 		</owl:ObjectProperty>
 
+		<!-- Not all of them are well defined, so let's state this and then we will remove redundant declarations -->
+		<xsl:if test = "not ( fn:is_ignored_relation ( ./odx:inverseName ) )">
+			<owl:ObjectProperty rdf:about="{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}">
+				<rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation" />
+			</owl:ObjectProperty>
+		</xsl:if>
 	</xsl:template>
 
 
