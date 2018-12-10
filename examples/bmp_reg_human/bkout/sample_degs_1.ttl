@@ -1,0 +1,87 @@
+@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix bkr:  <http://www.ondex.org/bioknet/resources/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix bk:  <http://www.ondex.org/bioknet/terms/> .
+@prefix bka:  <http://www.ondex.org/bioknet/terms/attributes/> .
+
+bkr:TOB1  bk:expressed_by  bkr:degex_patient_1 .
+
+bkr:degex_patient_1_tob1
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000600497806344172"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:degex_patient_1 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:SMAD1  bk:expressed_by  bkr:degex_patient_1 .
+
+bkr:degex_patient_1_smad1
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000754527501513066"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:SMAD1 ;
+        bk:relTo       bkr:degex_patient_1 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:BMPR2  bk:expressed_by  bkr:degex_patient_1 .
+
+bkr:degex_patient_1_bmpr2
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.0000000588968741986782"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:BMPR2 ;
+        bk:relTo       bkr:degex_patient_1 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:RUNX2  bk:expressed_by  bkr:degex_patient_1 .
+
+bkr:degex_patient_1_runx2
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000261748871275369"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:RUNX2 ;
+        bk:relTo       bkr:degex_patient_1 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:BMPR2  bk:expressed_by  bkr:degex_patient_1 .
+
+bkr:degex_patient_1_bmpr2
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000603507498720886"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:BMPR2 ;
+        bk:relTo       bkr:degex_patient_1 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:TOB1  bk:expressed_by  bkr:degex_patient_2 .
+
+bkr:degex_patient_2_tob1
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000596766633617822"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:TOB1 ;
+        bk:relTo       bkr:degex_patient_2 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:SMURF1  bk:expressed_by  bkr:degex_patient_2 .
+
+bkr:degex_patient_2_smurf1
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000252516243921889"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:SMURF1 ;
+        bk:relTo       bkr:degex_patient_2 ;
+        bk:relTypeRef  bk:expressed_by .
+
+bkr:RUNX2  bk:expressed_by  bkr:degex_patient_2 .
+
+bkr:degex_patient_2_runx2
+        rdf:type       bk:Relation ;
+        bka:PVALUE     "0.000000115606394287974"^^xsd:double ;
+        bk:evidence    bkev:EXP ;
+        bk:relFrom     bkr:RUNX2 ;
+        bk:relTo       bkr:degex_patient_2 ;
+        bk:relTypeRef  bk:expressed_by .

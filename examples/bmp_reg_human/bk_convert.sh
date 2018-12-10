@@ -15,6 +15,29 @@ mkdir -p "$out_dir"
 rm -f "$out_dir/*"
 
 
+tdb="/tmp/bk_convert_tdb"
+echo -e "\n\n==== Loading already-RDF files into temp TDB '$tdb'\n"
+rm -Rf "$tdb"
+"$JENA_HOME/bin/tdbloader2" --loc="$tdb" \
+	../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl} input_data/bkonto/*.ttl
+
+
+echo -e "\n\n==== Downloading external ontologies\n"
+ext_dir="$out_dir/ext"
+mkdir -p "$ext_dir"
+for url in \
+  http://www.biopax.org/release/biopax-level3.owl \
+  http://www.w3.org/TR/skos-reference/skos.rdf
+do
+  base=$(basename "$url")
+  wget -O "$ext_dir/$base" "$url"
+done
+
+
+echo -e "\n\n==== TDB Loading external ontologies\n"
+"$JENA_HOME/bin/tdbloader" --loc="$tdb" "$ext_dir"/*
+
+
 echo -e "\n\n==== Converting CSVs from DEG Example\n"
 tarql_cmd="$TARQL_HOME/bin/tarql --tabs --quotechar '\"'"
 for i in $(seq 2)
@@ -26,30 +49,8 @@ do
     >"$out_dir/sample_degs_$i.ttl"
 done
 
-
-echo -e "\n\n==== Moving BK-Onto files to out dir\n"
-[ -e input_data/bkonto/*.ttl ] && cp -f input_data/bkonto/*.ttl "$out_dir"
-
-tdb="/tmp/bk_convert_tdb"
-
-
-echo -e "\n\n==== Loading data into temp TDB '$tdb'\n"
-rm -Rf "$tdb"
-"$JENA_HOME/bin/tdbloader2" --loc="$tdb" \
-	../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl} input_data/bkonto/*.ttl
-
-
-echo -e "\n\n==== Adding/TDB-Loading external ontologies\n"
-ext_dir="$out_dir/ext"
-mkdir -p "$ext_dir"
-for url in \
-  http://www.biopax.org/release/biopax-level3.owl \
-  http://www.w3.org/TR/skos-reference/skos.rdf
-do
-  base=$(basename "$url")
-  wget -O "$ext_dir/$base" "$url"
-done
-"$JENA_HOME/bin/tdbloader" --loc="$tdb" $ext_dir/*
+echo -e "\n\n==== TDB Loading of converted CSVs\n"
+"$JENA_HOME/bin/tdbloader" --loc="$tdb" "$out_dir/sample_degs_$i.ttl"
 
 
 echo -e "\n\n==== Running CONSTRUCTs\n"
@@ -62,7 +63,7 @@ do
 done
 
 
-echo -e "\n\n==== Loading CONSTRUCT results into temp TDB\n"
+echo -e "\n\n==== TDB Loading of CONSTRUCT results\n"
 "$JENA_HOME/bin/tdbloader" --loc="$tdb" "$out_dir"/cvt_*.ttl
 
 

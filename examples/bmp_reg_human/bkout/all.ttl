@@ -87,12 +87,12 @@ bp:RnaReference  a        owl:Class ;
         rdfs:comment      "Defintion: A RNA  reference is a grouping of several RNA entities that are either encoded by the same gene or replicates of the same genome.  Members can differ in celular location, sequence features and bound partners. Currently conformational states (such as hairpin) are not covered." ;
         rdfs:subClassOf   bp:EntityReference ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:RnaRegionReference ;
-                            owl:onProperty     bp:subRegion
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:RnaReference ;
                             owl:onProperty     bp:memberEntityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:RnaRegionReference ;
+                            owl:onProperty     bp:subRegion
                           ] ;
         owl:disjointWith  bp:ProteinReference , bp:DnaReference , bp:DnaRegionReference , bp:RnaRegionReference , bp:SmallMoleculeReference .
 
@@ -428,6 +428,12 @@ bk:methylates  a            owl:ObjectProperty ;
 <http://purl.uniprot.org/hogenom/HOG000253939>
         a                  protCore:Resource ;
         protCore:database  <http://purl.uniprot.org/database/HOGENOM> .
+
+bkr:degex_patient_2  a      bk:ExperimentalSample ;
+        bk:evidence         bkev:IMPD ;
+        bk:is_annotated_by  bkr:degex_smad6_blocker ;
+        bk:member_of        bkr:sampleExp ;
+        bk:prefName         "Patient 2" .
 
 bk:anto  a                   owl:ObjectProperty ;
         rdfs:label           "anto"@en ;
@@ -1228,11 +1234,11 @@ bp:Stoichiometry  a       owl:Class ;
         rdfs:subClassOf   bp:UtilityClass ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:stoichiometricCoefficient
+                            owl:onProperty   bp:physicalEntity
                           ] ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:physicalEntity
+                            owl:onProperty   bp:stoichiometricCoefficient
                           ] ;
         owl:disjointWith  bp:Provenance , bp:SequenceLocation , bp:ControlledVocabulary , bp:EntityFeature , bp:Score , bp:BioSource , bp:Evidence , bp:ChemicalStructure , bp:PathwayStep , bp:Xref , bp:DeltaG , bp:KPrime , bp:ExperimentalForm , bp:EntityReference .
 
@@ -1986,6 +1992,10 @@ bk:MolecularFunction  a      owl:Class ;
         bk:isOndexPreferred  true ;
         owl:equivalentClass  bk:MolFunc .
 
+bkr:degex_smad1_inhibitor
+        a            bk:Annotation ;
+        bk:prefName  "SMAD1 Inhibitor" .
+
 bkds:AFFYMETRIX  a           owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "Affymetrix"@en ;
         dcterms:description  "A pioneer in genetic analysis, Affymetrix introduced highly parallel genetic assays to the marketplace by commercializing the first DNA microarray in the late 1980s. - http://www.affymetrix.com"@en ;
@@ -2168,6 +2178,12 @@ bk:sDNA  a                   owl:Class ;
         dcterms:description  "Single stranded deoxyribonucleic acid"@en ;
         dcterms:identifier   "sDNA" ;
         bk:isOndexPreferred  true .
+
+bkr:degex_patient_1  a      bk:ExperimentalSample ;
+        bk:evidence         bkev:IMPD ;
+        bk:is_annotated_by  bkr:degex_smad1_inhibitor ;
+        bk:member_of        bkr:sampleExp ;
+        bk:prefName         "Patient 1" .
 
 <http://purl.uniprot.org/uniprot/P50616#attribution-1F1D235CEE6E9F517881B603655DF439>
         protCore:evidence  obo:ECO_0000305 ;
@@ -2659,14 +2675,14 @@ bk:occ_in  a                owl:ObjectProperty ;
         dcterms:identifier  "occ_in" ;
         owl:inverseOf       bk:has_occurrence_of .
 
+<http://www.wikipathways.org/id42>
+        a             bp:Complex ;
+        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
+
 bp:value  a           owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "The value of the score. This can be a numerical or categorical value." ;
         rdfs:domain   bp:Score ;
         rdfs:range    xsd:string .
-
-<http://www.wikipathways.org/id42>
-        a             bp:Complex ;
-        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
 
 bk:is_transcribed_from
         a                   owl:ObjectProperty ;
@@ -3148,14 +3164,14 @@ bk:Protein  a                owl:Class ;
         dcterms:identifier   "Protein" ;
         bk:isOndexPreferred  true .
 
-bk:derivable_to  a          owl:ObjectProperty ;
-        rdfs:subPropertyOf  bk:conceptsRelation .
-
 skos:historyNote  a         rdf:Property , owl:AnnotationProperty ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
         rdfs:label          "history note"@en ;
         rdfs:subPropertyOf  skos:note ;
         skos:definition     "A note about the past state/use/meaning of a concept."@en .
+
+bk:derivable_to  a          owl:ObjectProperty ;
+        rdfs:subPropertyOf  bk:conceptsRelation .
 
 bp:RnaRegionReference
         a                 owl:Class ;
@@ -3737,18 +3753,18 @@ bk:inhibited_by  a              owl:AsymmetricProperty , owl:ObjectProperty ;
         owl:equivalentProperty  bk:in_by ;
         owl:inverseOf           bk:inhibits .
 
-bp:stoichiometricCoefficient
-        a             owl:FunctionalProperty , owl:DatatypeProperty ;
-        rdfs:comment  "Stoichiometric coefficient for one of the entities in an interaction or complex. This value can be any rational number. Generic values such as \"n\" or \"n+1\" should not be used - polymers are currently not covered." ;
-        rdfs:domain   bp:Stoichiometry ;
-        rdfs:range    xsd:float .
-
 bp:sequence  a        owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "Polymer sequence in uppercase letters. For DNA, usually A,C,G,T letters representing the nucleosides of adenine, cytosine, guanine and thymine, respectively; for RNA, usually A, C, U, G; for protein, usually the letters corresponding to the 20 letter IUPAC amino acid code."@en ;
         rdfs:domain   [ a            owl:Class ;
                         owl:unionOf  ( bp:DnaReference bp:DnaRegionReference bp:ProteinReference bp:RnaReference bp:RnaRegionReference )
                       ] ;
         rdfs:range    xsd:string .
+
+bp:stoichiometricCoefficient
+        a             owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:comment  "Stoichiometric coefficient for one of the entities in an interaction or complex. This value can be any rational number. Generic values such as \"n\" or \"n+1\" should not be used - polymers are currently not covered." ;
+        rdfs:domain   bp:Stoichiometry ;
+        rdfs:range    xsd:float .
 
 bp:ionicStrength  a   owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "The ionic strength is defined as half of the total sum of the concentration (ci) of every ionic species (i) in the solution times the square of its charge (zi). For example, the ionic strength of a 0.1 M solution of CaCl2 is 0.5 x (0.1 x 22 + 0.2 x 12) = 0.3 M" ;
@@ -4648,6 +4664,12 @@ bk:enc  a                    owl:AsymmetricProperty , owl:ObjectProperty ;
         dcterms:identifier   "enc" ;
         owl:inverseOf        bk:is_encoded_by .
 
+skos:note  a              rdf:Property , owl:AnnotationProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "note"@en ;
+        skos:definition   "A general note, for any purpose."@en ;
+        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
+
 bk:GeneOntologyTerms  a      owl:Class ;
         rdfs:label           "GeneOntologyTerms"@en ;
         rdfs:subClassOf      bk:OntologyTerms ;
@@ -4662,12 +4684,6 @@ bka:Chemical  a              owl:DatatypeProperty ;
         dcterms:identifier   "Chemical" ;
         bk:isOndexPreferred  true ;
         bk:ondexRange        "java.lang.String" .
-
-skos:note  a              rdf:Property , owl:AnnotationProperty ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "note"@en ;
-        skos:definition   "A general note, for any purpose."@en ;
-        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
 
 bk:physical_IB_relation
         a                   owl:ObjectProperty ;
@@ -4979,12 +4995,12 @@ bp:DnaReference  a        owl:Class ;
         rdfs:comment      "Definition: A DNA reference is a grouping of several DNA entities that are common in sequence.  Members can differ in celular location, sequence features, SNPs, mutations and bound partners.\n\nComments : Note that this is not a reference gene. Genes are non-physical,stateless continuants. Their physical manifestations can span multiple DNA molecules, sometimes even across chromosomes due to regulatory regions. Similarly a gene is not necessarily made up of deoxyribonucleic acid and can be present in multiple copies ( which are different DNA regions)." ;
         rdfs:subClassOf   bp:EntityReference ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:DnaReference ;
-                            owl:onProperty     bp:memberEntityReference
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:DnaRegionReference ;
                             owl:onProperty     bp:subRegion
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:DnaReference ;
+                            owl:onProperty     bp:memberEntityReference
                           ] ;
         owl:disjointWith  bp:RnaReference , bp:DnaRegionReference , bp:ProteinReference , bp:SmallMoleculeReference , bp:RnaRegionReference .
 
@@ -5083,18 +5099,18 @@ bp:Evidence  a            owl:Class ;
         protCore:evidence  obo:ECO_0000250 ;
         protCore:manual    true .
 
-skos:notation  a          rdf:Property , owl:DatatypeProperty ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "notation"@en ;
-        skos:definition   "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en ;
-        skos:scopeNote    "By convention, skos:notation is used with a typed literal in the object position of the triple."@en .
-
 <http://purl.uniprot.org/uniprot/#_3B6576C2D00EE025_rdfs.comment_B0BB21A948F01214>
         a                     rdf:Statement ;
         rdf:object            "Belongs to the BTG family." ;
         rdf:predicate         rdfs:comment ;
         rdf:subject           <http://purl.uniprot.org/uniprot/P50616#SIP26A6DD7996B66F9B> ;
         protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-1F1D235CEE6E9F517881B603655DF439> .
+
+skos:notation  a          rdf:Property , owl:DatatypeProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "notation"@en ;
+        skos:definition   "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en ;
+        skos:scopeNote    "By convention, skos:notation is used with a typed literal in the object position of the triple."@en .
 
 bk:GIDL  a                   owl:Class ;
         rdfs:label           "Dosage Lethality"@en ;
@@ -5361,6 +5377,9 @@ bkds:LIGANDBOX  a            owl:NamedIndividual , bk:DataSource ;
         dcterms:identifier   "LIGANDBOX" ;
         bk:isOndexPreferred  true .
 
+bkr:degex_control  a  bk:Annotation ;
+        bk:prefName  "Control" .
+
 bk:FeatureContainer  a       owl:Class ;
         rdfs:label           "FeatureContainer"@en ;
         rdfs:subClassOf      bk:NucleotideFeature ;
@@ -5442,13 +5461,13 @@ bp:GeneticInteraction
                             owl:maxCardinality  1 ;
                             owl:onProperty      bp:interactionType
                           ] ;
-        rdfs:subClassOf   [ a                owl:Restriction ;
-                            owl:cardinality  1 ;
-                            owl:onProperty   bp:phenotype
-                          ] ;
         rdfs:subClassOf   [ a                   owl:Restriction ;
                             owl:minCardinality  2 ;
                             owl:onProperty      bp:participant
+                          ] ;
+        rdfs:subClassOf   [ a                owl:Restriction ;
+                            owl:cardinality  1 ;
+                            owl:onProperty   bp:phenotype
                           ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:Gene ;
@@ -6396,12 +6415,12 @@ bp:RnaRegion  a           owl:Class ;
         rdfs:comment      "Definition: A region on a RNA molecule. \nUsage: RNARegion is not a pool of independent molecules but a subregion on these molecules. As such, every RNARegion has a defining RNA molecule.  \nExamples: CDS, 3' UTR, Hairpin" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:RnaRegionReference ;
-                            owl:onProperty     bp:entityReference
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:RnaRegion ;
                             owl:onProperty     bp:memberPhysicalEntity
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:RnaRegionReference ;
+                            owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Protein , bp:DnaRegion , bp:SmallMolecule , bp:Complex , bp:Rna , bp:Dna .
 
@@ -7229,9 +7248,20 @@ bk:MatingLocusSubFeature
         dcterms:identifier   "MatingLocusSubFeature" ;
         bk:isOndexPreferred  true .
 
+skos:broadMatch  a          rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "has broader match"@en ;
+        rdfs:subPropertyOf  skos:mappingRelation , skos:broader ;
+        owl:inverseOf       skos:narrowMatch ;
+        skos:definition     "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
+
 bp:SmallMolecule  a       owl:Class ;
         rdfs:comment      "Definition: A pool of molecules that are neither complexes nor are genetically encoded.\n\nRationale: Identity of small molecules are based on structure, rather than sequence as in the case of DNA, RNA or Protein. A small molecule reference is a grouping of several small molecule entities  that have the same chemical structure.  \n\nUsage : Smalle Molecules can have a cellular location and binding features. They can't have modification features as covalent modifications of small molecules are not considered as state changes but treated as different molecules.\nSome non-genomic macromolecules, such as large complex carbohydrates are currently covered by small molecules despite they lack a static structure. Better coverage for such molecules require representation of generic stoichiometry and polymerization, currently planned for BioPAX level 4.\n\nExamples: glucose, penicillin, phosphatidylinositol" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:SmallMolecule ;
+                            owl:onProperty     bp:memberPhysicalEntity
+                          ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:BindingFeature ;
                             owl:onProperty     bp:notFeature
@@ -7241,21 +7271,10 @@ bp:SmallMolecule  a       owl:Class ;
                             owl:onProperty     bp:feature
                           ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:SmallMolecule ;
-                            owl:onProperty     bp:memberPhysicalEntity
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:SmallMoleculeReference ;
                             owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Complex , bp:RnaRegion , bp:EntityReference , bp:Dna , bp:DnaRegion , bp:Protein , bp:Rna .
-
-skos:broadMatch  a          rdf:Property , owl:ObjectProperty ;
-        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label          "has broader match"@en ;
-        rdfs:subPropertyOf  skos:mappingRelation , skos:broader ;
-        owl:inverseOf       skos:narrowMatch ;
-        skos:definition     "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
 
 bk:HierarchyNode  a          owl:Class ;
         rdfs:label           "Hierarchy Node"@en ;
@@ -7511,6 +7530,12 @@ bk:has_participant  a        owl:AsymmetricProperty , owl:ObjectProperty ;
         bk:isOndexPreferred  true ;
         owl:inverseOf        bk:participates_in .
 
+bkr:degex_patient_3  a      bk:ExperimentalSample ;
+        bk:evidence         bkev:IMPD ;
+        bk:is_annotated_by  bkr:degex_control ;
+        bk:member_of        bkr:sampleExp ;
+        bk:prefName         "Patient 3" .
+
 bk:consumes  a              owl:ObjectProperty ;
         rdfs:subPropertyOf  bk:conceptsRelation .
 
@@ -7606,6 +7631,10 @@ bk:MRNA  a                   owl:Class ;
         dcterms:identifier   "MRNA" ;
         bk:isOndexPreferred  true .
 
+bkr:degex_smad6_blocker
+        a            bk:Annotation ;
+        bk:prefName  "SMAD6 Blocker" .
+
 bk:interacts_genetically_with
         a                   owl:ObjectProperty ;
         rdfs:subPropertyOf  bk:conceptsRelation .
@@ -7660,12 +7689,12 @@ bp:DnaRegion  a           owl:Class ;
         rdfs:comment      "Definition: A region on a DNA molecule. \nUsage:  DNARegion is not a pool of independent molecules but a subregion on these molecules. As such, every DNARegion has a defining DNA molecule.  \nExamples: Protein encoding region, promoter" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:DnaRegion ;
-                            owl:onProperty     bp:memberPhysicalEntity
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:DnaRegionReference ;
                             owl:onProperty     bp:entityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:DnaRegion ;
+                            owl:onProperty     bp:memberPhysicalEntity
                           ] ;
         owl:disjointWith  bp:Dna , bp:Protein , bp:SmallMolecule , bp:Complex , bp:RnaRegion , bp:Rna .
 
@@ -8472,12 +8501,12 @@ bp:Rna  a                 owl:Class ;
         rdfs:comment      "Definition: A physical entity consisting of a sequence of ribonucleotide monophosphates; a ribonucleic acid.\nUsage: RNA should be used for pools of individual RNA molecules. For describing subregions on those molecules use RNARegion.\nExamples: messengerRNA, microRNA, ribosomalRNA. A specific example is the let-7 microRNA." ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:RnaReference ;
-                            owl:onProperty     bp:entityReference
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:Rna ;
                             owl:onProperty     bp:memberPhysicalEntity
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:RnaReference ;
+                            owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Protein , bp:RnaRegion , bp:Complex , bp:DnaRegion , bp:Dna , bp:SmallMolecule .
 
@@ -8559,12 +8588,6 @@ bk:pos_reg  a                owl:ObjectProperty ;
         faldo:position   218 ;
         faldo:reference  <http://purl.uniprot.org/isoforms/P50616-1> .
 
-bkds:TIGR  a                 owl:NamedIndividual , bk:DataSource ;
-        rdfs:label           "The Institute for Genomic Research"@en ;
-        dcterms:description  "The Institute for Genomic Research (TIGR) was a non-profit genomics research institute founded in 1992 by Craig Venter in Rockville, Maryland, United States. It is now a part of the J. Craig Venter Institute. - http://www.tigr.org"@en ;
-        dcterms:identifier   "TIGR" ;
-        bk:isOndexPreferred  true .
-
 bkr:citation_TOB1_18669648
         a              bk:Relation ;
         bka:Score      0.95 ;
@@ -8572,6 +8595,12 @@ bkr:citation_TOB1_18669648
         bk:relFrom     bkr:TOB1 ;
         bk:relTo       bkr:18669648 ;
         bk:relTypeRef  bk:published_in .
+
+bkds:TIGR  a                 owl:NamedIndividual , bk:DataSource ;
+        rdfs:label           "The Institute for Genomic Research"@en ;
+        dcterms:description  "The Institute for Genomic Research (TIGR) was a non-profit genomics research institute founded in 1992 by Craig Venter in Rockville, Maryland, United States. It is now a part of the J. Craig Venter Institute. - http://www.tigr.org"@en ;
+        dcterms:identifier   "TIGR" ;
+        bk:isOndexPreferred  true .
 
 bk:annotates  a             owl:ObjectProperty ;
         rdfs:subPropertyOf  bk:conceptsRelation .
@@ -8785,11 +8814,6 @@ bka:FullText  a              owl:DatatypeProperty ;
         a               protCore:Turn_Annotation ;
         protCore:range  <http://purl.uniprot.org/range/22576479320749614tt14tt19> .
 
-bp:TransportWithBiochemicalReaction
-        a                owl:Class ;
-        rdfs:comment     "Definition: A conversion interaction that is both a biochemicalReaction and a transport. In transportWithBiochemicalReaction interactions, one or more of the substrates changes both their location and their physical structure. Active transport reactions that use ATP as an energy source fall under this category, even if the only covalent change is the hydrolysis of ATP to ADP.\n\nRationale: This class was added to support a large number of transport events in pathway databases that have a biochemical reaction during the transport process. It is not expected that other double inheritance subclasses will be added to the ontology at the same level as this class.\n\nExamples: In the PEP-dependent phosphotransferase system, transportation of sugar into an E. coli cell is accompanied by the sugar's phosphorylation as it crosses the plasma membrane." ;
-        rdfs:subClassOf  bp:Transport , bp:BiochemicalReaction .
-
 <http://identifiers.org/ncbigene/10140>
         a                  protCore:Resource ;
         protCore:database  <http://purl.uniprot.org/database/DisGeNET> .
@@ -8801,6 +8825,11 @@ bk:CellularComponent  a      owl:Class ;
         dcterms:identifier   "CellularComponent" ;
         bk:isOndexPreferred  true ;
         owl:equivalentClass  bk:CelComp .
+
+bp:TransportWithBiochemicalReaction
+        a                owl:Class ;
+        rdfs:comment     "Definition: A conversion interaction that is both a biochemicalReaction and a transport. In transportWithBiochemicalReaction interactions, one or more of the substrates changes both their location and their physical structure. Active transport reactions that use ATP as an energy source fall under this category, even if the only covalent change is the hydrolysis of ATP to ADP.\n\nRationale: This class was added to support a large number of transport events in pathway databases that have a biochemical reaction during the transport process. It is not expected that other double inheritance subclasses will be added to the ontology at the same level as this class.\n\nExamples: In the PEP-dependent phosphotransferase system, transportation of sugar into an E. coli cell is accompanied by the sugar's phosphorylation as it crosses the plasma membrane." ;
+        rdfs:subClassOf  bp:Transport , bp:BiochemicalReaction .
 
 bkds:PubMed  a               owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "PubMed"@en ;
