@@ -1,0 +1,8 @@
+# Support file used to dump all the TDB data, joined from all graphs
+#
+CONSTRUCT {
+  ?s ?p ?o
+}
+WHERE {
+  ?s ?p ?o
+}

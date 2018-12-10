@@ -1103,11 +1103,6 @@ bk:has_attributive_relation_with
         dcterms:identifier   "has_attributive_relation_with" ;
         bk:isOndexPreferred  true .
 
-<http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98>
-        protCore:evidence  obo:ECO_0000269 ;
-        protCore:manual    true ;
-        protCore:source    protCit:21336257 .
-
 skos:member  a            rdf:Property , owl:ObjectProperty ;
         rdfs:domain       skos:Collection ;
         rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
@@ -1116,6 +1111,11 @@ skos:member  a            rdf:Property , owl:ObjectProperty ;
                             owl:unionOf  ( skos:Concept skos:Collection )
                           ] ;
         skos:definition   "Relates a collection to one of its members."@en .
+
+<http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98>
+        protCore:evidence  obo:ECO_0000269 ;
+        protCore:manual    true ;
+        protCore:source    protCit:21336257 .
 
 bp:Modulation  a          owl:Class ;
         rdfs:comment      "Definition: A control interaction in which a physical entity modulates a catalysis interaction. \n\nRationale: Biologically, most modulation interactions describe an interaction in which a small molecule alters the ability of an enzyme to catalyze a specific reaction. Instances of this class describe a pairing between a modulating entity and a catalysis interaction.\n\nUsage:  A typical modulation instance has a small molecule as the controller entity and a catalysis instance as the controlled entity. A separate modulation instance should be created for each different catalysis instance that a physical entity may modulate, and for each different physical entity that may modulate a catalysis instance.\nExamples: Allosteric activation and competitive inhibition of an enzyme's ability to catalyze a specific reaction." ;
@@ -1234,11 +1234,11 @@ bp:Stoichiometry  a       owl:Class ;
         rdfs:subClassOf   bp:UtilityClass ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:physicalEntity
+                            owl:onProperty   bp:stoichiometricCoefficient
                           ] ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:stoichiometricCoefficient
+                            owl:onProperty   bp:physicalEntity
                           ] ;
         owl:disjointWith  bp:Provenance , bp:SequenceLocation , bp:ControlledVocabulary , bp:EntityFeature , bp:Score , bp:BioSource , bp:Evidence , bp:ChemicalStructure , bp:PathwayStep , bp:Xref , bp:DeltaG , bp:KPrime , bp:ExperimentalForm , bp:EntityReference .
 
@@ -1290,19 +1290,19 @@ bka:PHOPT  a                 owl:DatatypeProperty ;
         bk:isOndexPreferred  true ;
         bk:ondexRange        "java.lang.Double" .
 
-bkds:PHYTOZOME-POPLAR
-        a                    owl:NamedIndividual , bk:DataSource ;
-        rdfs:label           "Phytozome Poplar DB"@en ;
-        dcterms:description  "Poplar specific data on Phytozome which is a joint project of the Department of Energy's Joint Genome Institute and the Center for Integrative Genomics to facilitate comparative genomic studies amongst green plants. - http://www.phytozome.net"@en ;
-        dcterms:identifier   "PHYTOZOME-POPLAR" ;
-        bk:isOndexPreferred  true .
-
 skos:related  a             rdf:Property , owl:SymmetricProperty , owl:ObjectProperty ;
         rdfs:comment        "skos:related is disjoint with skos:broaderTransitive"@en ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
         rdfs:label          "has related"@en ;
         rdfs:subPropertyOf  skos:semanticRelation ;
         skos:definition     "Relates a concept to a concept with which there is an associative semantic relationship."@en .
+
+bkds:PHYTOZOME-POPLAR
+        a                    owl:NamedIndividual , bk:DataSource ;
+        rdfs:label           "Phytozome Poplar DB"@en ;
+        dcterms:description  "Poplar specific data on Phytozome which is a joint project of the Department of Energy's Joint Genome Institute and the Center for Integrative Genomics to facilitate comparative genomic studies amongst green plants. - http://www.phytozome.net"@en ;
+        dcterms:identifier   "PHYTOZOME-POPLAR" ;
+        bk:isOndexPreferred  true .
 
 bkr:19690332  a             bk:Publication ;
         dc:identifier       bkr:19690332_acc ;
@@ -2675,14 +2675,14 @@ bk:occ_in  a                owl:ObjectProperty ;
         dcterms:identifier  "occ_in" ;
         owl:inverseOf       bk:has_occurrence_of .
 
-<http://www.wikipathways.org/id42>
-        a             bp:Complex ;
-        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
-
 bp:value  a           owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "The value of the score. This can be a numerical or categorical value." ;
         rdfs:domain   bp:Score ;
         rdfs:range    xsd:string .
+
+<http://www.wikipathways.org/id42>
+        a             bp:Complex ;
+        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
 
 bk:is_transcribed_from
         a                   owl:ObjectProperty ;
@@ -3164,14 +3164,14 @@ bk:Protein  a                owl:Class ;
         dcterms:identifier   "Protein" ;
         bk:isOndexPreferred  true .
 
+bk:derivable_to  a          owl:ObjectProperty ;
+        rdfs:subPropertyOf  bk:conceptsRelation .
+
 skos:historyNote  a         rdf:Property , owl:AnnotationProperty ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
         rdfs:label          "history note"@en ;
         rdfs:subPropertyOf  skos:note ;
         skos:definition     "A note about the past state/use/meaning of a concept."@en .
-
-bk:derivable_to  a          owl:ObjectProperty ;
-        rdfs:subPropertyOf  bk:conceptsRelation .
 
 bp:RnaRegionReference
         a                 owl:Class ;
@@ -4664,12 +4664,6 @@ bk:enc  a                    owl:AsymmetricProperty , owl:ObjectProperty ;
         dcterms:identifier   "enc" ;
         owl:inverseOf        bk:is_encoded_by .
 
-skos:note  a              rdf:Property , owl:AnnotationProperty ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "note"@en ;
-        skos:definition   "A general note, for any purpose."@en ;
-        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
-
 bk:GeneOntologyTerms  a      owl:Class ;
         rdfs:label           "GeneOntologyTerms"@en ;
         rdfs:subClassOf      bk:OntologyTerms ;
@@ -4684,6 +4678,12 @@ bka:Chemical  a              owl:DatatypeProperty ;
         dcterms:identifier   "Chemical" ;
         bk:isOndexPreferred  true ;
         bk:ondexRange        "java.lang.String" .
+
+skos:note  a              rdf:Property , owl:AnnotationProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "note"@en ;
+        skos:definition   "A general note, for any purpose."@en ;
+        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
 
 bk:physical_IB_relation
         a                   owl:ObjectProperty ;
@@ -5457,14 +5457,6 @@ bp:GeneticInteraction
         a                 owl:Class ;
         rdfs:comment      "Definition : Genetic interactions between genes occur when two genetic perturbations (e.g. mutations) have a combined phenotypic effect not caused by either perturbation alone. A gene participant in a genetic interaction represents the gene that is perturbed. Genetic interactions are not physical interactions but logical (AND) relationships. Their physical manifestations can be complex and span an arbitarily long duration. \n\nRationale: Currently,  BioPAX provides a simple definition that can capture most genetic interactions described in the literature. In the future, if required, the definition can be extended to capture other logical relationships and different, participant specific phenotypes. \n\nExample: A synthetic lethal interaction occurs when cell growth is possible without either gene A OR B, but not without both gene A AND B. If you knock out A and B together, the cell will die." ;
         rdfs:subClassOf   bp:Interaction ;
-        rdfs:subClassOf   [ a                   owl:Restriction ;
-                            owl:maxCardinality  1 ;
-                            owl:onProperty      bp:interactionType
-                          ] ;
-        rdfs:subClassOf   [ a                   owl:Restriction ;
-                            owl:minCardinality  2 ;
-                            owl:onProperty      bp:participant
-                          ] ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
                             owl:onProperty   bp:phenotype
@@ -5472,6 +5464,14 @@ bp:GeneticInteraction
         rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:Gene ;
                             owl:onProperty     bp:participant
+                          ] ;
+        rdfs:subClassOf   [ a                   owl:Restriction ;
+                            owl:maxCardinality  1 ;
+                            owl:onProperty      bp:interactionType
+                          ] ;
+        rdfs:subClassOf   [ a                   owl:Restriction ;
+                            owl:minCardinality  2 ;
+                            owl:onProperty      bp:participant
                           ] ;
         owl:disjointWith  bp:MolecularInteraction , bp:TemplateReaction , bp:Control , bp:Conversion .
 
@@ -6455,13 +6455,6 @@ bkds:CSD  a                  owl:NamedIndividual , bk:DataSource ;
         rdf:subject           prot:P50616 ;
         protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-1E1BC0E4A82C16790DA4CD58B3222303> .
 
-<http://purl.uniprot.org/uniprot/#_kb.P50616_up.annotation_431399D776C048CA>
-        a                     rdf:Statement ;
-        rdf:object            <http://purl.uniprot.org/uniprot/P50616#SIP9556183BBA587270> ;
-        rdf:predicate         protCore:annotation ;
-        rdf:subject           prot:P50616 ;
-        protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98> .
-
 skos:narrowerTransitive
         a                   rdf:Property , owl:TransitiveProperty , owl:ObjectProperty ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
@@ -6470,6 +6463,13 @@ skos:narrowerTransitive
         owl:inverseOf       skos:broaderTransitive ;
         skos:definition     "skos:narrowerTransitive is a transitive superproperty of skos:narrower." ;
         skos:scopeNote      "By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en .
+
+<http://purl.uniprot.org/uniprot/#_kb.P50616_up.annotation_431399D776C048CA>
+        a                     rdf:Statement ;
+        rdf:object            <http://purl.uniprot.org/uniprot/P50616#SIP9556183BBA587270> ;
+        rdf:predicate         protCore:annotation ;
+        rdf:subject           prot:P50616 ;
+        protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98> .
 
 <http://purl.uniprot.org/uniprot/P50616#SIP10D8DB9122342377>
         a               protCore:Helix_Annotation ;
@@ -7248,16 +7248,17 @@ bk:MatingLocusSubFeature
         dcterms:identifier   "MatingLocusSubFeature" ;
         bk:isOndexPreferred  true .
 
-skos:broadMatch  a          rdf:Property , owl:ObjectProperty ;
-        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label          "has broader match"@en ;
-        rdfs:subPropertyOf  skos:mappingRelation , skos:broader ;
-        owl:inverseOf       skos:narrowMatch ;
-        skos:definition     "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
-
 bp:SmallMolecule  a       owl:Class ;
         rdfs:comment      "Definition: A pool of molecules that are neither complexes nor are genetically encoded.\n\nRationale: Identity of small molecules are based on structure, rather than sequence as in the case of DNA, RNA or Protein. A small molecule reference is a grouping of several small molecule entities  that have the same chemical structure.  \n\nUsage : Smalle Molecules can have a cellular location and binding features. They can't have modification features as covalent modifications of small molecules are not considered as state changes but treated as different molecules.\nSome non-genomic macromolecules, such as large complex carbohydrates are currently covered by small molecules despite they lack a static structure. Better coverage for such molecules require representation of generic stoichiometry and polymerization, currently planned for BioPAX level 4.\n\nExamples: glucose, penicillin, phosphatidylinositol" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:SmallMoleculeReference ;
+                            owl:onProperty     bp:entityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:BindingFeature ;
+                            owl:onProperty     bp:feature
+                          ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:SmallMolecule ;
                             owl:onProperty     bp:memberPhysicalEntity
@@ -7266,15 +7267,14 @@ bp:SmallMolecule  a       owl:Class ;
                             owl:allValuesFrom  bp:BindingFeature ;
                             owl:onProperty     bp:notFeature
                           ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:BindingFeature ;
-                            owl:onProperty     bp:feature
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:SmallMoleculeReference ;
-                            owl:onProperty     bp:entityReference
-                          ] ;
         owl:disjointWith  bp:Complex , bp:RnaRegion , bp:EntityReference , bp:Dna , bp:DnaRegion , bp:Protein , bp:Rna .
+
+skos:broadMatch  a          rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "has broader match"@en ;
+        rdfs:subPropertyOf  skos:mappingRelation , skos:broader ;
+        owl:inverseOf       skos:narrowMatch ;
+        skos:definition     "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
 
 bk:HierarchyNode  a          owl:Class ;
         rdfs:label           "Hierarchy Node"@en ;
@@ -8588,6 +8588,12 @@ bk:pos_reg  a                owl:ObjectProperty ;
         faldo:position   218 ;
         faldo:reference  <http://purl.uniprot.org/isoforms/P50616-1> .
 
+bkds:TIGR  a                 owl:NamedIndividual , bk:DataSource ;
+        rdfs:label           "The Institute for Genomic Research"@en ;
+        dcterms:description  "The Institute for Genomic Research (TIGR) was a non-profit genomics research institute founded in 1992 by Craig Venter in Rockville, Maryland, United States. It is now a part of the J. Craig Venter Institute. - http://www.tigr.org"@en ;
+        dcterms:identifier   "TIGR" ;
+        bk:isOndexPreferred  true .
+
 bkr:citation_TOB1_18669648
         a              bk:Relation ;
         bka:Score      0.95 ;
@@ -8595,12 +8601,6 @@ bkr:citation_TOB1_18669648
         bk:relFrom     bkr:TOB1 ;
         bk:relTo       bkr:18669648 ;
         bk:relTypeRef  bk:published_in .
-
-bkds:TIGR  a                 owl:NamedIndividual , bk:DataSource ;
-        rdfs:label           "The Institute for Genomic Research"@en ;
-        dcterms:description  "The Institute for Genomic Research (TIGR) was a non-profit genomics research institute founded in 1992 by Craig Venter in Rockville, Maryland, United States. It is now a part of the J. Craig Venter Institute. - http://www.tigr.org"@en ;
-        dcterms:identifier   "TIGR" ;
-        bk:isOndexPreferred  true .
 
 bk:annotates  a             owl:ObjectProperty ;
         rdfs:subPropertyOf  bk:conceptsRelation .

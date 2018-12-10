@@ -10,9 +10,10 @@ start_dir=$(pwd)
 cd $(dirname "$0")
 my_dir=$(pwd)
 
+echo -e "\n\n==== Cleaning out dir\n"
 out_dir="./bkout"
 mkdir -p "$out_dir"
-rm -f "$out_dir/*"
+rm -Rf "$out_dir"/*
 
 
 tdb="/tmp/bk_convert_tdb"
