@@ -488,6 +488,13 @@ obo:GO_0005575_acc  a       bk:Accession ;
         dcterms:identifier  "GO_0005575" ;
         bk:dataSource       bkds:GO .
 
+bka:Matrix  a                owl:DatatypeProperty ;
+        rdfs:label           "Matrix"@en ;
+        rdfs:subPropertyOf   bk:attribute ;
+        dcterms:identifier   "Matrix" ;
+        bk:isOndexPreferred  true ;
+        bk:ondexRange        "java.lang.Object" .
+
 bk:involves  a              owl:ObjectProperty ;
         rdfs:subPropertyOf  bk:conceptsRelation .
 
@@ -498,13 +505,6 @@ bk:is_a  a                   owl:ReflexiveProperty , owl:TransitiveProperty , ow
         dcterms:identifier   "is_a" ;
         bk:isOndexPreferred  true ;
         owl:inverseOf        bk:is_a .
-
-bka:Matrix  a                owl:DatatypeProperty ;
-        rdfs:label           "Matrix"@en ;
-        rdfs:subPropertyOf   bk:attribute ;
-        dcterms:identifier   "Matrix" ;
-        bk:isOndexPreferred  true ;
-        bk:ondexRange        "java.lang.Object" .
 
 bkds:WIKI  a                 owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "Wikipedia"@en ;
@@ -531,11 +531,11 @@ bp:ChemicalStructure  a   owl:Class ;
         rdfs:subClassOf   bp:UtilityClass ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:structureData
+                            owl:onProperty   bp:structureFormat
                           ] ;
         rdfs:subClassOf   [ a                owl:Restriction ;
                             owl:cardinality  1 ;
-                            owl:onProperty   bp:structureFormat
+                            owl:onProperty   bp:structureData
                           ] ;
         owl:disjointWith  bp:Xref , bp:EntityFeature , bp:EntityReference , bp:Provenance , bp:KPrime , bp:ControlledVocabulary , bp:ExperimentalForm , bp:Stoichiometry , bp:Evidence , bp:BioSource , bp:DeltaG , bp:PathwayStep , bp:SequenceLocation , bp:Score .
 
@@ -654,16 +654,16 @@ bp:CellularLocationVocabulary
         rdfs:subClassOf   bp:ControlledVocabulary ;
         owl:disjointWith  bp:RelationshipTypeVocabulary , bp:CellVocabulary , bp:EvidenceCodeVocabulary , bp:TissueVocabulary , bp:PhenotypeVocabulary , bp:SequenceRegionVocabulary , bp:EntityReferenceTypeVocabulary , bp:InteractionVocabulary , bp:ExperimentalFormVocabulary , bp:SequenceModificationVocabulary .
 
-bk:RelationElement  a        owl:Class ;
-        rdfs:label           "Relation Element"@en ;
-        rdfs:seeAlso         bk:Relation , bk:Concept ;
-        dcterms:description  "A bk:Relation, or the corresponding BioKNet triple, is composed mainly of two bk:Concept instances and a relation type. The bk:RelationElement is a convenience common container for such components."@en .
-
 bkr:SMAD4  a                bk:Protein ;
         dc:identifier       bkr:SMAD4_acc ;
         bk:evidence         bkev:IMPD ;
         bk:participates_in  <http://www.wikipathways.org/id1> ;
         bk:prefName         "SMAD4"^^<xsd:string> .
+
+bk:RelationElement  a        owl:Class ;
+        rdfs:label           "Relation Element"@en ;
+        rdfs:seeAlso         bk:Relation , bk:Concept ;
+        dcterms:description  "A bk:Relation, or the corresponding BioKNet triple, is composed mainly of two bk:Concept instances and a relation type. The bk:RelationElement is a convenience common container for such components."@en .
 
 bp:templateDirection  a  owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "The direction of the template reaction on the template." ;
@@ -1103,6 +1103,11 @@ bk:has_attributive_relation_with
         dcterms:identifier   "has_attributive_relation_with" ;
         bk:isOndexPreferred  true .
 
+<http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98>
+        protCore:evidence  obo:ECO_0000269 ;
+        protCore:manual    true ;
+        protCore:source    protCit:21336257 .
+
 skos:member  a            rdf:Property , owl:ObjectProperty ;
         rdfs:domain       skos:Collection ;
         rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
@@ -1111,11 +1116,6 @@ skos:member  a            rdf:Property , owl:ObjectProperty ;
                             owl:unionOf  ( skos:Concept skos:Collection )
                           ] ;
         skos:definition   "Relates a collection to one of its members."@en .
-
-<http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98>
-        protCore:evidence  obo:ECO_0000269 ;
-        protCore:manual    true ;
-        protCore:source    protCit:21336257 .
 
 bp:Modulation  a          owl:Class ;
         rdfs:comment      "Definition: A control interaction in which a physical entity modulates a catalysis interaction. \n\nRationale: Biologically, most modulation interactions describe an interaction in which a small molecule alters the ability of an enzyme to catalyze a specific reaction. Instances of this class describe a pairing between a modulating entity and a catalysis interaction.\n\nUsage:  A typical modulation instance has a small molecule as the controller entity and a catalysis instance as the controlled entity. A separate modulation instance should be created for each different catalysis instance that a physical entity may modulate, and for each different physical entity that may modulate a catalysis instance.\nExamples: Allosteric activation and competitive inhibition of an enzyme's ability to catalyze a specific reaction." ;
@@ -1290,19 +1290,19 @@ bka:PHOPT  a                 owl:DatatypeProperty ;
         bk:isOndexPreferred  true ;
         bk:ondexRange        "java.lang.Double" .
 
-skos:related  a             rdf:Property , owl:SymmetricProperty , owl:ObjectProperty ;
-        rdfs:comment        "skos:related is disjoint with skos:broaderTransitive"@en ;
-        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label          "has related"@en ;
-        rdfs:subPropertyOf  skos:semanticRelation ;
-        skos:definition     "Relates a concept to a concept with which there is an associative semantic relationship."@en .
-
 bkds:PHYTOZOME-POPLAR
         a                    owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "Phytozome Poplar DB"@en ;
         dcterms:description  "Poplar specific data on Phytozome which is a joint project of the Department of Energy's Joint Genome Institute and the Center for Integrative Genomics to facilitate comparative genomic studies amongst green plants. - http://www.phytozome.net"@en ;
         dcterms:identifier   "PHYTOZOME-POPLAR" ;
         bk:isOndexPreferred  true .
+
+skos:related  a             rdf:Property , owl:SymmetricProperty , owl:ObjectProperty ;
+        rdfs:comment        "skos:related is disjoint with skos:broaderTransitive"@en ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "has related"@en ;
+        rdfs:subPropertyOf  skos:semanticRelation ;
+        skos:definition     "Relates a concept to a concept with which there is an associative semantic relationship."@en .
 
 bkr:19690332  a             bk:Publication ;
         dc:identifier       bkr:19690332_acc ;
@@ -1595,15 +1595,15 @@ bk:expressed_by  a              owl:ObjectProperty ;
         bk:isOndexPreferred     true ;
         owl:equivalentProperty  bk:ex_by .
 
-<http://purl.uniprot.org/uniprot/P50616#SIP48E53CC1BE585594>
-        a               protCore:Compositional_Bias_Annotation ;
-        rdfs:comment    "Poly-Gln" ;
-        protCore:range  <http://purl.uniprot.org/range/22576479320749614tt237tt245> .
-
 bp:notFeature  a      owl:ObjectProperty ;
         rdfs:comment  "Sequence features where the owner physical entity has a feature. If not specified, other potential features are not known." ;
         rdfs:domain   bp:PhysicalEntity ;
         rdfs:range    bp:EntityFeature .
+
+<http://purl.uniprot.org/uniprot/P50616#SIP48E53CC1BE585594>
+        a               protCore:Compositional_Bias_Annotation ;
+        rdfs:comment    "Poly-Gln" ;
+        protCore:range  <http://purl.uniprot.org/range/22576479320749614tt237tt245> .
 
 <http://purl.uniprot.org/uniprot/#_kb.P50616_up.classifiedWith_obo.GO_0030514>
         a                     rdf:Statement ;
@@ -1994,6 +1994,7 @@ bk:MolecularFunction  a      owl:Class ;
 
 bkr:degex_smad1_inhibitor
         a            bk:Annotation ;
+        bk:evidence  bkev:IMPD ;
         bk:prefName  "SMAD1 Inhibitor" .
 
 bkds:AFFYMETRIX  a           owl:NamedIndividual , bk:DataSource ;
@@ -2675,14 +2676,14 @@ bk:occ_in  a                owl:ObjectProperty ;
         dcterms:identifier  "occ_in" ;
         owl:inverseOf       bk:has_occurrence_of .
 
+<http://www.wikipathways.org/id42>
+        a             bp:Complex ;
+        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
+
 bp:value  a           owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "The value of the score. This can be a numerical or categorical value." ;
         rdfs:domain   bp:Score ;
         rdfs:range    xsd:string .
-
-<http://www.wikipathways.org/id42>
-        a             bp:Complex ;
-        bp:component  <http://www.wikipathways.org/e3e90> , <http://www.wikipathways.org/faf94> , <http://www.wikipathways.org/d9194> .
 
 bk:is_transcribed_from
         a                   owl:ObjectProperty ;
@@ -3086,16 +3087,16 @@ bka:ChemicalStructure
         bk:isOndexPreferred  true ;
         bk:ondexRange        "net.sourceforge.ondex.tools.data.ChemicalStructure" .
 
+bp:sequencePosition  a  owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:comment  "The integer listed gives the position. The first base or amino acid is position 1. In combination with the numeric value, the property 'POSITION-STATUS' allows to express fuzzy positions, e.g. 'less than 4'." ;
+        rdfs:domain   bp:SequenceSite ;
+        rdfs:range    xsd:int .
+
 bkds:SGD  a                  owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "Saccharomyces Genome Database"@en ;
         dcterms:description  "SGD is a scientific database of the molecular biology and genetics of the yeast Saccharomyces cerevisiae, which is commonly known as baker's or budding yeast. - http://www.yeastgenome.org/"@en ;
         dcterms:identifier   "SGD" ;
         bk:isOndexPreferred  true .
-
-bp:sequencePosition  a  owl:FunctionalProperty , owl:DatatypeProperty ;
-        rdfs:comment  "The integer listed gives the position. The first base or amino acid is position 1. In combination with the numeric value, the property 'POSITION-STATUS' allows to express fuzzy positions, e.g. 'less than 4'." ;
-        rdfs:domain   bp:SequenceSite ;
-        rdfs:range    xsd:int .
 
 bkds:TRANSPRO  a             owl:NamedIndividual , bk:DataSource ;
         rdfs:label           "TRANSPro"@en ;
@@ -3409,12 +3410,12 @@ bp:Dna  a                 owl:Class ;
         rdfs:comment      "Definition: A physical entity consisting of a sequence of deoxyribonucleotide monophosphates; a deoxyribonucleic acid.\nUsage: DNA should be used for pools of individual DNA molecules. For describing subregions on those molecules use DNARegion.\nExamples: a chromosome, a plasmid. A specific example is chromosome 7 of Homo sapiens." ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:DnaReference ;
-                            owl:onProperty     bp:entityReference
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:Dna ;
                             owl:onProperty     bp:memberPhysicalEntity
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:DnaReference ;
+                            owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Protein , bp:SmallMolecule , bp:DnaRegion , bp:RnaRegion , bp:Complex , bp:Rna .
 
@@ -4664,6 +4665,12 @@ bk:enc  a                    owl:AsymmetricProperty , owl:ObjectProperty ;
         dcterms:identifier   "enc" ;
         owl:inverseOf        bk:is_encoded_by .
 
+skos:note  a              rdf:Property , owl:AnnotationProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "note"@en ;
+        skos:definition   "A general note, for any purpose."@en ;
+        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
+
 bk:GeneOntologyTerms  a      owl:Class ;
         rdfs:label           "GeneOntologyTerms"@en ;
         rdfs:subClassOf      bk:OntologyTerms ;
@@ -4678,12 +4685,6 @@ bka:Chemical  a              owl:DatatypeProperty ;
         dcterms:identifier   "Chemical" ;
         bk:isOndexPreferred  true ;
         bk:ondexRange        "java.lang.String" .
-
-skos:note  a              rdf:Property , owl:AnnotationProperty ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "note"@en ;
-        skos:definition   "A general note, for any purpose."@en ;
-        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
 
 bk:physical_IB_relation
         a                   owl:ObjectProperty ;
@@ -4995,12 +4996,12 @@ bp:DnaReference  a        owl:Class ;
         rdfs:comment      "Definition: A DNA reference is a grouping of several DNA entities that are common in sequence.  Members can differ in celular location, sequence features, SNPs, mutations and bound partners.\n\nComments : Note that this is not a reference gene. Genes are non-physical,stateless continuants. Their physical manifestations can span multiple DNA molecules, sometimes even across chromosomes due to regulatory regions. Similarly a gene is not necessarily made up of deoxyribonucleic acid and can be present in multiple copies ( which are different DNA regions)." ;
         rdfs:subClassOf   bp:EntityReference ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:DnaRegionReference ;
-                            owl:onProperty     bp:subRegion
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:DnaReference ;
                             owl:onProperty     bp:memberEntityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:DnaRegionReference ;
+                            owl:onProperty     bp:subRegion
                           ] ;
         owl:disjointWith  bp:RnaReference , bp:DnaRegionReference , bp:ProteinReference , bp:SmallMoleculeReference , bp:RnaRegionReference .
 
@@ -5378,6 +5379,7 @@ bkds:LIGANDBOX  a            owl:NamedIndividual , bk:DataSource ;
         bk:isOndexPreferred  true .
 
 bkr:degex_control  a  bk:Annotation ;
+        bk:evidence  bkev:IMPD ;
         bk:prefName  "Control" .
 
 bk:FeatureContainer  a       owl:Class ;
@@ -6175,6 +6177,14 @@ bk:NcRNAGene  a              owl:Class ;
         faldo:position   92 ;
         faldo:reference  <http://purl.uniprot.org/isoforms/P50616-1> .
 
+bk:has_feature  a            owl:AsymmetricProperty , owl:TransitiveProperty , owl:ObjectProperty ;
+        rdfs:label           "has_feature"@en ;
+        rdfs:subPropertyOf   bk:has_attributive_relation_with ;
+        dcterms:description  "Sequence->SequenceFeature"@en ;
+        dcterms:identifier   "has_feature" ;
+        bk:isOndexPreferred  true ;
+        owl:inverseOf        bk:is_feature_of .
+
 bk:has_similar_sequence
         a                       owl:ObjectProperty ;
         rdfs:label              "has_similar_sequence"@en ;
@@ -6184,14 +6194,6 @@ bk:has_similar_sequence
         bk:isOndexPreferred     true ;
         owl:equivalentProperty  bk:h_s_s ;
         owl:inverseOf           bk:has_similar_sequence .
-
-bk:has_feature  a            owl:AsymmetricProperty , owl:TransitiveProperty , owl:ObjectProperty ;
-        rdfs:label           "has_feature"@en ;
-        rdfs:subPropertyOf   bk:has_attributive_relation_with ;
-        dcterms:description  "Sequence->SequenceFeature"@en ;
-        dcterms:identifier   "has_feature" ;
-        bk:isOndexPreferred  true ;
-        owl:inverseOf        bk:is_feature_of .
 
 bka:2SYS  a                  owl:DatatypeProperty ;
         rdfs:label           "2Syn-mapping_score"@en ;
@@ -6415,12 +6417,12 @@ bp:RnaRegion  a           owl:Class ;
         rdfs:comment      "Definition: A region on a RNA molecule. \nUsage: RNARegion is not a pool of independent molecules but a subregion on these molecules. As such, every RNARegion has a defining RNA molecule.  \nExamples: CDS, 3' UTR, Hairpin" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:RnaRegion ;
-                            owl:onProperty     bp:memberPhysicalEntity
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:RnaRegionReference ;
                             owl:onProperty     bp:entityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:RnaRegion ;
+                            owl:onProperty     bp:memberPhysicalEntity
                           ] ;
         owl:disjointWith  bp:Protein , bp:DnaRegion , bp:SmallMolecule , bp:Complex , bp:Rna , bp:Dna .
 
@@ -6455,6 +6457,13 @@ bkds:CSD  a                  owl:NamedIndividual , bk:DataSource ;
         rdf:subject           prot:P50616 ;
         protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-1E1BC0E4A82C16790DA4CD58B3222303> .
 
+<http://purl.uniprot.org/uniprot/#_kb.P50616_up.annotation_431399D776C048CA>
+        a                     rdf:Statement ;
+        rdf:object            <http://purl.uniprot.org/uniprot/P50616#SIP9556183BBA587270> ;
+        rdf:predicate         protCore:annotation ;
+        rdf:subject           prot:P50616 ;
+        protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98> .
+
 skos:narrowerTransitive
         a                   rdf:Property , owl:TransitiveProperty , owl:ObjectProperty ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
@@ -6463,13 +6472,6 @@ skos:narrowerTransitive
         owl:inverseOf       skos:broaderTransitive ;
         skos:definition     "skos:narrowerTransitive is a transitive superproperty of skos:narrower." ;
         skos:scopeNote      "By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en .
-
-<http://purl.uniprot.org/uniprot/#_kb.P50616_up.annotation_431399D776C048CA>
-        a                     rdf:Statement ;
-        rdf:object            <http://purl.uniprot.org/uniprot/P50616#SIP9556183BBA587270> ;
-        rdf:predicate         protCore:annotation ;
-        rdf:subject           prot:P50616 ;
-        protCore:attribution  <http://purl.uniprot.org/uniprot/P50616#attribution-25D5FD76B13B4EDE790B9E05F7420C98> .
 
 <http://purl.uniprot.org/uniprot/P50616#SIP10D8DB9122342377>
         a               protCore:Helix_Annotation ;
@@ -7252,8 +7254,8 @@ bp:SmallMolecule  a       owl:Class ;
         rdfs:comment      "Definition: A pool of molecules that are neither complexes nor are genetically encoded.\n\nRationale: Identity of small molecules are based on structure, rather than sequence as in the case of DNA, RNA or Protein. A small molecule reference is a grouping of several small molecule entities  that have the same chemical structure.  \n\nUsage : Smalle Molecules can have a cellular location and binding features. They can't have modification features as covalent modifications of small molecules are not considered as state changes but treated as different molecules.\nSome non-genomic macromolecules, such as large complex carbohydrates are currently covered by small molecules despite they lack a static structure. Better coverage for such molecules require representation of generic stoichiometry and polymerization, currently planned for BioPAX level 4.\n\nExamples: glucose, penicillin, phosphatidylinositol" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:SmallMoleculeReference ;
-                            owl:onProperty     bp:entityReference
+                            owl:allValuesFrom  bp:BindingFeature ;
+                            owl:onProperty     bp:notFeature
                           ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:BindingFeature ;
@@ -7264,8 +7266,8 @@ bp:SmallMolecule  a       owl:Class ;
                             owl:onProperty     bp:memberPhysicalEntity
                           ] ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:BindingFeature ;
-                            owl:onProperty     bp:notFeature
+                            owl:allValuesFrom  bp:SmallMoleculeReference ;
+                            owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Complex , bp:RnaRegion , bp:EntityReference , bp:Dna , bp:DnaRegion , bp:Protein , bp:Rna .
 
@@ -7633,6 +7635,7 @@ bk:MRNA  a                   owl:Class ;
 
 bkr:degex_smad6_blocker
         a            bk:Annotation ;
+        bk:evidence  bkev:IMPD ;
         bk:prefName  "SMAD6 Blocker" .
 
 bk:interacts_genetically_with
@@ -7689,12 +7692,12 @@ bp:DnaRegion  a           owl:Class ;
         rdfs:comment      "Definition: A region on a DNA molecule. \nUsage:  DNARegion is not a pool of independent molecules but a subregion on these molecules. As such, every DNARegion has a defining DNA molecule.  \nExamples: Protein encoding region, promoter" ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:DnaRegionReference ;
-                            owl:onProperty     bp:entityReference
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:DnaRegion ;
                             owl:onProperty     bp:memberPhysicalEntity
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:DnaRegionReference ;
+                            owl:onProperty     bp:entityReference
                           ] ;
         owl:disjointWith  bp:Dna , bp:Protein , bp:SmallMolecule , bp:Complex , bp:RnaRegion , bp:Rna .
 
@@ -8358,19 +8361,19 @@ bk:Metabolite  a             owl:Class ;
         dcterms:identifier   "Metabolite" ;
         bk:isOndexPreferred  true .
 
-bk:ptm_by  a                 owl:ObjectProperty ;
-        rdfs:label           "post-translationally_modified_by"@en ;
-        rdfs:subPropertyOf   bk:phys_intbio ;
-        dcterms:identifier   "ptm_by" ;
-        bk:isOndexPreferred  true ;
-        owl:inverseOf        bk:post-translationally_modifies .
-
 bk:KO   a                    owl:Class ;
         rdfs:label           "Kegg Ortholog Group"@en ;
         rdfs:subClassOf      bk:Group ;
         dcterms:description  "Kegg Ortholog Group of sequence similarity"@en ;
         dcterms:identifier   "KO" ;
         bk:isOndexPreferred  true .
+
+bk:ptm_by  a                 owl:ObjectProperty ;
+        rdfs:label           "post-translationally_modified_by"@en ;
+        rdfs:subPropertyOf   bk:phys_intbio ;
+        dcterms:identifier   "ptm_by" ;
+        bk:isOndexPreferred  true ;
+        owl:inverseOf        bk:post-translationally_modifies .
 
 bka:ecotype  a               owl:DatatypeProperty ;
         rdfs:label           "ecotype"@en ;
@@ -8501,12 +8504,12 @@ bp:Rna  a                 owl:Class ;
         rdfs:comment      "Definition: A physical entity consisting of a sequence of ribonucleotide monophosphates; a ribonucleic acid.\nUsage: RNA should be used for pools of individual RNA molecules. For describing subregions on those molecules use RNARegion.\nExamples: messengerRNA, microRNA, ribosomalRNA. A specific example is the let-7 microRNA." ;
         rdfs:subClassOf   bp:PhysicalEntity ;
         rdfs:subClassOf   [ a                  owl:Restriction ;
-                            owl:allValuesFrom  bp:Rna ;
-                            owl:onProperty     bp:memberPhysicalEntity
-                          ] ;
-        rdfs:subClassOf   [ a                  owl:Restriction ;
                             owl:allValuesFrom  bp:RnaReference ;
                             owl:onProperty     bp:entityReference
+                          ] ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  bp:Rna ;
+                            owl:onProperty     bp:memberPhysicalEntity
                           ] ;
         owl:disjointWith  bp:Protein , bp:RnaRegion , bp:Complex , bp:DnaRegion , bp:Dna , bp:SmallMolecule .
 

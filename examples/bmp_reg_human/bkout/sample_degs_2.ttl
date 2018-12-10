@@ -15,7 +15,8 @@ bkr:degex_patient_1  rdf:type  bk:ExperimentalSample ;
 
 bkr:degex_smad1_inhibitor
         rdf:type     bk:Annotation ;
-        bk:prefName  "SMAD1 Inhibitor" .
+        bk:prefName  "SMAD1 Inhibitor" ;
+        bk:evidence  bkev:IMPD .
 
 bkr:degex_patient_2  rdf:type  bk:ExperimentalSample ;
         bk:prefName         "Patient 2" ;
@@ -25,7 +26,8 @@ bkr:degex_patient_2  rdf:type  bk:ExperimentalSample ;
 
 bkr:degex_smad6_blocker
         rdf:type     bk:Annotation ;
-        bk:prefName  "SMAD6 Blocker" .
+        bk:prefName  "SMAD6 Blocker" ;
+        bk:evidence  bkev:IMPD .
 
 bkr:degex_patient_3  rdf:type  bk:ExperimentalSample ;
         bk:prefName         "Patient 3" ;
@@ -34,4 +36,5 @@ bkr:degex_patient_3  rdf:type  bk:ExperimentalSample ;
         bk:evidence         bkev:IMPD .
 
 bkr:degex_control  rdf:type  bk:Annotation ;
-        bk:prefName  "Control" .
+        bk:prefName  "Control" ;
+        bk:evidence  bkev:IMPD .

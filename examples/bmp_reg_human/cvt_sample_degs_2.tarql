@@ -18,7 +18,8 @@ CONSTRUCT
 
   ?treatmentIri
     a bk:Annotation;
-    bk:prefName ?Treatment
+    bk:prefName ?Treatment;
+    bk:evidence bkev:IMPD
   .
 }
 WHERE {
