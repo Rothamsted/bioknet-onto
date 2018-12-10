@@ -15,7 +15,7 @@ mkdir -p "$out_dir"
 rm -f "$out_dir/*"
 
 
-echo "Converting CSVs from DEG Example"
+echo -e "\n\n==== Converting CSVs from DEG Example\n"
 tarql_cmd="$TARQL_HOME/bin/tarql --tabs --quotechar '\"'"
 for i in $(seq 2)
 do
@@ -26,46 +26,20 @@ do
     >"$out_dir/sample_degs_$i.ttl"
 done
 
-echo "Moving BK-Onto files"
+
+echo -e "\n\n==== Moving BK-Onto files to out dir\n"
 [ -e input_data/bkonto/*.ttl ] && cp -f input_data/bkonto/*.ttl "$out_dir"
 
 tdb="/tmp/bk_convert_tdb"
-echo "Loading data into temp TDB '$tdb'"
+
+
+echo -e "\n\n==== Loading data into temp TDB '$tdb'\n"
 rm -Rf "$tdb"
 "$JENA_HOME/bin/tdbloader2" --loc="$tdb" \
 	../../bioknet.owl ../../bk_ondex.owl input_data/*.{rdf,owl,ttl} input_data/bkonto/*.ttl
 
 
-echo "Running CONSTRUCTs"
-
-sparql="$JENA_HOME/bin/tdbquery"
-for query in ./cvt_*.sparql
-do
-  echo "$query"
-  qbase=$(basename "$query" '.sparql')
-  "$sparql" --loc "$tdb" --query "$query" >"$out_dir/${qbase}.ttl"
-done
-
-
-echo "Putting output files together"
-cd "$out_dir"
-cat *.ttl >all.ttl
-
-cd "$my_dir/../.."
-onto_dir="$(pwd)"
-cd "$my_dir"
-
-
-echo "Loading all, together with our own ontologies"
-"$JENA_HOME/bin/tdbloader" --loc="$tdb" \
-  "$out_dir/all.ttl" \
-  "$onto_dir/bioknet.owl" \
-  "$onto_dir/bk_ondex.owl" \
-  "$onto_dir/bk_mappings.ttl"
-
-
-echo "Adding external ontologies"
-
+echo -e "\n\n==== Adding/TDB-Loading external ontologies\n"
 ext_dir="$out_dir/ext"
 mkdir -p "$ext_dir"
 for url in \
@@ -77,4 +51,23 @@ do
 done
 "$JENA_HOME/bin/tdbloader" --loc="$tdb" $ext_dir/*
 
-echo "The End"
+
+echo -e "\n\n==== Running CONSTRUCTs\n"
+sparql="$JENA_HOME/bin/tdbquery"
+for query in ./cvt_*.sparql
+do
+  echo "$query"
+  qbase=$(basename "$query" '.sparql')
+  "$sparql" --loc "$tdb" --query "$query" >"$out_dir/${qbase}.ttl"
+done
+
+
+echo -e "\n\n==== Loading CONSTRUCT results into temp TDB\n"
+"$JENA_HOME/bin/tdbloader" --loc="$tdb" "$out_dir"/cvt_*.ttl
+
+
+echo -e "\n\n==== Dumping all output onto all.ttl\n"
+"$sparql" --loc "$tdb" --query "./dump.sparql" >"$out_dir/all.ttl"
+
+
+echo -e "\n\n==== The End\n"
