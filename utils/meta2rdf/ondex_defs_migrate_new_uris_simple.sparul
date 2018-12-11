@@ -1,0 +1,49 @@
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# Takes names coming from ONDEX and adds new, more suitable names, marking the old entities as
+# preferred in the ONDEX platform. This allows us to rename ONDEX data coming from old names.
+#
+# This query is second part that migrates all statements involving old properties
+# It must be run after ondex_defs_new_uris.sparql 
+
+# ?src is the property/class to be replaced with ?dst in all its occurrences
+#
+
+# Uncomment this if you want to delete them, rather than have redundancy
+#DELETE {
+#  ?src ?p ?o.
+#  ?s ?ip ?src
+#  ?src dcterms:identifier ?id
+#}
+INSERT {
+  ?dst ?p ?o.
+  ?s ?ip ?dst.
+}
+WHERE 
+{
+  ?dst owl:equivalentClass|owl:equivalentProperty ?src.
+  
+  # One has bk:isOndexPreferred, the other hasn't (or has it as false)
+  ?dst bk:isOndexPreferred true.
+  OPTIONAL { ?src bk:isOndexPreferred ?srcOndexFlag }
+  FILTER ( !BOUND ( ?srcOndexFlag ) || !xsd:boolean ( ?srcOndexFlag ) )
+  
+  { 
+  	?src ?p ?o
+  	
+  	# Because we already have generated our new ID
+  	FILTER ( ?p != dcterms:identifier )
+  	
+  	# Because it's stating something relevant about old/new URIs
+		FILTER( ?p NOT IN ( owl:equivalentClass, owl:equivalentProperty ) )  	  	  	
+  } 
+ 	UNION { 
+  	?s ?ip ?src.
+  	
+  	# As above
+  	FILTER ( ?ip NOT IN ( owl:equivalentClass, owl:equivalentProperty ) ) 
+  }
+}

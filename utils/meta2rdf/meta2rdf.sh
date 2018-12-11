@@ -20,14 +20,24 @@ ntmpf=$(mktemp /tmp/meta2rdf_XXX.ttl)
 echo Getting raw RDF from XML
 java -jar "$SAX_JAR" -s:"$finput" -xsl:odx_metadata_2_rdf.xsl -o:"$otmpf"
 
-echo URI normalization
+
+echo -e "\n\n==== URI normalization 1/3\n"
 "$JENA_HOME/bin/update" --data="$otmpf" --update=ondex_defs_new_uris.sparul --dump | sponge "$ntmpf"
 
-# This goes at the end, cause there are multiple steps that can lead to this redundancy
-echo Redundant subproperty declarations
-"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_redundant_subprops.sparul --dump | sponge "$ntmpf"
 
-echo "Conversion to RDF/XML encoding"
+echo -e "\n\n==== URI normalization 2/3\n"
+"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_migrate_new_uris_complex.sparul --dump | sponge "$ntmpf"
+
+
+echo -e "\n\n==== URI normalization 3/3\n"
+"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_migrate_new_uris_simple.sparul --dump | sponge "$ntmpf"
+
+
+# This goes at the end, cause there are multiple steps that can lead to this redundancy
+#echo -e "\n\n==== Redundant subproperty declarations\n"
+#"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_redundant_subprops.sparul --dump | sponge "$ntmpf"
+
+echo -e "\n\n==== Conversion to RDF/XML encoding\n"
 $JENA_HOME/bin/riot --formatted='RDF/XML' namespaces.owl "$ntmpf" >"$fout"
 
-echo "The End"
+echo -e "\n\n==== The End\n"
