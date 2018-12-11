@@ -34,8 +34,8 @@ echo -e "\n\n==== URI normalization 3/3\n"
 
 
 # This goes at the end, cause there are multiple steps that can lead to this redundancy
-#echo -e "\n\n==== Redundant subproperty declarations\n"
-#"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_redundant_subprops.sparul --dump | sponge "$ntmpf"
+echo -e "\n\n==== Redundant subproperty declarations\n"
+"$JENA_HOME/bin/update" --data="$ntmpf" --update=ondex_defs_redundant_subprops.sparul --dump | sponge "$ntmpf"
 
 echo -e "\n\n==== Conversion to RDF/XML encoding\n"
 $JENA_HOME/bin/riot --formatted='RDF/XML' namespaces.owl "$ntmpf" >"$fout"
