@@ -6,8 +6,13 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 # Takes names coming from ONDEX and adds new, more suitable names, marking the old entities as
 # preferred in the ONDEX platform. This allows us to rename ONDEX data coming from old names.
 #
-# This query is a first part that migrates the bk:isOndexPreferred property only
-# Then, other definitions about the old properties are migrated by ondex_defs_migrate_new_uris.sparql 
+# - This query is a first part that migrates the bk:isOndexPreferred property only.
+# - ondex_defs_migrate_new_uris_complex.sparul replaces any occurrence in triples of those classes/properties
+#   having a new version (with ondexPreferred set), considering the case where both the two entities in a triple
+#   are old and pointing to a new one.
+# - ondex_defs_migrate_new_uris_simple.sparul does the same, but doesn't follow the possible new entities in all
+#   the triples (cause it's run after the former transformation).
+#
 
 DELETE {
   ?src bk:isOndexPreferred ?isOndexPreferred.

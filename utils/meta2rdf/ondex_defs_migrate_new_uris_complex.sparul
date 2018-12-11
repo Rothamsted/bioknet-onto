@@ -3,11 +3,8 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
-# Takes names coming from ONDEX and adds new, more suitable names, marking the old entities as
-# preferred in the ONDEX platform. This allows us to rename ONDEX data coming from old names.
+# See ondex_defs_new_uris.sparul for details.
 #
-# This query is second part that migrates all statements involving old properties
-# It must be run after ondex_defs_new_uris.sparql 
 
 # ?src is the property/class to be replaced with ?dst in all its occurrences
 #
