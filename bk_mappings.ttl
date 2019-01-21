@@ -49,31 +49,7 @@ bk:prefName rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf skos:prefLabel .
 
 
-###  http://www.ondex.org/bioknet/terms/relFrom
-bk:relFrom rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf rdf:subject .
 
-
-###  http://www.ondex.org/bioknet/terms/relTo
-bk:relTo rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf rdf:object .
-
-
-###  http://www.ondex.org/bioknet/terms/relTypeRef
-bk:relTypeRef rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf rdf:predicate .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
-rdf:object rdf:type owl:DatatypeProperty .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
-rdf:predicate rdf:type owl:DatatypeProperty .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
-rdf:subject rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -91,6 +67,33 @@ skos:prefLabel rdf:type owl:DatatypeProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.ondex.org/bioknet/terms/relFrom
+bk:relFrom rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf rdf:subject .
+
+
+###  http://www.ondex.org/bioknet/terms/relTo
+bk:relTo rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf rdf:object .
+
+
+###  http://www.ondex.org/bioknet/terms/relTypeRef
+bk:relTypeRef rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf rdf:predicate .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
+rdf:object rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
+rdf:predicate rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
+rdf:subject rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/elements/1.1/subject
 dc:subject rdf:type owl:ObjectProperty .
