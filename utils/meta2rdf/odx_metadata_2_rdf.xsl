@@ -191,7 +191,11 @@
 	</xsl:template>
 
 
-	<!-- Data Sources and Evidences -->
+	<!-- 
+		Data Sources and Evidences.
+		
+		TODO: units are still missing.  
+	-->
 	<xsl:template match = "odx:cvs/odx:cv|odx:evidences/odx:evidence">
 
 		<xsl:variable name="mode">
@@ -227,7 +231,7 @@
 
 
   <xsl:template match="*">
-		<xsl:message>Excluding <xsl:value-of select = "name(.)" /></xsl:message>
+		<xsl:message>Excluding <xsl:value-of select = "concat ( name(.), ' ', ./odx:id )" /></xsl:message>
 	</xsl:template>
 
 
