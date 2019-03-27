@@ -3,31 +3,45 @@
 
 ## Ontology Overview
 
-**BIO**logical **KN**owledge Network **O**ntology (BioKNO, pronounced "bio-know") is a lightweight ontology, aimed at representing biological-related knowledge networks. We use it to power the [KnetMiner](http://knetminer.rothamsted.ac.uk/) project.
+**BIO**logical **KN**owledge Network **O**ntology (BioKNO, pronounced "bio-know") is a lightweight ontology, aimed at 
+representing biological-related knowledge networks. We use it to power the 
+[KnetMiner](http://knetminer.rothamsted.ac.uk/) project.
 
 Further information on the ontology and where it fits in KnetMiner is available from our 
 [IB2018 article](https://www.degruyter.com/view/j/jib.ahead-of-print/jib-2018-0023/jib-2018-0023.xml).
 
-At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and attributed-attached reified relationships. 
+At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and 
+attributed-attached reified relationships. 
 
 In addition to that, entities such as structured accessions, data sources and evidence-tracking predicates are defined. 
 
-At a more specific level, [the core definitions](bioknet.owl) are extended with common biological entities, such as Protein, Gene, or the 'encodes' relation.
+At a more specific level, [the core definitions](bioknet.owl) are extended with common biological entities, such as 
+Protein, Gene, or the 'encodes' relation.
 
-Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., [bioschemas](http://bioschemas.org/)).
+Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to 
+common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., 
+[bioschemas](http://bioschemas.org/)).
 
-We use/are using/plan to use BioKNO in the KnetMiner project to perform various operations, ranging from data import/integration, to graph-based queries and building of APIs.
+We use/are using/plan to use BioKNO in the KnetMiner project to perform various operations, ranging from data 
+import/integration, to graph-based queries and building of APIs.
 
 ## Web View
-You can web-browse the ontology [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bioknet.html), and mappings to our [KnetMiner](http://knetminer.rothamsted.ac.uk/)/[Ondex](https://github.com/Rothamsted/ondex-knet-builder) metadata [here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bk_ondex.html). Many thanks to the developers of [LODE](http://www.essepuntato.it/lode), which we uses for rendering these pages.
+You can web-browse the ontology 
+[here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bioknet.html), and mappings to our 
+[KnetMiner](http://knetminer.rothamsted.ac.uk/)/[Ondex](https://github.com/Rothamsted/ondex-knet-builder) metadata 
+[here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bk_ondex.html). Many thanks to the 
+developers of [LODE](http://www.essepuntato.it/lode), which we uses for rendering these pages.
 
-**WARNING**: *sometimes these views might be outdated with respect to the last versions of the original ontology files that they are based on.*
+**WARNING**: *sometimes these views might be outdated with respect to the last versions of the original ontology files 
+that they are based on.*
 
 ## The basics
 
-The two main classes in BioKNO are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property `bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
+The two main classes in BioKNO are `bk:Concept` and `bk:Relation`. The latter is related to the RDF object property 
+`bk:relatedConcept`, which of main sub-property is `bk:conceptsRelation`. 
 
-Typically, the entities you want to talk about in a BioKNO knowledge network are indirect (i.e., transitive) instances of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:conceptsRelation`. 
+Typically, the entities you want to talk about in a BioKNO knowledge network are indirect (i.e., transitive) instances 
+of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:conceptsRelation`. 
 
 A first instance about a biological pathway, taken from our [WikiPathway example](examples/bmp_reg_human/bkout):
 
@@ -51,6 +65,7 @@ bkr:TOB1_acc  a             bk:Accession ;
         bk:dataSource       bkds:UNIPROTKB; # instance of bk:DataSource. We havea list of predefined data sources.
         bk:is_annotated_by obo:GO_0030014.
 ```
+
 
 As you can see, we have predefined entities like `bk:Path`, subclassing core entities like `bk:Concept`. Moreover, the 
 original link chains between pathways and proteins present in the BioPax data are simplified by means of the 
@@ -76,12 +91,17 @@ obo:GO_0030015  a  bk:GeneOntologyTerms;
         bk:prefName    "CCR4-NOT core complex" .
 ```
 
-As you can see, original URIs about external RDF data can be reused (in OWL-2, this is possible thanks to [punning](https://www.w3.org/2007/OWL/wiki/Punning)). Morever, relations like `bk:is_a`, `bk:part_of` are more informal than OWL/OBO relations, which might simplify the modelling. For instance, the fact that a CCR4-NOT core complex is part of a CCR4-NOT complex is a simple direct relation, where, in OWL terms must be an axiom like "part of some CCR-NOT complex.    
+As you can see, original URIs about external RDF data can be reused (in OWL-2, this is possible thanks to 
+[punning](https://www.w3.org/2007/OWL/wiki/Punning)). Morever, relations like `bk:is_a`, `bk:part_of` are more informal 
+than OWL/OBO relations, which might simplify the modelling. For instance, the fact that a CCR4-NOT core complex is part 
+of a CCR4-NOT complex is a simple direct relation, where, in OWL terms must be an axiom like "part of some CCR-NOT 
+complex.    
 
 
 ## Concept attributes
 
-Under the top-level `bk:attribute` property, BioKNO provides a number of OWL datatype properties, which can be attached to concepts and relations. For instance:
+Under the top-level `bk:attribute` property, BioKNO provides a number of OWL datatype properties, which can be attached 
+to concepts and relations. For instance:
 
 ```Turtle
 bkr:20068231  a             bk:Publication ;
@@ -93,12 +113,14 @@ bkr:20068231  a             bk:Publication ;
         bk:prefName         "20068231" .
 ```
 
+
 Attributes can have any suitable range and we made sensible choices for the ranges of our predefine attributes.  
 
 
 ## Reified relations
 
-Attributes can be associated to relations too. Since RDF structurally supports binary relations/statement only, attributed relations must be modelled through reification:
+Attributes can be associated to relations too. Since RDF structurally supports binary relations/statement only, 
+attributed relations must be modelled through reification:
 
 ```Turtle
 # For practical reasons, we always expect that the straight triple is asserted, with the reified version optionally added to it.
@@ -113,9 +135,13 @@ bkr:citation_TOB1_15489334
         bk:evidence    bkev:TM. Both attributes and object properties can be linked to a reified relation.
 ```
 
-As you can see, a reified relation is an instance of `bk:Relation ` and its main properties are a pointer to the relation
+
+As you can see, a reified relation is an instance of `bk:Relation ` and its main properties are a pointer to the 
+relation
 type (which is the same object property appearing in the direct relation, and typically a sub-property of 
 `bk:conceptsRelation`).
 
-We require that a reified relation is asserted by means of both its "straight", common RDF statement version and as an instance of `bk:Relation`. That ease certain use cases. For instance, if one has to search for the existence of a given relation, independently on the possible attributes it might have, it's easier to search the straight version, without having to deal with both types.
-
+We require that a reified relation is asserted by means of both its "straight", common RDF statement version and as an 
+instance of `bk:Relation`. That ease certain use cases. For instance, if one has to search for the existence of a given 
+relation, independently on the possible attributes it might have, it's easier to search the straight version, without 
+having to deal with both types.

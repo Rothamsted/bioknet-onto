@@ -22,8 +22,8 @@ bk:ExperimentalSample
         a                    owl:Class ;
         rdfs:label           "Experimental Sample"@en ;
         rdfs:subClassOf      bk:Concept ;
-        dcterms:description    "Anything that can be seen as a sample related to organism(s) and taken to perform an experiment (e.g. blood sample, cell culture, cohort of patients)"@en ;
-        dcterms:identifier     "ExperimentalSample" ;
+        dcterms:description  "Anything that can be seen as a sample related to organism(s) and taken to perform an experiment (e.g. blood sample, cell culture, cohort of patients)"@en ;
+        dcterms:identifier   "ExperimentalSample" ;
         bk:isOndexPreferred  true .
 
 bkr:sampleExp
