@@ -62,7 +62,7 @@ bkr:TOB1  a                 bk:Protein ;
 # Structured accession, allow for linking of identifier and context.         
 bkr:TOB1_acc  a             bk:Accession ;
         dcterms:identifier  "TOB1"^^<xsd:string> ;
-        bk:dataSource       bkds:UNIPROTKB; # instance of bk:DataSource. We havea list of predefined data sources.
+        bk:dataSource       bkds:UNIPROTKB; # instance of bk:DataSource. We have a list of predefined data sources.
         bk:is_annotated_by obo:GO_0030014.
 ```
 
