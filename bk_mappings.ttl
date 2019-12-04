@@ -1,7 +1,7 @@
-@prefix : <http://www.ondex.org/bioknet/ext_mappings#> .
-@prefix bk: <http://www.ondex.org/bioknet/terms/> .
+@prefix : <http://knetminer.org/data/rdf/terms/biokno/ext_mappings#> .
+@prefix bk: <http://knetminer.org/data/rdf/terms/biokno/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix bka: <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,10 +14,10 @@
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix bioschema: <http://bioschemas.org/> .
-@base <http://www.ondex.org/bioknet/ext_mappings> .
+@base <http://knetminer.org/data/rdf/terms/biokno/ext_mappings> .
 
-<http://www.ondex.org/bioknet/ext_mappings> rdf:type owl:Ontology ;
-                                             owl:imports <http://www.ondex.org/bioknet/knetminer_extensions/> .
+<http://knetminer.org/data/rdf/terms/biokno/ext_mappings> rdf:type owl:Ontology ;
+                                             owl:imports <http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/> .
 
 
 ###  http://purl.org/dc/terms/label
@@ -34,17 +34,17 @@ bpax:standardName rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf bk:prefName .
 
 
-###  http://www.ondex.org/bioknet/terms/altName
+###  http://knetminer.org/data/rdf/terms/biokno/altName
 bk:altName rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf skos:altLabel .
 
 
-###  http://www.ondex.org/bioknet/terms/name
+###  http://knetminer.org/data/rdf/terms/biokno/name
 bk:name rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf dcterms:label .
 
 
-###  http://www.ondex.org/bioknet/terms/prefName
+###  http://knetminer.org/data/rdf/terms/biokno/prefName
 bk:prefName rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf skos:prefLabel .
 
@@ -68,17 +68,17 @@ skos:prefLabel rdf:type owl:DatatypeProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.ondex.org/bioknet/terms/relFrom
+###  http://knetminer.org/data/rdf/terms/biokno/relFrom
 bk:relFrom rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf rdf:subject .
 
 
-###  http://www.ondex.org/bioknet/terms/relTo
+###  http://knetminer.org/data/rdf/terms/biokno/relTo
 bk:relTo rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf rdf:object .
 
 
-###  http://www.ondex.org/bioknet/terms/relTypeRef
+###  http://knetminer.org/data/rdf/terms/biokno/relTypeRef
 bk:relTypeRef rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf rdf:predicate .
 
@@ -121,81 +121,81 @@ bpax:product rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf bk:produces .
 
 
-###  http://www.ondex.org/bioknet/terms/consumes
+###  http://knetminer.org/data/rdf/terms/biokno/consumes
 bk:consumes rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/cooc_wi
+###  http://knetminer.org/data/rdf/terms/biokno/cooc_wi
 bk:cooc_wi rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/cs_by
+###  http://knetminer.org/data/rdf/terms/biokno/cs_by
 bk:cs_by rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/en_by
+###  http://knetminer.org/data/rdf/terms/biokno/en_by
 bk:en_by rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf sio:SIO_010079 .
 
 
-###  http://www.ondex.org/bioknet/terms/enc
+###  http://knetminer.org/data/rdf/terms/biokno/enc
 bk:enc rdf:type owl:ObjectProperty ;
        rdfs:subPropertyOf sio:SIO_010078 .
 
 
-###  http://www.ondex.org/bioknet/terms/has_part
+###  http://knetminer.org/data/rdf/terms/biokno/has_part
 bk:has_part rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/has_participant
+###  http://knetminer.org/data/rdf/terms/biokno/has_participant
 bk:has_participant rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/is_a
+###  http://knetminer.org/data/rdf/terms/biokno/is_a
 bk:is_a rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/neg_reg
+###  http://knetminer.org/data/rdf/terms/biokno/neg_reg
 bk:neg_reg rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/occ_in
+###  http://knetminer.org/data/rdf/terms/biokno/occ_in
 bk:occ_in rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/part_of
+###  http://knetminer.org/data/rdf/terms/biokno/part_of
 bk:part_of rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/participates_in
+###  http://knetminer.org/data/rdf/terms/biokno/participates_in
 bk:participates_in rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/pd_by
+###  http://knetminer.org/data/rdf/terms/biokno/pd_by
 bk:pd_by rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/pos_reg
+###  http://knetminer.org/data/rdf/terms/biokno/pos_reg
 bk:pos_reg rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/produces
+###  http://knetminer.org/data/rdf/terms/biokno/produces
 bk:produces rdf:type owl:ObjectProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/publication_features
+###  http://knetminer.org/data/rdf/terms/biokno/publication_features
 bk:publication_features rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf dc:subject .
 
 
-###  http://www.ondex.org/bioknet/terms/published_in
+###  http://knetminer.org/data/rdf/terms/biokno/published_in
 bk:published_in rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf schema:subjectOf ,
                                    [ owl:inverseOf dc:subject
                                    ] .
 
 
-###  http://www.ondex.org/bioknet/terms/regulates
+###  http://knetminer.org/data/rdf/terms/biokno/regulates
 bk:regulates rdf:type owl:ObjectProperty .
 
 
@@ -219,38 +219,38 @@ dcterms:issued rdf:type owl:DatatypeProperty .
 dcterms:title rdf:type owl:DatatypeProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/AUTHORS
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/AUTHORS
 bka:AUTHORS rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf dc:creator .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/Abstract
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/Abstract
 bka:Abstract rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf dcterms:description .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/AbstractHeader
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/AbstractHeader
 bka:AbstractHeader rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf dcterms:title .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/FullText
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/FullText
 bka:FullText rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf dcterms:description .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/PVALUE
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/PVALUE
 bka:PVALUE rdf:type owl:DatatypeProperty ;
            rdfs:comment "TODO: we would like to find a better form of integration with SIO/OBI"@en ;
            rdfs:seeAlso obo:OBI_0000175 ,
                         sio:SIO_000765 .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/URL
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/URL
 bka:URL rdf:type owl:DatatypeProperty .
 
 
-###  http://www.ondex.org/bioknet/terms/attributes/YEAR
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/YEAR
 bka:YEAR rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf dcterms:issued .
 
@@ -317,57 +317,57 @@ bpax:Transport rdf:type owl:Class ;
                owl:equivalentClass bk:Transport .
 
 
-###  http://www.ondex.org/bioknet/terms/Concept
+###  http://knetminer.org/data/rdf/terms/biokno/Concept
 bk:Concept rdfs:subClassOf skos:Concept .
 
 
-###  http://www.ondex.org/bioknet/terms/Gene
+###  http://knetminer.org/data/rdf/terms/biokno/Gene
 bk:Gene rdf:type owl:Class .
 
 
-###  http://www.ondex.org/bioknet/terms/Interaction
+###  http://knetminer.org/data/rdf/terms/biokno/Interaction
 bk:Interaction rdf:type owl:Class .
 
 
-###  http://www.ondex.org/bioknet/terms/Molecule
+###  http://knetminer.org/data/rdf/terms/biokno/Molecule
 bk:Molecule rdf:type owl:Class ;
             rdfs:subClassOf bioschema:BioChemEntity .
 
 
-###  http://www.ondex.org/bioknet/terms/MoleculeComplex
+###  http://knetminer.org/data/rdf/terms/biokno/MoleculeComplex
 bk:MoleculeComplex rdf:type owl:Class ;
                    rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en .
 
 
-###  http://www.ondex.org/bioknet/terms/Participant
+###  http://knetminer.org/data/rdf/terms/biokno/Participant
 bk:Participant rdf:type owl:Class ;
                skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en .
 
 
-###  http://www.ondex.org/bioknet/terms/Path
+###  http://knetminer.org/data/rdf/terms/biokno/Path
 bk:Path rdf:type owl:Class .
 
 
-###  http://www.ondex.org/bioknet/terms/Protein
+###  http://knetminer.org/data/rdf/terms/biokno/Protein
 bk:Protein rdf:type owl:Class .
 
 
-###  http://www.ondex.org/bioknet/terms/Publication
+###  http://knetminer.org/data/rdf/terms/biokno/Publication
 bk:Publication rdf:type owl:Class ;
                rdfs:subClassOf schema:CreativeWork .
 
 
-###  http://www.ondex.org/bioknet/terms/Reaction
+###  http://knetminer.org/data/rdf/terms/biokno/Reaction
 bk:Reaction rdf:type owl:Class ;
             rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, whether it's biology-related or not"@en .
 
 
-###  http://www.ondex.org/bioknet/terms/Relation
+###  http://knetminer.org/data/rdf/terms/biokno/Relation
 bk:Relation rdf:type owl:Class ;
             rdfs:subClassOf rdf:Statement .
 
 
-###  http://www.ondex.org/bioknet/terms/Transport
+###  http://knetminer.org/data/rdf/terms/biokno/Transport
 bk:Transport rdf:type owl:Class .
 
 

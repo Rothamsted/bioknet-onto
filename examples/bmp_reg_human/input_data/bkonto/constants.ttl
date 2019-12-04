@@ -1,11 +1,11 @@
-@prefix bkr: <http://www.ondex.org/bioknet/resources/>.
-@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix bkr: <http://knetminer.org/data/rdf/resources/biokno/>.
+@prefix bkev:  <http://knetminer.org/data/rdf/terms/evidences/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
+@prefix bkds:  <http://knetminer.org/data/rdf/terms/dataSources/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
-@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bk:    <http://knetminer.org/data/rdf/terms/> .
+@prefix bka:   <http://knetminer.org/data/rdf/terms/attributes/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: 	 <http://purl.org/dc/elements/1.1/>.
@@ -14,7 +14,7 @@
 
 
 
-<http://www.ondex.org/bioknet/bk-onto-sample-extension/>
+<http://knetminer.org/data/rdf/terms/bk-onto-sample-extension/>
         a            owl:Ontology ;
         owl:imports  bk: .
 

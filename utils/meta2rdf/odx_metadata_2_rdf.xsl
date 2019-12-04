@@ -4,9 +4,9 @@
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:bk="http://www.ondex.org/bioknet/terms/"
+  xmlns:bk="http://knetminer.org/data/rdf/terms/biokno/"
   xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:fn="http://www.ondex.org/xsl/functions/"
+  xmlns:fn="http://knetminer.org/data/rdf/xsl/functions/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
 	version="2.0">
@@ -25,21 +25,22 @@
 	    xmlns:odx="http://ondex.sourceforge.net/"
 	    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	    xmlns:bk="http://www.ondex.org/bioknet/terms/"
+	    xmlns:bk="http://knetminer.org/data/rdf/terms/biokno/"
 	  	xmlns:dcterms="http://purl.org/dc/terms/"
       xmlns:owl="http://www.w3.org/2002/07/owl#"
     >
-	    <owl:Ontology rdf:about="http://www.ondex.org/bioknet/kNetMiner_extensions/">
-	        <owl:imports rdf:resource="http://www.ondex.org/bioknet/terms/"/>
+	    <owl:Ontology rdf:about="http://knetminer.org/data/rdf/terms/biokno/kNetMiner_extensions/">
+	        <owl:imports rdf:resource="http://knetminer.org/data/rdf/terms/biokno/"/>
 	    </owl:Ontology>
 
 
-    		<owl:ObjectProperty rdf:about="http://www.ondex.org/bioknet/terms/conceptsRelation" />
-
 			<!-- the XML omits these defs -->
-	    <owl:AsymmetricProperty rdf:about="http://www.ondex.org/bioknet/terms/gives">
-	     		<rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation" />
-	     		<owl:inverseOf rdf:resource="http://www.ondex.org/bioknet/terms/given_by" />
+			
+			<owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation" />
+			
+	    <owl:AsymmetricProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gives">
+	     		<rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation" />
+	     		<owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/given_by" />
 	    </owl:AsymmetricProperty>
 
       <xsl:apply-templates select = "odx:ondexmetadata/*/*" />
@@ -52,7 +53,7 @@
 
 		<xsl:message>Matching CC <xsl:value-of select = "odx:id" /></xsl:message>
 
-		<owl:Class rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:id )}">
+		<owl:Class rdf:about = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', ./odx:id )}">
 
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
@@ -75,7 +76,7 @@
 				</xsl:choose>
 			</xsl:variable>
 
-			<rdfs:subClassOf rdf:resource = "{concat( 'http://www.ondex.org/bioknet/terms/', $super_class_id )}" />
+			<rdfs:subClassOf rdf:resource = "{concat( 'http://knetminer.org/data/rdf/terms/biokno/', $super_class_id )}" />
 
 		</owl:Class>
 
@@ -90,7 +91,7 @@
 		<xsl:message>Matching Relation <xsl:value-of select = "odx:id" /></xsl:message>
 
 
-		<owl:ObjectProperty rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:id )}">
+		<owl:ObjectProperty rdf:about = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', ./odx:id )}">
 
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
@@ -113,7 +114,7 @@
 				</xsl:choose>
 			</xsl:variable>
 
-			<rdfs:subPropertyOf rdf:resource = "{concat( 'http://www.ondex.org/bioknet/terms/', $super_prop_id )}" />
+			<rdfs:subPropertyOf rdf:resource = "{concat( 'http://knetminer.org/data/rdf/terms/biokno/', $super_prop_id )}" />
 
 
 			<!-- Property nature -->
@@ -133,15 +134,15 @@
 
 			<!-- Symmetric property -->
 			<xsl:if test = "not ( fn:is_ignored_relation ( ./odx:inverseName ) )">
-				<owl:inverseOf rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}" />
+				<owl:inverseOf rdf:resource = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', ./odx:inverseName )}" />
 			</xsl:if>
 
 		</owl:ObjectProperty>
 
 		<!-- Not all of them are well defined, so let's state this and then we will remove redundant declarations -->
 		<xsl:if test = "not ( fn:is_ignored_relation ( ./odx:inverseName ) )">
-			<owl:ObjectProperty rdf:about="{concat ( 'http://www.ondex.org/bioknet/terms/', ./odx:inverseName )}">
-				<rdfs:subPropertyOf rdf:resource="http://www.ondex.org/bioknet/terms/conceptsRelation" />
+			<owl:ObjectProperty rdf:about="{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', ./odx:inverseName )}">
+				<rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation" />
 			</owl:ObjectProperty>
 		</xsl:if>
 	</xsl:template>
@@ -151,9 +152,11 @@
 
 		<xsl:message>Matching Attribute <xsl:value-of select = "odx:id" /></xsl:message>
 
-		<owl:DatatypeProperty rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/attributes/', odx:id )}">
+		<xsl:variable name="nrm_id" select="encode-for-uri( odx:id )" />
 
-			<rdfs:subPropertyOf rdf:resource = "http://www.ondex.org/bioknet/terms/attribute" />
+		<owl:DatatypeProperty rdf:about = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/attributes/', $nrm_id )}">
+
+			<rdfs:subPropertyOf rdf:resource = "http://knetminer.org/data/rdf/terms/biokno/attribute" />
 
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
@@ -207,7 +210,7 @@
 
 		<xsl:message>Matching <xsl:value-of select = "fn:if ( $mode = 'ds', 'CV/DataSource ', 'Evidence ' )" /> <xsl:value-of select = "odx:id" /></xsl:message>
 
-		<owl:NamedIndividual rdf:about = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'dataSources', 'evidences' ), '/', ./odx:id )}">
+		<owl:NamedIndividual rdf:about = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', fn:if ( $mode = 'ds', 'dataSources', 'evidences' ), '/', ./odx:id )}">
 
 			<bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bk:isOndexPreferred>
 			<dcterms:identifier><xsl:value-of select = "./odx:id" /></dcterms:identifier>
@@ -220,7 +223,7 @@
 				<dcterms:description xml:lang = 'en'><xsl:value-of select = "normalize-space( ./odx:description )" /></dcterms:description>
 			</xsl:if>
 
-			<rdf:type rdf:resource = "{concat ( 'http://www.ondex.org/bioknet/terms/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
+			<rdf:type rdf:resource = "{concat ( 'http://knetminer.org/data/rdf/terms/biokno/', fn:if ( $mode = 'ds', 'DataSource', 'EvidenceType' ))}" />
 
 		</owl:NamedIndividual>
 

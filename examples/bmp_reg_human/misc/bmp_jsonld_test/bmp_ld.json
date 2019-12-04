@@ -1,14 +1,14 @@
 {
 	"@context": {
-		"bk": "http://www.ondex.org/bioknet/terms/",
-		"bka": "http://www.ondex.org/bioknet/terms/attributes/",
-		"bkds": "http://www.ondex.org/bioknet/terms/dataSources/",
-		"bkev": "http://www.ondex.org/bioknet/terms/evidences/",
-		"bkr": "http://www.ondex.org/bioknet/resources/",
+		"bk": "http://knetminer.org/data/rdf/terms/",
+		"bka": "http://knetminer.org/data/rdf/terms/attributes/",
+		"bkds": "http://knetminer.org/data/rdf/terms/dataSources/",
+		"bkev": "http://knetminer.org/data/rdf/terms/evidences/",
+		"bkr": "http://knetminer.org/data/rdf/resources/biokno/",
 		"dcterms": "http://purl.org/dc/terms/",
 		"obo": "http://purl.obolibrary.org/obo/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
-		"@vocab": "http://www.ondex.org/bioknet/terms/",
+		"@vocab": "http://knetminer.org/data/rdf/terms/",
 		"dcterms:identifier": {
 			"@type": "xsd:string"
 		},

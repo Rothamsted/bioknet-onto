@@ -4,32 +4,32 @@ This section provides details for each class and property defined by [Ontology N
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#Accession" title="http://www.ondex.org/bioknet/terms/Accession">Accession</a>
+         <a href="#Accession" title="http://knetminer.org/data/rdf/terms/biokno/Accession">Accession</a>
       </li>
       <li>
-         <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+         <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
       </li>
       <li>
-         <a href="#DataSource" title="http://www.ondex.org/bioknet/terms/DataSource">Data Source</a>
+         <a href="#DataSource" title="http://knetminer.org/data/rdf/terms/biokno/DataSource">Data Source</a>
       </li>
       <li>
-         <a href="#Describeable" title="http://www.ondex.org/bioknet/terms/Describeable">Describeable Entity</a>
+         <a href="#Describeable" title="http://knetminer.org/data/rdf/terms/biokno/Describeable">Describeable Entity</a>
       </li>
       <li>
-         <a href="#EvidenceType" title="http://www.ondex.org/bioknet/terms/EvidenceType">Evidence Type</a>
+         <a href="#EvidenceType" title="http://knetminer.org/data/rdf/terms/biokno/EvidenceType">Evidence Type</a>
       </li>
       <li>
-         <a href="#Graph" title="http://www.ondex.org/bioknet/terms/Graph">Graph</a>
+         <a href="#Graph" title="http://knetminer.org/data/rdf/terms/biokno/Graph">Graph</a>
       </li>
       <li>
-         <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+         <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
       </li>
       <li>
          <a href="#RelationElement"
-            title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
       </li>
       <li>
-         <a href="#Unit" title="http://www.ondex.org/bioknet/terms/Unit">Unit</a>
+         <a href="#Unit" title="http://knetminer.org/data/rdf/terms/biokno/Unit">Unit</a>
       </li>
    </ul>
    <div class="entity" id="Accession">
@@ -38,7 +38,7 @@ This section provides details for each class and property defined by [Ontology N
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Accession</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Accession</p>
       <div class="comment">
          <span class="markdown">[description] An accession is a string value, assigned with dcterms:identifier and at least one data source in which the accession value is usually unique. Set bk:isAccessionAmbiguous to false to specify the accession is not necessarily unique.
 
@@ -47,16 +47,16 @@ bk:Concept instances are associated to bk:Accession instances via dc:identifier 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#dataSource" title="http://www.ondex.org/bioknet/terms/dataSource">data source</a>
+            <a href="#dataSource" title="http://knetminer.org/data/rdf/terms/biokno/dataSource">data source</a>
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">some</span> 
-            <a href="#DataSource" title="http://www.ondex.org/bioknet/terms/DataSource">Data Source</a>
+            <a href="#DataSource" title="http://knetminer.org/data/rdf/terms/biokno/DataSource">Data Source</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#isAmbiguousAccession"
-               title="http://www.ondex.org/bioknet/terms/isAmbiguousAccession">is ambiguous accession</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/isAmbiguousAccession">is ambiguous accession</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
@@ -67,7 +67,7 @@ bk:Concept instances are associated to bk:Accession instances via dc:identifier 
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Concept</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Concept</p>
       <div class="comment">
          <span class="markdown">[editorial note] Those used to the ONDEX model should note that we are mapping the 'concept type' relations straight to rdf:type and the ONDEX Concept Classes to rdfs:subClassOf, with this class on the top. We see this as a natural mapping of the ONDEX model to the RDF/RDF-S/OWL standards.
 [description] A Concept is the a basic unit of information in the Bio Knowledge Network Ontology. The main type of knowledge in BioKNet consists of relations (either RDF triples based on bk:relationType, or bk:Relation instances) between bk:Concept instances.
@@ -80,36 +80,36 @@ The recommended way to use bk:Concept is:
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Describeable" title="http://www.ondex.org/bioknet/terms/Describeable">Describeable Entity</a>
+            <a href="#Describeable" title="http://knetminer.org/data/rdf/terms/biokno/Describeable">Describeable Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
             <a href="#RelationElement"
-               title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#conceptsRelation"
-               title="http://www.ondex.org/bioknet/terms/conceptsRelation">concept relation</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation">concept relation</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#conceptsRelation"
-               title="http://www.ondex.org/bioknet/terms/conceptsRelation">concept relation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#relFrom" title="http://www.ondex.org/bioknet/terms/relFrom">rel from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#relTo" title="http://www.ondex.org/bioknet/terms/relTo">rel to</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation">concept relation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relFrom" title="http://knetminer.org/data/rdf/terms/biokno/relFrom">rel from</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relTo" title="http://knetminer.org/data/rdf/terms/biokno/relTo">rel to</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#relatedConcept"
-               title="http://www.ondex.org/bioknet/terms/relatedConcept">related to concept</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/relatedConcept">related to concept</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
          <dd>
             <a href="#testConcept0_1"
-               title="http://www.ondex.org/bioknet/terms/testConcept0_1">test concept0 1</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_1">test concept0 1</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#testConcept0_2"
-               title="http://www.ondex.org/bioknet/terms/testConcept0_2">test concept0 2</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_2">test concept0 2</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -120,19 +120,19 @@ The recommended way to use bk:Concept is:
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/DataSource</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/DataSource</p>
       <div class="comment">
-         <span class="markdown">[editorial note] Due to possible clashes with other identifiers, you should use the namespace bkds: &lt;http://www.ondex.org/bioknet/terms/dataSources/&gt; to define new data source.</span>
+         <span class="markdown">[editorial note] Due to possible clashes with other identifiers, you should use the namespace bkds: &lt;http://knetminer.org/data/rdf/terms/biokno/dataSources/&gt; to define new data source.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Describeable" title="http://www.ondex.org/bioknet/terms/Describeable">Describeable Entity</a>
+            <a href="#Describeable" title="http://knetminer.org/data/rdf/terms/biokno/Describeable">Describeable Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#dataSource" title="http://www.ondex.org/bioknet/terms/dataSource">data source</a>
+            <a href="#dataSource" title="http://knetminer.org/data/rdf/terms/biokno/dataSource">data source</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -143,7 +143,7 @@ The recommended way to use bk:Concept is:
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Describeable</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Describeable</p>
       <div class="comment">
          <span class="markdown">[description] This is an abstract container to factorise those individuals for which a minimum of description attributes can be defined.
 
@@ -159,10 +159,10 @@ These are:
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DataSource" title="http://www.ondex.org/bioknet/terms/DataSource">Data Source</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EvidenceType" title="http://www.ondex.org/bioknet/terms/EvidenceType">Evidence Type</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Unit" title="http://www.ondex.org/bioknet/terms/Unit">Unit</a>
+            <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#DataSource" title="http://knetminer.org/data/rdf/terms/biokno/DataSource">Data Source</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#EvidenceType" title="http://knetminer.org/data/rdf/terms/biokno/EvidenceType">Evidence Type</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Unit" title="http://knetminer.org/data/rdf/terms/biokno/Unit">Unit</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -173,19 +173,19 @@ These are:
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/EvidenceType</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/EvidenceType</p>
       <div class="comment">
-         <span class="markdown">[editorial note] Due to possible clashes with other identifiers, you should use the namespace bkev: &lt;http://www.ondex.org/bioknet/terms/evidences/&gt; to define new evidence types.</span>
+         <span class="markdown">[editorial note] Due to possible clashes with other identifiers, you should use the namespace bkev: &lt;http://knetminer.org/data/rdf/terms/biokno/evidences/&gt; to define new evidence types.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Describeable" title="http://www.ondex.org/bioknet/terms/Describeable">Describeable Entity</a>
+            <a href="#Describeable" title="http://knetminer.org/data/rdf/terms/biokno/Describeable">Describeable Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#evidence" title="http://www.ondex.org/bioknet/terms/evidence">evidence</a>
+            <a href="#evidence" title="http://knetminer.org/data/rdf/terms/biokno/evidence">evidence</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -196,7 +196,7 @@ These are:
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Graph</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Graph</p>
       <div class="comment">
          <span class="markdown">[editorial note] [TODO] to be completed, using VoID, pav, etc.
 [description] A biological knowledge network can be grouped together into a graph. This is typically a named graph as well and used in triple stores like Virtuoso to identify networks/subsets.</span>
@@ -205,7 +205,7 @@ These are:
          <dt>is in domain of</dt>
          <dd>
             <a href="#graphSummaryFigure"
-               title="http://www.ondex.org/bioknet/terms/graphSummaryFigure">graph summary figure</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/graphSummaryFigure">graph summary figure</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
@@ -216,7 +216,7 @@ These are:
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Relation</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Relation</p>
       <div class="comment">
          <span class="markdown">[description] Relations in BioKNet are created in two ways:
 
@@ -245,32 +245,32 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          <dt>has super-classes</dt>
          <dd>
             <a href="#RelationElement"
-               title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
-            <a href="#relFrom" title="http://www.ondex.org/bioknet/terms/relFrom">rel from</a>
+            <a href="#relFrom" title="http://knetminer.org/data/rdf/terms/biokno/relFrom">rel from</a>
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">exactly</span> 1 <a href="#RelationElement"
-               title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
-            <a href="#relTo" title="http://www.ondex.org/bioknet/terms/relTo">rel to</a>
+            <a href="#relTo" title="http://knetminer.org/data/rdf/terms/biokno/relTo">rel to</a>
             <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">exactly</span> 1 <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+            <span class="logic">exactly</span> 1 <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#relTypeRef" title="http://www.ondex.org/bioknet/terms/relTypeRef">is instance of relation type</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#relFrom" title="http://www.ondex.org/bioknet/terms/relFrom">rel from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#relTo" title="http://www.ondex.org/bioknet/terms/relTo">rel to</a>
+            <a href="#relTypeRef" title="http://knetminer.org/data/rdf/terms/biokno/relTypeRef">is instance of relation type</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relFrom" title="http://knetminer.org/data/rdf/terms/biokno/relFrom">rel from</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#relTo" title="http://knetminer.org/data/rdf/terms/biokno/relTo">rel to</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#testStmt0" title="http://www.ondex.org/bioknet/terms/testStmt0">test stmt0</a>
+            <a href="#testStmt0" title="http://knetminer.org/data/rdf/terms/biokno/testStmt0">test stmt0</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -281,23 +281,23 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/RelationElement</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/RelationElement</p>
       <div class="comment">
          <span class="markdown">[description] A bk:Relation, or the corresponding BioKNet triple, is composed mainly of two bk:Concept instances and a relation type. The bk:RelationElement is a convenience common container for such components.</span>
       </div>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+            <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#attribute" title="http://www.ondex.org/bioknet/terms/attribute">attribute</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#evidence" title="http://www.ondex.org/bioknet/terms/evidence">evidence</a>
+            <a href="#attribute" title="http://knetminer.org/data/rdf/terms/biokno/attribute">attribute</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#evidence" title="http://knetminer.org/data/rdf/terms/biokno/evidence">evidence</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#relatedConcept"
-               title="http://www.ondex.org/bioknet/terms/relatedConcept">related to concept</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/relatedConcept">related to concept</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -308,21 +308,21 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/Unit</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/Unit</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Describeable" title="http://www.ondex.org/bioknet/terms/Describeable">Describeable Entity</a>
+            <a href="#Describeable" title="http://knetminer.org/data/rdf/terms/biokno/Describeable">Describeable Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#attributeUnit" title="http://www.ondex.org/bioknet/terms/attributeUnit">attribute unit</a>
+            <a href="#attributeUnit" title="http://knetminer.org/data/rdf/terms/biokno/attributeUnit">attribute unit</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#testUnit" title="http://www.ondex.org/bioknet/terms/testUnit">test unit</a>
+            <a href="#testUnit" title="http://knetminer.org/data/rdf/terms/biokno/testUnit">test unit</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -331,41 +331,41 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#attributeUnit" title="http://www.ondex.org/bioknet/terms/attributeUnit">attribute unit</a>
+         <a href="#attributeUnit" title="http://knetminer.org/data/rdf/terms/biokno/attributeUnit">attribute unit</a>
       </li>
       <li>
          <a href="#conceptsRelation"
-            title="http://www.ondex.org/bioknet/terms/conceptsRelation">concept relation</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation">concept relation</a>
       </li>
       <li>
-         <a href="#dataSource" title="http://www.ondex.org/bioknet/terms/dataSource">
+         <a href="#dataSource" title="http://knetminer.org/data/rdf/terms/biokno/dataSource">
             <span>data source</span>
          </a>
       </li>
       <li>
-         <a href="#evidence" title="http://www.ondex.org/bioknet/terms/evidence">
+         <a href="#evidence" title="http://knetminer.org/data/rdf/terms/biokno/evidence">
             <span>evidence</span>
          </a>
       </li>
       <li>
-         <a href="#relTypeRef" title="http://www.ondex.org/bioknet/terms/relTypeRef">is instance of relation type</a>
+         <a href="#relTypeRef" title="http://knetminer.org/data/rdf/terms/biokno/relTypeRef">is instance of relation type</a>
       </li>
       <li>
-         <a href="#relFrom" title="http://www.ondex.org/bioknet/terms/relFrom">
+         <a href="#relFrom" title="http://knetminer.org/data/rdf/terms/biokno/relFrom">
             <span>rel from</span>
          </a>
       </li>
       <li>
-         <a href="#relTo" title="http://www.ondex.org/bioknet/terms/relTo">
+         <a href="#relTo" title="http://knetminer.org/data/rdf/terms/biokno/relTo">
             <span>rel to</span>
          </a>
       </li>
       <li>
          <a href="#relatedConcept"
-            title="http://www.ondex.org/bioknet/terms/relatedConcept">related to concept</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/relatedConcept">related to concept</a>
       </li>
       <li>
-         <a href="#testProp" title="http://www.ondex.org/bioknet/terms/testProp">
+         <a href="#testProp" title="http://knetminer.org/data/rdf/terms/biokno/testProp">
             <span>test prop</span>
          </a>
       </li>
@@ -376,7 +376,7 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/attributeUnit</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/attributeUnit</p>
       <div class="comment">
          <span class="markdown">[description] When a bk:attribute property is associated to a unit by means of this property, literal values of that property are measure values expressed in the associated unit.
 [editorial note] Note that the domain of this property is a subclass of bk:attribute. This is specified by means of schema:domainIncludes, in order to keep OWL correctness.</span>
@@ -385,7 +385,7 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#Unit" title="http://www.ondex.org/bioknet/terms/Unit">Unit</a>
+               <a href="#Unit" title="http://knetminer.org/data/rdf/terms/biokno/Unit">Unit</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -397,7 +397,7 @@ We suggest to base the identifiers of reified relations on the IDs (or URIs) of 
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/conceptsRelation</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/conceptsRelation</p>
       <div class="comment">
          <span class="markdown">[editorial note] All ONDEX/kNetMiner relations should go under this property.
 [description] This is a top-level container, which is used to define specific relations of interest between between bk:Concept instances. See bk:Relation for a detailed description of how concept relations are model in BioKNet.
@@ -409,22 +409,22 @@ This property should never be used directly, a concept/concept relation of inter
             <dt>has super-properties</dt>
             <dd>
                <a href="#relatedConcept"
-                  title="http://www.ondex.org/bioknet/terms/relatedConcept">related to concept</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/relatedConcept">related to concept</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#testProp" title="http://www.ondex.org/bioknet/terms/testProp">test prop</a>
+               <a href="#testProp" title="http://knetminer.org/data/rdf/terms/biokno/testProp">test prop</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+               <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+               <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -436,7 +436,7 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/dataSource</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/dataSource</p>
       <div class="comment">
          <span class="markdown">[editorial note] [TODO] Align to PAV and alike.
 [description] The source from which an entity comes from, or was imported or alike.</span>
@@ -445,16 +445,16 @@ This property should never be used directly, a concept/concept relation of inter
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Accession" title="http://www.ondex.org/bioknet/terms/Accession">Accession</a>
+               <a href="#Accession" title="http://knetminer.org/data/rdf/terms/biokno/Accession">Accession</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
                <a href="#RelationElement"
-                  title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#DataSource" title="http://www.ondex.org/bioknet/terms/DataSource">Data Source</a>
+               <a href="#DataSource" title="http://knetminer.org/data/rdf/terms/biokno/DataSource">Data Source</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -466,7 +466,7 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/evidence</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/evidence</p>
       <div class="comment">
          <span class="markdown">[description] Links an entity, such as a concept or a relation, to the type of evidence that prove it exists, such as 'imported from database', evidence codes, 'inferred from literature'.</span>
       </div>
@@ -475,12 +475,12 @@ This property should never be used directly, a concept/concept relation of inter
             <dt>has domain</dt>
             <dd>
                <a href="#RelationElement"
-                  title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#EvidenceType" title="http://www.ondex.org/bioknet/terms/EvidenceType">Evidence Type</a>
+               <a href="#EvidenceType" title="http://knetminer.org/data/rdf/terms/biokno/EvidenceType">Evidence Type</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -492,7 +492,7 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/relTypeRef</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/relTypeRef</p>
       <div class="comment">
          <span class="markdown">[editorial note] The fact that the values of this should be subclasses of bk:relationType is documented by means of schema:rangeIncludes. We don't use rdfs:range bk:relationType, because this tends to confuse ontology editors and libraries (i.e., Protege and OWL-API), which infer bk:relationType is also a clsass. It shouldn't be a big deal to link to bk:relationType using an owl:objectProperty like this, since OWL-2 should deal with this through punning (TODO: check).</span>
       </div>
@@ -500,7 +500,7 @@ This property should never be used directly, a concept/concept relation of inter
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+               <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -512,17 +512,17 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/relFrom</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/relFrom</p>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+               <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+               <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -534,17 +534,17 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/relTo</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/relTo</p>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+               <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+               <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -556,7 +556,7 @@ This property should never be used directly, a concept/concept relation of inter
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/relatedConcept</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/relatedConcept</p>
       <div class="comment">
          <span class="markdown">[description] A generic reference to a concept
 
@@ -570,18 +570,18 @@ This is used to relate a relation element with a non better-specified relation (
             <dt>has sub-properties</dt>
             <dd>
                <a href="#conceptsRelation"
-                  title="http://www.ondex.org/bioknet/terms/conceptsRelation">concept relation</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation">concept relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#RelationElement"
-                  title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+               <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -593,13 +593,13 @@ This is used to relate a relation element with a non better-specified relation (
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/testProp</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/testProp</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
                <a href="#conceptsRelation"
-                  title="http://www.ondex.org/bioknet/terms/conceptsRelation">concept relation</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation">concept relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>is also defined as</dt>
@@ -611,36 +611,36 @@ This is used to relate a relation element with a non better-specified relation (
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#attribute" title="http://www.ondex.org/bioknet/terms/attribute">attribute</a>
+         <a href="#attribute" title="http://knetminer.org/data/rdf/terms/biokno/attribute">attribute</a>
       </li>
       <li>
          <a href="#graphConceptsCount"
-            title="http://www.ondex.org/bioknet/terms/graphConceptsCount">graph concepts count</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/graphConceptsCount">graph concepts count</a>
       </li>
       <li>
          <a href="#graphRelationsCount"
-            title="http://www.ondex.org/bioknet/terms/graphRelationsCount">graph relations count</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/graphRelationsCount">graph relations count</a>
       </li>
       <li>
          <a href="#graphSummaryFigure"
-            title="http://www.ondex.org/bioknet/terms/graphSummaryFigure">graph summary figure</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/graphSummaryFigure">graph summary figure</a>
       </li>
       <li>
-         <a href="#altName" title="http://www.ondex.org/bioknet/terms/altName">has alternative name</a>
+         <a href="#altName" title="http://knetminer.org/data/rdf/terms/biokno/altName">has alternative name</a>
       </li>
       <li>
-         <a href="#prefName" title="http://www.ondex.org/bioknet/terms/prefName">has preferred name</a>
+         <a href="#prefName" title="http://knetminer.org/data/rdf/terms/biokno/prefName">has preferred name</a>
       </li>
       <li>
          <a href="#isAmbiguousAccession"
-            title="http://www.ondex.org/bioknet/terms/isAmbiguousAccession">is ambiguous accession</a>
+            title="http://knetminer.org/data/rdf/terms/biokno/isAmbiguousAccession">is ambiguous accession</a>
       </li>
       <li>
-         <a href="#name" title="http://www.ondex.org/bioknet/terms/name">name</a>
+         <a href="#name" title="http://knetminer.org/data/rdf/terms/biokno/name">name</a>
       </li>
       <li>
          <a href="#attributes/testAttribute"
-            title="http://www.ondex.org/bioknet/terms/attributes/testAttribute">
+            title="http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute">
             <span>test attribute</span>
          </a>
       </li>
@@ -651,7 +651,7 @@ This is used to relate a relation element with a non better-specified relation (
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/attribute</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/attribute</p>
       <div class="comment">
          <span class="markdown">[editorial note] Note that the way units are modelled is different than other structured value models (e.g., schema.org, good relations), where units can be specified for each value. Here, units are linked to an attribute property, to specify once for all the unit to which all that property values refer to.
 [description] An attribute is a literal property associated to a concept or a relation.
@@ -661,7 +661,7 @@ Specific attribute types (e.g., pValue, geneBegin) should be defined as subprope
 Note that attributes can refer to measure values, in which case you should associate a unit to the corresponding bk:attribute subproperty.
 
 Note that bk:attribute is considered an abstract property container: rather than using it directly, you should always define a specific attribute subproperty to represent attributes properly.
-[editorial note] Due to possible clashes with other identifiers, you should use the namespace bka: &lt;http://www.ondex.org/bioknet/terms/attributes/&gt; to define new attributes.
+[editorial note] Due to possible clashes with other identifiers, you should use the namespace bka: &lt;http://knetminer.org/data/rdf/terms/biokno/attributes/&gt; to define new attributes.
 [editorial note] This property is conceptually equivalent to AttributeName in ONDEX. It doesn't look correct to call it name.</span>
       </div>
       <div class="description">
@@ -669,13 +669,13 @@ Note that bk:attribute is considered an abstract property container: rather than
             <dt>has sub-properties</dt>
             <dd>
                <a href="#attributes/testAttribute"
-                  title="http://www.ondex.org/bioknet/terms/attributes/testAttribute">test attribute</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute">test attribute</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#RelationElement"
-                  title="http://www.ondex.org/bioknet/terms/RelationElement">Relation Element</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/RelationElement">Relation Element</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -687,13 +687,13 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/graphConceptsCount</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/graphConceptsCount</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
                <a href="#graphSummaryFigure"
-                  title="http://www.ondex.org/bioknet/terms/graphSummaryFigure">graph summary figure</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/graphSummaryFigure">graph summary figure</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has range</dt>
@@ -709,13 +709,13 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/graphRelationsCount</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/graphRelationsCount</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
                <a href="#graphSummaryFigure"
-                  title="http://www.ondex.org/bioknet/terms/graphSummaryFigure">graph summary figure</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/graphSummaryFigure">graph summary figure</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has range</dt>
@@ -731,7 +731,7 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/graphSummaryFigure</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/graphSummaryFigure</p>
       <div class="comment">
          <span class="markdown">[description] a property of this type provides summary figures for the contents of a graph, such as the number of concepts or relations.</span>
       </div>
@@ -740,14 +740,14 @@ Note that bk:attribute is considered an abstract property container: rather than
             <dt>has sub-properties</dt>
             <dd>
                <a href="#graphConceptsCount"
-                  title="http://www.ondex.org/bioknet/terms/graphConceptsCount">graph concepts count</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/graphConceptsCount">graph concepts count</a>
                <sup class="type-dp" title="data property">dp</sup>, <a href="#graphRelationsCount"
-                  title="http://www.ondex.org/bioknet/terms/graphRelationsCount">graph relations count</a>
+                  title="http://knetminer.org/data/rdf/terms/biokno/graphRelationsCount">graph relations count</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Graph" title="http://www.ondex.org/bioknet/terms/Graph">Graph</a>
+               <a href="#Graph" title="http://knetminer.org/data/rdf/terms/biokno/Graph">Graph</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -759,12 +759,12 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/altName</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/altName</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#name" title="http://www.ondex.org/bioknet/terms/name">name</a>
+               <a href="#name" title="http://knetminer.org/data/rdf/terms/biokno/name">name</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
          </dl>
@@ -776,12 +776,12 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/prefName</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/prefName</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#name" title="http://www.ondex.org/bioknet/terms/name">name</a>
+               <a href="#name" title="http://knetminer.org/data/rdf/terms/biokno/name">name</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
          </dl>
@@ -793,7 +793,7 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/isAmbiguousAccession</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/isAmbiguousAccession</p>
       <div class="comment">
          <span class="markdown">[editorial note] TODO: we need to clarify what this is exactly. How can an accession be ambiguous? Examples?</span>
       </div>
@@ -801,7 +801,7 @@ Note that bk:attribute is considered an abstract property container: rather than
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Accession" title="http://www.ondex.org/bioknet/terms/Accession">Accession</a>
+               <a href="#Accession" title="http://knetminer.org/data/rdf/terms/biokno/Accession">Accession</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -817,7 +817,7 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/name</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/name</p>
       <div class="comment">
          <span class="markdown">[editorial note] Compared to the ONDEX model, we use bk:prefName to represent a name that has the preferred flag set to true, bk:altName to represent all the other names, bk:name for generic names. This is simpler than having a class just to store an additional flag.
 [description] In bio-databases a name is often meant as something more specific than a title or a label (being more official and often shorter) and not as unique as accessions.</span>
@@ -826,8 +826,8 @@ Note that bk:attribute is considered an abstract property container: rather than
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#altName" title="http://www.ondex.org/bioknet/terms/altName">has alternative name</a>
-               <sup class="type-dp" title="data property">dp</sup>, <a href="#prefName" title="http://www.ondex.org/bioknet/terms/prefName">has preferred name</a>
+               <a href="#altName" title="http://knetminer.org/data/rdf/terms/biokno/altName">has alternative name</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#prefName" title="http://knetminer.org/data/rdf/terms/biokno/prefName">has preferred name</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has range</dt>
@@ -843,12 +843,12 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/attributes/testAttribute</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#attribute" title="http://www.ondex.org/bioknet/terms/attribute">attribute</a>
+               <a href="#attribute" title="http://knetminer.org/data/rdf/terms/biokno/attribute">attribute</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has range</dt>
@@ -867,29 +867,29 @@ Note that bk:attribute is considered an abstract property container: rather than
    <ul class="hlist">
       <li>
          <a href="#attributes/testAttribute"
-            title="http://www.ondex.org/bioknet/terms/attributes/testAttribute">
+            title="http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute">
             <span>test attribute</span>
          </a>
       </li>
       <li>
          <a href="#testConcept0_1"
-            title="http://www.ondex.org/bioknet/terms/testConcept0_1">
+            title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_1">
             <span>test concept0 1</span>
          </a>
       </li>
       <li>
          <a href="#testConcept0_2"
-            title="http://www.ondex.org/bioknet/terms/testConcept0_2">
+            title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_2">
             <span>test concept0 2</span>
          </a>
       </li>
       <li>
-         <a href="#testStmt0" title="http://www.ondex.org/bioknet/terms/testStmt0">
+         <a href="#testStmt0" title="http://knetminer.org/data/rdf/terms/biokno/testStmt0">
             <span>test stmt0</span>
          </a>
       </li>
       <li>
-         <a href="#testUnit" title="http://www.ondex.org/bioknet/terms/testUnit">test unit</a>
+         <a href="#testUnit" title="http://knetminer.org/data/rdf/terms/biokno/testUnit">test unit</a>
       </li>
    </ul>
    <div class="entity" id="attributes/testAttribute">
@@ -898,13 +898,13 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/attributes/testAttribute</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute</p>
       <dl class="description">
          <dt>has facts</dt>
          <dd>
-            <a href="#attributeUnit" title="http://www.ondex.org/bioknet/terms/attributeUnit">attribute unit</a>
+            <a href="#attributeUnit" title="http://knetminer.org/data/rdf/terms/biokno/attributeUnit">attribute unit</a>
             <sup class="type-op" title="object property">op</sup> 
-            <a href="#testUnit" title="http://www.ondex.org/bioknet/terms/testUnit">test unit</a>
+            <a href="#testUnit" title="http://knetminer.org/data/rdf/terms/biokno/testUnit">test unit</a>
          </dd>
          <dt>is also defined as</dt>
          <dd>
@@ -918,17 +918,17 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/testConcept0_1</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/testConcept0_1</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+            <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has facts</dt>
          <dd>
             <a href="#attributes/testAttribute"
-               title="http://www.ondex.org/bioknet/terms/attributes/testAttribute">test attribute</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute">test attribute</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"1.2"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#double">double</span>
             </span>
@@ -941,11 +941,11 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/testConcept0_2</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/testConcept0_2</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Concept" title="http://www.ondex.org/bioknet/terms/Concept">Concept</a>
+            <a href="#Concept" title="http://knetminer.org/data/rdf/terms/biokno/Concept">Concept</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -956,34 +956,34 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/testStmt0</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/testStmt0</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Relation" title="http://www.ondex.org/bioknet/terms/Relation">Relation</a>
+            <a href="#Relation" title="http://knetminer.org/data/rdf/terms/biokno/Relation">Relation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has facts</dt>
          <dd>
-            <a href="#relFrom" title="http://www.ondex.org/bioknet/terms/relFrom">rel from</a>
+            <a href="#relFrom" title="http://knetminer.org/data/rdf/terms/biokno/relFrom">rel from</a>
             <sup class="type-op" title="object property">op</sup> 
             <a href="#testConcept0_1"
-               title="http://www.ondex.org/bioknet/terms/testConcept0_1">test concept0 1</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_1">test concept0 1</a>
          </dd>
          <dd>
-            <a href="#relTo" title="http://www.ondex.org/bioknet/terms/relTo">rel to</a>
+            <a href="#relTo" title="http://knetminer.org/data/rdf/terms/biokno/relTo">rel to</a>
             <sup class="type-op" title="object property">op</sup> 
             <a href="#testConcept0_2"
-               title="http://www.ondex.org/bioknet/terms/testConcept0_2">test concept0 2</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/testConcept0_2">test concept0 2</a>
          </dd>
          <dd>
-            <a href="#relTypeRef" title="http://www.ondex.org/bioknet/terms/relTypeRef">is instance of relation type</a>
+            <a href="#relTypeRef" title="http://knetminer.org/data/rdf/terms/biokno/relTypeRef">is instance of relation type</a>
             <sup class="type-op" title="object property">op</sup> 
-            <a href="#testProp" title="http://www.ondex.org/bioknet/terms/testProp">test prop</a>
+            <a href="#testProp" title="http://knetminer.org/data/rdf/terms/biokno/testProp">test prop</a>
          </dd>
          <dd>
             <a href="#attributes/testAttribute"
-               title="http://www.ondex.org/bioknet/terms/attributes/testAttribute">test attribute</a>
+               title="http://knetminer.org/data/rdf/terms/biokno/attributes/testAttribute">test attribute</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"2.5"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#double">double</span>
             </span>
@@ -996,14 +996,14 @@ Note that bk:attribute is considered an abstract property container: rather than
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.ondex.org/bioknet/terms/testUnit</p>
+         <strong>IRI:</strong> http://knetminer.org/data/rdf/terms/biokno/testUnit</p>
       <div class="comment">
          <span class="markdown">[description] This is a test unit, which shows how attributes and their units are modelled in BioKNet.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Unit" title="http://www.ondex.org/bioknet/terms/Unit">Unit</a>
+            <a href="#Unit" title="http://knetminer.org/data/rdf/terms/biokno/Unit">Unit</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

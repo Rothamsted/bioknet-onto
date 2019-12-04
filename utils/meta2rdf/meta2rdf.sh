@@ -14,12 +14,11 @@ fi
 
 fout="$2"; : ${fout:=../../bk_ondex.owl}
 
-otmpf=$(mktemp /tmp/meta2rdf_XXX.owl)
-ntmpf=$(mktemp /tmp/meta2rdf_XXX.ttl)
+otmpf=/tmp/meta2rdf.$$.owl
+ntmpf=/tmp/meta2rdf.$$.ttl
 
 echo Getting raw RDF from XML
 java -jar "$SAX_JAR" -s:"$finput" -xsl:odx_metadata_2_rdf.xsl -o:"$otmpf"
-
 
 echo -e "\n\n==== URI normalization 1/3\n"
 "$JENA_HOME/bin/update" --data="$otmpf" --update=ondex_defs_new_uris.sparul --dump | sponge "$ntmpf"

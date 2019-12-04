@@ -1,6 +1,6 @@
 PREFIX bp: <http://open-services.net/ns/basicProfile#>
-PREFIX bk: <http://www.ondex.org/bioknet/terms/>
-PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX bpax: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX schema: <http://schema.org/>

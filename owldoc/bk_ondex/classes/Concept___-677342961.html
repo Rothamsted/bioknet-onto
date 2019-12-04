@@ -28,7 +28,7 @@
 <ul>
 <li class="asserted"><a href="../annotationproperties/description___456553100.html" class='Annotation Property' title="http://purl.org/dc/terms/description">dcterms:description</a> <span class='literal'>"A Concept is the a basic unit of information in the Bio Knowledge Network Ontology. The main type of knowledge in BioKNet consists of relations (either RDF triples based on bk:relationType, or bk:Relation instances) between bk:Concept instances.<br /><br />The recommended way to use bk:Concept is:<br />  - subclass bk:Concept with specific classes (eg, Protein, Gene)<br />  - instance those specific classes<br />  - optionally, but recommended in production environments like triple stores backing SPARQL, declare your new instance an instance of bk:Concept too. While this can be inferred, having explicit instances make things easier for applications."</span> <span style='color: black;'>@en</span></li>
 <li class="asserted"><a href="../annotationproperties/identifier___562666297.html" class='Annotation Property' title="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class='literal'>"Concept"</span></li>
-<li class="asserted"><a href="../annotationproperties/isOndexPreferred___-1170698214.html" class='Annotation Property' title="http://www.ondex.org/bioknet/terms/isOndexPreferred">isOndexPreferred</a> <span class='literal'>"true"</span>(<a href="../datatypes/boolean___1756652655.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a>)</li>
+<li class="asserted"><a href="../annotationproperties/isOndexPreferred___-1170698214.html" class='Annotation Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/isOndexPreferred">isOndexPreferred</a> <span class='literal'>"true"</span>(<a href="../datatypes/boolean___1756652655.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a>)</li>
 <li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"Concept"</span> <span style='color: black;'>@en</span></li>
 <li class="asserted"><a href="../annotationproperties/editorialNote___505819902.html" class='Annotation Property' title="http://www.w3.org/2004/02/skos/core#editorialNote">skos:editorialNote</a> <span class='literal'>"Those used to the ONDEX model should note that we are mapping the 'concept type' relations straight to rdf:type and the ONDEX Concept Classes to rdfs:subClassOf, with this class on the top. We see this as a natural mapping of the ONDEX model to the RDF/RDF-S/OWL standards."</span> <span style='color: black;'>@en</span></li>
 </ul>
@@ -40,8 +40,8 @@
 <h4>Superclasses (2)</h4>
 <div class='codebox'>
 <ul>
-<li class="asserted"><a href="Describeable___-1169964660.html" class='Class' title="http://www.ondex.org/bioknet/terms/Describeable">Describeable</a></li>
-<li class="asserted"><a href="RelationElement___1080098823.html" class='Class' title="http://www.ondex.org/bioknet/terms/RelationElement">RelationElement</a></li>
+<li class="asserted"><a href="Describeable___-1169964660.html" class='Class' title="http://knetminer.org/data/rdf/terms/biokno/terms/Describeable">Describeable</a></li>
+<li class="asserted"><a href="RelationElement___1080098823.html" class='Class' title="http://knetminer.org/data/rdf/terms/biokno/terms/RelationElement">RelationElement</a></li>
 </ul>
 </div>
 </div><!-- superclasses (2) -->
@@ -50,8 +50,8 @@
 <div id='members_(2)'>
 <h4>Members (2)</h4>
 <div class='codebox'>
-<span class="asserted"><a href="../individuals/testConcept0_1___-1648370317.html" class='Individual' title="http://www.ondex.org/bioknet/terms/testConcept0_1">testConcept0_1</a></span>,
-<span class="asserted"><a href="../individuals/testConcept0_2___-1648370316.html" class='Individual' title="http://www.ondex.org/bioknet/terms/testConcept0_2">testConcept0_2</a></span></div>
+<span class="asserted"><a href="../individuals/testConcept0_1___-1648370317.html" class='Individual' title="http://knetminer.org/data/rdf/terms/biokno/terms/testConcept0_1">testConcept0_1</a></span>,
+<span class="asserted"><a href="../individuals/testConcept0_2___-1648370316.html" class='Individual' title="http://knetminer.org/data/rdf/terms/biokno/terms/testConcept0_2">testConcept0_2</a></span></div>
 </div><!-- members (2) -->
 
 
@@ -59,12 +59,12 @@
 <h4>Usage (6)</h4>
 <div class='codebox'>
 <ul>
-<li class="asserted"><a href="Relation___512154851.html" class='Class' title="http://www.ondex.org/bioknet/terms/Relation">Relation</a> <span class='keyword'>&sube;</span> <a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relTo">relTo</a> <span class='exactly'>exactly</span> 1 <span class='Class active-entity'>Concept</span></li>
-<li class="asserted"><a href="../objectproperties/conceptsRelation___322204910.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/conceptsRelation">conceptsRelation</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>Concept</span></li>
-<li class="asserted"><a href="../objectproperties/conceptsRelation___322204910.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/conceptsRelation">conceptsRelation</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
-<li class="asserted"><a href="../objectproperties/relFrom___2091634346.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relFrom">relFrom</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
-<li class="asserted"><a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relTo">relTo</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
-<li class="asserted"><a href="../objectproperties/relatedConcept___-202637692.html" class='Object Property' title="http://www.ondex.org/bioknet/terms/relatedConcept">relatedConcept</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="Relation___512154851.html" class='Class' title="http://knetminer.org/data/rdf/terms/biokno/terms/Relation">Relation</a> <span class='keyword'>&sube;</span> <a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/relTo">relTo</a> <span class='exactly'>exactly</span> 1 <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="../objectproperties/conceptsRelation___322204910.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/conceptsRelation">conceptsRelation</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="../objectproperties/conceptsRelation___322204910.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/conceptsRelation">conceptsRelation</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="../objectproperties/relFrom___2091634346.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/relFrom">relFrom</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="../objectproperties/relTo___1110343611.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/relTo">relTo</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
+<li class="asserted"><a href="../objectproperties/relatedConcept___-202637692.html" class='Object Property' title="http://knetminer.org/data/rdf/terms/biokno/terms/relatedConcept">relatedConcept</a> <span class='keyword'>Range</span> <span class='Class active-entity'>Concept</span></li>
 </ul>
 </div>
 </div><!-- usage (6) -->

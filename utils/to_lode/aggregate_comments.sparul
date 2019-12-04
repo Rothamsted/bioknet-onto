@@ -1,5 +1,5 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 
 # This is called after a set of annotations are converted to rdfs:comment annotations.
 # It joins all such comments and makes one comment only per resource. This is another thing

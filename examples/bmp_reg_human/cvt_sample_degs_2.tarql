@@ -1,8 +1,8 @@
-PREFIX bk: <http://www.ondex.org/bioknet/terms/>
-PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
-PREFIX bka: <http://www.ondex.org/bioknet/terms/attributes/>
-PREFIX bkds: <http://www.ondex.org/bioknet/terms/dataSources/>
-PREFIX bkev: <http://www.ondex.org/bioknet/terms/evidences/>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/biokno/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkds: <http://knetminer.org/data/rdf/terms/biokno/dataSources/>
+PREFIX bkev: <http://knetminer.org/data/rdf/terms/biokno/evidences/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 

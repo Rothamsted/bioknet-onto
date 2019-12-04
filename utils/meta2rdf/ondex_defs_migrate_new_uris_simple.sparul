@@ -1,4 +1,4 @@
-PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>

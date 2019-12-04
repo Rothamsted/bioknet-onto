@@ -1,9 +1,9 @@
-@prefix bkr:   <http://www.ondex.org/bioknet/resources/> .
-@prefix bk:    <http://www.ondex.org/bioknet/terms/> .
-@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix bkr:   <http://knetminer.org/data/rdf/resources/biokno/> .
+@prefix bk:    <http://knetminer.org/data/rdf/terms/> .
+@prefix bkev:  <http://knetminer.org/data/rdf/terms/evidences/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
-@prefix bka:   <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bkds:  <http://knetminer.org/data/rdf/terms/dataSources/> .
+@prefix bka:   <http://knetminer.org/data/rdf/terms/attributes/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 bkr:TOB1  a                 bk:Protein ;

@@ -1,10 +1,10 @@
-@prefix bkev:  <http://www.ondex.org/bioknet/terms/evidences/> .
+@prefix bkev:  <http://knetminer.org/data/rdf/terms/biokno/evidences/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix bkds:  <http://www.ondex.org/bioknet/terms/dataSources/> .
-@prefix bkr:  <http://www.ondex.org/bioknet/resources/> .
+@prefix bkds:  <http://knetminer.org/data/rdf/terms/biokno/dataSources/> .
+@prefix bkr:  <http://knetminer.org/data/rdf/resources/biokno/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix bk:  <http://www.ondex.org/bioknet/terms/> .
-@prefix bka:  <http://www.ondex.org/bioknet/terms/attributes/> .
+@prefix bk:  <http://knetminer.org/data/rdf/terms/biokno/> .
+@prefix bka:  <http://knetminer.org/data/rdf/terms/biokno/attributes/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 
 bkr:degex_patient_1  rdf:type  bk:ExperimentalSample ;
