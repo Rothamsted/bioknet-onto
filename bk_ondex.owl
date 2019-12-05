@@ -18,7 +18,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">These concepts serve containers for other nucleotide sequence features</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>FeatureContainer</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CDS">
@@ -26,7 +28,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">The coding region of a gene is that portion of a gene's DNA or RNA, composed of exons, that codes for protein.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>CDS</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CoExpStudy">
@@ -45,7 +49,9 @@
     <rdfs:label xml:lang="en">rRNA-Gene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NcRNAGene"/>
+    </rdfs:subClassOf>
     <terms:identifier>RRNAGene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TFBS">
@@ -53,7 +59,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A sequence where a transcription factor binds to the DNA</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>TFBS</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SequenceFeature">
@@ -67,7 +75,9 @@
     <rdfs:label xml:lang="en">ARS-Consensus</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>ARSCons</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CellularComponent">
@@ -78,7 +88,9 @@
     <owl:equivalentClass>
       <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CelComp"/>
     </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
+    </rdfs:subClassOf>
     <terms:identifier>CellularComponent</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshSubstance">
@@ -86,14 +98,18 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A substance from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
+    </rdfs:subClassOf>
     <terms:identifier>MeshSubstance</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ncRNA">
     <rdfs:label xml:lang="en">ncRNA</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/RNA"/>
+    </rdfs:subClassOf>
     <terms:identifier>ncRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Trait">
@@ -114,7 +130,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A polymer of aminoacids.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/InfoPolymer"/>
+    </rdfs:subClassOf>
     <terms:identifier>Polypeptide</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms">
@@ -127,7 +145,9 @@
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protcmplx">
     <rdfs:label xml:lang="en">Protein complex</rdfs:label>
     <terms:description xml:lang="en">Protein Complex consists of several subunits</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>Protcmplx</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Sequence">
@@ -141,14 +161,18 @@
     <rdfs:label xml:lang="en">Synthetic Growth Defect</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GISGD</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Transport">
     <rdfs:label xml:lang="en">Transport</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Process"/>
+    </rdfs:subClassOf>
     <terms:identifier>Transport</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TO">
@@ -156,7 +180,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">ontology describing the different Traits which can affect plants (TO)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>TO</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/sDNA">
@@ -164,7 +188,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Single stranded deoxyribonucleic acid</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/DNA"/>
+    </rdfs:subClassOf>
     <terms:identifier>sDNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Gene">
@@ -172,7 +198,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>Gene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PO_PlantStructure">
@@ -180,14 +208,18 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">The controlled vocabulary of plant structures representing organs, tissue and cell types. Examples are stamen, gynoecium, petal, parenchyma, guard cell, etc</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms"/>
+    </rdfs:subClassOf>
     <terms:identifier>PO_PlantStructure</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CDEII">
     <rdfs:label xml:lang="en">CDEII</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CentromereSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>CDEII</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/StrucProt">
@@ -195,7 +227,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A protein that serves structural purposes.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>StrucProt</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Polynucleotide">
@@ -203,21 +237,27 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A polymer of nucleotides</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/InfoPolymer"/>
+    </rdfs:subClassOf>
     <terms:identifier>Polynucleotide</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/STR">
     <rdfs:label xml:lang="en">XElementCombinatorialRepeat</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SubtelomereSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>STR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Pseudogene">
     <rdfs:label xml:lang="en">Pseudogene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>Pseudogene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TARGETSEQ">
@@ -225,7 +265,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">The relatively small less than 600 nucleotide sequence segment from the 3' end of the consensus or the exemplar sequence; used to design the probes for any given probe set.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NASEQ"/>
+    </rdfs:subClassOf>
     <terms:identifier>TARGETSEQ</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PublicationList">
@@ -241,14 +283,18 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A parmacological action from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
+    </rdfs:subClassOf>
     <terms:identifier>MeshPharmacologicalAction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GIPE">
     <rdfs:label xml:lang="en">Phenotypic Enhancemant</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GIPE</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/RNA">
@@ -256,7 +302,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Ribonucleic Acid. A polymer of riboses with pyrimidine and purine bases.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Polynucleotide"/>
     <terms:identifier>RNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Drug">
@@ -264,7 +310,12 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">a medical drug</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Comp"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Compound"/>
+    </rdfs:subClassOf>
     <terms:identifier>Drug</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Group">
@@ -279,14 +330,14 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Kegg Ortholog Group of sequence similarity</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Group"/>
     <terms:identifier>KO</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PolypeptideFeature">
     <rdfs:label xml:lang="en">PolypeptideFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/SequenceFeature"/>
     <terms:identifier>PolypeptideFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NASEQ">
@@ -294,7 +345,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Nucleic Acid Sequence</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Sequence"/>
     <terms:identifier>NASEQ</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PO_GrowthStage">
@@ -302,14 +353,18 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">TA controlled vocabulary of growth and developmental stages in various plants and their relationships. Examples are germination, seedling, flowering, etc.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms"/>
+    </rdfs:subClassOf>
     <terms:identifier>PO_GrowthStage</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CentromereSubFeature">
     <rdfs:label xml:lang="en">CentromereSubFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>CentromereSubFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SF">
@@ -317,7 +372,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A Sigma factor is a transcription factor that binds to the TATA box of a promoter, thereby allowing the Polymerase to transcribe the downstream DNA sequence.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TF"/>
+    </rdfs:subClassOf>
     <terms:identifier>SF</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Participant">
@@ -325,7 +382,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A molecular biological entity that can participate in a Process or in an Interaction.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Localizable"/>
+    </rdfs:subClassOf>
     <terms:identifier>Participant</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/HierarchyNode">
@@ -344,14 +403,18 @@
     <owl:equivalentClass>
       <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/BioProc"/>
     </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
+    </rdfs:subClassOf>
     <terms:identifier>BiologicalProcess</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GISL">
     <rdfs:label xml:lang="en">Synthetic Lethality</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GISL</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Cultivar">
@@ -359,21 +422,27 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Variation of a plant species arising in cultivation and propagated for some unusual characteristic, such as leaf colour or shape.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Organism"/>
+    </rdfs:subClassOf>
     <terms:identifier>Cultivar</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/LTR">
     <rdfs:label xml:lang="en">Long_terminal_repeat</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TRRSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>LTR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Z2Region">
     <rdfs:label xml:lang="en">Z2Region</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>Z2Region</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Reaction">
@@ -381,7 +450,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">a chemical reaction</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Process"/>
+    </rdfs:subClassOf>
     <terms:identifier>Reaction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MolecularFunction">
@@ -392,7 +463,9 @@
     <owl:equivalentClass>
       <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MolFunc"/>
     </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
+    </rdfs:subClassOf>
     <terms:identifier>MolecularFunction</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/AHDPO">
@@ -400,28 +473,32 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Arabidopsis Hormone Database, Phenotype Ontology http://nar.oxfordjournals.org/cgi/content/full/37/suppl_1/D975?ck=nck</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>AHDPO</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Repeat">
     <rdfs:label xml:lang="en">Repeat</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>Repeat</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms">
     <rdfs:label xml:lang="en">GeneOntologyTerms</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>GeneOntologyTerms</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TRRSubFeature">
     <rdfs:label xml:lang="en">TRRSubFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>TRRSubFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Treatment">
@@ -436,14 +513,14 @@
     <rdfs:label xml:lang="en">CDEIII</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/CentromereSubFeature"/>
     <terms:identifier>CDEIII</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TelomericRepeat">
     <rdfs:label xml:lang="en">TelomericRepeat</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/TRRSubFeature"/>
     <terms:identifier>TelomericRepeat</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MetabolicPathway">
@@ -451,7 +528,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">series of chemical reactions occurring within a cell.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Path"/>
+    </rdfs:subClassOf>
     <terms:identifier>MetabolicPathway</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeSH">
@@ -459,7 +538,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">NLM's controlled vocabulary, used to characterize the content of MEDLINE citations</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>MeSH</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Scaffold">
@@ -467,35 +546,37 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A sequence region which has no physical mapping to one of the main linkage groups (Chromosomes)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/FeatureContainer"/>
     <terms:identifier>Scaffold</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/XCore">
     <rdfs:label xml:lang="en">XCore</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/TRRSubFeature"/>
     <terms:identifier>XCore</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNRNA">
     <rdfs:label xml:lang="en">snRNA</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ncRNA"/>
     <terms:identifier>SNRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MatingLocus">
     <rdfs:label xml:lang="en">MatingLocus</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>MatingLocus</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/AminoacidSequence">
     <rdfs:label xml:lang="en">AminoacidSequence</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Sequence"/>
     <terms:identifier>AminoacidSequence</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Metabolite">
@@ -503,7 +584,12 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Metabolite</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Comp"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Compound"/>
+    </rdfs:subClassOf>
     <terms:identifier>Metabolite</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Publication">
@@ -518,7 +604,9 @@
     <rdfs:label xml:lang="en">Space</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Localizable"/>
+    </rdfs:subClassOf>
     <terms:identifier>Space</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ProteinComplex">
@@ -527,7 +615,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Protein Complex consists of several subunits</terms:description>
     <owl:equivalentClass rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Protcmplx"/>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>ProteinComplex</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Phenotype">
@@ -544,14 +634,16 @@
     <owl:equivalentClass>
       <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MolCmplx"/>
     </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Participant"/>
     <terms:identifier>MoleculeComplex</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NonTranscribedRegion">
     <rdfs:label xml:lang="en">NonTranscribedRegion</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>NonTranscribedRegion</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Organism">
@@ -559,28 +651,36 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Organism.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Taxon"/>
+    </rdfs:subClassOf>
     <terms:identifier>Organism</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/YRegion">
     <rdfs:label xml:lang="en">YRegion</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>YRegion</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MultiGeneLocus">
     <rdfs:label xml:lang="en">MultiGeneLocus</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>MultiGeneLocus</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PhysInt">
     <rdfs:label xml:lang="en">Physical Interaction</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Interaction"/>
+    </rdfs:subClassOf>
     <terms:identifier>PhysInt</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ProtDomain">
@@ -588,7 +688,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A Protein domain</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/PolypeptideFeature"/>
     <terms:identifier>ProtDomain</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshSemanticType">
@@ -596,7 +696,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A semantic type from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
+    </rdfs:subClassOf>
     <terms:identifier>MeshSemanticType</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Enzyme">
@@ -604,14 +706,16 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">An Enzyme is a Protein that catalyzes a chemical reaction.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>Enzyme</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms">
     <rdfs:label xml:lang="en">PlantOntologyTerms</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>PlantOntologyTerms</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ProtFam">
@@ -619,21 +723,27 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Proteins which share a common family</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Annotation"/>
+    </rdfs:subClassOf>
     <terms:identifier>ProtFam</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Retrotransposon">
     <rdfs:label xml:lang="en">Retrotransposon</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>Retrotransposon</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNRNAGene">
     <rdfs:label xml:lang="en">snRNA-Gene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NcRNAGene"/>
+    </rdfs:subClassOf>
     <terms:identifier>SNRNAGene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/KOEN">
@@ -641,7 +751,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Kegg Ortholog Group of sequence similarity</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/KO"/>
     <terms:identifier>KOEN</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNPEffect">
@@ -655,7 +765,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Biological Pathway</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ProcessSequence"/>
     <terms:identifier>Path</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/At_Mutant">
@@ -663,7 +773,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Mutant plant of Arabidopsis</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Organism"/>
     <terms:identifier>At_Mutant</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/EST">
@@ -671,7 +781,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">"single-pass" cDNA sequence, or Expressed Sequence Tag</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NASEQ"/>
     <terms:identifier>EST</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/dDNA">
@@ -679,7 +789,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Double stranded deoxyribonucleic acid</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/DNA"/>
+    </rdfs:subClassOf>
     <terms:identifier>dDNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ExpressionAffector">
@@ -694,7 +806,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A MESH-related term</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>MeshTerm</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TF">
@@ -702,7 +814,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A transcription factor is a protein that regulates the expression of one or more gene by binding to an associated DNA region (see TFBS).</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>TF</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNP">
@@ -714,7 +828,7 @@
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CelComp">
     <rdfs:label xml:lang="en">Cellular_Component</rdfs:label>
     <terms:description xml:lang="en">Cellular Component (GO)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
     <terms:identifier>CelComp</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Transporter">
@@ -722,14 +836,18 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A protein that transports compounds through membranes between different cellular compartments.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein"/>
+    </rdfs:subClassOf>
     <terms:identifier>Transporter</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TRNAGene">
     <rdfs:label xml:lang="en">tRNA-Gene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NcRNAGene"/>
+    </rdfs:subClassOf>
     <terms:identifier>TRNAGene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Annotation">
@@ -742,7 +860,7 @@
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MolCmplx">
     <rdfs:label xml:lang="en">Molecule Complex</rdfs:label>
     <terms:description xml:lang="en">An entity comprised of one or more molecules</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Participant"/>
     <terms:identifier>MolCmplx</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ECorg">
@@ -750,7 +868,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Used by Brenda, a number belongs to one EC and one Organism</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/EC"/>
+    </rdfs:subClassOf>
     <terms:identifier>ECorg</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/uorf">
@@ -763,7 +883,9 @@
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Comp">
     <rdfs:label xml:lang="en">Compound</rdfs:label>
     <terms:description xml:lang="en">a chemical compound</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Molecule"/>
+    </rdfs:subClassOf>
     <terms:identifier>Comp</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Interaction">
@@ -778,7 +900,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">The controlled vocabulary of growth and developmental stages in various cereal plants. Examples are germination, seedling, booting, flowering, etc. Available only for rice, maize, sorghum, wheat, wheat, oat and barley</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms"/>
     <terms:identifier>GRO</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshSupplementalRecord">
@@ -786,7 +908,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A supplementary record from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
     <terms:identifier>MeshSupplementalRecord</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Plant_Hormone">
@@ -794,7 +916,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Plant Hormone treatment</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Treatment"/>
     <terms:identifier>Plant_Hormone</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshDescriptor">
@@ -802,7 +924,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A descriptor record from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
     <terms:identifier>MeshDescriptor</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/DGES">
@@ -816,7 +938,7 @@
     <rdfs:label xml:lang="en">YPrimeElement</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/TRRSubFeature"/>
     <terms:identifier>YPrime</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Molecule">
@@ -824,14 +946,16 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A molecule is comprised of one or more atoms that form a single component through covalent bonds.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Participant"/>
     <terms:identifier>Molecule</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/XRegion">
     <rdfs:label xml:lang="en">XRegion</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>XRegion</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Disease">
@@ -839,7 +963,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Human Diseases</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ExpressionAffector"/>
     <terms:identifier>Disease</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SIRNA">
@@ -847,14 +971,14 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Small Interfering RNA</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ncRNA"/>
     <terms:identifier>SIRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/RRNA">
     <rdfs:label xml:lang="en">rRNA</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ncRNA"/>
     <terms:identifier>RRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Localizable">
@@ -870,7 +994,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Quantitative Trait Locus</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>QTL</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/PWM">
@@ -885,7 +1011,9 @@
     <rdfs:label xml:lang="en">Dosage Rescue</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GIDR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MicroArrayExperiment">
@@ -893,7 +1021,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Microarray experiment</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Experiment"/>
+    </rdfs:subClassOf>
     <terms:identifier>MicroArrayExperiment</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ORF">
@@ -901,21 +1031,25 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Open reading frame</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
+    </rdfs:subClassOf>
     <terms:identifier>ORF</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GISHI">
     <rdfs:label xml:lang="en">Synthetic Haploinsufficiency</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GISHI</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CDEI">
     <rdfs:label xml:lang="en">CDEI</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/CentromereSubFeature"/>
     <terms:identifier>CDEI</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MeshQualifier">
@@ -923,20 +1057,20 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A qualifier from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
     <terms:identifier>MeshQualifier</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature">
     <rdfs:label xml:lang="en">NucleotideFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/SequenceFeature"/>
     <terms:identifier>NucleotideFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/BioProc">
     <rdfs:label xml:lang="en">Biological_Process</rdfs:label>
     <terms:description xml:lang="en">Biological_Process (GO)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
     <terms:identifier>BioProc</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/POTempStage">
@@ -944,14 +1078,16 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">ontology describing Plant temporal stages (PO)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms"/>
     <terms:identifier>POTempStage</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GIDGD">
     <rdfs:label xml:lang="en">Dosage Growth Defect</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GIDGD</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/KOPR">
@@ -959,7 +1095,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Kegg Ortholog Group of sequence similarity</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/KO"/>
     <terms:identifier>KOPR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/CHEM">
@@ -967,7 +1103,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Ontology of chemicals</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/OntologyTerms"/>
     <terms:identifier>CHEM</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/DNA">
@@ -975,7 +1111,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">DNA</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Polynucleotide"/>
     <terms:identifier>DNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein">
@@ -983,20 +1119,21 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A protein is comprised of one or more Polypeptides and potentially other molecules.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MoleculeComplex"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MolCmplx"/>
     <terms:identifier>Protein</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature">
     <rdfs:label xml:lang="en">MatingLocusSubFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>MatingLocusSubFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MolFunc">
     <rdfs:label xml:lang="en">Molecular_Function</rdfs:label>
     <terms:description xml:lang="en">Molecular Function (GO)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/GeneOntologyTerms"/>
     <terms:identifier>MolFunc</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/EC">
@@ -1004,7 +1141,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">All Enzymes are ordered by Classes(e.g. 1.2.3.2)</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/PlantOntologyTerms"/>
     <terms:identifier>EC</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TRNA">
@@ -1012,35 +1149,35 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Transfer RNA</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ncRNA"/>
     <terms:identifier>TRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Z1Region">
     <rdfs:label xml:lang="en">Z1Region</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature"/>
     <terms:identifier>Z1Region</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Centromere">
     <rdfs:label xml:lang="en">Centromere</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>Centromere</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNORNA">
     <rdfs:label xml:lang="en">snoRNA</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ncRNA"/>
     <terms:identifier>SNORNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/ARS">
     <rdfs:label xml:lang="en">ARS</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>ARS</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Process">
@@ -1048,14 +1185,14 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A Process</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Localizable"/>
     <terms:identifier>Process</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GeneCassette">
     <rdfs:label xml:lang="en">GeneCassette</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>GeneCassette</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/MRNA">
@@ -1063,7 +1200,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Messenger RNA</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/RNA"/>
     <terms:identifier>MRNA</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Tissue">
@@ -1071,7 +1208,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Part of an organism consisting of an aggregate of cells having a similar structure and function</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Space"/>
     <terms:identifier>Tissue</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Environment">
@@ -1079,14 +1216,14 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Treatment or surrounding conditions</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Space"/>
     <terms:identifier>Environment</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SubtelomereSubFeature">
     <rdfs:label xml:lang="en">SubtelomereSubFeature</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>SubtelomereSubFeature</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/KOGE">
@@ -1094,42 +1231,44 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Kegg Ortholog Group of sequence similarity</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/KO"/>
     <terms:identifier>KOGE</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/TRR">
     <rdfs:label xml:lang="en">TelomericRegion</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>TRR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/STBS">
     <rdfs:label xml:lang="en">SubtelomericBindingSite</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/SubtelomereSubFeature"/>
     <terms:identifier>STBS</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GIPS">
     <rdfs:label xml:lang="en">Phenotypic Suppression</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
+    </rdfs:subClassOf>
     <terms:identifier>GIPS</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/NcRNAGene">
     <rdfs:label xml:lang="en">ncRNA-Gene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>NcRNAGene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GenInt">
     <rdfs:label xml:lang="en">Genetic Interaction</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Interaction"/>
     <terms:identifier>GenInt</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Taxon">
@@ -1151,14 +1290,14 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Chromosome</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/FeatureContainer"/>
     <terms:identifier>Chromosome</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/WRegion">
     <rdfs:label xml:lang="en">WRegion</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MatingLocusSubFeature"/>
     <terms:identifier>WRegion</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SignallingPathway">
@@ -1166,7 +1305,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">processes of signal transduction involve ordered sequences of biochemical reactions inside the cell, which are carried out by enzymes and activated by second messengers, resulting in a signal transduction pathway.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Path"/>
     <terms:identifier>SignallingPathway</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Protein3DStructure">
@@ -1174,21 +1313,21 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">3-dimensional structure of a protein</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/PolypeptideFeature"/>
     <terms:identifier>Protein3DStructure</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/GIDL">
     <rdfs:label xml:lang="en">Dosage Lethality</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
     <terms:identifier>GIDL</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/SNORNAGene">
     <rdfs:label xml:lang="en">snoRNA-Gene</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NcRNAGene"/>
     <terms:identifier>SNORNAGene</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Timepoint">
@@ -1204,7 +1343,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A concept from MeSH</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/MeshTerm"/>
     <terms:identifier>MeshConcept</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Compound">
@@ -1213,7 +1352,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">a chemical compound</terms:description>
     <owl:equivalentClass rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Comp"/>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Molecule"/>
     <terms:identifier>Compound</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Experiment">
@@ -1228,7 +1367,7 @@
     <rdfs:label xml:lang="en">Synthetic Rescue</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/GenInt"/>
     <terms:identifier>GISR</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/InfoPolymer">
@@ -1236,7 +1375,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A polymeric molecule that contains sequence information.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Molecule"/>
     <terms:identifier>InfoPolymer</terms:identifier>
   </owl:Class>
   <owl:Class rdf:about="http://knetminer.org/data/rdf/terms/biokno/Operon">
@@ -1244,7 +1383,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">An operon is comprised of a promoter, an operator, one or more genes and a terminator.</terms:description>
-    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/Concept"/>
+    <rdfs:subClassOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/NucleotideFeature"/>
     <terms:identifier>Operon</terms:identifier>
   </owl:Class>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/occurs_in">
@@ -1276,7 +1415,12 @@
     <rdfs:label xml:lang="en">inhibited_by</rdfs:label>
     <terms:description xml:lang="en">inhibition of a gene's expression by a transcription factor</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inhibits"/>
     </owl:inverseOf>
@@ -1294,7 +1438,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/not_annotated_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_not_function_of"/>
     </owl:inverseOf>
@@ -1306,7 +1452,10 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">entry2 has a state change from entry1</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/state_change_to"/>
     </owl:inverseOf>
@@ -1318,7 +1467,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">has Ec or CAS ID</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_chemical_in"/>
     </owl:inverseOf>
@@ -1329,7 +1480,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">has_mutated_gene relates an organism/cultivar/mutant with a reference/canonical gene Interpretation: Organism has a mutant version of some reference/canonical gene, where the reference gene would be regarded one from a public database.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_mutated_gene_in"/>
     </owl:inverseOf>
@@ -1352,7 +1505,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Thing-&gt;Publication</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/publication_features"/>
     </owl:inverseOf>
@@ -1369,7 +1524,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">This would typically relate a gene or an experiment with a hormone. Interpretation should be: This gene or experiment involved this hormone (but more explicit information of how is not known).</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/with_treatment"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>assoc_hormone</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/not_located_in">
@@ -1377,7 +1534,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/not_annotated_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_not_location_of"/>
     </owl:inverseOf>
@@ -1402,7 +1561,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;growth and developmental stages</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_expression_of"/>
     </owl:inverseOf>
@@ -1413,7 +1574,12 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">interactions via DNA binding</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>expressed_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ex_by"/>
@@ -1449,7 +1615,12 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">gene's expression is repressed by transcripiton factor</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>repressed_by</terms:identifier>
     <owl:equivalentProperty>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/re_by"/>
@@ -1459,7 +1630,9 @@
     <rdfs:label xml:lang="en">is_subfeature_of</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rel_seq_pos"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_subfeature"/>
     </owl:inverseOf>
@@ -1471,7 +1644,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">InfoPolymer-&gt;Sequence</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_sequence_of"/>
     </owl:inverseOf>
@@ -1485,7 +1660,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Participant-&gt;Participant</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/it_wi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/interacts_physically_with"/>
     </owl:inverseOf>
@@ -1497,7 +1674,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Participant-&gt;Process</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_participant"/>
     </owl:inverseOf>
@@ -1521,7 +1700,9 @@
     <terms:description xml:lang="en">As for part_of, with the additional constraint that subject and object are distinct</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_proper_part"/>
     </owl:inverseOf>
@@ -1536,7 +1717,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Used to denote the relationship between two molecular entities (or classes of entities), one of which possesses one or more chacteristic groups from which the other can be derived by functional modification. This relationship is especially useful to demonstrate the relationships between a number of functionalised entities and a common less-functionalised parent.</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_chemical_functional_parent_of"/>
     </owl:inverseOf>
@@ -1544,17 +1727,6 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_subfeature">
     <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_relative_position">
-    <rdfs:label xml:lang="en">has_relative_position</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_position"/>
-    <terms:identifier>has_relative_position</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/taken_by">
     <rdfs:label xml:lang="en">taken_by</rdfs:label>
@@ -1570,7 +1742,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rel_seq_pos"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_3&apos;_neighbour_of"/>
     </owl:inverseOf>
@@ -1584,7 +1758,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Thing-&gt;Annotation</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/annotates"/>
     <terms:identifier>is_annotated_by</terms:identifier>
   </owl:ObjectProperty>
@@ -1597,7 +1773,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;morphology, organs, tissue and cell types</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_expression_of"/>
     </owl:inverseOf>
@@ -1617,7 +1795,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gives"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/produced_by"/>
     </owl:inverseOf>
@@ -1628,7 +1808,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/upstream"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_3&apos;_adjacent_to"/>
     </owl:inverseOf>
@@ -1638,33 +1820,20 @@
     <rdfs:label xml:lang="en">regulated_by</rdfs:label>
     <terms:description xml:lang="en">TF-&gt;Gene</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulates"/>
     </owl:inverseOf>
     <terms:identifier>rg_by</terms:identifier>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/activated_by">
-    <rdfs:label xml:lang="en">activated_by</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <terms:description xml:lang="en">activation of a gene's expression by a transcription factor</terms:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/activates"/>
-    </owl:inverseOf>
-    <terms:identifier>activated_by</terms:identifier>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ac_by"/>
-    </owl:equivalentProperty>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/consumed_by">
     <rdfs:label xml:lang="en">consumed_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/taken_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/consumes"/>
     </owl:inverseOf>
@@ -1680,7 +1849,9 @@
     <rdfs:label xml:lang="en">dephosphorylated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/dephosphorylates"/>
     </owl:inverseOf>
@@ -1694,7 +1865,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/does_not_annotate"/>
     <terms:identifier>not_annotated_by</terms:identifier>
   </owl:ObjectProperty>
@@ -1703,7 +1876,9 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/cat_c">
     <rdfs:label xml:lang="en">part_of_catalyzing_class</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>cat_c</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/narrower">
@@ -1718,7 +1893,9 @@
     <rdfs:label xml:lang="en">demethylated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/demethylates"/>
     </owl:inverseOf>
@@ -1729,7 +1906,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Entities that are inversely correlated (-ve coefficiant)</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/correlated_with"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>inverse_correlation_with</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/part_of">
@@ -1738,7 +1917,10 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">For continuants: C part_of C' if and only if: given any c that instantiates C at a time t, there is some c' such that c' instantiates C' at time t, and c *part_of* c' at t. For processes: P part_of P' if and only if: given any p that instantiates P at a time t, there is some p' such that p' instantiates P' at time t, and p *part_of* p' at t. (Here *part_of* is the instance-level part-relation.)</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_part"/>
     </owl:inverseOf>
@@ -1750,7 +1932,7 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/pu_by">
     <rdfs:label xml:lang="en">taken_up_by</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/taken_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/takes_up"/>
     </owl:inverseOf>
@@ -1766,7 +1948,9 @@
     <rdfs:label xml:lang="en">glycosylated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/glycosylates"/>
     <terms:identifier>glycosylated_by</terms:identifier>
   </owl:ObjectProperty>
@@ -1781,7 +1965,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/5pNeighbour"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/overlaps_3&apos;_of"/>
     </owl:inverseOf>
@@ -1792,7 +1976,22 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">n C adjacent to C' if and only if: given any instance c that instantiates C at a time t, there is some c' such that: c' instantiates C' at time t and c and c' are in spatial proximity</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ReflexiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_relative_position">
+        <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+        <rdfs:subPropertyOf>
+          <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+        </rdfs:subPropertyOf>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</bk:isOndexPreferred>
+        <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_position"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:label xml:lang="en">has_relative_position</rdfs:label>
+        <terms:identifier>has_relative_position</terms:identifier>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+      </owl:ReflexiveProperty>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/adjacent_to"/>
     <terms:identifier>adjacent_to</terms:identifier>
   </owl:ObjectProperty>
@@ -1802,7 +2001,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;mRNA</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/info_transd"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_transcribed_from"/>
     <terms:identifier>transcribes_to</terms:identifier>
   </owl:ObjectProperty>
@@ -1810,7 +2011,9 @@
     <rdfs:label xml:lang="en">catalyzed_by</rdfs:label>
     <terms:description xml:lang="en">catalyzation of a reaction by a catalyst</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_agent"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/catalyzes"/>
     </owl:inverseOf>
@@ -1820,7 +2023,10 @@
     <rdfs:label xml:lang="en">chemical_relationship</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>chem_rel</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_conjugate">
@@ -1829,7 +2035,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Cyclic relationships which are used mainly between acids and their conjugate bases.</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_conjugate"/>
     <terms:identifier>is_conjugate</terms:identifier>
   </owl:ObjectProperty>
@@ -1877,7 +2083,12 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">gene is homologue to other gene</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_similar_sequence"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/h_s_s"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>homologue</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ortho">
@@ -1886,7 +2097,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">blastbased ortholog proteins of different species</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/homologue"/>
     <terms:identifier>ortho</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gi_ps">
@@ -1894,7 +2105,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phenotype_suppressed_by"/>
     </owl:inverseOf>
@@ -1903,7 +2116,9 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/h_s_s">
     <rdfs:label xml:lang="en">has_similar_sequence</rdfs:label>
     <terms:description xml:lang="en">blastbased homolog proteins of different species</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_similar_sequence"/>
     </owl:inverseOf>
@@ -1914,7 +2129,10 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical_IB_relation"/>
     </owl:inverseOf>
@@ -1923,7 +2141,7 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/cs_by">
     <rdfs:label xml:lang="en">consumed_by</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/taken_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/consumes"/>
     </owl:inverseOf>
@@ -1938,7 +2156,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;TF or GO1-&gt;GO2</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
     </owl:inverseOf>
@@ -1953,7 +2171,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">hormone_treated relates an experiment with a hormone. experiment -&gt; hormone_treated -&gt; hormone should be interpreted as: This experiment involves the application of hormone.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/with_treatment"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>hormone_treated</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/integral_part_of">
@@ -1961,7 +2181,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">C integral_part_of C' if and only if: C part_of C' AND C' has_part C</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_integral_part"/>
     </owl:inverseOf>
@@ -1972,7 +2192,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/not_annotated_by"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_not_participant"/>
     <terms:identifier>participates_not</terms:identifier>
   </owl:ObjectProperty>
@@ -1981,7 +2201,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/dosage_lethality"/>
     </owl:inverseOf>
@@ -1996,7 +2218,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Indicates the relationship between a substituent group (or atom) and its parent molecular entity, from which it is formed by loss of one or more protons or simple groups.</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_chemical_substituent_group"/>
     <terms:identifier>is_chem_sub_gr_from</terms:identifier>
   </owl:ObjectProperty>
@@ -2030,22 +2252,11 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Catalysis of chain elongation</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_elongated_by"/>
     </owl:inverseOf>
     <terms:identifier>elongates</terms:identifier>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/situated_to">
-    <rdfs:label xml:lang="en">situated_to</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <terms:description xml:lang="en">A transcription factor binding site is situated next to a Gene.</terms:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/situated_to"/>
-    <terms:identifier>situated_to</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/occ_in">
     <rdfs:label xml:lang="en">occurs_in</rdfs:label>
@@ -2060,7 +2271,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;Gene</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/it_wi"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/interacts_genetically_with"/>
     </owl:inverseOf>
@@ -2071,7 +2284,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Entities that are directly correlated (+ve coefficiant)</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/correlated_with"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>direct_correlation_with</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_function_of">
@@ -2081,7 +2296,9 @@
     <rdfs:label xml:lang="en">cofactored_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_participant"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>co_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/genetic">
@@ -2094,7 +2311,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Molecule-&gt;MoleculeCmplx</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
     <terms:identifier>is_part_of</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/demethylates">
@@ -2106,7 +2323,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Transporter-&gt;Transport</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/modifies"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/transport_performed_by"/>
     <terms:identifier>performs_transport</terms:identifier>
   </owl:ObjectProperty>
@@ -2114,7 +2333,10 @@
     <rdfs:label xml:lang="en">contributes_to</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_contributor"/>
     </owl:inverseOf>
@@ -2125,7 +2347,10 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Relation between two classes, in which instances retain their identity yet change their classification by virtue of some kind of transformation. Formally: C transformation_of C' if and only if given any c and any t, if c instantiates C at time t, then for some t', c instantiates C' at t' and t' earlier t, and there is no t2 such that c instantiates C at t2 and c instantiates C' at t2.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>transformation_of</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/h_pwm">
@@ -2133,7 +2358,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">transcription factor binding site (TFBS) has position-specific weight matrix (PWM)</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_pwm_of"/>
     </owl:inverseOf>
@@ -2158,7 +2385,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_intermediate"/>
     </owl:inverseOf>
@@ -2175,7 +2402,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phenotype_enhanced_by"/>
     <terms:identifier>gi_pe</terms:identifier>
   </owl:ObjectProperty>
@@ -2184,7 +2411,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">GO concept names contain a sensu part which we break up into seperate concepts and relations</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inverse_sensu"/>
     </owl:inverseOf>
@@ -2195,7 +2422,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/growth_defect_inflicted_by"/>
     </owl:inverseOf>
@@ -2205,7 +2432,9 @@
     <rdfs:label xml:lang="en">methylated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/methylates"/>
     </owl:inverseOf>
@@ -2217,7 +2446,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Enzyme-&gt;Reaction</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/modifies"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_catalyzed_by"/>
     </owl:inverseOf>
@@ -2229,20 +2460,12 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Derivation on the instance level (*derives_from*) holds between distinct material continuants when one succeeds the other across a temporal divide in such a way that at least a biologically significant portion of the matter of the earlier continuant is inherited by the later. We say that one class C derives_from class C' if instances of C are connected to instances of C' via some chain of instance-level derivation relations. Example: osteocyte derives_from osteoblast. Formally: C derives_immediately_from C' if and only if: given any c and any t, if c instantiates C at time t, then there is some c' and some t', such that c' instantiates C' at t' and t' earlier-than t and c *derives_from* c'. C derives_from C' if and only if: there is an chain of immediate derivation relations connecting C to C'.</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/derivable_to"/>
     <terms:identifier>derives_from</terms:identifier>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/preceded_by">
-    <rdfs:label xml:lang="en">preceded_by</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <terms:description xml:lang="en">Used for keggenzymecentric on P preceded_by P' if and only if: given any process p that instantiates P at a time t, there is some process p' such that p' instantiates P' at time t', and t' is earlier than t.</terms:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/precedes"/>
-    <terms:identifier>preceded_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_intermediate">
     <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
@@ -2253,7 +2476,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Involvement in something e.g. disease</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/involves"/>
     <terms:identifier>inv_in</terms:identifier>
   </owl:ObjectProperty>
@@ -2262,14 +2485,17 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Used in GO, eg BP A neg_regulates BP B</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
     <terms:identifier>neg_reg</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ptm_by">
     <rdfs:label xml:lang="en">post-translationally_modified_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/post-translationally_modifies"/>
     <terms:identifier>ptm_by</terms:identifier>
   </owl:ObjectProperty>
@@ -2288,7 +2514,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/given_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_efflux_from"/>
     </owl:inverseOf>
@@ -2309,20 +2535,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/lethality_caused_with_by"/>
     <terms:identifier>gi_sl</terms:identifier>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inhibited_by">
-    <rdfs:label xml:lang="en">inhibited_by</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <terms:description xml:lang="en">inhibition of a gene's expression by a transcription factor</terms:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/inhibits"/>
-    <terms:identifier>inhibited_by</terms:identifier>
-    <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/in_by"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/xref">
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
@@ -2333,7 +2548,10 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/re_by">
     <rdfs:label xml:lang="en">repressed_by</rdfs:label>
     <terms:description xml:lang="en">gene's expression is repressed by transcripiton factor</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
     <terms:identifier>re_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_efflux_from">
@@ -2344,7 +2562,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Two compounds have an unspecified enzymatic interaction</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_int"/>
     <terms:identifier>enz_int</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_mutated_gene_in">
@@ -2385,7 +2603,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">blastbased homolog proteins of different species</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_similar_sequence"/>
     <terms:identifier>has_similar_sequence</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/h_s_s"/>
@@ -2418,7 +2636,7 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/pub_in">
     <rdfs:label xml:lang="en">published_in</rdfs:label>
     <terms:description xml:lang="en">Thing-&gt;Publication</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/publication_features"/>
     <terms:identifier>pub_in</terms:identifier>
   </owl:ObjectProperty>
@@ -2427,7 +2645,9 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">gene is inparalogue of another gene</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/para"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inparalogue"/>
     </owl:inverseOf>
@@ -2439,7 +2659,10 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/ex_by">
     <rdfs:label xml:lang="en">expressed_by</rdfs:label>
     <terms:description xml:lang="en">interactions via DNA binding</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
     <terms:identifier>ex_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/develops_from">
@@ -2458,7 +2681,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Molecule-&gt;Molecule</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_int"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/bound_by"/>
     <terms:identifier>bi_to</terms:identifier>
   </owl:ObjectProperty>
@@ -2469,7 +2692,7 @@
     <rdfs:label xml:lang="en">acetylated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/acetylates"/>
     </owl:inverseOf>
@@ -2485,7 +2708,7 @@
     <terms:description xml:lang="en">Sequence-&gt;SequenceFeature</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_feature_of"/>
     </owl:inverseOf>
@@ -2498,7 +2721,9 @@
     <rdfs:label xml:lang="en">encodes</rdfs:label>
     <terms:description xml:lang="en">Gene-&gt;Protein</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/info_transd"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_encoded_by"/>
     <terms:identifier>enc</terms:identifier>
   </owl:ObjectProperty>
@@ -2506,7 +2731,10 @@
     <rdfs:label xml:lang="en">activated_by</rdfs:label>
     <terms:description xml:lang="en">activation of a gene's expression by a transcription factor</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/activates"/>
     </owl:inverseOf>
@@ -2515,35 +2743,14 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_feature_of">
     <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/equivalent">
-    <rdfs:label xml:lang="en">is_equivalent_to</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <terms:identifier>equivalent</terms:identifier>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/equ"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_a">
-    <rdfs:label xml:lang="en">is_a</rdfs:label>
-    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</bk:isOndexPreferred>
-    <terms:description xml:lang="en">(Meta) is_a This relation type represents when two classes are represented as Ondex Concepts, that there is a class level is-a relationship between the two classes.</terms:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
-    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_a"/>
-    <terms:identifier>is_a</terms:identifier>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/rp_by">
     <rdfs:label xml:lang="en">replaced_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/replaces"/>
     </owl:inverseOf>
@@ -2559,7 +2766,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_sequence_position"/>
     <terms:identifier>rel_seq_pos</terms:identifier>
   </owl:ObjectProperty>
@@ -2571,7 +2778,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/dosage_growth_defect"/>
     <terms:identifier>gi_dgd</terms:identifier>
   </owl:ObjectProperty>
@@ -2580,7 +2787,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/haploinsufficiency_inflicted_by"/>
     <terms:identifier>gi_shi</terms:identifier>
   </owl:ObjectProperty>
@@ -2606,7 +2813,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/5pNeighbour"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_downstream_from"/>
     </owl:inverseOf>
@@ -2634,7 +2841,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A cyclic relationship used when two entities are enantiomers of each other. An entity may have this relationship with only one other entity.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <terms:identifier>is_enantiomer_of</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_downstream_from">
@@ -2648,7 +2855,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/given_by"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/produces"/>
     <terms:identifier>produced_by</terms:identifier>
     <owl:equivalentProperty>
@@ -2667,7 +2874,8 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">indirect effect without molecular details (same as used for GErel)</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <terms:identifier>id_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/catalyzed_by">
@@ -2676,7 +2884,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">catalyzation of a reaction by a catalyst</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_agent"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/catalyzes"/>
     <terms:identifier>catalyzed_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ca_by"/>
@@ -2687,7 +2897,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Used to denote the relationship between an entity and its parent hydride (defined by IUPAC as "an unbranched acyclic or cyclic structure or an acyclic/cyclic structure having a semisystematic or trivial name to which only hydrogen atoms are attached").</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_chemical_parent_hybride"/>
     <terms:identifier>h_chem_p_hybride</terms:identifier>
   </owl:ObjectProperty>
@@ -2696,7 +2906,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/dosage_rescue"/>
     <terms:identifier>gi_dr</terms:identifier>
   </owl:ObjectProperty>
@@ -2706,7 +2916,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Thing-&gt;Thing</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/interacts_with"/>
     <terms:identifier>it_wi</terms:identifier>
   </owl:ObjectProperty>
@@ -2730,7 +2940,7 @@
     <terms:description xml:lang="en">AminoacidSequence-&gt;ProteinDomain</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_feature"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_protein_domain_of"/>
     <terms:identifier>has_domain</terms:identifier>
   </owl:ObjectProperty>
@@ -2740,7 +2950,8 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Specifies the inverse relation to part_of</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
     <terms:identifier>has_part</terms:identifier>
   </owl:ObjectProperty>
@@ -2751,7 +2962,7 @@
     <rdfs:label xml:lang="en">information_transduction</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <terms:identifier>info_transd</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/has_expression_of">
@@ -2762,14 +2973,17 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Used in GO, eg BP A pos_regulates BP B</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
     <terms:identifier>pos_reg</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/catalyzing_class">
     <rdfs:label xml:lang="en">part_of_catalyzing_class</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/part_of"/>
     <terms:identifier>catalyzing_class</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/cat_c"/>
   </owl:ObjectProperty>
@@ -2788,7 +3002,9 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Participant-&gt;Process</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/part_act"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_modified_by"/>
     <terms:identifier>modifies</terms:identifier>
   </owl:ObjectProperty>
@@ -2798,7 +3014,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">TF-&gt;Gene</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phys_intbio"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/regulates"/>
     <terms:identifier>regulated_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
@@ -2808,21 +3024,24 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A cyclic relationship used to show the interrelationship between two tautomers, where the differences between the structures are significant enough to warrant their separate inclusion in ChEBI.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/chem_rel"/>
     <terms:identifier>is_tautomer_of</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/correlated_with">
     <rdfs:label xml:lang="en">correlated_with</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/math"/>
+    </rdfs:subPropertyOf>
     <terms:identifier>correlated_with</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/textual_relationship">
     <rdfs:label xml:lang="en">textual_relationship</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <terms:identifier>textual_relationship</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inverse_sensu">
@@ -2849,7 +3068,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">As for has_participant, but with the additional condition that the component instance is causally active in the relevant process</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_participant"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_agent_of"/>
     </owl:inverseOf>
@@ -2860,7 +3079,8 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">superclass for mathematical relations</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <terms:identifier>math</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/located_in">
@@ -2870,7 +3090,7 @@
     <terms:description xml:lang="en">Localizable-&gt;Space</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_position"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_location_of"/>
     <terms:identifier>located_in</terms:identifier>
   </owl:ObjectProperty>
@@ -2879,7 +3099,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">shared with two successive reactions (ECrel) or intermediate of two interacting proteins (PPrel)</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_position"/>
     <terms:identifier>sh_im</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/phenotype_suppressed_by">
@@ -2890,7 +3110,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_function_of"/>
     <terms:identifier>has_function</terms:identifier>
   </owl:ObjectProperty>
@@ -2907,7 +3127,7 @@
     <terms:description xml:lang="en">NucleotideSequence-&gt;NucleotideFeature</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_feature"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_nucleotide_feature_of"/>
     <terms:identifier>has_nuclFeature</terms:identifier>
   </owl:ObjectProperty>
@@ -2915,7 +3135,7 @@
     <rdfs:label xml:lang="en">is_hypernym_of</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/textual_relationship"/>
     <terms:identifier>is_hyperym_of</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/broader">
@@ -2931,7 +3151,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">hormone_control relates an experiment with a hormone. experiment -&gt; hormone_control -&gt; hormone should be interpreted as: This experiment has no hormone treatment applied.</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/with_treatment"/>
     <terms:identifier>hormone_control</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/instance_of">
@@ -2940,7 +3160,8 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">A relation between an instance and a class. For components: a primitive relation between a component instance and a class which it instantiates at a specific time. For processes: a primitive relation, between a process instance and a class which it instantiates, holding independently of time</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_instance"/>
     <terms:identifier>instance_of</terms:identifier>
   </owl:ObjectProperty>
@@ -2951,7 +3172,9 @@
     <terms:description xml:lang="en">A is the direct outcome of B</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf>
+      <owl:TransitiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/preceded_by"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/precedes"/>
     <terms:identifier>pr_by</terms:identifier>
   </owl:ObjectProperty>
@@ -2964,7 +3187,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Polypeptide-&gt;Gene</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/info_transd"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/encodes"/>
     </owl:inverseOf>
@@ -2980,7 +3203,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Gene-&gt;Protein</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/info_transd"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_encoded_by"/>
     <terms:identifier>encodes</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/enc"/>
@@ -3009,7 +3232,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/gi"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rescued_by"/>
     <terms:identifier>gi_sr</terms:identifier>
   </owl:ObjectProperty>
@@ -3020,7 +3243,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_relative_position"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/colocalized_with"/>
     <terms:identifier>coloc</terms:identifier>
   </owl:ObjectProperty>
@@ -3029,7 +3252,8 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
     <terms:identifier>equ</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/translates_to">
@@ -3038,7 +3262,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">mRNA-&gt;Polypeptide</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/info_transd"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_translated_from"/>
     <terms:identifier>translates_to</terms:identifier>
   </owl:ObjectProperty>
@@ -3053,7 +3277,7 @@
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/pd_by">
     <rdfs:label xml:lang="en">produced_by</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/given_by"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/produces"/>
     <terms:identifier>pd_by</terms:identifier>
   </owl:ObjectProperty>
@@ -3062,7 +3286,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Protein-&gt;Protein</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/phosphorylates"/>
     <terms:identifier>phosphorylated_by</terms:identifier>
   </owl:ObjectProperty>
@@ -3071,7 +3295,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">Result of a experiment produces a phenotype</terms:description>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
     <terms:identifier>has_observ_pheno</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/activates">
@@ -3092,7 +3316,7 @@
     >true</bk:isOndexPreferred>
     <terms:description xml:lang="en">gene is paralogue to other gene</terms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/homologue"/>
     <terms:identifier>para</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/gives">
@@ -3109,7 +3333,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/taken_by"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/takes_up"/>
     <terms:identifier>taken_up_by</terms:identifier>
     <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/pu_by"/>
@@ -3122,7 +3346,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/participates_in"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_active_participant"/>
     <terms:identifier>part_act</terms:identifier>
   </owl:ObjectProperty>
@@ -3130,7 +3354,7 @@
     <rdfs:label xml:lang="en">ubiquinated_by</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ptm_by"/>
     <terms:identifier>ubiquinated_by</terms:identifier>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/part_pass">
@@ -3138,7 +3362,7 @@
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/participates_in"/>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_passive_participant"/>
     <terms:identifier>part_pass</terms:identifier>
   </owl:ObjectProperty>
@@ -5000,6 +5224,54 @@
     <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/attribute"/>
     <terms:identifier>RT</terms:identifier>
   </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/is_a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    <rdfs:label xml:lang="en">is_a</rdfs:label>
+    <terms:identifier>is_a</terms:identifier>
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/is_a"/>
+    <terms:description xml:lang="en">(Meta) is_a This relation type represents when two classes are represented as Ondex Concepts, that there is a class level is-a relationship between the two classes.</terms:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/situated_to">
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <terms:identifier>situated_to</terms:identifier>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/situated_to"/>
+    <terms:description xml:lang="en">A transcription factor binding site is situated next to a Gene.</terms:description>
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    <rdfs:label xml:lang="en">situated_to</rdfs:label>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/preceded_by">
+    <terms:identifier>preceded_by</terms:identifier>
+    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/precedes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <terms:description xml:lang="en">Used for keggenzymecentric on P preceded_by P' if and only if: given any process p that instantiates P at a time t, there is some process p' such that p' instantiates P' at time t', and t' is earlier than t.</terms:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+    <rdfs:label xml:lang="en">preceded_by</rdfs:label>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/equivalent">
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical_relation"/>
+    <rdfs:label xml:lang="en">is_equivalent_to</rdfs:label>
+    <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/equ"/>
+    <terms:identifier>equivalent</terms:identifier>
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/physical"/>
+  </owl:TransitiveProperty>
   <owl:NamedIndividual rdf:about="http://knetminer.org/data/rdf/terms/biokno/dataSources/Decypher:ENSEMBL">
     <rdfs:label xml:lang="en">Decypher:ENSEMBL</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
@@ -5804,6 +6076,18 @@
     <rdf:type rdf:resource="http://knetminer.org/data/rdf/terms/biokno/DataSource"/>
     <terms:identifier>TC</terms:identifier>
   </owl:NamedIndividual>
+  <owl:AsymmetricProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/activated_by">
+    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/activates"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    <rdfs:label xml:lang="en">activated_by</rdfs:label>
+    <terms:description xml:lang="en">activation of a gene's expression by a transcription factor</terms:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/ac_by"/>
+    <terms:identifier>activated_by</terms:identifier>
+  </owl:AsymmetricProperty>
   <owl:NamedIndividual rdf:about="http://knetminer.org/data/rdf/terms/biokno/dataSources/PubMed">
     <rdfs:label xml:lang="en">PubMed</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
@@ -5970,6 +6254,18 @@
     <rdf:type rdf:resource="http://knetminer.org/data/rdf/terms/biokno/DataSource"/>
     <terms:identifier>UMan</terms:identifier>
   </owl:NamedIndividual>
+  <owl:AsymmetricProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/inhibited_by">
+    <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</bk:isOndexPreferred>
+    <terms:identifier>inhibited_by</terms:identifier>
+    <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/inhibits"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/rg_by"/>
+    <terms:description xml:lang="en">inhibition of a gene's expression by a transcription factor</terms:description>
+    <rdfs:label xml:lang="en">inhibited_by</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/regulated_by"/>
+    <owl:equivalentProperty rdf:resource="http://knetminer.org/data/rdf/terms/biokno/in_by"/>
+  </owl:AsymmetricProperty>
   <owl:NamedIndividual rdf:about="http://knetminer.org/data/rdf/terms/biokno/dataSources/AC">
     <rdfs:label xml:lang="en">AraCyc</rdfs:label>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
@@ -7304,9 +7600,9 @@
     <terms:identifier>LIPIDBANK</terms:identifier>
   </owl:NamedIndividual>
   <owl:AsymmetricProperty rdf:about="http://knetminer.org/data/rdf/terms/biokno/member_of">
-    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/conceptsRelation"/>
     <rdfs:label xml:lang="en">member_of</rdfs:label>
     <owl:inverseOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_member"/>
+    <rdfs:subPropertyOf rdf:resource="http://knetminer.org/data/rdf/terms/biokno/has_attributive_relation_with"/>
     <terms:identifier>member_of</terms:identifier>
     <bk:isOndexPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</bk:isOndexPreferred>

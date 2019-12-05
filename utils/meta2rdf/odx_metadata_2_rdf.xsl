@@ -69,6 +69,9 @@
 			<!-- Super-class -->
 			<xsl:variable name="super_class_id">
 				<xsl:choose>
+					<xsl:when test = "not ( fn:is_ignored_cc ( odx:specialisationOf/odx:idRef ))">
+						<xsl:value-of select = "odx:specialisationOf/odx:idRef" />
+					</xsl:when>
 					<xsl:when test = "not ( fn:is_ignored_cc ( odx:specialisationOf/odx:id ))">
 						<xsl:value-of select = "odx:specialisationOf/odx:id" />
 					</xsl:when>
@@ -107,6 +110,9 @@
 			<!-- Super-property -->
 			<xsl:variable name="super_prop_id">
 				<xsl:choose>
+					<xsl:when test = "not ( fn:is_ignored_relation ( odx:specialisationOf/odx:idRef ) )">
+						<xsl:value-of select = "odx:specialisationOf/odx:idRef" />
+					</xsl:when>
 					<xsl:when test = "not ( fn:is_ignored_relation ( odx:specialisationOf/odx:id ) )">
 						<xsl:value-of select = "odx:specialisationOf/odx:id" />
 					</xsl:when>

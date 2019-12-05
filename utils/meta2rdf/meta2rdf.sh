@@ -20,6 +20,7 @@ ntmpf=/tmp/meta2rdf.$$.ttl
 echo Getting raw RDF from XML
 java -jar "$SAX_JAR" -s:"$finput" -xsl:odx_metadata_2_rdf.xsl -o:"$otmpf"
 
+
 echo -e "\n\n==== URI normalization 1/3\n"
 "$JENA_HOME/bin/update" --data="$otmpf" --update=ondex_defs_new_uris.sparul --dump | sponge "$ntmpf"
 
