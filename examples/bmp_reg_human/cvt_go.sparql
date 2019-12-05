@@ -1,5 +1,5 @@
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
-PREFIX bkr: <http://knetminer.org/data/rdf/resources//>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 PREFIX bkds: <http://knetminer.org/data/rdf/terms/biokno/dataSources/>
 PREFIX bkev: <http://knetminer.org/data/rdf/terms/biokno/evidences/>
