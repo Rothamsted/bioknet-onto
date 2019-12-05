@@ -1,4 +1,4 @@
-@prefix bkr:   <http://knetminer.org/data/rdf/resources/biokno/> .
+@prefix bkr:   <http://knetminer.org/data/rdf/resources//> .
 @prefix bk:    <http://knetminer.org/data/rdf/terms/> .
 @prefix bkev:  <http://knetminer.org/data/rdf/terms/evidences/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

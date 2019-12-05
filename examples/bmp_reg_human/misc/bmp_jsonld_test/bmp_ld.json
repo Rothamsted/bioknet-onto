@@ -4,7 +4,7 @@
 		"bka": "http://knetminer.org/data/rdf/terms/attributes/",
 		"bkds": "http://knetminer.org/data/rdf/terms/dataSources/",
 		"bkev": "http://knetminer.org/data/rdf/terms/evidences/",
-		"bkr": "http://knetminer.org/data/rdf/resources/biokno/",
+		"bkr": "http://knetminer.org/data/rdf/resources//",
 		"dcterms": "http://purl.org/dc/terms/",
 		"obo": "http://purl.obolibrary.org/obo/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
