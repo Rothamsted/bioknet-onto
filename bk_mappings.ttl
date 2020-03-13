@@ -36,7 +36,9 @@ bpax:standardName rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/altName
 bk:altName rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf skos:altLabel .
+           rdfs:subPropertyOf skos:altLabel;
+           owl:equivalentProperty schema:alternateName;
+					 rdfs:seeAlso schema:name .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/name
@@ -46,7 +48,9 @@ bk:name rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/prefName
 bk:prefName rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf skos:prefLabel .
+            rdfs:subPropertyOf skos:prefLabel;
+						rdfs:comment "schema:name is described and used as preferred name, despite being defined as equivalent to dc:title. Here, we prefer to stick to the de-facto meaning, which should ease interoperability." ;
+						owl:equivalentProperty schema:name.
 
 
 
