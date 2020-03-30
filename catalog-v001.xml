@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://knetminer.org/data/rdf/terms/biokno/kNetMiner_extensions/" uri="bk_ondex.owl"/>
+    <uri id="Imports Wizard Entry" name="http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/" uri="bk_ondex.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="http://knetminer.org/data/rdf/terms/biokno/" uri="bioknet.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="http://purl.uniprot.org/uniprot/" uri="examples/bmp_reg_human/input_data/tob1_P50616.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="http://www.biopax.org/release/biopax-level3.owl" uri="examples/bmp_reg_human/bkout/ext/biopax-level3.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="http://www.w3.org/2004/02/skos/core" uri="examples/bmp_reg_human/bkout/ext/skos.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="http://www.wikipathways.org/" uri="examples/bmp_reg_human/input_data/WP1425_86082_bpax.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1575627990670" name="shadowed:http://knetminer.org/data/rdf/terms/biokno/" uri="utils/meta2rdf/namespaces.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://knetminer.org/data/rdf/terms/biokno/" uri="bioknet.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/" uri="bk_ondex.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://purl.uniprot.org/uniprot/" uri="examples/bmp_reg_human/input_data/tob1_P50616.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://www.biopax.org/release/biopax-level3.owl" uri="examples/bmp_reg_human/bkout/ext/biopax-level3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://www.w3.org/2004/02/skos/core" uri="examples/bmp_reg_human/bkout/ext/skos.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="http://www.wikipathways.org/" uri="examples/bmp_reg_human/input_data/WP1425_86082_bpax.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1585334366931" name="shadowed:http://knetminer.org/data/rdf/terms/biokno/" uri="utils/meta2rdf/namespaces.owl"/>
     </group>
 </catalog>

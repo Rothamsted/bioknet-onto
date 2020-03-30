@@ -28,8 +28,9 @@
 	    xmlns:bk="http://knetminer.org/data/rdf/terms/biokno/"
 	  	xmlns:dcterms="http://purl.org/dc/terms/"
       xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xml:base="http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/"
     >
-	    <owl:Ontology rdf:about="http://knetminer.org/data/rdf/terms/biokno/kNetMiner_extensions/">
+	    <owl:Ontology rdf:about="http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/">
 	        <owl:imports rdf:resource="http://knetminer.org/data/rdf/terms/biokno/"/>
 	    </owl:Ontology>
 

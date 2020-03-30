@@ -8,6 +8,7 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix agri: <http://agrischemas.org/> .
 @prefix bpax: <http://www.biopax.org/release/biopax-level3.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -17,113 +18,34 @@
 @base <http://knetminer.org/data/rdf/terms/biokno/ext_mappings> .
 
 <http://knetminer.org/data/rdf/terms/biokno/ext_mappings> rdf:type owl:Ontology ;
-                                             owl:imports <http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/> .
+                                                           owl:imports bk: ,
+                                                                       <http://knetminer.org/data/rdf/terms/biokno/knetminer_extensions/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://agrischemas.org/evidence
+agri:evidence rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/label
-dcterms:label rdf:type owl:DatatypeProperty .
+###  http://knetminer.org/data/rdf/terms/biokno/evidence
+bk:evidence rdf:type owl:ObjectProperty;
+            rdfs:subPropertyOf agri:evidence .
 
 
-###  http://www.biopax.org/release/biopax-level3.owl#name
-bpax:name rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf bk:name .
+###  http://knetminer.org/data/rdf/terms/biokno/attributes/EVIDENCE
+bka:EVIDENCE rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf agri:evidence .
 
-
-###  http://www.biopax.org/release/biopax-level3.owl#standardName
-bpax:standardName rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf bk:prefName .
-
-
-###  http://knetminer.org/data/rdf/terms/biokno/altName
-bk:altName rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf skos:altLabel;
-           owl:equivalentProperty schema:alternateName;
-					 rdfs:seeAlso schema:name .
-
-
-###  http://knetminer.org/data/rdf/terms/biokno/name
-bk:name rdf:type owl:DatatypeProperty ;
-        rdfs:subPropertyOf dcterms:label .
-
-
-###  http://knetminer.org/data/rdf/terms/biokno/prefName
-bk:prefName rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf skos:prefLabel;
-						rdfs:comment "schema:name is described and used as preferred name, despite being defined as equivalent to dc:title. Here, we prefer to stick to the de-facto meaning, which should ease interoperability." ;
-						owl:equivalentProperty schema:name.
-
-
-
-
-
-###  http://www.w3.org/2004/02/skos/core#altLabel
-skos:altLabel rdf:type owl:DatatypeProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#editorialNote
-skos:editorialNote rdf:type owl:DatatypeProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:DatatypeProperty .
-
+bka:ID a owl:DataTypeProperty;
+  rdfs:subPropertyOf schema:identifier, dcterms:identifier.
+  
+schema:identifier a owl:AnnotationProperty.
 
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://knetminer.org/data/rdf/terms/biokno/relFrom
-bk:relFrom rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf rdf:subject .
-
-
-###  http://knetminer.org/data/rdf/terms/biokno/relTo
-bk:relTo rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf rdf:object .
-
-
-###  http://knetminer.org/data/rdf/terms/biokno/relTypeRef
-bk:relTypeRef rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf rdf:predicate .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
-rdf:object rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
-rdf:predicate rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
-rdf:subject rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/elements/1.1/subject
-dc:subject rdf:type owl:ObjectProperty .
-
-
-###  http://schema.org/subjectOf
-schema:subjectOf rdf:type owl:ObjectProperty .
-
-
-###  http://semanticscience.org/resource/SIO_010078
-sio:SIO_010078 rdf:type owl:ObjectProperty .
-
-
-###  http://semanticscience.org/resource/SIO_010079
-sio:SIO_010079 rdf:type owl:ObjectProperty .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#participant
-bpax:participant rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf bk:has_participant .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#product
-bpax:product rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf bk:produces .
-
 
 ###  http://knetminer.org/data/rdf/terms/biokno/consumes
 bk:consumes rdf:type owl:ObjectProperty .
@@ -168,7 +90,8 @@ bk:occ_in rdf:type owl:ObjectProperty .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/part_of
-bk:part_of rdf:type owl:ObjectProperty .
+bk:part_of rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf schema:isPartOf .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/participates_in
@@ -198,29 +121,74 @@ bk:published_in rdf:type owl:ObjectProperty ;
                                    [ owl:inverseOf dc:subject
                                    ] .
 
+bk:pub_in rdf:type owl:ObjectProperty;
+  owl:inverseOf schema:mentions.  
+
 
 ###  http://knetminer.org/data/rdf/terms/biokno/regulates
 bk:regulates rdf:type owl:ObjectProperty .
+
+
+###  http://knetminer.org/data/rdf/terms/biokno/relFrom
+bk:relFrom rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf rdf:subject .
+
+
+###  http://knetminer.org/data/rdf/terms/biokno/relTo
+bk:relTo rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf rdf:object .
+
+
+###  http://knetminer.org/data/rdf/terms/biokno/relTypeRef
+bk:relTypeRef rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf rdf:predicate .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+dc:subject rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/subjectOf
+schema:subjectOf rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/SIO_010078
+sio:SIO_010078 rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/SIO_010079
+sio:SIO_010079 rdf:type owl:ObjectProperty .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#participant
+bpax:participant rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf bk:has_participant .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#product
+bpax:product rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf bk:produces .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/elements/1.1/creator
-dc:creator rdf:type owl:DatatypeProperty .
+###  http://knetminer.org/data/rdf/terms/biokno/altName
+bk:altName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf skos:altLabel ;
+           rdfs:seeAlso schema:name .
 
 
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:DatatypeProperty .
+###  http://knetminer.org/data/rdf/terms/biokno/name
+bk:name rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf dcterms:label .
 
 
-###  http://purl.org/dc/terms/issued
-dcterms:issued rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:DatatypeProperty .
+###  http://knetminer.org/data/rdf/terms/biokno/prefName
+bk:prefName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf skos:prefLabel ;
+            rdfs:comment "schema:name is described and used as preferred name, despite being defined as equivalent to dc:title. Here, we prefer to stick to the de-facto meaning, which should ease interoperability." .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/AUTHORS
@@ -230,7 +198,7 @@ bka:AUTHORS rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/Abstract
 bka:Abstract rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf dcterms:description .
+             rdfs:subPropertyOf dcterms:description, schema:abstract .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/AbstractHeader
@@ -245,6 +213,7 @@ bka:FullText rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/PVALUE
 bka:PVALUE rdf:type owl:DatatypeProperty ;
+					 rdfs:subPropertyOf agri:pvalue;
            rdfs:comment "TODO: we would like to find a better form of integration with SIO/OBI"@en ;
            rdfs:seeAlso obo:OBI_0000175 ,
                         sio:SIO_000765 .
@@ -256,81 +225,95 @@ bka:URL rdf:type owl:DatatypeProperty .
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/YEAR
 bka:YEAR rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf dcterms:issued .
+         rdfs:subPropertyOf dcterms:issued, schema:datePublished .
+
+bka:PMID rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf agri:pmedId .
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/label
+dcterms:label rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:DatatypeProperty .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#name
+bpax:name rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf bk:name .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#standardName
+bpax:standardName rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf bk:prefName .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:DatatypeProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://agrischemas.org/BioPathway
+agri:BioPathway rdf:type owl:Class ;
+                owl:equivalentClass bk:Path .
+
+
+###  http://agrischemas.org/ScholarlyPublication
+agri:ScholarlyPublication rdf:type owl:Class ;
+                          owl:equivalentClass bk:Publication .
+
+
 ###  http://bioschemas.org/BioChemEntity
 bioschema:BioChemEntity rdf:type owl:Class .
 
 
-###  http://schema.org/CreativeWork
-schema:CreativeWork rdf:type owl:Class .
+###  http://bioschemas.org/Protein
+bioschema:Protein rdf:type owl:Class ;
+                  owl:equivalentClass bpax:Protein .
 
 
-###  http://semanticscience.org/resource/SIO_001107
-sio:SIO_001107 rdf:type owl:Class ;
-               owl:equivalentClass bk:Path .
-
-
-###  http://semanticscience.org/resource/SIO_010043
-sio:SIO_010043 rdf:type owl:Class ;
-               owl:equivalentClass bk:Protein .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction
-bpax:BiochemicalReaction rdf:type owl:Class ;
-                         owl:equivalentClass bk:Reaction .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Complex
-bpax:Complex rdf:type owl:Class ;
-             owl:equivalentClass bk:MoleculeComplex .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Entity
-bpax:Entity rdf:type owl:Class ;
-            owl:equivalentClass bk:Participant .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Gene
-bpax:Gene rdf:type owl:Class ;
-          owl:equivalentClass bk:Gene .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Interaction
-bpax:Interaction rdf:type owl:Class ;
-                 owl:equivalentClass bk:Interaction .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Pathway
-bpax:Pathway rdf:type owl:Class ;
-             owl:equivalentClass bk:Path .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Protein
-bpax:Protein rdf:type owl:Class ;
-             owl:equivalentClass bk:Protein .
-
-
-###  http://www.biopax.org/release/biopax-level3.owl#Transport
-bpax:Transport rdf:type owl:Class ;
-               owl:equivalentClass bk:Transport .
+###  http://bioschemas.org/Study
+bioschema:Study rdf:type owl:Class ;
+                owl:equivalentClass bk:Experiment .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Concept
 bk:Concept rdfs:subClassOf skos:Concept .
 
 
+###  http://knetminer.org/data/rdf/terms/biokno/Experiment
+
 ###  http://knetminer.org/data/rdf/terms/biokno/Gene
-bk:Gene rdf:type owl:Class .
+bk:Gene rdf:type owl:Class ;
+        owl:equivalentClass bpax:Gene .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Interaction
-bk:Interaction rdf:type owl:Class .
+bk:Interaction rdf:type owl:Class ;
+               owl:equivalentClass bpax:Interaction .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Molecule
@@ -340,20 +323,25 @@ bk:Molecule rdf:type owl:Class ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/MoleculeComplex
 bk:MoleculeComplex rdf:type owl:Class ;
+                   owl:equivalentClass bpax:Complex ;
                    rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Participant
 bk:Participant rdf:type owl:Class ;
-               skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en .
+               owl:equivalentClass bpax:Entity .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Path
-bk:Path rdf:type owl:Class .
+bk:Path rdf:type owl:Class ;
+        owl:equivalentClass sio:SIO_001107 ,
+                            bpax:Pathway .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Protein
-bk:Protein rdf:type owl:Class .
+bk:Protein rdf:type owl:Class ;
+           owl:equivalentClass sio:SIO_010043 ,
+                               bpax:Protein .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Publication
@@ -363,6 +351,7 @@ bk:Publication rdf:type owl:Class ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Reaction
 bk:Reaction rdf:type owl:Class ;
+            owl:equivalentClass bpax:BiochemicalReaction ;
             rdfs:comment "[kNetMiner] TODO: requires review. Likely, bpax:BiochemicalReaction can model any reaction, whether it's biology-related or not"@en .
 
 
@@ -372,11 +361,52 @@ bk:Relation rdf:type owl:Class ;
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Transport
-bk:Transport rdf:type owl:Class .
+bk:Transport rdf:type owl:Class ;
+             owl:equivalentClass bpax:Transport .
 
 
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
-rdf:Statement rdf:type owl:Class .
+###  http://schema.org/CreativeWork
+schema:CreativeWork rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/SIO_001107
+sio:SIO_001107 rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/SIO_010043
+sio:SIO_010043 rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction
+bpax:BiochemicalReaction rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Complex
+bpax:Complex rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Entity
+bpax:Entity rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Gene
+bpax:Gene rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Interaction
+bpax:Interaction rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Pathway
+bpax:Pathway rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Protein
+bpax:Protein rdf:type owl:Class .
+
+
+###  http://www.biopax.org/release/biopax-level3.owl#Transport
+bpax:Transport rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -384,10 +414,24 @@ skos:Concept rdf:type owl:Class .
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://knetminer.org/data/rdf/terms/biokno/Participant
+bk:Participant rdf:type owl:NamedIndividual .
+
+
+#################################################################
 #    Annotations
 #################################################################
 
-bka:Score rdfs:seeAlso obo:OBI_0000071 .
+bk:Participant skos:editorialNote "[kNetMiner] TODO: from the description, it seems to correspond to bpax:PhysicalEntity, but we're unsure that there aren't more general real data"@en .
 
 
-###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
+bka:Score a owl:DatatypeProperty; 
+  rdfs:seeAlso obo:OBI_0000071;
+  rdfs:subPropertyOf agri:score
+.
+  
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
