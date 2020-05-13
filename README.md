@@ -8,7 +8,7 @@ representing biological-related knowledge networks. We use it to power the
 [KnetMiner](http://knetminer.rothamsted.ac.uk/) project.
 
 Further information on the ontology and where it fits in KnetMiner is available from our 
-[IB2018 article](https://www.degruyter.com/view/j/jib.ahead-of-print/jib-2018-0023/jib-2018-0023.xml).
+[IB2018 article](https://dx.doi.org/10.1515%2Fjib-2018-0023).
 
 At the most basic level, it provides simple modelling for very general entities, such as concepts, relationships and 
 attributed-attached reified relationships. 
