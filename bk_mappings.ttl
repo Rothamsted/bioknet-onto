@@ -182,18 +182,18 @@ bk:altName rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/name
 bk:name rdf:type owl:DatatypeProperty ;
-        rdfs:subPropertyOf dcterms:label .
+        rdfs:subPropertyOf rdfs:label .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/prefName
 bk:prefName rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf skos:prefLabel ;
+            rdfs:subPropertyOf skos:prefLabel, schema:name;
             rdfs:comment "schema:name is described and used as preferred name, despite being defined as equivalent to dc:title. Here, we prefer to stick to the de-facto meaning, which should ease interoperability." .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/AUTHORS
 bka:AUTHORS rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf dc:creator .
+            rdfs:subPropertyOf dcterms:creator .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/Abstract
@@ -240,10 +240,6 @@ dcterms:description rdf:type owl:DatatypeProperty .
 
 ###  http://purl.org/dc/terms/issued
 dcterms:issued rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms/label
-dcterms:label rdf:type owl:DatatypeProperty .
 
 
 ###  http://purl.org/dc/terms/title
