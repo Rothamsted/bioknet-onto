@@ -33,6 +33,8 @@ agri:evidence rdf:type owl:AnnotationProperty .
 bk:evidence rdf:type owl:ObjectProperty;
             rdfs:subPropertyOf agri:evidence .
 
+bk:dataSource rdf:type owl:ObjectProperty;
+            rdfs:subPropertyOf dc:source .
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/EVIDENCE
 bka:EVIDENCE rdf:type owl:DatatypeProperty ;
