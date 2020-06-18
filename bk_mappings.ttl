@@ -219,6 +219,9 @@ bka:PVALUE rdf:type owl:DatatypeProperty ;
            rdfs:seeAlso obo:OBI_0000175 ,
                         sio:SIO_000765 .
 
+bka:TFIDF rdf:type owl:DatatypeProperty ;
+					 rdfs:subPropertyOf agri:score;
+					 rdfs:seeAlso obo:OBI_0000071.
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/URL
 bka:URL rdf:type owl:DatatypeProperty .
