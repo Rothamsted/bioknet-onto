@@ -87,10 +87,6 @@ bk:is_a rdf:type owl:ObjectProperty .
 bk:neg_reg rdf:type owl:ObjectProperty .
 
 
-###  http://knetminer.org/data/rdf/terms/biokno/occ_in
-bk:occ_in rdf:type owl:ObjectProperty .
-
-
 ###  http://knetminer.org/data/rdf/terms/biokno/part_of
 bk:part_of rdf:type owl:ObjectProperty;
   rdfs:subPropertyOf schema:isPartOf .
@@ -126,6 +122,8 @@ bk:published_in rdf:type owl:ObjectProperty ;
 bk:pub_in rdf:type owl:ObjectProperty;
   owl:inverseOf schema:mentions.  
 
+bk:occ_in rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf schema:mentions.  
 
 ###  http://knetminer.org/data/rdf/terms/biokno/regulates
 bk:regulates rdf:type owl:ObjectProperty .
@@ -195,8 +193,9 @@ bk:prefName rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/AUTHORS
 bka:AUTHORS rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf dcterms:creator .
-
+            rdfs:subPropertyOf dcterms:creator, agri:authorsList.
+            
+agri:authorsList rdf:type owl:AnnotationProperty.
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/Abstract
 bka:Abstract rdf:type owl:DatatypeProperty ;
