@@ -122,7 +122,7 @@ bk:pub_in rdf:type owl:ObjectProperty;
                 rdfs:subPropertyOf schema:subjectOf.
 
 bk:occ_in rdf:type owl:ObjectProperty;
-  rdfs:subPropertyOf schema:subjectOf.  
+	owl:inverseOf schema:mentions.
 
 ###  http://knetminer.org/data/rdf/terms/biokno/regulates
 bk:regulates rdf:type owl:ObjectProperty .
