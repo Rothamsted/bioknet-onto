@@ -323,7 +323,7 @@ bk:Molecule rdf:type owl:Class ;
 ###  http://knetminer.org/data/rdf/terms/biokno/MoleculeComplex
 bk:MoleculeComplex rdf:type owl:Class ;
                    owl:equivalentClass bpax:Complex ;
-                   rdfs:subClassOf bioschema:BioChemEntity.
+                   rdfs:subClassOf bioschema:BioChemEntity;
                    rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en .
 
 
