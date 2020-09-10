@@ -63,16 +63,17 @@ bk:cs_by rdf:type owl:ObjectProperty .
 
 ###  http://knetminer.org/data/rdf/terms/biokno/en_by
 bk:en_by rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf sio:SIO_010079 .
+         rdfs:subPropertyOf sio:SIO_010079, bioschema:isEncodedByBioChemEntity .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/enc
 bk:enc rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf sio:SIO_010078 .
+       rdfs:subPropertyOf sio:SIO_010078, bioschema:encodesBioChemEntity .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/has_part
-bk:has_part rdf:type owl:ObjectProperty .
+bk:has_part rdf:type owl:ObjectProperty;
+	rdfs:subPropertyOf schema:hasPart .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/has_participant
@@ -110,17 +111,15 @@ bk:produces rdf:type owl:ObjectProperty .
 
 ###  http://knetminer.org/data/rdf/terms/biokno/publication_features
 bk:publication_features rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf dc:subject .
+                        rdfs:subPropertyOf dc:subject, schema:about.
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/published_in
 bk:published_in rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf schema:subjectOf ,
-                                   [ owl:inverseOf dc:subject
-                                   ] .
+                rdfs:subPropertyOf schema:subjectOf.
 
 bk:pub_in rdf:type owl:ObjectProperty;
-  owl:inverseOf schema:mentions.  
+                rdfs:subPropertyOf schema:subjectOf.
 
 bk:occ_in rdf:type owl:ObjectProperty;
   rdfs:subPropertyOf schema:subjectOf.  
@@ -176,18 +175,18 @@ bpax:product rdf:type owl:ObjectProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/altName
 bk:altName rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf skos:altLabel ;
+           rdfs:subPropertyOf skos:altLabel, schema:alternateName, rdfs:label;
            rdfs:seeAlso schema:name .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/name
 bk:name rdf:type owl:DatatypeProperty ;
-        rdfs:subPropertyOf rdfs:label .
+        rdfs:subPropertyOf rdfs:label.
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/prefName
 bk:prefName rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf skos:prefLabel, schema:name;
+            rdfs:subPropertyOf skos:prefLabel, schema:name, rdfs:label;
             rdfs:comment "schema:name is described and used as preferred name, despite being defined as equivalent to dc:title. Here, we prefer to stick to the de-facto meaning, which should ease interoperability." .
 
 
@@ -209,7 +208,7 @@ bka:AbstractHeader rdf:type owl:DatatypeProperty ;
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/FullText
 bka:FullText rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf dcterms:description .
+             rdfs:subPropertyOf dcterms:description, schema:text .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/attributes/PVALUE
@@ -308,7 +307,7 @@ bk:Concept rdfs:subClassOf skos:Concept .
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Gene
 bk:Gene rdf:type owl:Class ;
-        owl:equivalentClass bpax:Gene .
+        owl:equivalentClass bpax:Gene, bioschema:Gene .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Interaction
@@ -324,6 +323,7 @@ bk:Molecule rdf:type owl:Class ;
 ###  http://knetminer.org/data/rdf/terms/biokno/MoleculeComplex
 bk:MoleculeComplex rdf:type owl:Class ;
                    owl:equivalentClass bpax:Complex ;
+                   rdfs:subClassOf bioschema:BioChemEntity.
                    rdfs:comment "[kNetMiner] TODO: for some reason bk:Protein is made a subclass of this, probably wrong."@en .
 
 
@@ -341,7 +341,7 @@ bk:Path rdf:type owl:Class ;
 ###  http://knetminer.org/data/rdf/terms/biokno/Protein
 bk:Protein rdf:type owl:Class ;
            owl:equivalentClass sio:SIO_010043 ,
-                               bpax:Protein .
+                               bpax:Protein, bioschema:Protein .
 
 
 ###  http://knetminer.org/data/rdf/terms/biokno/Publication
