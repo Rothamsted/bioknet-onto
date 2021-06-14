@@ -45,7 +45,7 @@ of `bk:Concept`, while Concepts are linked together by some sub-property of `bk:
 
 A first instance about a biological pathway, taken from our [WikiPathway example](examples/bmp_reg_human/bkout):
 
-```Turtle
+```turtle
 <http://www.wikipathways.org/id1>
         # A pathway, a predefined class in bk_ondex.owl. This is a subclass of bk:Concept, which subclasses skos:Concept
         a            bk:Path ; 
@@ -73,7 +73,7 @@ original link chains between pathways and proteins present in the BioPax data ar
 
 Another example, about the gene ontology term referred by above:
 
-```Turtle
+```turtle
 obo:GO_0030014  a      bk:GeneOntologyTerms ;
         dc:identifier  obo:GO_0030014_acc ;
         bk:is_a        obo:GO_0044424 , obo:GO_0043234 ;
@@ -103,7 +103,7 @@ complex.
 Under the top-level `bk:attribute` property, BioKNO provides a number of OWL datatype properties, which can be attached 
 to concepts and relations. For instance:
 
-```Turtle
+```turtle
 bkr:20068231  a             bk:Publication ;
         dc:identifier       bkr:20068231_acc ;
         bka:PMID            "20068231" ;
@@ -122,7 +122,7 @@ Attributes can have any suitable range and we made sensible choices for the rang
 Attributes can be associated to relations too. Since RDF structurally supports binary relations/statement only, 
 attributed relations must be modelled through reification:
 
-```Turtle
+```turtle
 # For practical reasons, we always expect that the straight triple is asserted, with the reified version optionally added to it.
 bkr:TOB1 bk:published_in    bkr:20068231.
 
