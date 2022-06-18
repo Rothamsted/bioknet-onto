@@ -17,9 +17,9 @@ In addition to that, entities such as structured accessions, data sources and ev
 
 At a more specific level, [the core definitions](bioknet.owl) are [extended with common biological entities](bk_ondex.owl), such as Protein, Gene, or the 'encodes' relation.
 
-Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to 
+Suitable [mappings](bk_mappings.ttl) are also given, in order to map the knowledge networks modelled by means of BioKNO to 
 common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., 
-[bioschemas](http://bioschemas.org/)).
+[bioschemas](http://bioschemas.org/)). In particular, we map these types to the [Agrischemas](https://github.com/Rothamsted/agri-schemas) types.
 
 We use/are using/plan to use BioKNO in the KnetMiner project to perform various operations, ranging from data 
 import/integration, to graph-based queries and building of APIs.
