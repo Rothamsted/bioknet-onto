@@ -15,8 +15,7 @@ attributed-attached reified relationships.
 
 In addition to that, entities such as structured accessions, data sources and evidence-tracking predicates are defined. 
 
-At a more specific level, [the core definitions](bioknet.owl) are extended with common biological entities, such as 
-Protein, Gene, or the 'encodes' relation.
+At a more specific level, [the core definitions](bioknet.owl) are [extended with common biological entities](bk_ondex.owl), such as Protein, Gene, or the 'encodes' relation.
 
 Suitable [mappings](bk_ondex.owl) are also given, in order to map the knowledge networks modelled by means of BioKNO to 
 common linked data standards, both general ones (e.g., SKOS, OWL) and life science-specific (e.g., 
