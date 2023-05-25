@@ -26,9 +26,9 @@ import/integration, to graph-based queries and building of APIs.
 
 ## Web View
 You can web-browse the ontology 
-[here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bioknet.html), and mappings to our 
+[here](https://rothamsted.github.io/bioknet-onto/lode/lode_bioknet.html), and mappings to our 
 [KnetMiner](http://knetminer.rothamsted.ac.uk/)/[Ondex](https://github.com/Rothamsted/ondex-knet-builder) metadata 
-[here](https://cdn.rawgit.com/Rothamsted/bioknet-onto/ed070a8e/utils/to_lode/lode_bk_ondex.html). Many thanks to the 
+[here](https://rothamsted.github.io/bioknet-onto/lode/lode_bk_ondex.html). Many thanks to the 
 developers of [LODE](http://www.essepuntato.it/lode), which we uses for rendering these pages.
 
 **WARNING**: *sometimes these views might be outdated with respect to the last versions of the original ontology files 
